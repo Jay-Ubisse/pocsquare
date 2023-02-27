@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Pocsquare</title>
+    <link rel="stylesheet" href="../assets/styles/output.css">
 </head>
 <body>
-    <h1>Client Section</h1>
+    <h1 class="bg-red-700">Client Section</h1>
 </body>
 </html>
