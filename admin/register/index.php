@@ -23,46 +23,87 @@
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="province" class="font-medium">Província</label>
-                        <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="province" onchange="toggleFields()" id="province" class="border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="MC">Maputo Cidade</option>
                             <option value="MP">Maputo Província</option>
                             <option value="GZ">Gaza</option>
                             <option value="IN">Inhambane</option>
-                            <option value="MN">Manica</option>
-                            <option value="SF">Sofala</option>
-                            <option value="Tete">TT</option>
-                            <option value="Nampula">NP</option>
-                            <option value="ZB">Zambézia</option>
-                            <option value="NS">Niassa</option>
-                            <option value="CD">Cabo delgado</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="district" class="font-medium">Distrito</label>
-                        <select name="district" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="KaMpfumo">KaMpfumo</option>
                             <option value="Nlhamankulu">Nlhamankulu</option>
+                        </select>
+                        <select name="district" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="Boane">Boane</option>
+                            <option value="Magude">Magude</option>
+                        </select>
+                        <select name="district" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="Chibuto">Chibuto</option>
+                            <option value="Bilene">Bilene</option>
+                        </select>
+                        <select name="district" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="Funhalouro">Funhalouro</option>
+                            <option value="Govuro">Govuro</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="administrative_post" class="font-medium">Posto Administrativo</label>
-                        <select name="administrative_post" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative_post" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mcp1">MC posto 1</option>
                             <option value="mcp2">MC posto 2</option>
+                        </select>
+                        <select name="administrative_post" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="mpp1">MP posto 1</option>
+                            <option value="mpp2">MP posto 2</option>
+                        </select>
+                        <select name="administrative_post" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="gzp1">GZ posto 1</option>
+                            <option value="gzp2">GZ posto 2</option>
+                        </select>
+                        <select name="administrative_post" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="inp1">IN posto 1</option>
+                            <option value="inp2">IN posto 2</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="locality" class="font-medium">Localidade</label>
-                        <select name="locality" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="locality" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mcl1">MC Localidade 1</option>
                             <option value="mcl2">MC Localidade 2</option>
+                        </select>
+                        <select name="locality" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="mpl1">MP Localidade 1</option>
+                            <option value="mpl2">MP Localidade 2</option>
+                        </select>
+                        <select name="locality" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="gzl1">GZ Localidade 1</option>
+                            <option value="gzl2">GZ Localidade 2</option>
+                        </select>
+                        <select name="locality" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="inl1">IN Localidade 1</option>
+                            <option value="inl2">IN Localidade 2</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="neighborhood" class="font-medium">Bairro</label>
-                        <select name="neighborhood" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="neighborhood" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mcb1">MC Bairro 1</option>
                             <option value="mcb2">MC Bairro 2</option>
+                        </select>
+                        <select name="neighborhood" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="mpb1">MP Bairro 1</option>
+                            <option value="mpb2">MP Bairro 2</option>
+                        </select>
+                        <select name="neighborhood" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="gzb1">GZ Bairro 1</option>
+                            <option value="gzb2">GZ Bairro 2</option>
+                        </select>
+                        <select name="neighborhood" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="inb1">IN Bairro 1</option>
+                            <option value="inb2">IN Bairro 2</option>
                         </select>
                     </div>
                 </fieldset>
@@ -109,5 +150,8 @@
     <footer>
         <?php include "../components/footer.php"; ?>
     </footer>
+
+    <script src="../../assets/scripts/jquery-3.6.0.js"></script>
+    <script src="../../assets/scripts/register.js"></script>
 </body>
 </html>
