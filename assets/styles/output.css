@@ -574,6 +574,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -671,6 +676,10 @@ video {
   width: 19%;
 }
 
+.w-1\/5 {
+  width: 20%;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -705,6 +714,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .overflow-scroll {

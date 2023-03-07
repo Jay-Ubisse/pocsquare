@@ -5,15 +5,15 @@
         $username = $_POST["username"];
         $password = md5($_POST["password"]);
 
-        // getting user personal data
-        $fetchAdminDataQuery = "SELECT * FROM admins WHERE username = '$username'";
+        // getting user admin data
+        $fetchAdminDataQuery = "SELECT * FROM pocsquare.admins WHERE username = '$username'";
         $adminDataResult = $dbcon->query($fetchAdminDataQuery);
 
-        if ($adminDataResult->num_rows == 0) {
+        if ($adminDataResult->rowCount() == 0) {
             $_SESSION['auth'] = "Nome de usuário inválido!";
             header("location: ../../admin/");
         } else {
-            $adminDataRow = $adminDataResult->fetch_assoc();
+            $adminDataRow = $adminDataResult->fetch(PDO::FETCH_ASSOC);
             $pass =  $adminDataRow['password'];
 
             if ($pass !== $password) {
@@ -24,5 +24,7 @@
                 header("location: ../../admin/home");
             }
         }
-        $dbcon->close();
+
+        //Terminar a conexao PDO
+        $dbcon=null;
 ?>

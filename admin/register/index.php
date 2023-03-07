@@ -17,14 +17,13 @@
         <?php include "../components/header.php"; ?>
     </header>
     <main>
-        <form method="POST" action="" class="border-2 border-orange-700 rounded-xl w-4/5 mx-auto mt-10">
+        <form method="post" action="../../server/src/register.php" class="border-2 border-orange-700 rounded-xl w-4/5 mx-auto mt-10">
         <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
                 <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" onchange="toggleFields()" id="province" class="border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="MC">Maputo Cidade</option>
                             <option value="MP">Maputo Província</option>
                             <option value="GZ">Gaza</option>
                             <option value="IN">Inhambane</option>
@@ -32,10 +31,6 @@
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="district" class="font-medium">Distrito</label>
-                        <select name="district" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="KaMpfumo">KaMpfumo</option>
-                            <option value="Nlhamankulu">Nlhamankulu</option>
-                        </select>
                         <select name="district" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Boane">Boane</option>
                             <option value="Magude">Magude</option>
@@ -51,10 +46,6 @@
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="administrative_post" class="font-medium">Posto Administrativo</label>
-                        <select name="administrative_post" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mcp1">MC posto 1</option>
-                            <option value="mcp2">MC posto 2</option>
-                        </select>
                         <select name="administrative_post" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mpp1">MP posto 1</option>
                             <option value="mpp2">MP posto 2</option>
@@ -70,10 +61,6 @@
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="locality" class="font-medium">Localidade</label>
-                        <select name="locality" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mcl1">MC Localidade 1</option>
-                            <option value="mcl2">MC Localidade 2</option>
-                        </select>
                         <select name="locality" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mpl1">MP Localidade 1</option>
                             <option value="mpl2">MP Localidade 2</option>
@@ -89,10 +76,6 @@
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="neighborhood" class="font-medium">Bairro</label>
-                        <select name="neighborhood" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mcb1">MC Bairro 1</option>
-                            <option value="mcb2">MC Bairro 2</option>
-                        </select>
                         <select name="neighborhood" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="mpb1">MP Bairro 1</option>
                             <option value="mpb2">MP Bairro 2</option>
@@ -145,6 +128,10 @@
                         </select>
                     </div>
                 </fieldset>
+                <div class="flex flex-row gap-5 w-1/5 mx-auto my-10">
+                    <input type="submit" value="Cadastrar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                    <input type="reset" value="Repor" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                </div>
         </form>
     </main>
     <footer>
