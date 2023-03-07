@@ -250,6 +250,8 @@ switch ($township) {
         break;
 }
 
+$code = $province . $district_id . $administrative_post;
+
 /**
  * Fazendo a insercao dos dados nas respectivas tabelas (USANDO PDO).
  */
@@ -258,9 +260,11 @@ try {
 
     $dbcon->beginTransaction();
 
-    $administrative_entities_query = "INSERT INTO administrative_entities () VALUES ()";
-    $stmt = $dbcon->prepare("QUERY");
-    $stmt->execute();
+    $administrative_entities_query = "INSERT INTO administrative_entities 
+                                    (province, province_numeric_id, district, district_id, administrative_post, admin_post_id, locality, locality_id, neighborhood, neighborhood_id, province_alphabetical_id, code) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $dbcon->prepare($administrative_entities_query);
+    $stmt->execute([$province_name, $province_id, $district, $district_id, $administrative_post, $administrative_post_id, $locality, $locality_id, $neighborhood, $neighborhood_id, $province, $code]);
 
     $local_entities_query = "INSERT INTO administrative_entities () VALUES ()";
     $stmt = $dbcon->prepare("ANOTHER QUERY??");
