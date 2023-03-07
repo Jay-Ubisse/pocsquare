@@ -47,46 +47,46 @@
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="administrative_post" class="font-medium">Posto Administrativo</label>
                         <select name="administrative_post" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mpp1">Maputo Província posto 1</option>
-                            <option value="mpp2">Maputo Província  posto 2</option>
+                            <option value="Maputo Província posto 1">Maputo Província posto 1</option>
+                            <option value="Maputo Província  posto 2">Maputo Província  posto 2</option>
                         </select>
                         <select name="administrative_post" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="gzp1">Gaza posto 1</option>
-                            <option value="gzp2">Gaza posto 2</option>
+                            <option value="Gaza posto 1">Gaza posto 1</option>
+                            <option value="Gaza posto 2">Gaza posto 2</option>
                         </select>
                         <select name="administrative_post" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="inp1">Inhambane posto 1</option>
-                            <option value="inp2">Inhambane posto 2</option>
+                            <option value="Inhambane posto 1">Inhambane posto 1</option>
+                            <option value="Inhambane posto 2">Inhambane posto 2</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="locality" class="font-medium">Localidade</label>
                         <select name="locality" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mpl1">Maputo Província Localidade 1</option>
-                            <option value="mpl2">Maputo Província Localidade 2</option>
+                            <option value="Maputo Província Localidade 1">Maputo Província Localidade 1</option>
+                            <option value="Maputo Província Localidade 2">Maputo Província Localidade 2</option>
                         </select>
                         <select name="locality" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="gzl1">Gaza Localidade 1</option>
-                            <option value="gzl2">Gaza Localidade 2</option>
+                            <option value="Gaza Localidade ">Gaza Localidade 1</option>
+                            <option value="Gaza Localidade 2">Gaza Localidade 2</option>
                         </select>
                         <select name="locality" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="inl1">Inhambane Localidade 1</option>
-                            <option value="inl2">Inhambane Localidade 2</option>
+                            <option value="Inhambane Localidade 1">Inhambane Localidade 1</option>
+                            <option value="Inhambane Localidade 2">Inhambane Localidade 2</option>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="neighborhood" class="font-medium">Bairro</label>
                         <select name="neighborhood" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="mpb1">Maputo Província Bairro 1</option>
-                            <option value="mpb2">Maputo Província Bairro 2</option>
+                            <option value="Maputo Província Bairro 1">Maputo Província Bairro 1</option>
+                            <option value="Maputo Província Bairro 2">Maputo Província Bairro 2</option>
                         </select>
                         <select name="neighborhood" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="gzb1">Gaza Bairro 1</option>
-                            <option value="gzb2">Gaza Bairro 2</option>
+                            <option value="Gaza Bairro 1">Gaza Bairro 1</option>
+                            <option value="Gaza Bairro 2">Gaza Bairro 2</option>
                         </select>
                         <select name="neighborhood" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="inb1">Inhambane Bairro 1</option>
-                            <option value="inb2">Inhambane Bairro 2</option>
+                            <option value="Inhambane Bairro 1">Inhambane Bairro 1</option>
+                            <option value="Inhambane Bairro 2">Inhambane Bairro 2</option>
                         </select>
                     </div>
                 </fieldset>
