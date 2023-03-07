@@ -18,10 +18,6 @@ $township = $_POST["township"];
 
 
 switch ($province) {
-    case 'MC':
-        $province_name = "Maputo Cidade";
-        $province_id = "01";
-        break;
     case 'MP':
         $province_name = "Maputo Província";
         $province_id = "02";
@@ -42,9 +38,11 @@ try {
 
     $dbcon->beginTransaction();
 
+    $administrative_entities_query = "INSERT INTO administrative_entities () VALUES ()";
     $stmt = $dbcon->prepare("QUERY");
     $stmt->execute();
 
+    $local_entities_query = "INSERT INTO administrative_entities () VALUES ()";
     $stmt = $dbcon->prepare("ANOTHER QUERY??");
     $stmt->execute();
 
