@@ -10,7 +10,7 @@
     if ($rows) {
         echo "<ul class='my-5'>";
         foreach ($rows as $row) {
-            echo "<li class='my-2 p-3 px-5 text-lg font-medium hover:bg-slate-300'>" . $row['province'] . ", " . $row['district'] . "</li>";
+            echo "<li class='my-2 p-3 px-5 text-lg font-medium hover:bg-slate-300'>" . $row['code'] . " - " . $row['province'] . ", " . $row['district'] . "</li>";
         }
         echo "</ul>";        
     }  else {
