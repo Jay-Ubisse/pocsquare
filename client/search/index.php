@@ -20,13 +20,16 @@
     <main class="bg-gray-200 h-48 p-1">
         <section class="w-fit mx-auto mt-20">
             <div>
-                <input type="search" placeholder="Pesquisar" size="80" class="py-3 px-3 outline-none focus:outline focus:outline-orange-700 text-gray-600 font-medium" />
-                <button type="submit" class="text-white font-medium text-lg bg-orange-700 py-3 px-5"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="search" placeholder="Pesquisar" size="80" id="searchValue" onchange="" class="py-3 px-3 outline-none focus:outline focus:outline-orange-700 text-gray-600 font-medium" />
+                <button type="submit" onclick="searchByClick()" class="text-white font-medium text-lg bg-orange-700 py-3 px-5"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <div id="results" class="bg-white">
+            <div id="results" class="bg-white mt-5 px-5">
 
             </div>
         </section>
     </main>
+
+    <script src="../../assets/scripts/jquery-3.6.0.js"></script>
+    <script src="../../assets/scripts/search.js"></script>
 </body>
 </html>
