@@ -19,14 +19,14 @@
     <main class="h-screen">
         <form method="post" action="../../server/src/register.php" class="border-2 border-orange-700 rounded-xl w-4/5 mx-auto mt-10">
             <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
-            <div class="bg-green-600 text-white font-semibold flex justify-center my-6 py-4">
 				<?php
 					if(isset($_SESSION["register-response"]) ) {
+                        echo "<div class='bg-green-600 text-white font-semibold flex justify-center my-6 py-4'>";
 						echo $_SESSION["register-response"];
 						unset($_SESSION["register-response"]);
-					} 
+                        echo "</div>";
+					}
 				?>
-			</div>
                 <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="w-[19%] flex flex-col gap-2">
