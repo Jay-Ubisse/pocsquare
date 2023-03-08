@@ -13,41 +13,41 @@
     <section id="slideshow">
         <div class="slideshow-container">
             <div class="mySlides fade h-screen">
-                <div class="numbertext">1 / 2</div>
                 <img src="../assets/img/slides/slide-1.jpg" class="h-full">
-                <div class="absolute top-0 w-full h-full bg-orange-600/50">
-                    <div class="w-2/5 ml-[10%] mt-[10%] text-white">
-                        <h2 class="text-base">Bem Vindo</h2>
-                        <h1 class="my-4 font-bold text-base">ENGINEERING CHAMBERS</h1>
-                        <p class="text-xs">Engineering Chambers Moz Lda é uma empresa moçambicana registada em 2019.</p>
-                        <p class="text-xs mb-4">
-                            A empresa tem como negócio principal o fornecimento de serviços
-                            em sistemas de bombeamento em fluidos, isto é, diversos tipos de
-                            bombas e equipamentos relacionados como motores, válvulas, medidores
-                            de fluxo, quadros de comando e consumíveis. 
+                <div class="absolute top-0 w-full h-full bg-orange-600/40">
+                    <div class="w-fit ml-[10%] mt-[10%] text-white">
+                        <h1 class="text-5xl font-bold mb-10">Bem Vindo ao Pocsquare!</h1>
+                        <p class="text-2xl">O Pocsquere oferece um identificador único para cada área postal do país.</p>
+                        <p class="text-2xl mb-4">
+                           O Pocsquare facilita o trabalho de localizar os endereços, de separar e encaminhar as correspondências. 
                         </p>
-                        <span class="mt-4 bg-red px-4 rounded-md py-2">
-                            <a href="./contacts/">Contacte-nos</a>
+                    </div>
+                    <div class="w-fit mx-auto mt-32 flex flex-row gap-5">
+                        <span class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl">
+                            Encontar um local
+                        </span>
+                        <span class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl">
+                            <a href="#">Saber mais sobre o Pocsquare</a>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="mySlides hide fade h-screen">
-                <div class="numbertext">2 / 2</div>
                 <img src="../assets/img/slides/slide-2.jpg" class="h-full">
-                <div class="absolute top-0 w-full h-full bg-orange-600/50">
-                    <div class="w-2/5 ml-[10%] mt-[10%] text-white">
-                        <h2 class="text-base">Bem Vindo</h2>
-                        <h1 class="my-4 font-bold text-base">ENGINEERING CHAMBERS</h1>
-                        <p class="text-xs">Engineering Chambers Moz Lda é uma empresa moçambicana registada em 2019.</p>
-                        <p class="text-xs mb-4">
-                            A empresa tem como negócio principal o fornecimento de serviços
-                            em sistemas de bombeamento em fluidos, isto é, diversos tipos de
-                            bombas e equipamentos relacionados como motores, válvulas, medidores
-                            de fluxo, quadros de comando e consumíveis. 
+                <div class="absolute top-0 w-full h-full bg-orange-600/40">
+                    <div class="w-fit ml-[10%] mt-[10%] text-white">
+                        <h1 class="text-5xl font-bold mb-10">Bem Vindo ao Pocsquare!</h1>
+                        <p class="text-2xl">O Pocsquere oferece um identificador único para cada área postal do país.</p>
+                        <p class="text-2xl mb-4">
+                           O Pocsquare facilita o trabalho de localizar os endereços, de separar e encaminhar as correspondências. 
                         </p>
-                        <span class="mt-4 bg-red px-4 rounded-md py-2">
-                            <a href="./contacts/">Contacte-nos</a>
+                    </div>
+                    <div class="w-fit mx-auto mt-32 text-white flex flex-row gap-5">
+                        <span class="bg-orange-500 font-semibold px-20 py-4 rounded-xl text-xl">
+                            Encontar um local
+                        </span>
+                        <span class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl">
+                            <a href="#">Saber mais sobre o Pocsquare</a>
                         </span>
                     </div>
                 </div>
