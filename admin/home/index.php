@@ -35,7 +35,7 @@
                         Cadastrar Local
                     </span>
                 </a>
-                <a href="../search/" class="border-2 border-orange-700 rounded-md w-[50%] h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                <a href="#" class="border-2 border-orange-700 rounded-md w-[50%] h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
                     <span>
                     <i class="fa-solid fa-magnifying-glass fa-2x"></i>
                     </span>
