@@ -23,7 +23,7 @@
                 <input type="search" placeholder="Pesquisar" size="80" id="searchValue" onchange="" class="py-3 px-3 outline-none focus:outline focus:outline-orange-700 text-gray-600 font-medium" />
                 <button type="submit" onclick="searchByClick()" class="text-white font-medium text-lg bg-orange-700 py-3 px-5"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <div id="results" class="bg-white mt-5 px-5">
+            <div id="results" class="bg-white mt-5">
 
             </div>
         </section>
