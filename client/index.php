@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Pocsquare</title>
+    <title>Inicio | Pocsquare</title>
     <link rel="stylesheet" href="../assets/styles/output.css">
     <link rel="stylesheet" href="../assets/styles/slideshow.css">
 </head>
@@ -23,10 +23,10 @@
                         </p>
                     </div>
                     <div class="w-fit mx-auto mt-32 flex flex-row gap-5">
-                        <a href="#" class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl hover:bg-orange-700">
+                        <a href="./search/" class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl hover:bg-orange-700">
                             Encontar um local
                         </a>
-                        <a href="#" class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl hover:bg-gray-300">
+                        <a href="./search/" class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl hover:bg-gray-300">
                             Saber mais sobre o Pocsquare
                         </a>
                     </div>
