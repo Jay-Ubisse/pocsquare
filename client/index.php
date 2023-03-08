@@ -23,12 +23,12 @@
                         </p>
                     </div>
                     <div class="w-fit mx-auto mt-32 flex flex-row gap-5">
-                        <span class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl">
+                        <a href="#" class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl hover:bg-orange-700">
                             Encontar um local
-                        </span>
-                        <span class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl">
-                            <a href="#">Saber mais sobre o Pocsquare</a>
-                        </span>
+                        </a>
+                        <a href="#" class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl hover:bg-gray-300">
+                            Saber mais sobre o Pocsquare
+                        </a>
                     </div>
                 </div>
             </div>
@@ -43,12 +43,12 @@
                         </p>
                     </div>
                     <div class="w-fit mx-auto mt-32 text-white flex flex-row gap-5">
-                        <span class="bg-orange-500 font-semibold px-20 py-4 rounded-xl text-xl">
+                        <a href="#" class="bg-orange-500 text-white font-semibold px-20 py-4 rounded-xl text-xl hover:bg-orange-700">
                             Encontar um local
-                        </span>
-                        <span class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl">
-                            <a href="#">Saber mais sobre o Pocsquare</a>
-                        </span>
+                        </a>
+                        <a href="#" class="bg-white text-orange-500 font-semibold px-16 py-4 rounded-xl text-xl hover:bg-gray-300">
+                            Saber mais sobre o Pocsquare
+                        </a>
                     </div>
                 </div>
             </div>
