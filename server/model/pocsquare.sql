@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2023 at 09:58 PM
+-- Generation Time: Mar 09, 2023 at 12:33 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -30,17 +30,46 @@ SET time_zone = "+00:00";
 CREATE TABLE `administrative_entities` (
   `entity_id` int(11) NOT NULL,
   `province` varchar(20) NOT NULL,
-  `province_numeric_id` int(2) NOT NULL,
+  `province_numeric_id` varchar(2) NOT NULL,
   `district` varchar(40) NOT NULL,
-  `district_numeric_id` int(3) NOT NULL,
+  `district_id` varchar(3) NOT NULL,
   `administrative_post` varchar(40) NOT NULL,
-  `admin_post_id` int(3) NOT NULL,
+  `admin_post_id` varchar(3) NOT NULL,
   `locality` varchar(50) NOT NULL,
-  `locality_id` int(3) NOT NULL,
+  `locality_id` varchar(3) NOT NULL,
   `neighborhood` varchar(50) NOT NULL,
-  `neighborhood_id` int(3) NOT NULL,
-  `provice_alphabetical_id` varchar(2) NOT NULL
+  `neighborhood_id` varchar(3) NOT NULL,
+  `province_alphabetical_id` varchar(2) NOT NULL,
+  `code` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `administrative_entities`
+--
+
+INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`, `code`) VALUES
+(10000007, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001'),
+(10000008, 'Gaza', '02', 'Chibuto', '003', 'Gaza posto 1', '003', 'Gaza Localidade 1', '003', 'Gaza Bairro 1', '003', 'GZ', 'GZ003 003'),
+(10000009, 'Inhambane', '03', 'Funhalouro', '005', 'Inhambane posto 1', '005', 'Inhambane Localidade 1', '005', 'Inhambane Bairro 1', '005', 'IN', 'IN005 005'),
+(10000010, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(270) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`username`, `password`) VALUES
+('ubisse', 'f9069bbef34fd6d4e082c4e110a6a252');
 
 -- --------------------------------------------------------
 
@@ -77,16 +106,26 @@ CREATE TABLE `heritage_entities` (
 CREATE TABLE `local_entities` (
   `entity_id` int(11) NOT NULL,
   `cell` varchar(50) NOT NULL,
-  `cell_id` int(3) NOT NULL,
+  `cell_id` varchar(3) NOT NULL,
   `circle` varchar(50) NOT NULL,
-  `circle_id` int(3) NOT NULL,
+  `circle_id` varchar(3) NOT NULL,
   `village` varchar(50) NOT NULL,
-  `village_id` int(3) NOT NULL,
+  `village_id` varchar(3) NOT NULL,
   `township` varchar(50) NOT NULL,
-  `township_id` int(11) NOT NULL,
+  `township_id` varchar(3) NOT NULL,
   `zone` varchar(50) NOT NULL,
-  `zone_id` int(3) NOT NULL
+  `zone_id` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `local_entities`
+--
+
+INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
+(10000007, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001'),
+(10000008, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 1', '003', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003'),
+(10000009, 'Inhambane Célula 1', '005', 'Inhambane Circulo 1', '005', 'Inhambane Vila 1', '005', 'Inhambane Povoação 1', '005', 'Inhambane Zona 1', '005'),
+(10000010, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001');
 
 --
 -- Indexes for dumped tables
@@ -99,10 +138,16 @@ ALTER TABLE `administrative_entities`
   ADD PRIMARY KEY (`entity_id`);
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indexes for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  ADD KEY `entity_relashionship` (`entity_id`);
+  ADD PRIMARY KEY (`entity_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -112,17 +157,13 @@ ALTER TABLE `local_entities`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000011;
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `local_entities`
+-- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  ADD CONSTRAINT `entity_relashionship` FOREIGN KEY (`entity_id`) REFERENCES `administrative_entities` (`entity_id`);
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000011;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
