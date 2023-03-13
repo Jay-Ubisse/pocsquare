@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2023 at 12:33 AM
+-- Generation Time: Mar 13, 2023 at 07:56 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -127,6 +127,42 @@ INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_
 (10000009, 'Inhambane Célula 1', '005', 'Inhambane Circulo 1', '005', 'Inhambane Vila 1', '005', 'Inhambane Povoação 1', '005', 'Inhambane Zona 1', '005'),
 (10000010, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supervisors`
+--
+
+CREATE TABLE `supervisors` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(270) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `supervisors`
+--
+
+INSERT INTO `supervisors` (`username`, `password`) VALUES
+('supervisor', 'f9069bbef34fd6d4e082c4e110a6a252');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `technician`
+--
+
+CREATE TABLE `technician` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(270) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `technician`
+--
+
+INSERT INTO `technician` (`username`, `password`) VALUES
+('tecnico', 'f9069bbef34fd6d4e082c4e110a6a252');
+
 --
 -- Indexes for dumped tables
 --
@@ -148,6 +184,12 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `local_entities`
   ADD PRIMARY KEY (`entity_id`);
+
+--
+-- Indexes for table `technician`
+--
+ALTER TABLE `technician`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
