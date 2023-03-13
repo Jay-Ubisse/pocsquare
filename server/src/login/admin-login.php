@@ -10,16 +10,17 @@
         $adminDataResult = $dbcon->query($fetchAdminDataQuery);
 
         if ($adminDataResult->rowCount() == 0) {
-            $_SESSION['auth'] = "Nome de usuário inválido!";
+            $_SESSION['admin-auth'] = "Nome de usuário inválido!";
             header("location: ../../../admin/");
         } else {
             $adminDataRow = $adminDataResult->fetch(PDO::FETCH_ASSOC);
             $pass =  $adminDataRow['password'];
 
             if ($pass !== $password) {
-                $_SESSION['auth'] = "Palavra-passe inválida!";
+                $_SESSION['admin-auth'] = "Palavra-passe inválida!";
                 header("location: ../../../admin/");
             } else {
+                $_SESSION['admin-auth'] = "Logged-in";
                 $_SESSION['user-data'] = $adminDataRow;
                 header("location: ../../../admin/home");
             }

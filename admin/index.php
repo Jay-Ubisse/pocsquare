@@ -47,9 +47,9 @@ session_start();
     <div class="container admin-container">
 		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["auth"]) ) {
-					echo $_SESSION["auth"];
-					unset($_SESSION["auth"]);
+				if(isset($_SESSION["admin-auth"]) ) {
+					echo $_SESSION["admin-auth"];
+					unset($_SESSION["admin-auth"]);
 				} 
 			?>
 		</div>
@@ -68,9 +68,9 @@ session_start();
 	<div class="container sup-container">
 		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["auth"]) ) {
-					echo $_SESSION["auth"];
-					unset($_SESSION["auth"]);
+				if(isset($_SESSION["sup-auth"]) ) {
+					echo $_SESSION["sup-auth"];
+					unset($_SESSION["sup-auth"]);
 				} 
 			?>
 		</div>

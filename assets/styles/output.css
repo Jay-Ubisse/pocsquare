@@ -639,6 +639,10 @@ video {
   height: 60%;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -653,6 +657,18 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
+.h-44 {
+  height: 11rem;
 }
 
 .w-4\/5 {

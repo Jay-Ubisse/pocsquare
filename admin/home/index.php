@@ -24,28 +24,17 @@
             </div>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] overflow-scroll">
-        <section class="bg-white w-9/12 h-3/5 mx-auto mt-20 p-6 rounded-lg">
-            <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">DASHBOARD</h1>
-            <div class="flex flex-row gap-2 h-3/5 mt-10">
-                <a href="../register/" class="border-2 border-orange-700 rounded-md w-[50%] h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
-                    <span>
-                        <i class="fa-solid fa-floppy-disk fa-2x"></i>
-                    </span>
-                    <span>
-                        Cadastrar Local
-                    </span>
-                </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[50%] h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
-                    <span>
-                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
-                    </span>
-                    <span>
-                        Pesquisar Local
-                    </span>
-                </a>
-                
-            </div>
-        </section>
+            <?php
+				if(isset($_SESSION["tech-auth"]) ) {
+					include "../components/home/tech-home.php";
+				}
+                if(isset($_SESSION["admin-auth"]) ) {
+					include "../components/home/admin-home.php";
+				}
+                if(isset($_SESSION["sup-auth"]) ) {
+					include "../components/home/sup-home.php";
+				}
+			?>
     </main>
     <footer>
         <?php include "../components/footer.php" ?>
