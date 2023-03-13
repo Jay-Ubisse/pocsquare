@@ -26,9 +26,9 @@ session_start();
 	<div class="container tech-container">
 		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["auth"]) ) {
-					echo $_SESSION["auth"];
-					unset($_SESSION["auth"]);
+				if(isset($_SESSION["tech-auth"]) ) {
+					echo $_SESSION["tech-auth"];
+					unset($_SESSION["tech-auth"]);
 				} 
 			?>
 		</div>
@@ -36,7 +36,7 @@ session_start();
 			<i class="fas fa-user"></i>
 		</div>
 		<h2 class="title font-semibold">Login | Técnico</h2>
-		<form class="form" method="POST" action="../server/src/login/admin-login.php">
+		<form class="form" method="POST" action="../server/src/login/tech-login.php">
 			<label for="username">Nome de Usuário</label>
 			<input type="text" id="username" name="username" class="input" autocomplete="off" placeholder="Insira o nome de usuário" />
 			<label for="password">Palavra-passe</label>
@@ -78,7 +78,7 @@ session_start();
 			<i class="fas fa-user"></i>
 		</div>
 		<h2 class="title font-semibold">Login | Supervisor</h2>
-		<form class="form" method="POST" action="../server/src/login/admin-login.php">
+		<form class="form" method="POST" action="../server/src/login/sup-login.php">
 			<label for="username">Nome de Usuário</label>
 			<input type="text" id="username" name="username" class="input" autocomplete="off" placeholder="Insira o nome de usuário" />
 			<label for="password">Palavra-passe</label>
