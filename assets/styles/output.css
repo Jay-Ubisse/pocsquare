@@ -549,12 +549,24 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .top-0 {
   top: 0px;
+}
+
+.m-10 {
+  margin: 2.5rem;
 }
 
 .mx-auto {
@@ -565,6 +577,11 @@ video {
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-4 {
@@ -580,11 +597,6 @@ video {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .mb-10 {
@@ -672,10 +684,6 @@ video {
   width: 100%;
 }
 
-.border-collapse {
-  border-collapse: collapse;
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -758,16 +766,6 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-\[\#6e48aa\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(110 72 170 / var(--tw-border-opacity));
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .bg-\[\#6e48aa\] {
   --tw-bg-opacity: 1;
   background-color: rgb(110 72 170 / var(--tw-bg-opacity));
@@ -806,12 +804,12 @@ video {
   padding: 0.25rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-16 {
@@ -867,11 +865,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .text-center {
@@ -981,5 +974,13 @@ video {
 }
 
 .focus\:outline-orange-700:focus {
+  outline-color: #c2410c;
+}
+
+.active\:outline:active {
+  outline-style: solid;
+}
+
+.active\:outline-orange-700:active {
   outline-color: #c2410c;
 }
