@@ -35,7 +35,7 @@
                 <p><span><b>CEP: </b></span><span id="cep"></span></p>
             </div>
             <div id="map" class="border border-orange-700 rounded-md h-64 w-64 flex justify-center items-center font-bold">
-                    
+                    MAPA
             </div>
         </section>
     </main>
