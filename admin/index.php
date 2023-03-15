@@ -81,7 +81,7 @@ session_start();
 		<form class="form" method="POST" action="../server/src/login/sup-login.php">
 			<label for="username">Nome de Usuário</label>
 			<input type="text" id="username" name="username" class="input" autocomplete="off" placeholder="Insira o nome de usuário" />
-			<label for="password">Palavra-passe</label>
+			<label for="password">Palavra-passee</label>
 			<input type="password" id="password" name="password" class="input" autocomplete="off" placeholder="Insira a palavra-passe" />
 			<button type="submit" class="button">Entrar</button>
 		</form>
