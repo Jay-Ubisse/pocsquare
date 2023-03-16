@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2023 at 07:56 PM
+-- Generation Time: Mar 15, 2023 at 07:19 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -51,7 +51,9 @@ INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeri
 (10000007, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001'),
 (10000008, 'Gaza', '02', 'Chibuto', '003', 'Gaza posto 1', '003', 'Gaza Localidade 1', '003', 'Gaza Bairro 1', '003', 'GZ', 'GZ003 003'),
 (10000009, 'Inhambane', '03', 'Funhalouro', '005', 'Inhambane posto 1', '005', 'Inhambane Localidade 1', '005', 'Inhambane Bairro 1', '005', 'IN', 'IN005 005'),
-(10000010, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001');
+(10000010, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001'),
+(10000011, 'Gaza', '02', 'Bilene', '004', 'Gaza posto 2', '004', 'Gaza Localidade 1', '003', 'Gaza Bairro 1', '003', 'GZ', 'GZ004 003'),
+(10000012, 'Gaza', '02', 'Bilene', '004', 'Gaza posto 2', '004', 'Gaza Localidade 2', '004', 'Gaza Bairro 1', '003', 'GZ', 'GZ004 003');
 
 -- --------------------------------------------------------
 
@@ -125,7 +127,9 @@ INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_
 (10000007, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001'),
 (10000008, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 1', '003', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003'),
 (10000009, 'Inhambane Célula 1', '005', 'Inhambane Circulo 1', '005', 'Inhambane Vila 1', '005', 'Inhambane Povoação 1', '005', 'Inhambane Zona 1', '005'),
-(10000010, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001');
+(10000010, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001'),
+(10000011, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 2', '004', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003'),
+(10000012, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 2', '004', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003');
 
 -- --------------------------------------------------------
 
@@ -199,13 +203,13 @@ ALTER TABLE `technician`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000011;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000011;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
