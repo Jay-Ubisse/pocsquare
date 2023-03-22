@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Locais | Pocsquare</title>
+    <title>Adicionar Distrito | Pocsquare</title>
     <link rel="stylesheet" href="../../../../assets/styles/output.css" />
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
@@ -56,6 +56,7 @@
                             <option value="Maputo Cidade">Maputo Cidade</option>
                             <option value="Maputo Província">Maputo Província</option>
                             <option value="Gaza">Gaza</option>
+                            <option value="Inhambane">Inhambane</option>
                             <option value="Manica">Manica</option>
                             <option value="Sofala">Sofala</option>
                             <option value="Tete">Tete</option>

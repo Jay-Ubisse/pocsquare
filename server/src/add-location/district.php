@@ -6,7 +6,7 @@ $province = $_POST['province'];
 $district = trim($_POST['district']);
 
 $checkDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = '$province'";
-$checkDistrictResult = $dbcon->query($checkDistrictQuery );
+$checkDistrictResult = $dbcon->query($checkDistrictQuery);
 
 $rows = $checkDistrictResult->fetchAll(PDO::FETCH_ASSOC);
 
