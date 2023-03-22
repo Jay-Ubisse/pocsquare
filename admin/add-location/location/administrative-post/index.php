@@ -48,7 +48,7 @@
                         }
 					}
 				?>
-            <form method="POST" action="../../../../server/src/add-location/district.php" class="mt-10">
+            <form method="POST" action="../../../../server/src/add-location/administrative-post.php" class="mt-10">
                 <div class="flex flex-row justify-around">
                     <div>
                         <label for="province" class="font-medium">Província</label>

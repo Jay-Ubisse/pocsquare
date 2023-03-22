@@ -35,7 +35,7 @@
                 <a href="./location/district/" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
                     Adicionar Distrito
                 </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                <a href="./location/administrative-post/" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
                     Adicionar Posto Administrativo
                 </a>
                 <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
