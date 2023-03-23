@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 07:19 PM
+-- Generation Time: Mar 23, 2023 at 10:06 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,6 +58,27 @@ INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeri
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `administrative_posts`
+--
+
+CREATE TABLE `administrative_posts` (
+  `administrative_post_id` int(11) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `administrative_post` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `administrative_posts`
+--
+
+INSERT INTO `administrative_posts` (`administrative_post_id`, `province`, `administrative_post`) VALUES
+(10, 'Cabo Delgado', 'Ancuabe'),
+(11, 'Maputo Cidade', 'Distrito Urbano de KaMpfumo'),
+(12, 'Gaza', 'Pafuri');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `admins`
 --
 
@@ -72,6 +93,37 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`username`, `password`) VALUES
 ('ubisse', 'f9069bbef34fd6d4e082c4e110a6a252');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `district_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`district_id`, `province`, `district_name`) VALUES
+(13, 'Maputo Província', 'Boane'),
+(16, 'Gaza', 'Bilene'),
+(17, 'Gaza', 'Chibuto'),
+(18, 'Maputo Província', 'Namaancha'),
+(19, 'Maputo Cidade', 'KaMaxakene'),
+(20, 'Maputo Cidade', 'KaMubukwana'),
+(21, 'Inhambane', 'Funhalouro'),
+(22, 'Manica', 'Gondola'),
+(23, 'Sofala', 'Caia'),
+(24, 'Tete', 'Changara'),
+(25, 'Nampula', 'Angoche'),
+(26, 'Zambézia', 'Derre'),
+(27, 'Cabo Delgado', 'Balama');
 
 -- --------------------------------------------------------
 
@@ -134,6 +186,18 @@ INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mc_locality`
+--
+
+CREATE TABLE `mc_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `supervisors`
 --
 
@@ -178,16 +242,34 @@ ALTER TABLE `administrative_entities`
   ADD PRIMARY KEY (`entity_id`);
 
 --
+-- Indexes for table `administrative_posts`
+--
+ALTER TABLE `administrative_posts`
+  ADD PRIMARY KEY (`administrative_post_id`);
+
+--
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `local_entities`
 --
 ALTER TABLE `local_entities`
   ADD PRIMARY KEY (`entity_id`);
+
+--
+-- Indexes for table `mc_locality`
+--
+ALTER TABLE `mc_locality`
+  ADD PRIMARY KEY (`locality_id`);
 
 --
 -- Indexes for table `technician`
@@ -206,10 +288,28 @@ ALTER TABLE `administrative_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
 
 --
+-- AUTO_INCREMENT for table `administrative_posts`
+--
+ALTER TABLE `administrative_posts`
+  MODIFY `administrative_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `district_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
+
+--
+-- AUTO_INCREMENT for table `mc_locality`
+--
+ALTER TABLE `mc_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
