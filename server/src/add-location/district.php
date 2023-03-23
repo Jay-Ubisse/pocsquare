@@ -14,7 +14,7 @@ $isFound = false;
 foreach ($rows as $row) {
     if(strcasecmp($district , $row['district_name']) == 0) {
         $isFound = true;
-        $_SESSION['add-province'] = "Este distrito já foi adicionado!";
+        $_SESSION['registration-info'] = "Este distrito já foi adicionado!";
         $_SESSION['error'] = true;
         header("location: ../../../admin/add-location/location/district/");
     }
@@ -34,7 +34,7 @@ if(!$isFound) {
     
         $dbcon->commit();
         
-        $_SESSION['add-province'] = "Distrito adicionado com sucesso!";
+        $_SESSION['registration-info'] = "Distrito adicionado com sucesso!";
         $_SESSION['error'] = false;
         header("location: ../../../admin/add-location/location/district/");
     

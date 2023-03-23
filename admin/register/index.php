@@ -28,7 +28,7 @@
                         echo "</div>";
 					}
 				?>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-District justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="province" class="font-medium">Província</label>
@@ -50,99 +50,160 @@
                         <label for="district" class="font-medium">Distrito</label>
                         <select name="district-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($maputoRows as $maputoRow) {
-                                    echo "<option value='" . $maputoRow['district_name'] ."'>" . $maputoRow['district_name'] . "</option>";
+                                foreach ($maputoDistricts as $maputoDistrict) {
+                                    echo "<option value='" . $maputoDistrict['district_name'] ."'>" . $maputoDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($maputoProvinceRows as $maputoProvinceRow) {
-                                    echo "<option value='" . $maputoProvinceRow['district_name'] ."'>" . $maputoProvinceRow['district_name'] . "</option>";
+                                foreach ($maputoProvinceDistricts as $maputoProvinceDistrict) {
+                                    echo "<option value='" . $maputoProvinceDistrict['district_name'] ."'>" . $maputoProvinceDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($gazaRows as $gazaRow) {
-                                    echo "<option value='" . $gazaRow['district_name'] ."'>" . $gazaRow['district_name'] . "</option>";
+                                foreach ($gazaDistricts as $gazaDistrict) {
+                                    echo "<option value='" . $gazaDistrict['district_name'] ."'>" . $gazaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($inhambaneRows as $inhambaneRow) {
-                                    echo "<option value='" . $inhambaneRow['district_name'] ."'>" . $inhambaneRow['district_name'] . "</option>";
+                                foreach ($inhambaneDistricts as $inhambaneDistrict) {
+                                    echo "<option value='" . $inhambaneDistrict['district_name'] ."'>" . $inhambaneDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($manicaRows as $manicaRow) {
-                                    echo "<option value='" . $manicaRow['district_name'] ."'>" . $manicaRow['district_name'] . "</option>";
+                                foreach ($manicaDistricts as $manicaDistrict) {
+                                    echo "<option value='" . $manicaDistrict['district_name'] ."'>" . $manicaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($sofalaRows as $sofalaRow) {
-                                    echo "<option value='" . $sofalaRow['district_name'] ."'>" . $sofalaRow['district_name'] . "</option>";
+                                foreach ($sofalaDistricts as $sofalaDistrict) {
+                                    echo "<option value='" . $sofalaDistrict['district_name'] ."'>" . $sofalaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($teteRows as $teteRow) {
-                                    echo "<option value='" . $teteRow['district_name'] ."'>" . $teteRow['district_name'] . "</option>";
+                                foreach ($teteDistricts as $teteDistrict) {
+                                    echo "<option value='" . $teteDistrict['district_name'] ."'>" . $teteDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($nampulaRows as $nampulaRow) {
-                                    echo "<option value='" . $nampulaRow['district_name'] ."'>" . $nampulaRow['district_name'] . "</option>";
+                                foreach ($nampulaDistricts as $nampulaDistrict) {
+                                    echo "<option value='" . $nampulaDistrict['district_name'] ."'>" . $nampulaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($niassaRows as $niassaRow) {
-                                    echo "<option value='" . $niassaRow['district_name'] ."'>" . $niassaRow['district_name'] . "</option>";
+                                foreach ($niassaDistricts as $niassaDistrict) {
+                                    echo "<option value='" . $niassaDistrict['district_name'] ."'>" . $niassaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($zambeziaRows as $zambeziaRow) {
-                                    echo "<option value='" . $zambeziaRow['district_name'] ."'>" . $zambeziaRow['district_name'] . "</option>";
+                                foreach ($zambeziaDistricts as $zambeziaDistrict) {
+                                    echo "<option value='" . $zambeziaDistrict['district_name'] ."'>" . $zambeziaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="district-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
-                                foreach ($caboDelgadoRows as $caboDelgadoRow) {
-                                    echo "<option value='" . $caboDelgadoRow['district_name'] ."'>" . $caboDelgadoRow['district_name'] . "</option>";
+                                foreach ($caboDelgadoDistricts as $caboDelgadoDistrict) {
+                                    echo "<option value='" . $caboDelgadoDistrict['district_name'] ."'>" . $caboDelgadoDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
-                        <label for="administrative_post" class="font-medium">Posto Administrativo</label>
-                        <select name="administrative_post-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província posto 1">Maputo Província posto 1</option>
-                            <option value="Maputo Província  posto 2">Maputo Província  posto 2</option>
+                        <label for="administrative-post" class="font-medium">Posto Administrativo</label>
+                        <select name="administrative-post-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($maputoPosts as $maputoPost) {
+                                    echo "<option value='" . $maputoPost['administrative_post'] ."'>" . $maputoPost['administrative_post'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="administrative_post-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província posto 1">Maputo Província posto 1</option>
-                            <option value="Maputo Província  posto 2">Maputo Província  posto 2</option>
+                        <select name="administrative-post-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($maputoProvincePosts as $maputoProvincePost) {
+                                    echo "<option value='" . $maputoProvincePost['administrative_post'] ."'>" . $maputoProvincePost['administrative_post'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="administrative_post-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza posto 1">Gaza posto 1</option>
-                            <option value="Gaza posto 2">Gaza posto 2</option>
+                        <select name="administrative-post-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($gazaPosts as $gazaPost) {
+                                    echo "<option value='" . $gazaPost['administrative_post'] ."'>" . $gazaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="administrative_post-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane posto 1">Inhambane posto 1</option>
-                            <option value="Inhambane posto 2">Inhambane posto 2</option>
+                        <select name="administrative-post-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($inhambanePosts as $inhambanePost) {
+                                    echo "<option value='" . $inhambanePost['administrative_post'] ."'>" . $inhambanePost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaPosts as $manicaPost) {
+                                    echo "<option value='" . $manicaPost['administrative_post'] ."'>" . $manicaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaPosts as $sofalaPost) {
+                                    echo "<option value='" . $sofalaPost['administrative_post'] ."'>" . $sofalaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($tetePosts as $tetePost) {
+                                    echo "<option value='" . $tetePost['administrative_post'] ."'>" . $tetePost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaPosts as $nampulaPost) {
+                                    echo "<option value='" . $nampulaPost['administrative_post'] ."'>" . $nampulaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaPosts as $niassaPost) {
+                                    echo "<option value='" . $niassaPost['administrative_post'] ."'>" . $niassaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaPosts as $zambeziaPost) {
+                                    echo "<option value='" . $zambeziaPost['administrative_post'] ."'>" . $zambeziaPost['administrative_post'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="administrative-post-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoPosts as $caboDelgadoPost) {
+                                    echo "<option value='" . $caboDelgadoPost['administrative_post'] ."'>" . $caboDelgadoPost['administrative_post'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="w-[19%] flex flex-col gap-2">
@@ -184,7 +245,7 @@
                         </select>
                     </div>
                 </fieldset>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-District justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Locais</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="cell" class="font-medium">Célula</label>
@@ -282,7 +343,7 @@
                         </select>
                     </div>
                 </fieldset>
-                <div class="flex flex-row gap-5 w-fit mx-auto my-10">
+                <div class="flex flex-District gap-5 w-fit mx-auto my-10">
                     <input type="submit" value="Cadastrar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
                 </div>
         </form>

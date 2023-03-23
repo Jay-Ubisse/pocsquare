@@ -1,58 +1,123 @@
 <?php
+
+    /**
+     * GET DISTRICTS DATA
+     */
+
     //get Maputo Cidade districts
-    $getMaputoQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Maputo Cidade'";
-    $getMaputoResult = $dbcon->query($getMaputoQuery);
-    $maputoRows = $getMaputoResult->fetchAll(PDO::FETCH_ASSOC);
+    $maputoDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Maputo Cidade'";
+    $maputoDistrictResult = $dbcon->query($maputoDistrictQuery);
+    $maputoDistricts = $maputoDistrictResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Maputo Província districts
-    $getMaputoProvinceQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Maputo Província'";
-    $getMaputoProvinceResult = $dbcon->query($getMaputoProvinceQuery);
-    $maputoProvinceRows = $getMaputoProvinceResult->fetchAll(PDO::FETCH_ASSOC);
+    $maputoProvinceDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Maputo Província'";
+    $maputoProvinceDistrictResult = $dbcon->query($maputoProvinceDistrictQuery);
+    $maputoProvinceDistricts = $maputoProvinceDistrictResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Gaza districts
-    $getGazaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Gaza'";
-    $getGazaResult = $dbcon->query($getGazaQuery);
-    $gazaRows = $getGazaResult->fetchAll(PDO::FETCH_ASSOC);
+    $gazaDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Gaza'";
+    $gazaDistrictResult = $dbcon->query($gazaDistrictQuery);
+    $gazaDistricts = $gazaDistrictResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Inhambane districts
-    $getInhambaneQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Inhambane'";
-    $getInhambaneResult = $dbcon->query($getInhambaneQuery);
-    $inhambaneRows = $getInhambaneResult->fetchAll(PDO::FETCH_ASSOC);
+    $inhambaneDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Inhambane'";
+    $inhambaneDistrictResult = $dbcon->query($inhambaneDistrictQuery);
+    $inhambaneDistricts = $inhambaneDistrictResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Manica districts
-    $getManicaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Manica'";
-    $getManicaResult = $dbcon->query($getManicaQuery);
-    $manicaRows = $getManicaResult->fetchAll(PDO::FETCH_ASSOC);
+    $manicaDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Manica'";
+    $manicaDistrictsResult = $dbcon->query($manicaDistrictsQuery);
+    $manicaDistricts = $manicaDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Sofala districts
-    $getSofalaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Sofala'";
-    $getSofalaResult = $dbcon->query($getSofalaQuery);
-    $sofalaRows = $getSofalaResult->fetchAll(PDO::FETCH_ASSOC);
+    $sofalaDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Sofala'";
+    $sofalaDistrictsResult = $dbcon->query($sofalaDistrictsQuery);
+    $sofalaDistricts = $sofalaDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Tete districts
-    $getTeteQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Tete'";
-    $getTeteResult = $dbcon->query($getTeteQuery);
-    $teteRows = $getTeteResult->fetchAll(PDO::FETCH_ASSOC);
+    $teteDistrctsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Tete'";
+    $teteDistrctsResult = $dbcon->query($teteDistrctsQuery);
+    $teteDistricts = $teteDistrctsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Nampula districts
-    $getNampulaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Nampula'";
-    $getNampulaResult = $dbcon->query($getNampulaQuery);
-    $nampulaRows = $getNampulaResult->fetchAll(PDO::FETCH_ASSOC);
+    $nampulaDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Nampula'";
+    $nampulaDistrictsResult = $dbcon->query($nampulaDistrictsQuery);
+    $nampulaDistricts = $nampulaDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Niassa districts
-    $getNiassaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Niassa'";
-    $getNiassaResult = $dbcon->query($getNiassaQuery);
-    $niassaRows = $getNiassaResult->fetchAll(PDO::FETCH_ASSOC);
+    $niassaDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Niassa'";
+    $niassaDistrictsResult = $dbcon->query($niassaDistrictsQuery);
+    $niassaDistricts = $niassaDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Zambézia districts
-    $getZambeziaQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Zambézia'";
-    $getZambeziaResult = $dbcon->query($getZambeziaQuery);
-    $zambeziaRows = $getZambeziaResult->fetchAll(PDO::FETCH_ASSOC);
+    $zambeziaDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Zambézia'";
+    $zambeziaDistrictsResult = $dbcon->query($zambeziaDistrictsQuery);
+    $zambeziaDistricts = $zambeziaDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Cabo Delgado districts
-    $getDelgadoQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Cabo Delgado'";
-    $getDelgadoResult = $dbcon->query($getDelgadoQuery);
-    $caboDelgadoRows = $getDelgadoResult->fetchAll(PDO::FETCH_ASSOC);
+    $delgadoDistrictsQuery = "SELECT * FROM pocsquare.districts WHERE province = 'Cabo Delgado'";
+    $delgadoDistrictsResult = $dbcon->query($delgadoDistrictsQuery);
+    $caboDelgadoDistricts = $delgadoDistrictsResult->fetchAll(PDO::FETCH_ASSOC);
+
+
+    /**
+     * GET DISTRICTS DATA
+     */
+
+    //get Maputo Cidade districts
+    $maputoPostQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Maputo Cidade'";
+    $maputoPostResult = $dbcon->query($maputoPostQuery);
+    $maputoPosts = $maputoPostResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Maputo Província Posts
+    $maputoProvincePostQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Maputo Província'";
+    $maputoProvincePostResult = $dbcon->query($maputoProvincePostQuery);
+    $maputoProvincePosts = $maputoProvincePostResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Gaza Posts
+    $gazaPostQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Gaza'";
+    $gazaPostResult = $dbcon->query($gazaPostQuery);
+    $gazaPosts = $gazaPostResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Inhambane Posts
+    $inhambanePostQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Inhambane'";
+    $inhambanePostResult = $dbcon->query($inhambanePostQuery);
+    $inhambanePosts = $inhambanePostResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Manica Posts
+    $manicaPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Manica'";
+    $manicaPostsResult = $dbcon->query($manicaPostsQuery);
+    $manicaPosts = $manicaPostsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Sofala Posts
+    $sofalaPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Sofala'";
+    $sofalaPostsResult = $dbcon->query($sofalaPostsQuery);
+    $sofalaPosts = $sofalaPostsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Tete Posts
+    $teteDistrctsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Tete'";
+    $teteDistrctsResult = $dbcon->query($teteDistrctsQuery);
+    $tetePosts = $teteDistrctsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Nampula Posts
+    $nampulaPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Nampula'";
+    $nampulaPostsResult = $dbcon->query($nampulaPostsQuery);
+    $nampulaPosts = $nampulaPostsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Niassa Posts
+    $niassaPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Niassa'";
+    $niassaPostsResult = $dbcon->query($niassaPostsQuery);
+    $niassaPosts = $niassaPostsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Zambézia Posts
+    $zambeziaPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Zambézia'";
+    $zambeziaPostsResult = $dbcon->query($zambeziaPostsQuery);
+    $zambeziaPosts = $zambeziaPostsResult->fetchAll(PDO::FETCH_ASSOC);
+    
+    //get Cabo Delgado Posts
+    $delgadoPostsQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = 'Cabo Delgado'";
+    $delgadoPostsResult = $dbcon->query($delgadoPostsQuery);
+    $caboDelgadoPosts = $delgadoPostsResult->fetchAll(PDO::FETCH_ASSOC);
     
 
 ?>

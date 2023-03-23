@@ -32,17 +32,17 @@
         <section class="bg-white w-1/2 h-fit mx-auto my-40 p-6 rounded-lg">
             <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">Adicionar Posto Administrativo</h1>
 				<?php
-					if(isset($_SESSION['add-province']) ) {
+					if(isset($_SESSION['registration-info']) ) {
                         if($_SESSION['error']) {
                             echo "<div class='bg-red-600 text-white font-semibold flex justify-center my-6 py-4'>";
-						    echo $_SESSION['add-post'];
-						    unset($_SESSION['add-post']);
+						    echo $_SESSION['registration-info'];
+						    unset($_SESSION['registration-info']);
                             unset($_SESSION['error']);
                             echo "</div>";
                         } else {
                             echo "<div class='bg-green-600 text-white font-semibold flex justify-center my-6 py-4'>";
-						    echo $_SESSION['add-post'];
-						    unset($_SESSION['add-post']);
+						    echo $_SESSION['registration-info'];
+						    unset($_SESSION['registration-info']);
                             unset($_SESSION['error']);
                             echo "</div>";
                         }

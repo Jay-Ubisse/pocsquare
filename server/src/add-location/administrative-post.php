@@ -14,7 +14,7 @@ $isFound = false;
 foreach ($rows as $row) {
     if(strcasecmp($administrativePost , $row['administrative_post']) == 0) {
         $isFound = true;
-        $_SESSION['add-post'] = "Este P. Administrativo já foi adicionado!";
+        $_SESSION['registration-info'] = "Este P. Administrativo já foi adicionado!";
         $_SESSION['error'] = true;
         header("location: ../../../admin/add-location/location/administrative-post/");
     }
@@ -34,7 +34,7 @@ if(!$isFound) {
     
         $dbcon->commit();
         
-        $_SESSION['add-post'] = "P. Administrativo adicionado com sucesso!";
+        $_SESSION['registration-info'] = "P. Administrativo adicionado com sucesso!";
         $_SESSION['error'] = false;
         header("location: ../../../admin/add-location/location/administrative-post/");
     
