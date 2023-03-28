@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2023 at 10:06 AM
+-- Generation Time: Mar 28, 2023 at 04:16 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pocsquare`
+-- Database: `jayubiss_pocsquareocs`
 --
 
 -- --------------------------------------------------------
@@ -74,7 +74,8 @@ CREATE TABLE `administrative_posts` (
 INSERT INTO `administrative_posts` (`administrative_post_id`, `province`, `administrative_post`) VALUES
 (10, 'Cabo Delgado', 'Ancuabe'),
 (11, 'Maputo Cidade', 'Distrito Urbano de KaMpfumo'),
-(12, 'Gaza', 'Pafuri');
+(12, 'Gaza', 'Pafuri'),
+(13, 'Maputo Cidade', 'posto 10');
 
 -- --------------------------------------------------------
 
@@ -128,6 +129,18 @@ INSERT INTO `districts` (`district_id`, `province`, `district_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gz_locality`
+--
+
+CREATE TABLE `gz_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `heritage_entities`
 --
 
@@ -149,6 +162,18 @@ CREATE TABLE `heritage_entities` (
   `width` double NOT NULL,
   `occupancy` varchar(20) NOT NULL,
   `affectation` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_locality`
+--
+
+CREATE TABLE `in_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -190,6 +215,52 @@ INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_
 --
 
 CREATE TABLE `mc_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_locality`
+--
+
+INSERT INTO `mc_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Maputo Cidade', 'localidade 001'),
+(101, 'Maputo Cidade', 'localidade 002'),
+(102, 'Maputo Cidade', 'localidade 001'),
+(103, 'Maputo Cidade', 'localidadde 002');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mn_locality`
+--
+
+CREATE TABLE `mn_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mp_locality`
+--
+
+CREATE TABLE `mp_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf_locality`
+--
+
+CREATE TABLE `sf_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
@@ -260,6 +331,18 @@ ALTER TABLE `districts`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `gz_locality`
+--
+ALTER TABLE `gz_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `in_locality`
+--
+ALTER TABLE `in_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
 -- Indexes for table `local_entities`
 --
 ALTER TABLE `local_entities`
@@ -269,6 +352,24 @@ ALTER TABLE `local_entities`
 -- Indexes for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `mn_locality`
+--
+ALTER TABLE `mn_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `mp_locality`
+--
+ALTER TABLE `mp_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `sf_locality`
+--
+ALTER TABLE `sf_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
@@ -291,13 +392,25 @@ ALTER TABLE `administrative_entities`
 -- AUTO_INCREMENT for table `administrative_posts`
 --
 ALTER TABLE `administrative_posts`
-  MODIFY `administrative_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `administrative_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `districts`
 --
 ALTER TABLE `districts`
   MODIFY `district_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `gz_locality`
+--
+ALTER TABLE `gz_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `in_locality`
+--
+ALTER TABLE `in_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
@@ -309,6 +422,24 @@ ALTER TABLE `local_entities`
 -- AUTO_INCREMENT for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT for table `mn_locality`
+--
+ALTER TABLE `mn_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `mp_locality`
+--
+ALTER TABLE `mp_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `sf_locality`
+--
+ALTER TABLE `sf_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 COMMIT;
 
