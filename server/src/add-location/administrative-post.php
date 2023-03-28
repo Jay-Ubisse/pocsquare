@@ -5,7 +5,7 @@ session_start();
 $province = $_POST['province'];
 $administrativePost = trim($_POST['administrative-post']);
 
-$checkDistrictQuery = "SELECT * FROM pocsquare.administrative_posts WHERE province = '$province'";
+$checkDistrictQuery = "SELECT * FROM jayubiss_pocsquareocs.administrative_posts WHERE province = '$province'";
 $checkDistrictResult = $dbcon->query($checkDistrictQuery);
 
 $rows = $checkDistrictResult->fetchAll(PDO::FETCH_ASSOC);
@@ -25,7 +25,7 @@ if(!$isFound) {
 
         $dbcon->beginTransaction();
     
-        $savePostQuery = "INSERT INTO pocsquare.administrative_posts 
+        $savePostQuery = "INSERT INTO jayubiss_pocsquareocs.administrative_posts 
                                         (province, administrative_post) 
                                         VALUES (?, ?)";
         $stmt = $dbcon->prepare($savePostQuery);

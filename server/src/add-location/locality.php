@@ -7,37 +7,37 @@ $district = trim($_POST['locality']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checklocalityQuery = "SELECT * FROM pocsquare.mc_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mc_locality WHERE";
         break;
     case 'Maputo Provincia':
-        $checklocalityQuery = "SELECT * FROM pocsquare.mp_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mp_locality WHERE";
         break;
     case 'Gaza':
-         $checklocalityQuery = "SELECT * FROM pocsquare.gz_locality WHERE";
+         $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.gz_locality WHERE";
         break;
     case 'Inhambane':
-        $checklocalityQuery = "SELECT * FROM pocsquare.in_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.in_locality WHERE";
         break;
     case 'Manica':
-        $checklocalityQuery = "SELECT * FROM pocsquare.mn_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mn_locality WHERE";
         break;
     case 'Sofala':
-        $checklocalityQuery = "SELECT * FROM pocsquare.sf_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.sf_locality WHERE";
         break;
     case 'Tete':
-        $checklocalityQuery = "SELECT * FROM pocsquare.tt_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.tt_locality WHERE";
         break;
     case 'Nampula':
-        $checklocalityQuery = "SELECT * FROM pocsquare.np_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.np_locality WHERE";
         break;
     case 'Niassa':
-        $checklocalityQuery = "SELECT * FROM pocsquare.ns_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.ns_locality WHERE";
         break;
     case 'Zambézia':
-        $checklocalityQuery = "SELECT * FROM pocsquare.zb_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.zb_locality WHERE";
         break;
     case 'Cabo Delgado':
-        $checklocalityQuery = "SELECT * FROM pocsquare.cd_locality WHERE";
+        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.cd_locality WHERE";
         break;
     default:
         # code...
@@ -64,7 +64,7 @@ if(!$isFound) {
 
         $dbcon->beginTransaction();
     
-        $saveDistrictQuery = "INSERT INTO pocsquare.districts 
+        $saveDistrictQuery = "INSERT INTO jayubiss_pocsquareocs.districts 
                                         (province, district_name) 
                                         VALUES (?, ?)";
         $stmt = $dbcon->prepare($saveDistrictQuery);

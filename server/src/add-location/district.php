@@ -5,7 +5,7 @@ session_start();
 $province = $_POST['province'];
 $district = trim($_POST['district']);
 
-$checkDistrictQuery = "SELECT * FROM pocsquare.districts WHERE province = '$province'";
+$checkDistrictQuery = "SELECT * FROM jayubiss_pocsquareocs.districts WHERE province = '$province'";
 $checkDistrictResult = $dbcon->query($checkDistrictQuery);
 
 $rows = $checkDistrictResult->fetchAll(PDO::FETCH_ASSOC);
@@ -25,7 +25,7 @@ if(!$isFound) {
 
         $dbcon->beginTransaction();
     
-        $saveDistrictQuery = "INSERT INTO pocsquare.districts 
+        $saveDistrictQuery = "INSERT INTO jayubiss_pocsquareocs.districts 
                                         (province, district_name) 
                                         VALUES (?, ?)";
         $stmt = $dbcon->prepare($saveDistrictQuery);
