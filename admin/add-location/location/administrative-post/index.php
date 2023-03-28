@@ -67,8 +67,8 @@
                         </select>
                     </div>
                     <div>
-                        <label for="administrative-post" class="font-medium">Posto Administrativo</label>
-                        <input type="text" name="administrative-post" placeholder="Introduza o nome do p. administrativo" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
+                        <label for="admin-post" class="font-medium">Posto Administrativo</label>
+                        <input type="text" name="admin-post" placeholder="Introduza o nome do p. administrativo" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
                     </div>
                 </div>
                 <div class="gap-5 w-fit mx-auto mt-10">

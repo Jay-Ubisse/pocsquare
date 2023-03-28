@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 07:53 PM
+-- Generation Time: Mar 28, 2023 at 08:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,28 +58,6 @@ INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeri
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrative_posts`
---
-
-CREATE TABLE `administrative_posts` (
-  `administrative_post_id` int(11) NOT NULL,
-  `province` varchar(20) NOT NULL,
-  `administrative_post` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `administrative_posts`
---
-
-INSERT INTO `administrative_posts` (`administrative_post_id`, `province`, `administrative_post`) VALUES
-(10, 'Cabo Delgado', 'Ancuabe'),
-(11, 'Maputo Cidade', 'Distrito Urbano de KaMpfumo'),
-(12, 'Gaza', 'Pafuri'),
-(13, 'Maputo Cidade', 'posto 10');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `admins`
 --
 
@@ -94,6 +72,29 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`username`, `password`) VALUES
 ('ubisse', 'f9069bbef34fd6d4e082c4e110a6a252');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_admin_post`
+--
+
+CREATE TABLE `cd_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cd_admin_post`
+--
+
+INSERT INTO `cd_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Cabo Delgado', 'lll'),
+(11, 'Cabo Delgado', 'lll'),
+(12, 'Cabo Delgado', 'lll'),
+(13, 'Cabo Delgado', 'ccc'),
+(14, 'Cabo Delgado', 'ccc');
 
 -- --------------------------------------------------------
 
@@ -148,6 +149,25 @@ INSERT INTO `districts` (`district_id`, `province`, `district_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gz_admin_post`
+--
+
+CREATE TABLE `gz_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gz_admin_post`
+--
+
+INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Gaza', 'qqq');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gz_locality`
 --
 
@@ -189,6 +209,25 @@ CREATE TABLE `heritage_entities` (
   `occupancy` varchar(20) NOT NULL,
   `affectation` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_admin_post`
+--
+
+CREATE TABLE `in_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `in_admin_post`
+--
+
+INSERT INTO `in_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Inhambane', 'ccc');
 
 -- --------------------------------------------------------
 
@@ -246,6 +285,27 @@ INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mc_admin_post`
+--
+
+CREATE TABLE `mc_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_admin_post`
+--
+
+INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Maputo Cidade', ''),
+(11, 'Maputo Cidade', 'Posto 2'),
+(12, 'Maputo Cidade', 'qqq');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mc_locality`
 --
 
@@ -267,7 +327,27 @@ INSERT INTO `mc_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (104, 'Maputo Cidade', 'fff'),
 (105, 'Maputo Cidade', 'zzz'),
 (106, 'Maputo Cidade', 'qqq'),
-(107, 'Maputo Cidade', 'xxx');
+(107, 'Maputo Cidade', 'xxx'),
+(108, 'Maputo Cidade', 'Post 1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mn_admin_post`
+--
+
+CREATE TABLE `mn_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mn_admin_post`
+--
+
+INSERT INTO `mn_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(100, 'Manica', 'xxx');
 
 -- --------------------------------------------------------
 
@@ -291,6 +371,25 @@ INSERT INTO `mn_locality` (`locality_id`, `province`, `locality_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mp_admin_post`
+--
+
+CREATE TABLE `mp_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_admin_post`
+--
+
+INSERT INTO `mp_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Maputo Província', 'www');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mp_locality`
 --
 
@@ -306,6 +405,25 @@ CREATE TABLE `mp_locality` (
 
 INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (100, 'Maputo Província', 'bb');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `np_admin_post`
+--
+
+CREATE TABLE `np_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `np_admin_post`
+--
+
+INSERT INTO `np_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Nampula', 'jjj');
 
 -- --------------------------------------------------------
 
@@ -329,6 +447,25 @@ INSERT INTO `np_locality` (`locality_id`, `province`, `locality_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ns_admin_post`
+--
+
+CREATE TABLE `ns_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ns_admin_post`
+--
+
+INSERT INTO `ns_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Niassa', 'kkk');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ns_locality`
 --
 
@@ -344,6 +481,25 @@ CREATE TABLE `ns_locality` (
 
 INSERT INTO `ns_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (100, 'Niassa', 'ggg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf_admin_post`
+--
+
+CREATE TABLE `sf_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sf_admin_post`
+--
+
+INSERT INTO `sf_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Sofala', 'ccc');
 
 -- --------------------------------------------------------
 
@@ -403,6 +559,25 @@ INSERT INTO `technician` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tt_admin_post`
+--
+
+CREATE TABLE `tt_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tt_admin_post`
+--
+
+INSERT INTO `tt_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(100, 'Tete', 'hhh');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tt_locality`
 --
 
@@ -418,6 +593,26 @@ CREATE TABLE `tt_locality` (
 
 INSERT INTO `tt_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (100, 'Tete', 'qqq');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zb_admin_post`
+--
+
+CREATE TABLE `zb_admin_post` (
+  `admin_post_id` int(2) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `zb_admin_post`
+--
+
+INSERT INTO `zb_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Zambézia', 'mmm'),
+(11, 'Zambézia', 'ss');
 
 -- --------------------------------------------------------
 
@@ -451,16 +646,16 @@ ALTER TABLE `administrative_entities`
   ADD PRIMARY KEY (`entity_id`);
 
 --
--- Indexes for table `administrative_posts`
---
-ALTER TABLE `administrative_posts`
-  ADD PRIMARY KEY (`administrative_post_id`);
-
---
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `cd_admin_post`
+--
+ALTER TABLE `cd_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `cd_locality`
@@ -475,10 +670,22 @@ ALTER TABLE `districts`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `gz_admin_post`
+--
+ALTER TABLE `gz_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
+
+--
 -- Indexes for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `in_admin_post`
+--
+ALTER TABLE `in_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `in_locality`
@@ -493,10 +700,22 @@ ALTER TABLE `local_entities`
   ADD PRIMARY KEY (`entity_id`);
 
 --
+-- Indexes for table `mc_admin_post`
+--
+ALTER TABLE `mc_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
+
+--
 -- Indexes for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `mn_admin_post`
+--
+ALTER TABLE `mn_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `mn_locality`
@@ -505,10 +724,22 @@ ALTER TABLE `mn_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `mp_admin_post`
+--
+ALTER TABLE `mp_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
+
+--
 -- Indexes for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `np_admin_post`
+--
+ALTER TABLE `np_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `np_locality`
@@ -517,10 +748,22 @@ ALTER TABLE `np_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `ns_admin_post`
+--
+ALTER TABLE `ns_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
+
+--
 -- Indexes for table `ns_locality`
 --
 ALTER TABLE `ns_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `sf_admin_post`
+--
+ALTER TABLE `sf_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `sf_locality`
@@ -535,10 +778,22 @@ ALTER TABLE `technician`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Indexes for table `tt_admin_post`
+--
+ALTER TABLE `tt_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
+
+--
 -- Indexes for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `zb_admin_post`
+--
+ALTER TABLE `zb_admin_post`
+  ADD PRIMARY KEY (`admin_post_id`);
 
 --
 -- Indexes for table `zb_locality`
@@ -557,10 +812,10 @@ ALTER TABLE `administrative_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
 
 --
--- AUTO_INCREMENT for table `administrative_posts`
+-- AUTO_INCREMENT for table `cd_admin_post`
 --
-ALTER TABLE `administrative_posts`
-  MODIFY `administrative_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `cd_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `cd_locality`
@@ -575,10 +830,22 @@ ALTER TABLE `districts`
   MODIFY `district_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
+-- AUTO_INCREMENT for table `gz_admin_post`
+--
+ALTER TABLE `gz_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `in_admin_post`
+--
+ALTER TABLE `in_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `in_locality`
@@ -593,10 +860,22 @@ ALTER TABLE `local_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
 
 --
+-- AUTO_INCREMENT for table `mc_admin_post`
+--
+ALTER TABLE `mc_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+
+--
+-- AUTO_INCREMENT for table `mn_admin_post`
+--
+ALTER TABLE `mn_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mn_locality`
@@ -605,10 +884,22 @@ ALTER TABLE `mn_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `mp_admin_post`
+--
+ALTER TABLE `mp_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `np_admin_post`
+--
+ALTER TABLE `np_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `np_locality`
@@ -617,10 +908,22 @@ ALTER TABLE `np_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `ns_admin_post`
+--
+ALTER TABLE `ns_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `ns_locality`
 --
 ALTER TABLE `ns_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `sf_admin_post`
+--
+ALTER TABLE `sf_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sf_locality`
@@ -629,10 +932,22 @@ ALTER TABLE `sf_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `tt_admin_post`
+--
+ALTER TABLE `tt_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
 -- AUTO_INCREMENT for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `zb_admin_post`
+--
+ALTER TABLE `zb_admin_post`
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `zb_locality`
