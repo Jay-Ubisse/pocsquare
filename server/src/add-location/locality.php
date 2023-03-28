@@ -3,41 +3,107 @@ require "../../config/connect.php";
 session_start();
 
 $province = $_POST['province'];
-$district = trim($_POST['locality']);
+$locality = trim($_POST['locality']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mc_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mc_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("mc_locality");
+        }
         break;
     case 'Maputo Provincia':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mp_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mp_locality";
+        $isFound = checkLocality($checklocality);
+        if(!$isFound) {
+            errorMEssage(); 
+        } else {
+            saveLocality("mp_locality");
+        }
         break;
     case 'Gaza':
-         $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.gz_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.gz_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("gz_locality");
+        }
         break;
     case 'Inhambane':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.in_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.in_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            saveLocality("in_locality");
+        } else {
+            errorMEssage();
+        }
         break;
     case 'Manica':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.mn_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mn_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("mn_locality");
+        }
         break;
     case 'Sofala':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.sf_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.sf_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("sf_locality");
+        }
         break;
     case 'Tete':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.tt_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.tt_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("tt_locality");
+        }
         break;
     case 'Nampula':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.np_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.np_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("np_locality");
+        }
         break;
     case 'Niassa':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.ns_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.ns_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("ns_locality");
+        }
         break;
     case 'Zambézia':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.zb_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.zb_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("zb_locality");
+        }
         break;
     case 'Cabo Delgado':
-        $checklocalityQuery = "SELECT * FROM jayubiss_pocsquareocs.cd_locality WHERE";
+        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.cd_locality";
+        $isFound = checkLocality($checklocality);
+        if($isFound) {
+            errorMEssage();
+        } else {
+            saveLocality("cd_locality");
+        }
         break;
     default:
         # code...
@@ -45,37 +111,39 @@ switch ($province) {
 }
 
 
-$checkDistrictResult = $dbcon->query($checkDistrictQuery);
+function checkLocality($checkLocality) {
+    global $locality, $province, $dbcon;
 
-$rows = $checkDistrictResult->fetchAll(PDO::FETCH_ASSOC);
+    $checkLocalityResult = $dbcon->query($checkLocality);
+    $rows = $checkLocalityResult->fetchAll(PDO::FETCH_ASSOC);
 
-$isFound = false;
-foreach ($rows as $row) {
-    if(strcasecmp($district , $row['district_name']) == 0) {
-        $isFound = true;
-        $_SESSION['registration-info'] = "Este distrito já foi adicionado!";
-        $_SESSION['error'] = true;
-        header("location: ../../../admin/add-location/location/district/");
+    $isFound = false;
+    foreach ($rows as $row) {
+        if(strcasecmp($locality , $row['locality_name']) == 0) {
+            $isFound = true;
+        }
     }
+
+    return $isFound;
 }
 
-if(!$isFound) {
+function saveLocality($table) {
+    global $locality, $province, $dbcon;
+
     try {
 
         $dbcon->beginTransaction();
     
-        $saveDistrictQuery = "INSERT INTO jayubiss_pocsquareocs.districts 
-                                        (province, district_name) 
-                                        VALUES (?, ?)";
-        $stmt = $dbcon->prepare($saveDistrictQuery);
-        $stmt->execute([$province, $district]);
+        $saveLocalityQuery = "INSERT INTO jayubiss_pocsquareocs." . $table . " (province, locality_name) VALUES (?, ?)";
+        $stmt = $dbcon->prepare($saveLocalityQuery);
+        $stmt->execute([$province, $locality]);
     
     
         $dbcon->commit();
         
-        $_SESSION['registration-info'] = "Distrito adicionado com sucesso!";
+        $_SESSION['registration-info'] = "Localidade adicionada com sucesso!";
         $_SESSION['error'] = false;
-        header("location: ../../../admin/add-location/location/district/");
+        header("location: ../../../admin/add-location/location/locality/");
     
     } 
     catch(PDOException $ex) {
@@ -84,4 +152,11 @@ if(!$isFound) {
         echo $ex->getMessage();
     }
 }
+
+function errorMessage() {
+    $_SESSION['registration-info'] = "Esta localidade já foi adicionada!";
+    $_SESSION['error'] = true;
+    header("location: ../../../admin/add-location/location/locality/");
+}
+
 ?>
