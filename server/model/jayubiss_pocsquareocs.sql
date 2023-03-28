@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 04:16 PM
+-- Generation Time: Mar 28, 2023 at 07:24 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -94,6 +94,18 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`username`, `password`) VALUES
 ('ubisse', 'f9069bbef34fd6d4e082c4e110a6a252');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_locality`
+--
+
+CREATE TABLE `cd_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -257,6 +269,30 @@ CREATE TABLE `mp_locality` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `np_locality`
+--
+
+CREATE TABLE `np_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ns_locality`
+--
+
+CREATE TABLE `ns_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sf_locality`
 --
 
@@ -302,6 +338,30 @@ CREATE TABLE `technician` (
 INSERT INTO `technician` (`username`, `password`) VALUES
 ('tecnico', 'f9069bbef34fd6d4e082c4e110a6a252');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tt_locality`
+--
+
+CREATE TABLE `tt_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zb_locality`
+--
+
+CREATE TABLE `zb_locality` (
+  `locality_id` int(3) NOT NULL,
+  `province` int(20) NOT NULL,
+  `locality_name` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -323,6 +383,12 @@ ALTER TABLE `administrative_posts`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `cd_locality`
+--
+ALTER TABLE `cd_locality`
+  ADD PRIMARY KEY (`locality_id`);
 
 --
 -- Indexes for table `districts`
@@ -367,6 +433,18 @@ ALTER TABLE `mp_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `np_locality`
+--
+ALTER TABLE `np_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `ns_locality`
+--
+ALTER TABLE `ns_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
 -- Indexes for table `sf_locality`
 --
 ALTER TABLE `sf_locality`
@@ -377,6 +455,18 @@ ALTER TABLE `sf_locality`
 --
 ALTER TABLE `technician`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `tt_locality`
+--
+ALTER TABLE `tt_locality`
+  ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `zb_locality`
+--
+ALTER TABLE `zb_locality`
+  ADD PRIMARY KEY (`locality_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -393,6 +483,12 @@ ALTER TABLE `administrative_entities`
 --
 ALTER TABLE `administrative_posts`
   MODIFY `administrative_post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `cd_locality`
+--
+ALTER TABLE `cd_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -437,9 +533,33 @@ ALTER TABLE `mp_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
+-- AUTO_INCREMENT for table `np_locality`
+--
+ALTER TABLE `np_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `ns_locality`
+--
+ALTER TABLE `ns_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
 -- AUTO_INCREMENT for table `sf_locality`
 --
 ALTER TABLE `sf_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `tt_locality`
+--
+ALTER TABLE `tt_locality`
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `zb_locality`
+--
+ALTER TABLE `zb_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 COMMIT;
 
