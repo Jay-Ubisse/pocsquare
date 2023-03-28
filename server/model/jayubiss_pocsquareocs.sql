@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 07:24 PM
+-- Generation Time: Mar 28, 2023 at 07:53 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -107,6 +107,13 @@ CREATE TABLE `cd_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cd_locality`
+--
+
+INSERT INTO `cd_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Cabo Delgado', 'uuu');
+
 -- --------------------------------------------------------
 
 --
@@ -150,6 +157,13 @@ CREATE TABLE `gz_locality` (
   `locality_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_locality`
+--
+
+INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Gaza', 'rrr');
+
 -- --------------------------------------------------------
 
 --
@@ -185,8 +199,17 @@ CREATE TABLE `heritage_entities` (
 CREATE TABLE `in_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
-  `locality_name` int(50) NOT NULL
+  `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `in_locality`
+--
+
+INSERT INTO `in_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Inhambane', '0'),
+(101, 'Inhambane', '0'),
+(102, 'Inhambane', 'kkk');
 
 -- --------------------------------------------------------
 
@@ -240,7 +263,11 @@ INSERT INTO `mc_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (100, 'Maputo Cidade', 'localidade 001'),
 (101, 'Maputo Cidade', 'localidade 002'),
 (102, 'Maputo Cidade', 'localidade 001'),
-(103, 'Maputo Cidade', 'localidadde 002');
+(103, 'Maputo Cidade', 'localidadde 002'),
+(104, 'Maputo Cidade', 'fff'),
+(105, 'Maputo Cidade', 'zzz'),
+(106, 'Maputo Cidade', 'qqq'),
+(107, 'Maputo Cidade', 'xxx');
 
 -- --------------------------------------------------------
 
@@ -254,6 +281,13 @@ CREATE TABLE `mn_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mn_locality`
+--
+
+INSERT INTO `mn_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Manica', 'xxx');
+
 -- --------------------------------------------------------
 
 --
@@ -265,6 +299,13 @@ CREATE TABLE `mp_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_locality`
+--
+
+INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Maputo Província', 'bb');
 
 -- --------------------------------------------------------
 
@@ -278,6 +319,13 @@ CREATE TABLE `np_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `np_locality`
+--
+
+INSERT INTO `np_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Nampula', 'aaa');
+
 -- --------------------------------------------------------
 
 --
@@ -290,6 +338,13 @@ CREATE TABLE `ns_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ns_locality`
+--
+
+INSERT INTO `ns_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Niassa', 'ggg');
+
 -- --------------------------------------------------------
 
 --
@@ -301,6 +356,13 @@ CREATE TABLE `sf_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sf_locality`
+--
+
+INSERT INTO `sf_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Sofala', 'www');
 
 -- --------------------------------------------------------
 
@@ -350,6 +412,13 @@ CREATE TABLE `tt_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tt_locality`
+--
+
+INSERT INTO `tt_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Tete', 'qqq');
+
 -- --------------------------------------------------------
 
 --
@@ -358,9 +427,18 @@ CREATE TABLE `tt_locality` (
 
 CREATE TABLE `zb_locality` (
   `locality_id` int(3) NOT NULL,
-  `province` int(20) NOT NULL,
-  `locality_name` int(50) NOT NULL
+  `province` varchar(20) NOT NULL,
+  `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `zb_locality`
+--
+
+INSERT INTO `zb_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, '0', '0'),
+(101, '0', '0'),
+(102, 'Zambézia', 'sss');
 
 --
 -- Indexes for dumped tables
@@ -488,7 +566,7 @@ ALTER TABLE `administrative_posts`
 -- AUTO_INCREMENT for table `cd_locality`
 --
 ALTER TABLE `cd_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -500,13 +578,13 @@ ALTER TABLE `districts`
 -- AUTO_INCREMENT for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `in_locality`
 --
 ALTER TABLE `in_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
@@ -518,49 +596,49 @@ ALTER TABLE `local_entities`
 -- AUTO_INCREMENT for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `mn_locality`
 --
 ALTER TABLE `mn_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `np_locality`
 --
 ALTER TABLE `np_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `ns_locality`
 --
 ALTER TABLE `ns_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `sf_locality`
 --
 ALTER TABLE `sf_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `zb_locality`
 --
 ALTER TABLE `zb_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

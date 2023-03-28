@@ -7,26 +7,26 @@ $locality = trim($_POST['locality']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mc_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mc_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
             saveLocality("mc_locality");
         }
         break;
-    case 'Maputo Provincia':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mp_locality";
-        $isFound = checkLocality($checklocality);
-        if(!$isFound) {
-            errorMEssage(); 
+    case 'Maputo Província':
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mp_locality";
+        $isFound = checkLocality($checkLocality);
+        if($isFound) {
+            errorMEssage();
         } else {
             saveLocality("mp_locality");
         }
         break;
     case 'Gaza':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.gz_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.gz_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -34,17 +34,17 @@ switch ($province) {
         }
         break;
     case 'Inhambane':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.in_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.in_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
-            saveLocality("in_locality");
-        } else {
             errorMEssage();
+        } else {
+            saveLocality("in_locality");
         }
         break;
     case 'Manica':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.mn_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mn_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -52,8 +52,8 @@ switch ($province) {
         }
         break;
     case 'Sofala':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.sf_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.sf_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -61,8 +61,8 @@ switch ($province) {
         }
         break;
     case 'Tete':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.tt_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.tt_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -70,8 +70,8 @@ switch ($province) {
         }
         break;
     case 'Nampula':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.np_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.np_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -79,8 +79,8 @@ switch ($province) {
         }
         break;
     case 'Niassa':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.ns_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.ns_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -88,8 +88,8 @@ switch ($province) {
         }
         break;
     case 'Zambézia':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.zb_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.zb_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
@@ -97,8 +97,8 @@ switch ($province) {
         }
         break;
     case 'Cabo Delgado':
-        $checklocality = "SELECT * FROM jayubiss_pocsquareocs.cd_locality";
-        $isFound = checkLocality($checklocality);
+        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.cd_locality";
+        $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
         } else {
