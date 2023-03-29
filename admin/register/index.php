@@ -28,7 +28,7 @@
                         echo "</div>";
 					}
 				?>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-District justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="province" class="font-medium">Província</label>
@@ -245,7 +245,7 @@
                         </select>
                     </div>
                 </fieldset>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-District justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Locais</legend>
                     <div class="w-[19%] flex flex-col gap-2">
                         <label for="cell" class="font-medium">Célula</label>
@@ -323,122 +323,42 @@
                             <option value="Inhambane Zona 2">Inhambane Zona 2</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="township" class="font-medium">Povoação</label>
-                        <select name="township-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
-                        </select>
-                        <select name="township-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
-                        </select>
-                        <select name="township-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Povoação 1">Gaza Povoação 1</option>
-                            <option value="Gaza Povoação 2">Gaza Povoação 2</option>
-                        </select>
-                        <select name="township-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Povoação 1">Inhambane Povoação 1</option>
-                            <option value="Inhambane Povoação 2">Inhambane Povoação 2</option>
-                        </select>
+                    
                     </div>
                 </fieldset>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-District justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-col gap-4 py-5 my-5">
                     <legend class="text-lg font-semibold px-4">Entidades Especiais</legend>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="cell" class="font-medium">Célula</label>
-                        <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Célula 1">Maputo Província Célula 1</option>
-                            <option value="Maputo Província Célula 2">Maputo Província Célula 2</option>
-                        </select>
-                        <select name="cell-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Célula 1">Maputo Província Célula 1</option>
-                            <option value="Maputo Província Célula 2">Maputo Província Célula 2</option>
-                        </select>
-                        <select name="cell-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Célula 1">Gaza Célula 1</option>
-                            <option value="Gaza Célula 2">Gaza Célula 2</option>
-                        </select>
-                        <select name="cell-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Célula 1">Inhambane Célula 1</option>
-                            <option value="Inhambane Célula 2">Inhambane Célula 2</option>
-                        </select>
+                    <div class="flex flex-row justify-evenly">
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="latitude" class="font-medium">Latitude</label>
+                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="latitude-dms" class="font-medium">Latitude DMS</label>
+                            <input type="text" name="latitudde-dms" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="longetude" class="font-medium">Longetude</label>
+                            <input type="text" name="longetude" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="longetude-dms" class="font-medium">Longitude DMS</label>
+                            <input type="text" name="longetude-dms" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="circle" class="font-medium">Circulo</label>
-                        <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Circulo 1">Maputo Província Circulo 1</option>
-                            <option value="Maputo Província Circulo 2">Maputo Província Circulo 2</option>
-                        </select>
-                        <select name="circle-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Circulo 1">Maputo Província Circulo 1</option>
-                            <option value="Maputo Província Circulo 2">Maputo Província Circulo 2</option>
-                        </select>
-                        <select name="circle-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Circulo 1">Gaza Circulo 1</option>
-                            <option value="Gaza Circulo 2">Gaza Circulo 2</option>
-                        </select>
-                        <select name="circle-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Circulo 1">Inhambane Circulo 1</option>
-                            <option value="Inhambane Circulo 2">Inhambane Circulo 2</option>
-                        </select>
-                    </div>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="village" class="font-medium">Vila</label>
-                        <select name="village-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Vila 1">Maputo Província Vila 1</option>
-                            <option value="Maputo Província Vila 2">Maputo Província Vila 2</option>
-                        </select>
-                        <select name="village-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Vila 1">Maputo Província Vila 1</option>
-                            <option value="Maputo Província Vila 2">Maputo Província Vila 2</option>
-                        </select>
-                        <select name="village-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Vila 1">Gaza Vila 1</option>
-                            <option value="Gaza Vila 2">Gaza Vila 2</option>
-                        </select>
-                        <select name="village-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Vila 1">Inhambane Vila 1</option>
-                            <option value="Inhambane Vila 2">Inhambane Vila 2</option>
-                        </select>
-                    </div>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="zone" class="font-medium">Zona</label>
-                        <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Zona 1">Maputo Província Zona 1</option>
-                            <option value="Maputo Província Zona 2">Maputo Província Zona 2</option>
-                        </select>
-                        <select name="zone-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Zona 1">Maputo Província Zona 1</option>
-                            <option value="Maputo Província Zona 2">Maputo Província Zona 2</option>
-                        </select>
-                        <select name="zone-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Zona 1">Gaza Zona 1</option>
-                            <option value="Gaza Zona 2">Gaza Zona 2</option>
-                        </select>
-                        <select name="zone-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Zona 1">Inhambane Zona 1</option>
-                            <option value="Inhambane Zona 2">Inhambane Zona 2</option>
-                        </select>
-                    </div>
-                    <div class="w-[19%] flex flex-col gap-2">
-                        <label for="township" class="font-medium">Povoação</label>
-                        <select name="township-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
-                        </select>
-                        <select name="township-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
-                        </select>
-                        <select name="township-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Povoação 1">Gaza Povoação 1</option>
-                            <option value="Gaza Povoação 2">Gaza Povoação 2</option>
-                        </select>
-                        <select name="township-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Povoação 1">Inhambane Povoação 1</option>
-                            <option value="Inhambane Povoação 2">Inhambane Povoação 2</option>
-                        </select>
+                    <div class="flex flex-row justify-evenly">
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="sea-​​rise" class="font-medium">Elevação do Mar</label>
+                            <input type="text" name="sea-​​rise" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="latitude" class="font-medium">Via Lat Start</label>
+                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="w-[19%] flex flex-col gap-2">
+                            <label for="latitude" class="font-medium">Via Long End</label>
+                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
                     </div>
                 </fieldset>
                 <div class="flex flex-District gap-5 w-fit mx-auto my-10">

@@ -6,7 +6,48 @@ session_start();
 $province = $_POST["province"];
 
 
-$code = $province . $district_id . " " . $township_id;
+
+switch ($province) {
+    case 'MC':
+        $province_name = "Maputo Cidade";
+        $district = $_POST["district-mc"];
+        $admin_post = $_POST["administrative-post-mc"];
+        break;
+    case 'MP':
+        $province_name = "Maputo Província";
+        break;
+    case 'GZ':
+        $province_name = "Gaza";
+        break;
+    case 'IN':
+        $province_name = "Inhambane";
+        break;
+    case 'MN':
+        $province_name = "Manica";
+        break;
+    case 'SF':
+        $province_name = "Sofala";
+        break;
+    case 'TT':
+        $province_name = "Tete";
+        break;
+    case 'NP':
+        $province_name = "Nampula";
+        break;
+    case 'NS':
+        $province_name = "Niassa";
+        break;
+    case 'ZB':
+        $province_name = "Zambézia";
+        break;
+    case 'CD':
+        $province_name = "Cabo Delgado";
+        break;
+    
+    default:
+        # code...
+        break;
+}
 
 /**
  * Fazendo a insercao dos dados nas respectivas tabelas (USANDO PDO).
