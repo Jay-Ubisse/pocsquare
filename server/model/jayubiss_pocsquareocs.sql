@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 08:36 PM
+-- Generation Time: Mar 29, 2023 at 07:28 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -85,16 +85,17 @@ CREATE TABLE `cd_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `cd_admin_post`
+-- Table structure for table `cd_district`
 --
 
-INSERT INTO `cd_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Cabo Delgado', 'lll'),
-(11, 'Cabo Delgado', 'lll'),
-(12, 'Cabo Delgado', 'lll'),
-(13, 'Cabo Delgado', 'ccc'),
-(14, 'Cabo Delgado', 'ccc');
+CREATE TABLE `cd_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -108,44 +109,6 @@ CREATE TABLE `cd_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `cd_locality`
---
-
-INSERT INTO `cd_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Cabo Delgado', 'uuu');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `districts`
---
-
-CREATE TABLE `districts` (
-  `district_id` int(2) NOT NULL,
-  `province` varchar(20) NOT NULL,
-  `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `districts`
---
-
-INSERT INTO `districts` (`district_id`, `province`, `district_name`) VALUES
-(13, 'Maputo Província', 'Boane'),
-(16, 'Gaza', 'Bilene'),
-(17, 'Gaza', 'Chibuto'),
-(18, 'Maputo Província', 'Namaancha'),
-(19, 'Maputo Cidade', 'KaMaxakene'),
-(20, 'Maputo Cidade', 'KaMubukwana'),
-(21, 'Inhambane', 'Funhalouro'),
-(22, 'Manica', 'Gondola'),
-(23, 'Sofala', 'Caia'),
-(24, 'Tete', 'Changara'),
-(25, 'Nampula', 'Angoche'),
-(26, 'Zambézia', 'Derre'),
-(27, 'Cabo Delgado', 'Balama');
-
 -- --------------------------------------------------------
 
 --
@@ -158,12 +121,17 @@ CREATE TABLE `gz_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `gz_admin_post`
+-- Table structure for table `gz_district`
 --
 
-INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Gaza', 'qqq');
+CREATE TABLE `gz_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -176,13 +144,6 @@ CREATE TABLE `gz_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gz_locality`
---
-
-INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Gaza', 'rrr');
 
 -- --------------------------------------------------------
 
@@ -222,12 +183,17 @@ CREATE TABLE `in_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `in_admin_post`
+-- Table structure for table `in_district`
 --
 
-INSERT INTO `in_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Inhambane', 'ccc');
+CREATE TABLE `in_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -240,15 +206,6 @@ CREATE TABLE `in_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `in_locality`
---
-
-INSERT INTO `in_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Inhambane', '0'),
-(101, 'Inhambane', '0'),
-(102, 'Inhambane', 'kkk');
 
 -- --------------------------------------------------------
 
@@ -294,14 +251,17 @@ CREATE TABLE `mc_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `mc_admin_post`
+-- Table structure for table `mc_district`
 --
 
-INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Maputo Cidade', ''),
-(11, 'Maputo Cidade', 'Posto 2'),
-(12, 'Maputo Cidade', 'qqq');
+CREATE TABLE `mc_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -315,21 +275,6 @@ CREATE TABLE `mc_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `mc_locality`
---
-
-INSERT INTO `mc_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Maputo Cidade', 'localidade 001'),
-(101, 'Maputo Cidade', 'localidade 002'),
-(102, 'Maputo Cidade', 'localidade 001'),
-(103, 'Maputo Cidade', 'localidadde 002'),
-(104, 'Maputo Cidade', 'fff'),
-(105, 'Maputo Cidade', 'zzz'),
-(106, 'Maputo Cidade', 'qqq'),
-(107, 'Maputo Cidade', 'xxx'),
-(108, 'Maputo Cidade', 'Post 1');
-
 -- --------------------------------------------------------
 
 --
@@ -342,12 +287,17 @@ CREATE TABLE `mn_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `mn_admin_post`
+-- Table structure for table `mn_district`
 --
 
-INSERT INTO `mn_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(100, 'Manica', 'xxx');
+CREATE TABLE `mn_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -361,13 +311,6 @@ CREATE TABLE `mn_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `mn_locality`
---
-
-INSERT INTO `mn_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Manica', 'xxx');
-
 -- --------------------------------------------------------
 
 --
@@ -380,12 +323,17 @@ CREATE TABLE `mp_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `mp_admin_post`
+-- Table structure for table `mp_district`
 --
 
-INSERT INTO `mp_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Maputo Província', 'www');
+CREATE TABLE `mp_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -399,13 +347,6 @@ CREATE TABLE `mp_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `mp_locality`
---
-
-INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Maputo Província', 'bb');
-
 -- --------------------------------------------------------
 
 --
@@ -418,12 +359,17 @@ CREATE TABLE `np_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `np_admin_post`
+-- Table structure for table `np_district`
 --
 
-INSERT INTO `np_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Nampula', 'jjj');
+CREATE TABLE `np_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -437,13 +383,6 @@ CREATE TABLE `np_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `np_locality`
---
-
-INSERT INTO `np_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Nampula', 'aaa');
-
 -- --------------------------------------------------------
 
 --
@@ -456,12 +395,17 @@ CREATE TABLE `ns_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `ns_admin_post`
+-- Table structure for table `ns_district`
 --
 
-INSERT INTO `ns_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Niassa', 'kkk');
+CREATE TABLE `ns_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -475,13 +419,6 @@ CREATE TABLE `ns_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `ns_locality`
---
-
-INSERT INTO `ns_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Niassa', 'ggg');
-
 -- --------------------------------------------------------
 
 --
@@ -494,12 +431,17 @@ CREATE TABLE `sf_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `sf_admin_post`
+-- Table structure for table `sf_district`
 --
 
-INSERT INTO `sf_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Sofala', 'ccc');
+CREATE TABLE `sf_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -512,13 +454,6 @@ CREATE TABLE `sf_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sf_locality`
---
-
-INSERT INTO `sf_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Sofala', 'www');
 
 -- --------------------------------------------------------
 
@@ -568,12 +503,17 @@ CREATE TABLE `tt_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tt_admin_post`
+-- Table structure for table `tt_district`
 --
 
-INSERT INTO `tt_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(100, 'Tete', 'hhh');
+CREATE TABLE `tt_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -587,13 +527,6 @@ CREATE TABLE `tt_locality` (
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tt_locality`
---
-
-INSERT INTO `tt_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, 'Tete', 'qqq');
-
 -- --------------------------------------------------------
 
 --
@@ -606,13 +539,17 @@ CREATE TABLE `zb_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `zb_admin_post`
+-- Table structure for table `zb_district`
 --
 
-INSERT INTO `zb_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Zambézia', 'mmm'),
-(11, 'Zambézia', 'ss');
+CREATE TABLE `zb_district` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -625,15 +562,6 @@ CREATE TABLE `zb_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `zb_locality`
---
-
-INSERT INTO `zb_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(100, '0', '0'),
-(101, '0', '0'),
-(102, 'Zambézia', 'sss');
 
 --
 -- Indexes for dumped tables
@@ -658,22 +586,28 @@ ALTER TABLE `cd_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `cd_district`
+--
+ALTER TABLE `cd_district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `cd_locality`
 --
 ALTER TABLE `cd_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
--- Indexes for table `districts`
---
-ALTER TABLE `districts`
-  ADD PRIMARY KEY (`district_id`);
-
---
 -- Indexes for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `gz_district`
+--
+ALTER TABLE `gz_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `gz_locality`
@@ -686,6 +620,12 @@ ALTER TABLE `gz_locality`
 --
 ALTER TABLE `in_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `in_district`
+--
+ALTER TABLE `in_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `in_locality`
@@ -706,6 +646,12 @@ ALTER TABLE `mc_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `mc_district`
+--
+ALTER TABLE `mc_district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
@@ -716,6 +662,12 @@ ALTER TABLE `mc_locality`
 --
 ALTER TABLE `mn_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `mn_district`
+--
+ALTER TABLE `mn_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `mn_locality`
@@ -730,6 +682,12 @@ ALTER TABLE `mp_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `mp_district`
+--
+ALTER TABLE `mp_district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
@@ -740,6 +698,12 @@ ALTER TABLE `mp_locality`
 --
 ALTER TABLE `np_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `np_district`
+--
+ALTER TABLE `np_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `np_locality`
@@ -754,6 +718,12 @@ ALTER TABLE `ns_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `ns_district`
+--
+ALTER TABLE `ns_district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `ns_locality`
 --
 ALTER TABLE `ns_locality`
@@ -764,6 +734,12 @@ ALTER TABLE `ns_locality`
 --
 ALTER TABLE `sf_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `sf_district`
+--
+ALTER TABLE `sf_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `sf_locality`
@@ -784,6 +760,12 @@ ALTER TABLE `tt_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `tt_district`
+--
+ALTER TABLE `tt_district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
@@ -794,6 +776,12 @@ ALTER TABLE `tt_locality`
 --
 ALTER TABLE `zb_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `zb_district`
+--
+ALTER TABLE `zb_district`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `zb_locality`
@@ -818,22 +806,28 @@ ALTER TABLE `cd_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `cd_district`
+--
+ALTER TABLE `cd_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `cd_locality`
 --
 ALTER TABLE `cd_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `districts`
---
-ALTER TABLE `districts`
-  MODIFY `district_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
 -- AUTO_INCREMENT for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `gz_district`
+--
+ALTER TABLE `gz_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gz_locality`
@@ -846,6 +840,12 @@ ALTER TABLE `gz_locality`
 --
 ALTER TABLE `in_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `in_district`
+--
+ALTER TABLE `in_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `in_locality`
@@ -866,6 +866,12 @@ ALTER TABLE `mc_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `mc_district`
+--
+ALTER TABLE `mc_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
@@ -876,6 +882,12 @@ ALTER TABLE `mc_locality`
 --
 ALTER TABLE `mn_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `mn_district`
+--
+ALTER TABLE `mn_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mn_locality`
@@ -902,6 +914,12 @@ ALTER TABLE `np_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `np_district`
+--
+ALTER TABLE `np_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `np_locality`
 --
 ALTER TABLE `np_locality`
@@ -912,6 +930,12 @@ ALTER TABLE `np_locality`
 --
 ALTER TABLE `ns_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `ns_district`
+--
+ALTER TABLE `ns_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ns_locality`
@@ -926,6 +950,12 @@ ALTER TABLE `sf_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `sf_district`
+--
+ALTER TABLE `sf_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `sf_locality`
 --
 ALTER TABLE `sf_locality`
@@ -938,6 +968,12 @@ ALTER TABLE `tt_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `tt_district`
+--
+ALTER TABLE `tt_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
@@ -948,6 +984,12 @@ ALTER TABLE `tt_locality`
 --
 ALTER TABLE `zb_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `zb_district`
+--
+ALTER TABLE `zb_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `zb_locality`
