@@ -154,7 +154,7 @@ function saveDistrict($table) {
 }
 
 function errorMessage() {
-    $_SESSION['registration-info'] = "Estdistrito já foi adicionado!";
+    $_SESSION['registration-info'] = "Este distrito já foi adicionado!";
     $_SESSION['error'] = true;
     header("location: ../../../admin/add-location/location/district/");
 }
