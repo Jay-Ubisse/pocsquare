@@ -18,7 +18,7 @@
         <?php include "../components/header.php"; ?>
     </header>
     <main class="h-screen">
-        <form method="post" action="../../server/src/register.php" class="border-2 border-orange-700 rounded-xl w-4/5 mx-auto mt-10">
+        <form method="post" action="../../server/src/register.php" class="border-2 border-orange-700 rounded-xl mx-auto mt-10 mb-20 laptop:w-4/5 mobile:w-[95%]">
             <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
 				<?php
 					if(isset($_SESSION["register-response"]) ) {
@@ -28,9 +28,9 @@
                         echo "</div>";
 					}
 				?>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 mx-auto rounded-md flex justify-evenly py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:[]19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" onchange="toggleFields()" id="province" class="border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="MC">Maputo Cidade</option>
@@ -46,7 +46,7 @@
                             <option value="CD">Cabo Delgado</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="district" class="font-medium">Distrito</label>
                         <select name="district-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
@@ -126,7 +126,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="administrative-post" class="font-medium">Posto Administrativo</label>
                         <select name="administrative-post-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
@@ -206,7 +206,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="locality" class="font-medium">Localidade</label>
                         <select name="locality-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Localidade 1">Maputo Província Localidade 1</option>
@@ -225,7 +225,7 @@
                             <option value="Inhambane Localidade 2">Inhambane Localidade 2</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="neighborhood" class="font-medium">Bairro</label>
                         <select name="neighborhood-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Bairro 1">Maputo Província Bairro 1</option>
@@ -245,9 +245,9 @@
                         </select>
                     </div>
                 </fieldset>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-row justify-evenly py-5 my-5">
+                <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-row justify-evenly py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                     <legend class="text-lg font-semibold px-4">Entidades Locais</legend>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="cell" class="font-medium">Célula</label>
                         <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Célula 1">Maputo Província Célula 1</option>
@@ -266,7 +266,7 @@
                             <option value="Inhambane Célula 2">Inhambane Célula 2</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="circle" class="font-medium">Circulo</label>
                         <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Circulo 1">Maputo Província Circulo 1</option>
@@ -285,7 +285,7 @@
                             <option value="Inhambane Circulo 2">Inhambane Circulo 2</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="village" class="font-medium">Vila</label>
                         <select name="village-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Vila 1">Maputo Província Vila 1</option>
@@ -304,7 +304,7 @@
                             <option value="Inhambane Vila 2">Inhambane Vila 2</option>
                         </select>
                     </div>
-                    <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="zone" class="font-medium">Zona</label>
                         <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="Maputo Província Zona 1">Maputo Província Zona 1</option>
@@ -323,41 +323,43 @@
                             <option value="Inhambane Zona 2">Inhambane Zona 2</option>
                         </select>
                     </div>
-                    
-                    </div>
                 </fieldset>
-                <fieldset class="border border-orange-700 w-[97%] mx-auto rounded-md flex flex-col gap-4 py-5 my-5">
+                <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-col gap-4 py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                     <legend class="text-lg font-semibold px-4">Entidades Especiais</legend>
-                    <div class="flex flex-row justify-evenly">
-                        <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex justify-evenly laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-2 laptop:flex-row mobile:flex-col">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Latitude</label>
-                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="latitudde" placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
-                        <div class="w-[19%] flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude-dms" class="font-medium">Latitude DMS</label>
-                            <input type="text" name="latitudde-dms" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="latitudde-dms" placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
-                        <div class="w-[19%] flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="longetude" class="font-medium">Longetude</label>
-                            <input type="text" name="longetude" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="longetude" placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
-                        <div class="w-[19%] flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="longetude-dms" class="font-medium">Longitude DMS</label>
-                            <input type="text" name="longetude-dms" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="longetude-dms" placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                     </div>
-                    <div class="flex flex-row justify-evenly">
-                        <div class="w-[19%] flex flex-col gap-2">
+                    <div class="flex justify-evenly laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4 laptop:flex-row mobile:flex-col">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="sea-​​rise" class="font-medium">Elevação do Mar</label>
-                            <input type="text" name="sea-​​rise" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="sea-​​rise" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
-                        <div class="w-[19%] flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Via Lat Start</label>
-                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
-                        <div class="w-[19%] flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Via Long End</label>
-                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="latitude" class="font-medium">Mapa Aérea c/gateway</label>
+                            
                         </div>
                     </div>
                 </fieldset>

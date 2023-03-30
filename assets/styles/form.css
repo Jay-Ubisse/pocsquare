@@ -13,15 +13,6 @@ body {
 	font-family: sans-serif;
 }
 
-.container {
-	max-width: 400px;
-	width: 100%;
-	background: #FFF;
-	padding: 40px;
-	border-radius: 20px;
-	position: relative;
-}
-
 .pic {
 	position: absolute;
 	top: 0;
@@ -68,6 +59,9 @@ label {
 	background: #EEE;
 	/* border: 2px solid #BD4B4B; */
 }
+.input:focus {
+	border: solid 1px rgb(194, 65, 12);
+}
 
 .button {
 	/* background: #BD4B4B; */
@@ -80,6 +74,27 @@ label {
 	text-transform: uppercase;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 320px) {
+	.container {
+		max-width: 90%;
+		background: #FFF;
+		margin: 0 auto;
+		padding: 40px;
+		border-radius: 20px;
+		position: relative;
+	}
+}
+
+
+
+@media (min-width: 1024px) {
+	.container {
+		max-width: 400px;
+		width: 100%;
+		background: #FFF;
+		padding: 40px;
+		border-radius: 20px;
+		position: relative;
+	}
 	
 }

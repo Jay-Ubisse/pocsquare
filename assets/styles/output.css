@@ -653,6 +653,10 @@ video {
   margin-top: 10%;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -769,10 +773,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[95\%\] {
-  width: 95%;
 }
 
 .border-collapse {
@@ -1123,4 +1123,117 @@ video {
 
 .active\:outline-orange-700:active {
   outline-color: #c2410c;
+}
+
+@media (min-width: 320px) {
+  .mobile\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .mobile\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .mobile\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile\:w-\[95\%\] {
+    width: 95%;
+  }
+
+  .mobile\:w-full {
+    width: 100%;
+  }
+
+  .mobile\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .mobile\:flex-col {
+    flex-direction: column;
+  }
+
+  .mobile\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .mobile\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .mobile\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .mobile\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .mobile\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-width: 320px) {
+    .laptop\:mobile\:w-full {
+      width: 100%;
+    }
+  }
+
+  .laptop\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .laptop\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .laptop\:w-9\/12 {
+    width: 75%;
+  }
+
+  .laptop\:w-\[50\%\] {
+    width: 50%;
+  }
+
+  .laptop\:w-4\/5 {
+    width: 80%;
+  }
+
+  .laptop\:w-\[19\%\] {
+    width: 19%;
+  }
+
+  .laptop\:w-\[97\%\] {
+    width: 97%;
+  }
+
+  .laptop\:flex-row {
+    flex-direction: row;
+  }
+
+  .laptop\:gap-4 {
+    gap: 1rem;
+  }
+
+  .laptop\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .laptop\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .laptop\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }

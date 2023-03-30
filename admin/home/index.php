@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4">
-            <div class="text-lg">
+    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4 laptop:text-base mobile:text-sm">
+            <div class="laptop:text-lg mobile:text-sm">
                 <?php
                     echo $_SESSION['user-data']['username'];
                 ?>
