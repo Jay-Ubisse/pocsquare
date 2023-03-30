@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4">
-        <div class="text-lg">
+    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4 laptop:text-base mobile:text-sm">
+        <div class="laptop:text-lg mobile:text-sm">
             <?php
                 echo $_SESSION['user-data']['username'];
             ?>
@@ -29,7 +29,7 @@
         </div>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] overflow-scroll">
-        <section class="bg-white w-1/2 h-fit mx-auto my-40 p-6 rounded-lg">
+        <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:my-40 mobile:mt-20 laptop:w-1/2 mobile:w-[95%]">
             <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">Adicionar Posto Administrativo</h1>
 				<?php
 					if(isset($_SESSION['registration-info']) ) {
@@ -49,7 +49,7 @@
 					}
 				?>
             <form method="POST" action="../../../../server/src/add-location/administrative-post.php" class="mt-10">
-                <div class="flex flex-row justify-around">
+                <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
                     <div>
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">

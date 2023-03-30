@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4">
-        <div class="text-lg">
+    <header class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4 laptop:text-base mobile:text-sm">
+        <div class="laptop:text-lg mobile:text-sm">
             <?php
                 echo $_SESSION['user-data']['username'];
             ?>
@@ -29,36 +29,36 @@
         </div>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] overflow-scroll">
-        <section class="bg-white w-5/6 h-fit mx-auto my-20 p-6 rounded-lg">
+        <section class="bg-white h-fit mx-auto my-20 p-6 rounded-lg laptop:w-5/6 mobile:w-[95%]">
             <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">DASHBOARD</h1>
-            <div class="flex flex-row justify-evenly h-44 mt-10">
-                <a href="./location/district/" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+            <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
+                <a href="./location/district/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Distrito
                 </a>
-                <a href="./location/administrative-post/" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
-                    Adicionar Posto Administrativo
+                <a href="./location/administrative-post/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                    Adicionar P. Administrativo
                 </a>
-                <a href="./location/locality/" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                <a href="./location/locality/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Localidade
                 </a>
             </div>
-            <div class="flex flex-row justify-evenly h-44 mt-10">
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+            <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
+                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar bairro
-                </a><a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                </a><a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Zona
                 </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Povoação
                 </a>
             </div>
-            <div class="flex flex-row justify-evenly h-44 mt-10">
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+            <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
+                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Vila
-                </a><a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                </a><a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Círculo
                 </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md w-[30%] h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white">
+                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Célula
                 </a>
             </div>
