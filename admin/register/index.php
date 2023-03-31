@@ -343,6 +343,93 @@
                         </select>
                     </div>
                 </fieldset>
+                <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-col flex-wrap justify-evenly py-5 my-5 laptop:w-[97%] mobile:w-[90%]">
+                    <legend class="text-lg font-semibold px-4">Entidades Patrimoniais/Vias</legend>
+                    <div class="flex laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="property-type" class="font-medium">Tipo de Propriedade</label>
+                            <select name="property-type" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                                <option value="Casa Geminada">Casa Geminada</option>
+                                <option value="Prédio">Prédio</option>
+                                <option value="Condomínio">Condomínio</option>
+                                <option value="Condomínio">Flat</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="floor" class="font-medium">Andar</label>
+                            <input type="text" name="floor" required value="R/C" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="side" class="font-medium">Lado</label>
+                            <input type="text" name="side" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="door-number" class="font-medium">Número da Porta</label>
+                            <input type="text" name="door-number" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                    </div>
+                    <div class="flex mt-2 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="road-type" class="font-medium">Tipo de Via</label>
+                            <select name="road-type" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                                <option value="Avenida">Avenida</option>
+                                <option value="Rua">Rua</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="road-name" class="font-medium">Nome/Número da Via</label>
+                            <input type="text" name="road-name" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="stalemate" class="font-medium">Impasse</label>
+                            <input type="text" name="stalemate" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="Viaduct" class="font-medium">Viaduto</label>
+                            <input type="text" name="Viaduct" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                    </div>
+                    <div class="flex mt-2 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="roundabout" class="font-medium">Rotunda</label>
+                            <input type="text" name="roundabout" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="sleepers" class="font-medium">Travessas</label>
+                            <input type="text" name="sleepers" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="wide" class="font-medium">Largos</label>
+                            <input type="text" name="wide" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="bridges" class="font-medium">Pontes</label>
+                            <input type="text" name="bridges" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                    </div>
+                    <div class="flex mt-4 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="plaza" class="font-medium">Praças</label>
+                            <input type="text" name="plaza" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="length" class="font-medium">Comprimento</label>
+                            <input type="text" name="length" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="width" class="font-medium">Largura</label>
+                            <input type="text" name="width" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="occupancy" class="font-medium">Ocupação</label>
+                            <input type="text" name="occupancy" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="affectation" class="font-medium">Afetação</label>
+                            <input type="text" name="affectation" required  class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
+                    </div>
+                </fieldset>
                 <fieldset class="border border-orange-700 mx-auto rounded-md gap-4 py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                     <legend class="text-lg font-semibold px-4">Entidades Especiais</legend>
                     <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-2 laptop:flex-row mobile:flex-col">
