@@ -430,8 +430,36 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-row flex-wrap justify-evenly py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
+                    <legend class="text-lg font-semibold px-4">Entidades Postais</legend>
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                        <label for="block" class="font-medium">Quarteirão</label>
+                        <input type="number" name="block" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                    </div>
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                        <label for="lateral" class="font-medium">Lateral Alfa-Numérico</label>
+                        <select name="lateral" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                        <label for="entry" class="font-medium">Entrada</label>
+                        <input type="number" name="entry" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                    </div>
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                        <label for="mailbox" class="font-medium">Caixa Postal</label>
+                        <input type="text" name="mailbox" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                    </div>
+                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                        <label for="post-office" class="font-medium">Estacão de correios</label>
+                        <input type="text" name="post-office" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                    </div>
+                </fieldset>
                 <fieldset class="border border-orange-700 mx-auto rounded-md gap-4 py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
-                    <legend class="text-lg font-semibold px-4">Entidades Especiais</legend>
+                    <legend class="text-lg font-semibold px-4">Entidades Espaciais</legend>
                     <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-2 laptop:flex-row mobile:flex-col">
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Latitude</label>
