@@ -206,7 +206,7 @@
                             ?>
                         </select>
                     </div>
-                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                    <div class="locality flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="locality" class="font-medium">Localidade</label>
                         <select name="locality-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             
@@ -221,7 +221,7 @@
 
                         </select>
                     </div>
-                    <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                    <div class="neighborhood flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="neighborhood" class="font-medium">Bairro</label>
                         <select name="neighborhood-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
 
