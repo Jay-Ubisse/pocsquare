@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2023 at 07:28 PM
+-- Generation Time: Apr 01, 2023 at 12:31 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -121,6 +121,13 @@ CREATE TABLE `gz_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_admin_post`
+--
+
+INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(11, 'Gaza', 'GZ Posto 1');
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +140,13 @@ CREATE TABLE `gz_district` (
   `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_district`
+--
+
+INSERT INTO `gz_district` (`district_id`, `province`, `district_name`) VALUES
+(2, 'Gaza', 'GZ Distrito 1');
+
 -- --------------------------------------------------------
 
 --
@@ -144,6 +158,13 @@ CREATE TABLE `gz_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gz_locality`
+--
+
+INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(101, 'Gaza', 'GZ Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -251,6 +272,13 @@ CREATE TABLE `mc_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mc_admin_post`
+--
+
+INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(13, 'Maputo Cidade', 'MC Posto 1');
+
 -- --------------------------------------------------------
 
 --
@@ -262,6 +290,13 @@ CREATE TABLE `mc_district` (
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_district`
+--
+
+INSERT INTO `mc_district` (`district_id`, `province`, `district_name`) VALUES
+(12, 'Maputo Cidade', 'MC Distrito 1');
 
 -- --------------------------------------------------------
 
@@ -346,6 +381,13 @@ CREATE TABLE `mp_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_locality`
+--
+
+INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(101, 'Maputo Província', 'MP Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -821,19 +863,19 @@ ALTER TABLE `cd_locality`
 -- AUTO_INCREMENT for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `gz_district`
 --
 ALTER TABLE `gz_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `in_admin_post`
@@ -863,13 +905,13 @@ ALTER TABLE `local_entities`
 -- AUTO_INCREMENT for table `mc_admin_post`
 --
 ALTER TABLE `mc_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mc_district`
 --
 ALTER TABLE `mc_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `mc_locality`
@@ -905,7 +947,7 @@ ALTER TABLE `mp_admin_post`
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `np_admin_post`
