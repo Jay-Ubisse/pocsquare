@@ -32,7 +32,7 @@
                     <legend class="text-lg font-semibold px-4">Entidades Administrativas</legend>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="province" class="font-medium">Província</label>
-                        <select name="province" onchange="toggleFields()" id="province" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="province" required onchange="toggleFields()" id="province" class="border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="MC">Maputo Cidade</option>
                             <option value="MP">Maputo Província</option>
                             <option value="GZ">Gaza</option>
@@ -48,77 +48,77 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="district" class="font-medium">Distrito</label>
-                        <select name="district-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoDistricts as $maputoDistrict) {
                                     echo "<option value='" . $maputoDistrict['district_name'] ."'>" . $maputoDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoProvinceDistricts as $maputoProvinceDistrict) {
                                     echo "<option value='" . $maputoProvinceDistrict['district_name'] ."'>" . $maputoProvinceDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($gazaDistricts as $gazaDistrict) {
                                     echo "<option value='" . $gazaDistrict['district_name'] ."'>" . $gazaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($inhambaneDistricts as $inhambaneDistrict) {
                                     echo "<option value='" . $inhambaneDistrict['district_name'] ."'>" . $inhambaneDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-mn" required class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($manicaDistricts as $manicaDistrict) {
                                     echo "<option value='" . $manicaDistrict['district_name'] ."'>" . $manicaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-sf" required class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($sofalaDistricts as $sofalaDistrict) {
                                     echo "<option value='" . $sofalaDistrict['district_name'] ."'>" . $sofalaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-tt" required class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($teteDistricts as $teteDistrict) {
                                     echo "<option value='" . $teteDistrict['district_name'] ."'>" . $teteDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-np" required class="np-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($nampulaDistricts as $nampulaDistrict) {
                                     echo "<option value='" . $nampulaDistrict['district_name'] ."'>" . $nampulaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-ns" required class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($niassaDistricts as $niassaDistrict) {
                                     echo "<option value='" . $niassaDistrict['district_name'] ."'>" . $niassaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-zb" required class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($zambeziaDistricts as $zambeziaDistrict) {
                                     echo "<option value='" . $zambeziaDistrict['district_name'] ."'>" . $zambeziaDistrict['district_name'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="district-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="district-cd" required class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($caboDelgadoDistricts as $caboDelgadoDistrict) {
                                     echo "<option value='" . $caboDelgadoDistrict['district_name'] ."'>" . $caboDelgadoDistrict['district_name'] . "</option>";
@@ -128,77 +128,77 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="administrative-post" class="font-medium">Posto Administrativo</label>
-                        <select name="administrative-post-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoPosts as $maputoPost) {
                                     echo "<option value='" . $maputoPost['administrative_post'] ."'>" . $maputoPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoProvincePosts as $maputoProvincePost) {
                                     echo "<option value='" . $maputoProvincePost['administrative_post'] ."'>" . $maputoProvincePost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($gazaPosts as $gazaPost) {
                                     echo "<option value='" . $gazaPost['administrative_post'] ."'>" . $gazaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($inhambanePosts as $inhambanePost) {
                                     echo "<option value='" . $inhambanePost['administrative_post'] ."'>" . $inhambanePost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-mn" required class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($manicaPosts as $manicaPost) {
                                     echo "<option value='" . $manicaPost['administrative_post'] ."'>" . $manicaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-sf" required class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($sofalaPosts as $sofalaPost) {
                                     echo "<option value='" . $sofalaPost['administrative_post'] ."'>" . $sofalaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-tt" required class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($tetePosts as $tetePost) {
                                     echo "<option value='" . $tetePost['administrative_post'] ."'>" . $tetePost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-np" required class="np-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($nampulaPosts as $nampulaPost) {
                                     echo "<option value='" . $nampulaPost['administrative_post'] ."'>" . $nampulaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-ns" required class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($niassaPosts as $niassaPost) {
                                     echo "<option value='" . $niassaPost['administrative_post'] ."'>" . $niassaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-zb" required class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($zambeziaPosts as $zambeziaPost) {
                                     echo "<option value='" . $zambeziaPost['administrative_post'] ."'>" . $zambeziaPost['administrative_post'] . "</option>";
                                 }
                             ?>
                         </select>
-                        <select name="administrative-post-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="administrative-post-cd" required class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($caboDelgadoPosts as $caboDelgadoPost) {
                                     echo "<option value='" . $caboDelgadoPost['administrative_post'] ."'>" . $caboDelgadoPost['administrative_post'] . "</option>";
@@ -208,40 +208,32 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="locality" class="font-medium">Localidade</label>
-                        <select name="locality-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Localidade 1">Maputo Província Localidade 1</option>
-                            <option value="Maputo Província Localidade 2">Maputo Província Localidade 2</option>
+                        <select name="locality-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            
                         </select>
-                        <select name="locality-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Localidade 1">Maputo Província Localidade 1</option>
-                            <option value="Maputo Província Localidade 2">Maputo Província Localidade 2</option>
+                        <select name="locality-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="locality-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Localidade 1">Gaza Localidade 1</option>
-                            <option value="Gaza Localidade 2">Gaza Localidade 2</option>
+                        <select name="locality-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="locality-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Localidade 1">Inhambane Localidade 1</option>
-                            <option value="Inhambane Localidade 2">Inhambane Localidade 2</option>
+                        <select name="locality-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="neighborhood" class="font-medium">Bairro</label>
-                        <select name="neighborhood-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Bairro 1">Maputo Província Bairro 1</option>
-                            <option value="Maputo Província Bairro 2">Maputo Província Bairro 2</option>
+                        <select name="neighborhood-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="neighborhood-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Bairro 1">Maputo Província Bairro 1</option>
-                            <option value="Maputo Província Bairro 2">Maputo Província Bairro 2</option>
+                        <select name="neighborhood-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="neighborhood-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Bairro 1">Gaza Bairro 1</option>
-                            <option value="Gaza Bairro 2">Gaza Bairro 2</option>
+                        <select name="neighborhood-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="neighborhood-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Bairro 1">Inhambane Bairro 1</option>
-                            <option value="Inhambane Bairro 2">Inhambane Bairro 2</option>
+                        <select name="neighborhood-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                 </fieldset>
@@ -249,97 +241,76 @@
                     <legend class="text-lg font-semibold px-4">Entidades Locais</legend>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="cell" class="font-medium">Célula</label>
-                        <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Célula 1">Maputo Província Célula 1</option>
-                            <option value="Maputo Província Célula 2">Maputo Província Célula 2</option>
+                        <select name="cell-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="cell-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Célula 1">Maputo Província Célula 1</option>
-                            <option value="Maputo Província Célula 2">Maputo Província Célula 2</option>
+                        <select name="cell-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="cell-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Célula 1">Gaza Célula 1</option>
-                            <option value="Gaza Célula 2">Gaza Célula 2</option>
+                        <select name="cell-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="cell-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Célula 1">Inhambane Célula 1</option>
-                            <option value="Inhambane Célula 2">Inhambane Célula 2</option>
+                        <select name="cell-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="circle" class="font-medium">Circulo</label>
-                        <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Circulo 1">Maputo Província Circulo 1</option>
-                            <option value="Maputo Província Circulo 2">Maputo Província Circulo 2</option>
+                        <select name="circle-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="circle-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Circulo 1">Maputo Província Circulo 1</option>
-                            <option value="Maputo Província Circulo 2">Maputo Província Circulo 2</option>
+                        <select name="circle-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="circle-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Circulo 1">Gaza Circulo 1</option>
-                            <option value="Gaza Circulo 2">Gaza Circulo 2</option>
+                        <select name="circle-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="circle-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Circulo 1">Inhambane Circulo 1</option>
-                            <option value="Inhambane Circulo 2">Inhambane Circulo 2</option>
+                        <select name="circle-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="village" class="font-medium">Vila</label>
-                        <select name="village-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Vila 1">Maputo Província Vila 1</option>
-                            <option value="Maputo Província Vila 2">Maputo Província Vila 2</option>
+                        <select name="village-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="village-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Vila 1">Maputo Província Vila 1</option>
-                            <option value="Maputo Província Vila 2">Maputo Província Vila 2</option>
+                        <select name="village-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="village-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Vila 1">Gaza Vila 1</option>
-                            <option value="Gaza Vila 2">Gaza Vila 2</option>
+
                         </select>
-                        <select name="village-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Vila 1">Inhambane Vila 1</option>
-                            <option value="Inhambane Vila 2">Inhambane Vila 2</option>
+                        <select name="village-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="zone" class="font-medium">Zona</label>
-                        <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Zona 1">Maputo Província Zona 1</option>
-                            <option value="Maputo Província Zona 2">Maputo Província Zona 2</option>
+                        <select name="zone-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Zona 1">Maputo Província Zona 1</option>
-                            <option value="Maputo Província Zona 2">Maputo Província Zona 2</option>
+                        <select name="zone-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Zona 1">Gaza Zona 1</option>
-                            <option value="Gaza Zona 2">Gaza Zona 2</option>
+                        <select name="zone-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Zona 1">Inhambane Zona 1</option>
-                            <option value="Inhambane Zona 2">Inhambane Zona 2</option>
+                        <select name="zone-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="township" class="font-medium">Povoação</label>
-                        <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
+                        <select name="zone-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província Povoação 1">Maputo Província Povoação 1</option>
-                            <option value="Maputo Província Povoação 2">Maputo Província Povoação 2</option>
+                        <select name="zone-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Gaza Povoação 1">Gaza Povoação 1</option>
-                            <option value="Gaza Povoação 2">Gaza Povoação 2</option>
+                        <select name="zone-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
-                        <select name="zone-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Inhambane Povoação 1">Inhambane Povoação 1</option>
-                            <option value="Inhambane Povoação 2">Inhambane Povoação 2</option>
+                        <select name="zone-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+
                         </select>
                     </div>
                 </fieldset>
@@ -463,25 +434,25 @@
                     <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-2 laptop:flex-row mobile:flex-col">
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Latitude</label>
-                            <input type="text" name="latitudde" placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="latitude" required placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude-dms" class="font-medium">Latitude DMS</label>
-                            <input type="text" name="latitudde-dms" placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="latitudde-dms" required placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="longetude" class="font-medium">Longetude</label>
-                            <input type="text" name="longetude" placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="longetude" required placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="longetude-dms" class="font-medium">Longitude DMS</label>
-                            <input type="text" name="longetude-dms" placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="longetude-dms" required placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                     </div>
                     <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-4 laptop:flex-row mobile:flex-col laptop:mt-4">
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="sea-​​rise" class="font-medium">Elevação do Mar</label>
-                            <input type="text" name="sea-​​rise" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="sea-​​rise" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Via Lat Start</label>
@@ -489,14 +460,42 @@
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
                             <label for="latitude" class="font-medium">Via Long End</label>
-                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <input type="text" name="latitudde" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="latitude" class="font-medium">Mapa Aérea c/gateway</label>
+                            <label for="latitude" required class="font-medium">Mapa Aérea c/gateway</label>
                             
                         </div>
                     </div>
                 </fieldset>
+                <fieldset class="border border-orange-700 mx-auto rounded-md gap-4 py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
+                    <legend class="text-lg font-semibold px-4">Entidades Complementares</legend>
+                    <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-2 laptop:flex-row mobile:flex-col">
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
+                            <label for="contact-number" class="font-medium">Número de Contato</label>
+                            <div>
+                                <input type="text" value="+258" disabled size="5">
+                                <input type="number" name="contact-number" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
+                            <label for="email" class="font-medium">Email</label>
+                            <input type="email" name="email" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                        </div>
+                        <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
+                            <label for="website" class="font-medium">Website</label>
+                            <input type="url" name="website"  class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="ml-5">
+                    <span class="text-lg font-semibold mr-2">ID do Usuário:</span>
+                    <span class="text-base font-medium">
+                        <?php
+                            echo $_SESSION['user-data']['username'];
+                        ?>
+                    </span>
+                </div>
                 <div class="flex flex-District gap-5 w-fit mx-auto my-10">
                     <input type="submit" value="Cadastrar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
                 </div>
