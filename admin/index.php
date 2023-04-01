@@ -16,7 +16,7 @@ session_start();
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
 <body class="relative">
-	<div class="absolute top-0 right-0 m-10">
+	<div class="absolute top-0 right-0 laptop:m-10 mobile:m-4">
 		<select id="role" onchange="changeRole()" class="px-5 py-2 rounded outline-none active:outline active:outline-orange-700">
 			<option value="tech">Técnico</option>
 			<option value="admin">Administrador</option>

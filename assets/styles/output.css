@@ -1118,6 +1118,10 @@ video {
 }
 
 @media (min-width: 320px) {
+  .mobile\:m-4 {
+    margin: 1rem;
+  }
+
   .mobile\:mb-2 {
     margin-bottom: 0.5rem;
   }
@@ -1178,6 +1182,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .laptop\:m-10 {
+    margin: 2.5rem;
+  }
+
   .laptop\:my-40 {
     margin-top: 10rem;
     margin-bottom: 10rem;
