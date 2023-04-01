@@ -53,7 +53,6 @@
                     <div>
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Cidade">Maputo Cidade</option>
                             <option value="Maputo Província">Maputo Província</option>
                             <option value="Gaza">Gaza</option>
                             <option value="Inhambane">Inhambane</option>

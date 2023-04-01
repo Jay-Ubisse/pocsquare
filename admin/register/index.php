@@ -131,77 +131,77 @@
                         <select name="administrative-post-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoPosts as $maputoPost) {
-                                    echo "<option value='" . $maputoPost['administrative_post'] ."'>" . $maputoPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $maputoPost['admin_post_name'] ."'>" . $maputoPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoProvincePosts as $maputoProvincePost) {
-                                    echo "<option value='" . $maputoProvincePost['administrative_post'] ."'>" . $maputoProvincePost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $maputoProvincePost['admin_post_name'] ."'>" . $maputoProvincePost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($gazaPosts as $gazaPost) {
-                                    echo "<option value='" . $gazaPost['administrative_post'] ."'>" . $gazaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $gazaPost['admin_post_name'] ."'>" . $gazaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($inhambanePosts as $inhambanePost) {
-                                    echo "<option value='" . $inhambanePost['administrative_post'] ."'>" . $inhambanePost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $inhambanePost['admin_post_name'] ."'>" . $inhambanePost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-mn" required class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($manicaPosts as $manicaPost) {
-                                    echo "<option value='" . $manicaPost['administrative_post'] ."'>" . $manicaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $manicaPost['admin_post_name'] ."'>" . $manicaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-sf" required class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($sofalaPosts as $sofalaPost) {
-                                    echo "<option value='" . $sofalaPost['administrative_post'] ."'>" . $sofalaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $sofalaPost['admin_post_name'] ."'>" . $sofalaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-tt" required class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($tetePosts as $tetePost) {
-                                    echo "<option value='" . $tetePost['administrative_post'] ."'>" . $tetePost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $tetePost['admin_post_name'] ."'>" . $tetePost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-np" required class="np-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($nampulaPosts as $nampulaPost) {
-                                    echo "<option value='" . $nampulaPost['administrative_post'] ."'>" . $nampulaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $nampulaPost['admin_post_name'] ."'>" . $nampulaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-ns" required class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($niassaPosts as $niassaPost) {
-                                    echo "<option value='" . $niassaPost['administrative_post'] ."'>" . $niassaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $niassaPost['admin_post_name'] ."'>" . $niassaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-zb" required class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($zambeziaPosts as $zambeziaPost) {
-                                    echo "<option value='" . $zambeziaPost['administrative_post'] ."'>" . $zambeziaPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $zambeziaPost['admin_post_name'] ."'>" . $zambeziaPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
                         <select name="administrative-post-cd" required class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($caboDelgadoPosts as $caboDelgadoPost) {
-                                    echo "<option value='" . $caboDelgadoPost['administrative_post'] ."'>" . $caboDelgadoPost['administrative_post'] . "</option>";
+                                    echo "<option value='" . $caboDelgadoPost['admin_post_name'] ."'>" . $caboDelgadoPost['admin_post_name'] . "</option>";
                                 }
                             ?>
                         </select>
@@ -209,16 +209,81 @@
                     <div class="locality flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="locality" class="font-medium">Localidade</label>
                         <select name="locality-mc" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-                            
+                            <?php
+                                foreach ($maputoLocality as $maputoLocale) {
+                                    echo "<option value='" . $maputoLocale['locality_name'] ."'>" . $maputoLocale['locality_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="locality-mp" required class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                                <?php
+                                foreach ($maputoProvinceLocality as $maputoProvinceLocale) {
+                                    echo "<option value='" . $maputoProvinceLocale['locality_name'] ."'>" . $maputoProvinceLocale['locality_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="locality-gz" required class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                                <?php
+                                foreach ($gazaLocality as $gazaLocale) {
+                                    echo "<option value='" . $gazaLocale['locality_name'] ."'>" . $gazaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="locality-in" required class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($inhambaneLocality as $inhambaneLocale) {
+                                    echo "<option value='" . $inhambaneLocale['locality_name'] ."'>" . $inhambaneLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-mn" required class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaLocality as $manicaLocale) {
+                                    echo "<option value='" . $manicaLocale['locality_name'] ."'>" . $manicaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-sf" required class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaLocality as $sofalaLocale) {
+                                    echo "<option value='" . $sofalaLocale['locality_name'] ."'>" . $sofalaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-tt" required class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteLocality as $teteLocale) {
+                                    echo "<option value='" . $teteLocale['locality_name'] ."'>" . $teteLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-np" required class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaLocality as $nampulaLocale) {
+                                    echo "<option value='" . $nampulaLocale['locality_name'] ."'>" . $nampulaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-ns" required class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaLocality as $niassaLocale) {
+                                    echo "<option value='" . $niassaLocale['locality_name'] ."'>" . $niassaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-zb" required class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaLocality as $zambeziaLocale) {
+                                    echo "<option value='" . $zambeziaLocale['locality_name'] ."'>" . $zambeziaLocale['locality_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="locality-cd" required class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoLocality as $caboDelgadoLocale) {
+                                    echo "<option value='" . $caboDelgadoLocale['locality_name'] ."'>" . $caboDelgadoLocale['locality_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="neighborhood flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
@@ -405,7 +470,7 @@
                     <legend class="text-lg font-semibold px-4">Entidades Postais</legend>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="block" class="font-medium">Quarteirão</label>
-                        <input type="number" name="block" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <input type="number" name="block" min="1" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="lateral" class="font-medium">Lateral Alfa-Numérico</label>
