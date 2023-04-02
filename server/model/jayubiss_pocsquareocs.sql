@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2023 at 12:31 PM
+-- Generation Time: Apr 02, 2023 at 12:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,21 +39,8 @@ CREATE TABLE `administrative_entities` (
   `locality_id` varchar(3) NOT NULL,
   `neighborhood` varchar(50) NOT NULL,
   `neighborhood_id` varchar(3) NOT NULL,
-  `province_alphabetical_id` varchar(2) NOT NULL,
-  `code` varchar(10) NOT NULL
+  `province_alphabetical_id` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `administrative_entities`
---
-
-INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`, `code`) VALUES
-(10000007, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001'),
-(10000008, 'Gaza', '02', 'Chibuto', '003', 'Gaza posto 1', '003', 'Gaza Localidade 1', '003', 'Gaza Bairro 1', '003', 'GZ', 'GZ003 003'),
-(10000009, 'Inhambane', '03', 'Funhalouro', '005', 'Inhambane posto 1', '005', 'Inhambane Localidade 1', '005', 'Inhambane Bairro 1', '005', 'IN', 'IN005 005'),
-(10000010, 'Maputo Província', '01', 'Boane', '001', 'Maputo Província posto 1', '001', 'Maputo Província Localidade 1', '001', 'Maputo Província Bairro 1', '001', 'MP', 'MP001 001'),
-(10000011, 'Gaza', '02', 'Bilene', '004', 'Gaza posto 2', '004', 'Gaza Localidade 1', '003', 'Gaza Bairro 1', '003', 'GZ', 'GZ004 003'),
-(10000012, 'Gaza', '02', 'Bilene', '004', 'Gaza posto 2', '004', 'Gaza Localidade 2', '004', 'Gaza Bairro 1', '003', 'GZ', 'GZ004 003');
 
 -- --------------------------------------------------------
 
@@ -107,6 +94,19 @@ CREATE TABLE `cd_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `complementary_entities`
+--
+
+CREATE TABLE `complementary_entities` (
+  `entity_id` int(11) NOT NULL,
+  `contact_number` int(9) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `website` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -178,14 +178,15 @@ CREATE TABLE `heritage_entities` (
   `floor` varchar(20) NOT NULL,
   `side` varchar(10) NOT NULL,
   `door_number` int(6) NOT NULL,
-  `track_number` int(6) NOT NULL,
-  `track_type` varchar(10) NOT NULL,
+  `road_name` varchar(50) NOT NULL,
+  `road_type` varchar(10) NOT NULL,
   `stalemate` varchar(20) NOT NULL,
   `viaduct` varchar(30) NOT NULL,
   `roundabout` varchar(20) NOT NULL,
-  `crossings` varchar(30) NOT NULL,
+  `lane` varchar(30) NOT NULL,
+  `wide` varchar(30) NOT NULL,
   `bridges` varchar(30) NOT NULL,
-  `squares` varchar(30) NOT NULL,
+  `plaza` varchar(30) NOT NULL,
   `length` double NOT NULL,
   `width` double NOT NULL,
   `occupancy` varchar(20) NOT NULL,
@@ -247,18 +248,6 @@ CREATE TABLE `local_entities` (
   `zone` varchar(50) NOT NULL,
   `zone_id` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `local_entities`
---
-
-INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
-(10000007, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001'),
-(10000008, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 1', '003', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003'),
-(10000009, 'Inhambane Célula 1', '005', 'Inhambane Circulo 1', '005', 'Inhambane Vila 1', '005', 'Inhambane Povoação 1', '005', 'Inhambane Zona 1', '005'),
-(10000010, 'Maputo Província Célula 1', '001', 'Maputo Província Circulo 1', '001', 'Maputo Província Vila 1', '001', 'Maputo Província Povoação 1', '001', 'Maputo Província Zona 1', '001'),
-(10000011, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 2', '004', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003'),
-(10000012, 'Gaza Célula 1', '003', 'Gaza Circulo 1', '003', 'Gaza Vila 2', '004', 'Gaza Povoação 1', '003', 'Gaza Zona 1', '003');
 
 -- --------------------------------------------------------
 
@@ -464,6 +453,22 @@ CREATE TABLE `ns_locality` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `postal_entities`
+--
+
+CREATE TABLE `postal_entities` (
+  `entity_id` int(11) NOT NULL,
+  `block` int(3) NOT NULL,
+  `lateral` char(1) NOT NULL,
+  `entry` char(1) NOT NULL,
+  `mailbox` varchar(30) NOT NULL,
+  `post_office` varchar(30) NOT NULL,
+  `postal_code` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sf_admin_post`
 --
 
@@ -495,6 +500,24 @@ CREATE TABLE `sf_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `space_entities`
+--
+
+CREATE TABLE `space_entities` (
+  `entity_id` int(11) NOT NULL,
+  `latitude` decimal(10,0) NOT NULL,
+  `latitude_dms` geometry NOT NULL,
+  `longitude` decimal(10,0) NOT NULL,
+  `longitude_dms` geometry NOT NULL,
+  `sea-​​rise` geometry NOT NULL,
+  `via_lat_start` geometry NOT NULL,
+  `via_lat_end` geometry NOT NULL,
+  `aerial-map` geometry NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -640,6 +663,12 @@ ALTER TABLE `cd_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `complementary_entities`
+--
+ALTER TABLE `complementary_entities`
+  ADD PRIMARY KEY (`entity_id`);
+
+--
 -- Indexes for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
@@ -656,6 +685,12 @@ ALTER TABLE `gz_district`
 --
 ALTER TABLE `gz_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `heritage_entities`
+--
+ALTER TABLE `heritage_entities`
+  ADD PRIMARY KEY (`entity_id`);
 
 --
 -- Indexes for table `in_admin_post`
@@ -772,6 +807,12 @@ ALTER TABLE `ns_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `postal_entities`
+--
+ALTER TABLE `postal_entities`
+  ADD PRIMARY KEY (`entity_id`);
+
+--
 -- Indexes for table `sf_admin_post`
 --
 ALTER TABLE `sf_admin_post`
@@ -788,6 +829,12 @@ ALTER TABLE `sf_district`
 --
 ALTER TABLE `sf_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `space_entities`
+--
+ALTER TABLE `space_entities`
+  ADD PRIMARY KEY (`entity_id`);
 
 --
 -- Indexes for table `technician`
@@ -858,6 +905,12 @@ ALTER TABLE `cd_district`
 --
 ALTER TABLE `cd_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `complementary_entities`
+--
+ALTER TABLE `complementary_entities`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gz_admin_post`
@@ -986,6 +1039,12 @@ ALTER TABLE `ns_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `postal_entities`
+--
+ALTER TABLE `postal_entities`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sf_admin_post`
 --
 ALTER TABLE `sf_admin_post`
@@ -1002,6 +1061,12 @@ ALTER TABLE `sf_district`
 --
 ALTER TABLE `sf_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `space_entities`
+--
+ALTER TABLE `space_entities`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tt_admin_post`
