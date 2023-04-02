@@ -43,22 +43,22 @@
                 </a>
             </div>
             <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
-                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location/neighborhood/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar bairro
-                </a><a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                </a><a href="./location/zone/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Zona
                 </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location/township/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Povoação
                 </a>
             </div>
             <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
-                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location/village/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Vila
-                </a><a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                </a><a href="./location/circle/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Círculo
                 </a>
-                <a href="#" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location/cell/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Adicionar Célula
                 </a>
             </div>

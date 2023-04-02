@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Posto Administrativo | Pocsquare</title>
+    <title>Adicionar Zona | Pocsquare</title>
     <link rel="stylesheet" href="../../../../assets/styles/output.css" />
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +18,7 @@
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] overflow-scroll">
         <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:my-40 mobile:mt-20 laptop:w-1/2 mobile:w-[95%]">
-            <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">Adicionar Posto Administrativo</h1>
+            <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">Adicionar Zona</h1>
 				<?php
 					if(isset($_SESSION['registration-info']) ) {
                         if($_SESSION['error']) {
@@ -36,12 +36,12 @@
                         }
 					}
 				?>
-            <form method="POST" action="../../../../server/src/add-location/administrative-post.php" class="mt-10">
+            <form method="POST" action="../../../../server/src/add-location/zone.php" class="mt-10">
                 <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
                     <div>
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Cidade">Maputo Cidade</option>
+                            <option value="Maputo Província">Maputo Província</option>
                             <option value="Maputo Província">Maputo Província</option>
                             <option value="Gaza">Gaza</option>
                             <option value="Inhambane">Inhambane</option>
@@ -55,8 +55,8 @@
                         </select>
                     </div>
                     <div>
-                        <label for="admin-post" class="font-medium">Posto Administrativo</label>
-                        <input type="text" name="admin-post" placeholder="Introduza o nome do p. administrativo" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
+                        <label for="zone" class="font-medium">Zona</label>
+                        <input type="text" name="zone" placeholder="Introduza o nome da localidade" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
                     </div>
                 </div>
                 <div class="gap-5 w-fit mx-auto mt-10">
