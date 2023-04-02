@@ -431,8 +431,8 @@
                             <input type="text" name="roundabout" required class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
-                            <label for="sleepers" class="font-medium">Travessas</label>
-                            <input type="text" name="sleepers" required class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <label for="lane" class="font-medium">Travessas</label>
+                            <input type="text" name="lane" required class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                             <label for="wide" class="font-medium">Largos</label>
@@ -483,7 +483,12 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="entry" class="font-medium">Entrada</label>
-                        <input type="number" name="entry" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="entry" required class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="mailbox" class="font-medium">Caixa Postal</label>
@@ -506,12 +511,12 @@
                             <input type="text" name="latitudde-dms" required placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
-                            <label for="longetude" class="font-medium">Longetude</label>
-                            <input type="text" name="longetude" required placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <label for="longitude" class="font-medium">Longetude</label>
+                            <input type="text" name="longitude" required placeholder="(Decimal Degrees)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
-                            <label for="longetude-dms" class="font-medium">Longitude DMS</label>
-                            <input type="text" name="longetude-dms" required placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <label for="longitude-dms" class="font-medium">Longitude DMS</label>
+                            <input type="text" name="longitude-dms" required placeholder="(Degrees, Minutes, Seconds)" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                     </div>
                     <div class="flex justify-evenly w-full mobile:px-5 laptop:mb-0 mobile:mb-4 laptop:flex-row mobile:flex-col laptop:mt-4">
@@ -520,15 +525,15 @@
                             <input type="text" name="sea-​​rise" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
-                            <label for="latitude" class="font-medium">Via Lat Start</label>
-                            <input type="text" name="latitudde" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <label for="via-long-start" class="font-medium">Via Lat Start</label>
+                            <input type="text" name="via-long-start" class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2 laptop:mb-0 mobile:mb-4">
-                            <label for="latitude" class="font-medium">Via Long End</label>
-                            <input type="text" name="latitudde" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            <label for="via-long-end" class="font-medium">Via Long End</label>
+                            <input type="text" name="via-long-end" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
                         </div>
                         <div class="flex flex-col gap-2">
-                            <label for="latitude" required class="font-medium">Mapa Aérea c/gateway</label>
+                            <label for="aerial-map" required class="font-medium">Mapa Aérea c/gateway</label>
                             
                         </div>
                     </div>
