@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2023 at 05:51 AM
+-- Generation Time: Apr 04, 2023 at 07:41 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -520,6 +520,18 @@ CREATE TABLE `mc_locality` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mc_neighborhood`
+--
+
+CREATE TABLE `mc_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mn_admin_post`
 --
 
@@ -551,6 +563,18 @@ CREATE TABLE `mn_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mn_neighborhood`
+--
+
+CREATE TABLE `mn_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` int(20) NOT NULL,
+  `neighborhood_name` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -599,6 +623,18 @@ INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mp_neighborhood`
+--
+
+CREATE TABLE `mp_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `np_admin_post`
 --
 
@@ -635,6 +671,18 @@ CREATE TABLE `np_locality` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `np_neighborhood`
+--
+
+CREATE TABLE `np_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ns_admin_post`
 --
 
@@ -666,6 +714,18 @@ CREATE TABLE `ns_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ns_neighborhood`
+--
+
+CREATE TABLE `ns_neighborhood` (
+  `district_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -718,6 +778,18 @@ CREATE TABLE `sf_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf_neighborhood`
+--
+
+CREATE TABLE `sf_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -813,6 +885,18 @@ CREATE TABLE `tt_locality` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tt_neighborhood`
+--
+
+CREATE TABLE `tt_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `zb_admin_post`
 --
 
@@ -844,6 +928,18 @@ CREATE TABLE `zb_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zb_neighborhood`
+--
+
+CREATE TABLE `zb_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1061,6 +1157,12 @@ ALTER TABLE `mc_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `mc_neighborhood`
+--
+ALTER TABLE `mc_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
 -- Indexes for table `mn_admin_post`
 --
 ALTER TABLE `mn_admin_post`
@@ -1077,6 +1179,12 @@ ALTER TABLE `mn_district`
 --
 ALTER TABLE `mn_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `mn_neighborhood`
+--
+ALTER TABLE `mn_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
 
 --
 -- Indexes for table `mp_admin_post`
@@ -1097,6 +1205,12 @@ ALTER TABLE `mp_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `mp_neighborhood`
+--
+ALTER TABLE `mp_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
 -- Indexes for table `np_admin_post`
 --
 ALTER TABLE `np_admin_post`
@@ -1115,6 +1229,12 @@ ALTER TABLE `np_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `np_neighborhood`
+--
+ALTER TABLE `np_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
 -- Indexes for table `ns_admin_post`
 --
 ALTER TABLE `ns_admin_post`
@@ -1131,6 +1251,12 @@ ALTER TABLE `ns_district`
 --
 ALTER TABLE `ns_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `ns_neighborhood`
+--
+ALTER TABLE `ns_neighborhood`
+  ADD PRIMARY KEY (`district_id`);
 
 --
 -- Indexes for table `postal_entities`
@@ -1155,6 +1281,12 @@ ALTER TABLE `sf_district`
 --
 ALTER TABLE `sf_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `sf_neighborhood`
+--
+ALTER TABLE `sf_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
 
 --
 -- Indexes for table `space_entities`
@@ -1187,6 +1319,12 @@ ALTER TABLE `tt_locality`
   ADD PRIMARY KEY (`locality_id`);
 
 --
+-- Indexes for table `tt_neighborhood`
+--
+ALTER TABLE `tt_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
 -- Indexes for table `zb_admin_post`
 --
 ALTER TABLE `zb_admin_post`
@@ -1203,6 +1341,12 @@ ALTER TABLE `zb_district`
 --
 ALTER TABLE `zb_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `zb_neighborhood`
+--
+ALTER TABLE `zb_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1407,6 +1551,12 @@ ALTER TABLE `mc_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
+-- AUTO_INCREMENT for table `mc_neighborhood`
+--
+ALTER TABLE `mc_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mn_admin_post`
 --
 ALTER TABLE `mn_admin_post`
@@ -1425,6 +1575,12 @@ ALTER TABLE `mn_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `mn_neighborhood`
+--
+ALTER TABLE `mn_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mp_admin_post`
 --
 ALTER TABLE `mp_admin_post`
@@ -1435,6 +1591,12 @@ ALTER TABLE `mp_admin_post`
 --
 ALTER TABLE `mp_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
+--
+-- AUTO_INCREMENT for table `mp_neighborhood`
+--
+ALTER TABLE `mp_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `np_admin_post`
@@ -1455,6 +1617,12 @@ ALTER TABLE `np_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `np_neighborhood`
+--
+ALTER TABLE `np_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `ns_admin_post`
 --
 ALTER TABLE `ns_admin_post`
@@ -1471,6 +1639,12 @@ ALTER TABLE `ns_district`
 --
 ALTER TABLE `ns_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `ns_neighborhood`
+--
+ALTER TABLE `ns_neighborhood`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `postal_entities`
@@ -1497,6 +1671,12 @@ ALTER TABLE `sf_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `sf_neighborhood`
+--
+ALTER TABLE `sf_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `space_entities`
 --
 ALTER TABLE `space_entities`
@@ -1521,6 +1701,12 @@ ALTER TABLE `tt_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `tt_neighborhood`
+--
+ALTER TABLE `tt_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `zb_admin_post`
 --
 ALTER TABLE `zb_admin_post`
@@ -1537,6 +1723,12 @@ ALTER TABLE `zb_district`
 --
 ALTER TABLE `zb_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT for table `zb_neighborhood`
+--
+ALTER TABLE `zb_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
