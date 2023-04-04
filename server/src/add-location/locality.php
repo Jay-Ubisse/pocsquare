@@ -7,7 +7,7 @@ $locality = trim($_POST['locality']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mc_locality";
+        $checkLocality = "SELECT * FROM $database_name.mc_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -16,7 +16,7 @@ switch ($province) {
         }
         break;
     case 'Maputo Província':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mp_locality";
+        $checkLocality = "SELECT * FROM $database_name.mp_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -25,7 +25,7 @@ switch ($province) {
         }
         break;
     case 'Gaza':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.gz_locality";
+        $checkLocality = "SELECT * FROM $database_name.gz_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -34,7 +34,7 @@ switch ($province) {
         }
         break;
     case 'Inhambane':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.in_locality";
+        $checkLocality = "SELECT * FROM $database_name.in_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -43,7 +43,7 @@ switch ($province) {
         }
         break;
     case 'Manica':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.mn_locality";
+        $checkLocality = "SELECT * FROM $database_name.mn_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -52,7 +52,7 @@ switch ($province) {
         }
         break;
     case 'Sofala':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.sf_locality";
+        $checkLocality = "SELECT * FROM $database_name.sf_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -61,7 +61,7 @@ switch ($province) {
         }
         break;
     case 'Tete':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.tt_locality";
+        $checkLocality = "SELECT * FROM $database_name.tt_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -70,7 +70,7 @@ switch ($province) {
         }
         break;
     case 'Nampula':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.np_locality";
+        $checkLocality = "SELECT * FROM $database_name.np_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -79,7 +79,7 @@ switch ($province) {
         }
         break;
     case 'Niassa':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.ns_locality";
+        $checkLocality = "SELECT * FROM $database_name.ns_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -88,7 +88,7 @@ switch ($province) {
         }
         break;
     case 'Zambézia':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.zb_locality";
+        $checkLocality = "SELECT * FROM $database_name.zb_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -97,7 +97,7 @@ switch ($province) {
         }
         break;
     case 'Cabo Delgado':
-        $checkLocality = "SELECT * FROM jayubiss_pocsquareocs.cd_locality";
+        $checkLocality = "SELECT * FROM $database_name.cd_locality";
         $isFound = checkLocality($checkLocality);
         if($isFound) {
             errorMEssage();
@@ -128,13 +128,13 @@ function checkLocality($checkLocality) {
 }
 
 function saveLocality($table) {
-    global $locality, $province, $dbcon;
+    global $locality, $province, $dbcon, $database_name;
 
     try {
 
         $dbcon->beginTransaction();
     
-        $saveLocalityQuery = "INSERT INTO jayubiss_pocsquareocs." . $table . " (province, locality_name) VALUES (?, ?)";
+        $saveLocalityQuery = "INSERT INTO $database_name." . $table . " (province, locality_name) VALUES (?, ?)";
         $stmt = $dbcon->prepare($saveLocalityQuery);
         $stmt->execute([$province, $locality]);
     

@@ -6,7 +6,7 @@
         $password = md5($_POST["password"]);
 
         // getting user admin data
-        $fetchAdminDataQuery = "SELECT * FROM jayubiss_pocsquareocs.admins WHERE username = '$username'";
+        $fetchAdminDataQuery = "SELECT * FROM $database_name.admins WHERE username = '$username'";
         $adminDataResult = $dbcon->query($fetchAdminDataQuery);
 
         if ($adminDataResult->rowCount() == 0) {

@@ -7,7 +7,7 @@ $admin_post = trim($_POST['admin-post']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.mc_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.mc_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -16,7 +16,7 @@ switch ($province) {
         }
         break;
     case 'Maputo Província':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.mp_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.mp_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -25,7 +25,7 @@ switch ($province) {
         }
         break;
     case 'Gaza':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.gz_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.gz_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -34,7 +34,7 @@ switch ($province) {
         }
         break;
     case 'Inhambane':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.in_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.in_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -43,7 +43,7 @@ switch ($province) {
         }
         break;
     case 'Manica':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.mn_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.mn_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -52,7 +52,7 @@ switch ($province) {
         }
         break;
     case 'Sofala':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.sf_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.sf_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -61,7 +61,7 @@ switch ($province) {
         }
         break;
     case 'Tete':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.tt_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.tt_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -70,7 +70,7 @@ switch ($province) {
         }
         break;
     case 'Nampula':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.np_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.np_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -79,7 +79,7 @@ switch ($province) {
         }
         break;
     case 'Niassa':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.ns_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.ns_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -88,7 +88,7 @@ switch ($province) {
         }
         break;
     case 'Zambézia':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.zb_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.zb_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -97,7 +97,7 @@ switch ($province) {
         }
         break;
     case 'Cabo Delgado':
-        $checkAdminPost = "SELECT * FROM jayubiss_pocsquareocs.cd_admin_post";
+        $checkAdminPost = "SELECT * FROM $database_name.cd_admin_post";
         $isFound = checkLocality($checkAdminPost);
         if($isFound) {
             errorMEssage();
@@ -128,13 +128,13 @@ function checkLocality($checkAdminPost) {
 }
 
 function saveAdminPost($table) {
-    global $admin_post, $province, $dbcon;
+    global $admin_post, $province, $dbcon, $database_name;
 
     try {
 
         $dbcon->beginTransaction();
     
-        $saveAdminPostQuery = "INSERT INTO jayubiss_pocsquareocs." . $table . " (province, admin_post_name) VALUES (?, ?)";
+        $saveAdminPostQuery = "INSERT INTO $database_name." . $table . " (province, admin_post_name) VALUES (?, ?)";
         $stmt = $dbcon->prepare($saveAdminPostQuery);
         $stmt->execute([$province, $admin_post]);
     

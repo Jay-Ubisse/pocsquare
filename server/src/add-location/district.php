@@ -7,7 +7,7 @@ $district = trim($_POST['district']);
 
 switch ($province) {
     case 'Maputo Cidade':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.mc_district";
+        $checkDistrict = "SELECT * FROM $database_name.mc_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -16,7 +16,7 @@ switch ($province) {
         }
         break;
     case 'Maputo Província':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.mp_district";
+        $checkDistrict = "SELECT * FROM $database_name.mp_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -25,7 +25,7 @@ switch ($province) {
         }
         break;
     case 'Gaza':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.gz_district";
+        $checkDistrict = "SELECT * FROM $database_name.gz_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -34,7 +34,7 @@ switch ($province) {
         }
         break;
     case 'Inhambane':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.in_district";
+        $checkDistrict = "SELECT * FROM $database_name.in_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -43,7 +43,7 @@ switch ($province) {
         }
         break;
     case 'Manica':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.mn_district";
+        $checkDistrict = "SELECT * FROM $database_name.mn_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -52,7 +52,7 @@ switch ($province) {
         }
         break;
     case 'Sofala':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.sf_district";
+        $checkDistrict = "SELECT * FROM $database_name.sf_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -61,7 +61,7 @@ switch ($province) {
         }
         break;
     case 'Tete':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.tt_district";
+        $checkDistrict = "SELECT * FROM $database_name.tt_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -70,7 +70,7 @@ switch ($province) {
         }
         break;
     case 'Nampula':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.np_district";
+        $checkDistrict = "SELECT * FROM $database_name.np_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -79,7 +79,7 @@ switch ($province) {
         }
         break;
     case 'Niassa':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.ns_district";
+        $checkDistrict = "SELECT * FROM $database_name.ns_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -88,7 +88,7 @@ switch ($province) {
         }
         break;
     case 'Zambézia':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.zb_district";
+        $checkDistrict = "SELECT * FROM $database_name.zb_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -97,7 +97,7 @@ switch ($province) {
         }
         break;
     case 'Cabo Delgado':
-        $checkDistrict = "SELECT * FROM jayubiss_pocsquareocs.cd_district";
+        $checkDistrict = "SELECT * FROM $database_name.cd_district";
         $isFound = checkDistrict($checkDistrict);
         if($isFound) {
             errorMEssage();
@@ -128,13 +128,13 @@ function checkDistrict($checkDistrict) {
 }
 
 function saveDistrict($table) {
-    global $district, $province, $dbcon;
+    global $district, $province, $dbcon, $database_name;
 
     try {
 
         $dbcon->beginTransaction();
     
-        $saveDistrictQuery = "INSERT INTO jayubiss_pocsquareocs." . $table . " (province, district_name) VALUES (?, ?)";
+        $saveDistrictQuery = "INSERT INTO $database_name." . $table . " (province, district_name) VALUES (?, ?)";
         $stmt = $dbcon->prepare($saveDistrictQuery);
         $stmt->execute([$province, $district]);
     

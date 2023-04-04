@@ -1,7 +1,7 @@
 <?php
     require "../../config/connect.php";
 
-    $sql = "SELECT * FROM jayubiss_pocsquareocs.administrative_entities";
+    $sql = "SELECT * FROM $database_name.administrative_entities";
     $result = $dbcon->query($sql);
 
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);

@@ -3,7 +3,7 @@
     
     $data = $_POST["data"];
 
-    $sql = "SELECT * FROM jayubiss_pocsquareocs.administrative_entities WHERE province LIKE '%$data%'";
+    $sql = "SELECT * FROM $database_name.administrative_entities WHERE province LIKE '%$data%'";
     $result = $dbcon->query($sql);
 
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
