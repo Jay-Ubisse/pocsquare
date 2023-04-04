@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2023 at 12:36 PM
+-- Generation Time: Apr 04, 2023 at 05:51 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -75,6 +75,30 @@ CREATE TABLE `cd_admin_post` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cd_cell`
+--
+
+CREATE TABLE `cd_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_circle`
+--
+
+CREATE TABLE `cd_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cd_district`
 --
 
@@ -94,6 +118,54 @@ CREATE TABLE `cd_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_neighborhood`
+--
+
+CREATE TABLE `cd_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_township`
+--
+
+CREATE TABLE `cd_township` (
+  `township_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_village`
+--
+
+CREATE TABLE `cd_village` (
+  `village_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `village_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cd_zone`
+--
+
+CREATE TABLE `cd_zone` (
+  `zone_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `zone_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -131,6 +203,30 @@ INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gz_cell`
+--
+
+CREATE TABLE `gz_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gz_circle`
+--
+
+CREATE TABLE `gz_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gz_district`
 --
 
@@ -156,7 +252,7 @@ INSERT INTO `gz_district` (`district_id`, `province`, `district_name`) VALUES
 CREATE TABLE `gz_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
-  `locality_name` text NOT NULL
+  `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -165,6 +261,54 @@ CREATE TABLE `gz_locality` (
 
 INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
 (101, 'Gaza', 'GZ Localidade 1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gz_neighborhood`
+--
+
+CREATE TABLE `gz_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gz_township`
+--
+
+CREATE TABLE `gz_township` (
+  `township_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `township_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gz_village`
+--
+
+CREATE TABLE `gz_village` (
+  `village_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `village_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gz_zone`
+--
+
+CREATE TABLE `gz_zone` (
+  `village_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `village_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -208,6 +352,30 @@ CREATE TABLE `in_admin_post` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `in_cell`
+--
+
+CREATE TABLE `in_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_circle`
+--
+
+CREATE TABLE `in_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `in_district`
 --
 
@@ -227,6 +395,54 @@ CREATE TABLE `in_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_neighborhood`
+--
+
+CREATE TABLE `in_neighborhood` (
+  `neighborhood_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `neighborhood_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_township`
+--
+
+CREATE TABLE `in_township` (
+  `township_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `township_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_village`
+--
+
+CREATE TABLE `in_village` (
+  `village_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `village_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `in_zone`
+--
+
+CREATE TABLE `in_zone` (
+  `village_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `village_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -285,7 +501,9 @@ CREATE TABLE `mc_district` (
 --
 
 INSERT INTO `mc_district` (`district_id`, `province`, `district_name`) VALUES
-(12, 'Maputo Cidade', 'MC Distrito 1');
+(12, 'Maputo Cidade', 'MC Distrito 1'),
+(13, 'Maputo Cidade', 'KaMpfumu'),
+(14, 'Maputo Cidade', 'MC Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -651,6 +869,18 @@ ALTER TABLE `cd_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `cd_cell`
+--
+ALTER TABLE `cd_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `cd_circle`
+--
+ALTER TABLE `cd_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `cd_district`
 --
 ALTER TABLE `cd_district`
@@ -661,6 +891,30 @@ ALTER TABLE `cd_district`
 --
 ALTER TABLE `cd_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `cd_neighborhood`
+--
+ALTER TABLE `cd_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
+-- Indexes for table `cd_township`
+--
+ALTER TABLE `cd_township`
+  ADD PRIMARY KEY (`township_id`);
+
+--
+-- Indexes for table `cd_village`
+--
+ALTER TABLE `cd_village`
+  ADD PRIMARY KEY (`village_id`);
+
+--
+-- Indexes for table `cd_zone`
+--
+ALTER TABLE `cd_zone`
+  ADD PRIMARY KEY (`zone_id`);
 
 --
 -- Indexes for table `complementary_entities`
@@ -675,6 +929,18 @@ ALTER TABLE `gz_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `gz_cell`
+--
+ALTER TABLE `gz_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `gz_circle`
+--
+ALTER TABLE `gz_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `gz_district`
 --
 ALTER TABLE `gz_district`
@@ -685,6 +951,30 @@ ALTER TABLE `gz_district`
 --
 ALTER TABLE `gz_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `gz_neighborhood`
+--
+ALTER TABLE `gz_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
+-- Indexes for table `gz_township`
+--
+ALTER TABLE `gz_township`
+  ADD PRIMARY KEY (`township_id`);
+
+--
+-- Indexes for table `gz_village`
+--
+ALTER TABLE `gz_village`
+  ADD PRIMARY KEY (`village_id`);
+
+--
+-- Indexes for table `gz_zone`
+--
+ALTER TABLE `gz_zone`
+  ADD PRIMARY KEY (`village_id`);
 
 --
 -- Indexes for table `heritage_entities`
@@ -699,6 +989,18 @@ ALTER TABLE `in_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `in_cell`
+--
+ALTER TABLE `in_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `in_circle`
+--
+ALTER TABLE `in_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `in_district`
 --
 ALTER TABLE `in_district`
@@ -709,6 +1011,30 @@ ALTER TABLE `in_district`
 --
 ALTER TABLE `in_locality`
   ADD PRIMARY KEY (`locality_id`);
+
+--
+-- Indexes for table `in_neighborhood`
+--
+ALTER TABLE `in_neighborhood`
+  ADD PRIMARY KEY (`neighborhood_id`);
+
+--
+-- Indexes for table `in_township`
+--
+ALTER TABLE `in_township`
+  ADD PRIMARY KEY (`township_id`);
+
+--
+-- Indexes for table `in_village`
+--
+ALTER TABLE `in_village`
+  ADD PRIMARY KEY (`village_id`);
+
+--
+-- Indexes for table `in_zone`
+--
+ALTER TABLE `in_zone`
+  ADD PRIMARY KEY (`village_id`);
 
 --
 -- Indexes for table `local_entities`
@@ -895,6 +1221,18 @@ ALTER TABLE `cd_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `cd_cell`
+--
+ALTER TABLE `cd_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cd_circle`
+--
+ALTER TABLE `cd_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `cd_district`
 --
 ALTER TABLE `cd_district`
@@ -905,6 +1243,30 @@ ALTER TABLE `cd_district`
 --
 ALTER TABLE `cd_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `cd_neighborhood`
+--
+ALTER TABLE `cd_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cd_township`
+--
+ALTER TABLE `cd_township`
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cd_village`
+--
+ALTER TABLE `cd_village`
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cd_zone`
+--
+ALTER TABLE `cd_zone`
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `complementary_entities`
@@ -919,6 +1281,18 @@ ALTER TABLE `gz_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `gz_cell`
+--
+ALTER TABLE `gz_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gz_circle`
+--
+ALTER TABLE `gz_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `gz_district`
 --
 ALTER TABLE `gz_district`
@@ -931,10 +1305,46 @@ ALTER TABLE `gz_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
+-- AUTO_INCREMENT for table `gz_neighborhood`
+--
+ALTER TABLE `gz_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gz_township`
+--
+ALTER TABLE `gz_township`
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gz_village`
+--
+ALTER TABLE `gz_village`
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `gz_zone`
+--
+ALTER TABLE `gz_zone`
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `in_admin_post`
 --
 ALTER TABLE `in_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `in_cell`
+--
+ALTER TABLE `in_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `in_circle`
+--
+ALTER TABLE `in_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `in_district`
@@ -947,6 +1357,30 @@ ALTER TABLE `in_district`
 --
 ALTER TABLE `in_locality`
   MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT for table `in_neighborhood`
+--
+ALTER TABLE `in_neighborhood`
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `in_township`
+--
+ALTER TABLE `in_township`
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `in_village`
+--
+ALTER TABLE `in_village`
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `in_zone`
+--
+ALTER TABLE `in_zone`
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
@@ -964,7 +1398,7 @@ ALTER TABLE `mc_admin_post`
 -- AUTO_INCREMENT for table `mc_district`
 --
 ALTER TABLE `mc_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `mc_locality`
