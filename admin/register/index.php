@@ -22,7 +22,7 @@
             <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
 				<?php
 					if(isset($_SESSION["register-response"]) ) {
-                        echo "<div class='bg-green-600 text-white font-semibold flex justify-center my-6 py-4'>";
+                        echo "<div class='bg-yellow-500 text-white font-semibold flex justify-center my-6 py-4'>";
 						echo $_SESSION["register-response"];
 						unset($_SESSION["register-response"]);
                         echo "</div>";

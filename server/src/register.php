@@ -2,6 +2,10 @@
 require "../config/connect.php";
 session_start();
 
+$_SESSION['register-response'] = "Formulário em manutenção. Tente mais tarde.";
+    header("location: ../../admin/register/");
+
+/*
 //obter a provincia selecionada
 $province = $_POST["province"];
 
@@ -49,10 +53,13 @@ switch ($province) {
         break;
 }
 
+*/
+
 /**
  * Fazendo a insercao dos dados nas respectivas tabelas (USANDO PDO).
  */
 
+/* 
 try {
 
     $dbcon->beginTransaction();
@@ -81,6 +88,8 @@ catch(PDOException $ex) {
     $dbcon->rollBack();
     echo $ex->getMessage();
 }
+
+*/
 
 
 ?>
