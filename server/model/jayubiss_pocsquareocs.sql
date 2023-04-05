@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2023 at 10:27 AM
+-- Generation Time: Apr 05, 2023 at 10:59 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -487,6 +487,30 @@ INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mc_cell`
+--
+
+CREATE TABLE `mc_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mc_circle`
+--
+
+CREATE TABLE `mc_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mc_district`
 --
 
@@ -580,6 +604,30 @@ CREATE TABLE `mn_admin_post` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mn_cell`
+--
+
+CREATE TABLE `mn_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mn_circle`
+--
+
+CREATE TABLE `mn_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mn_district`
 --
 
@@ -659,6 +707,30 @@ CREATE TABLE `mp_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mp_cell`
+--
+
+CREATE TABLE `mp_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mp_circle`
+--
+
+CREATE TABLE `mp_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -755,6 +827,30 @@ CREATE TABLE `np_admin_post` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `np_cell`
+--
+
+CREATE TABLE `np_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `np_circle`
+--
+
+CREATE TABLE `np_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `np_district`
 --
 
@@ -834,6 +930,30 @@ CREATE TABLE `ns_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ns_cell`
+--
+
+CREATE TABLE `ns_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ns_circle`
+--
+
+CREATE TABLE `ns_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -934,6 +1054,30 @@ CREATE TABLE `sf_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf_cell`
+--
+
+CREATE TABLE `sf_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sf_circle`
+--
+
+CREATE TABLE `sf_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1077,6 +1221,30 @@ CREATE TABLE `tt_admin_post` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tt_cell`
+--
+
+CREATE TABLE `tt_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tt_circle`
+--
+
+CREATE TABLE `tt_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tt_district`
 --
 
@@ -1156,6 +1324,30 @@ CREATE TABLE `zb_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zb_cell`
+--
+
+CREATE TABLE `zb_cell` (
+  `cell_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `cell_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zb_circle`
+--
+
+CREATE TABLE `zb_circle` (
+  `circle_id` int(3) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1433,6 +1625,18 @@ ALTER TABLE `mc_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `mc_cell`
+--
+ALTER TABLE `mc_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `mc_circle`
+--
+ALTER TABLE `mc_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `mc_district`
 --
 ALTER TABLE `mc_district`
@@ -1473,6 +1677,18 @@ ALTER TABLE `mc_zone`
 --
 ALTER TABLE `mn_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `mn_cell`
+--
+ALTER TABLE `mn_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `mn_circle`
+--
+ALTER TABLE `mn_circle`
+  ADD PRIMARY KEY (`circle_id`);
 
 --
 -- Indexes for table `mn_district`
@@ -1517,6 +1733,18 @@ ALTER TABLE `mp_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `mp_cell`
+--
+ALTER TABLE `mp_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `mp_circle`
+--
+ALTER TABLE `mp_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `mp_district`
 --
 ALTER TABLE `mp_district`
@@ -1559,6 +1787,18 @@ ALTER TABLE `np_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `np_cell`
+--
+ALTER TABLE `np_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `np_circle`
+--
+ALTER TABLE `np_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `np_district`
 --
 ALTER TABLE `np_district`
@@ -1599,6 +1839,18 @@ ALTER TABLE `np_zone`
 --
 ALTER TABLE `ns_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `ns_cell`
+--
+ALTER TABLE `ns_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `ns_circle`
+--
+ALTER TABLE `ns_circle`
+  ADD PRIMARY KEY (`circle_id`);
 
 --
 -- Indexes for table `ns_district`
@@ -1647,6 +1899,18 @@ ALTER TABLE `postal_entities`
 --
 ALTER TABLE `sf_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `sf_cell`
+--
+ALTER TABLE `sf_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `sf_circle`
+--
+ALTER TABLE `sf_circle`
+  ADD PRIMARY KEY (`circle_id`);
 
 --
 -- Indexes for table `sf_district`
@@ -1703,6 +1967,18 @@ ALTER TABLE `tt_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
 
 --
+-- Indexes for table `tt_cell`
+--
+ALTER TABLE `tt_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `tt_circle`
+--
+ALTER TABLE `tt_circle`
+  ADD PRIMARY KEY (`circle_id`);
+
+--
 -- Indexes for table `tt_district`
 --
 ALTER TABLE `tt_district`
@@ -1743,6 +2019,18 @@ ALTER TABLE `tt_zone`
 --
 ALTER TABLE `zb_admin_post`
   ADD PRIMARY KEY (`admin_post_id`);
+
+--
+-- Indexes for table `zb_cell`
+--
+ALTER TABLE `zb_cell`
+  ADD PRIMARY KEY (`cell_id`);
+
+--
+-- Indexes for table `zb_circle`
+--
+ALTER TABLE `zb_circle`
+  ADD PRIMARY KEY (`circle_id`);
 
 --
 -- Indexes for table `zb_district`
@@ -1971,6 +2259,18 @@ ALTER TABLE `mc_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `mc_cell`
+--
+ALTER TABLE `mc_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mc_circle`
+--
+ALTER TABLE `mc_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mc_district`
 --
 ALTER TABLE `mc_district`
@@ -2011,6 +2311,18 @@ ALTER TABLE `mc_zone`
 --
 ALTER TABLE `mn_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `mn_cell`
+--
+ALTER TABLE `mn_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mn_circle`
+--
+ALTER TABLE `mn_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `mn_district`
@@ -2055,6 +2367,18 @@ ALTER TABLE `mp_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `mp_cell`
+--
+ALTER TABLE `mp_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mp_circle`
+--
+ALTER TABLE `mp_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
@@ -2089,6 +2413,18 @@ ALTER TABLE `mp_zone`
 --
 ALTER TABLE `np_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `np_cell`
+--
+ALTER TABLE `np_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `np_circle`
+--
+ALTER TABLE `np_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `np_district`
@@ -2131,6 +2467,18 @@ ALTER TABLE `np_zone`
 --
 ALTER TABLE `ns_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `ns_cell`
+--
+ALTER TABLE `ns_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ns_circle`
+--
+ALTER TABLE `ns_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ns_district`
@@ -2181,6 +2529,18 @@ ALTER TABLE `sf_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `sf_cell`
+--
+ALTER TABLE `sf_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sf_circle`
+--
+ALTER TABLE `sf_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sf_district`
 --
 ALTER TABLE `sf_district`
@@ -2229,6 +2589,18 @@ ALTER TABLE `tt_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
+-- AUTO_INCREMENT for table `tt_cell`
+--
+ALTER TABLE `tt_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tt_circle`
+--
+ALTER TABLE `tt_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tt_district`
 --
 ALTER TABLE `tt_district`
@@ -2269,6 +2641,18 @@ ALTER TABLE `tt_zone`
 --
 ALTER TABLE `zb_admin_post`
   MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `zb_cell`
+--
+ALTER TABLE `zb_cell`
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `zb_circle`
+--
+ALTER TABLE `zb_circle`
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `zb_district`
