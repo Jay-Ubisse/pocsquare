@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2023 at 10:59 AM
+-- Generation Time: Apr 05, 2023 at 12:06 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -496,6 +496,13 @@ CREATE TABLE `mc_cell` (
   `cell_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mc_cell`
+--
+
+INSERT INTO `mc_cell` (`cell_id`, `province`, `cell_name`) VALUES
+(1, 'Maputo Cidade', 'MC Celula 1');
+
 -- --------------------------------------------------------
 
 --
@@ -507,6 +514,13 @@ CREATE TABLE `mc_circle` (
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_circle`
+--
+
+INSERT INTO `mc_circle` (`circle_id`, `province`, `circle_name`) VALUES
+(1, 'Maputo Cidade', 'MC Circulo 1');
 
 -- --------------------------------------------------------
 
@@ -553,6 +567,13 @@ CREATE TABLE `mc_neighborhood` (
   `neighborhood_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mc_neighborhood`
+--
+
+INSERT INTO `mc_neighborhood` (`neighborhood_id`, `province`, `neighborhood_name`) VALUES
+(1, 'Maputo Cidade', 'MC Bairro 1');
+
 -- --------------------------------------------------------
 
 --
@@ -564,6 +585,13 @@ CREATE TABLE `mc_township` (
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_township`
+--
+
+INSERT INTO `mc_township` (`township_id`, `province`, `township_name`) VALUES
+(1, 'Maputo Cidade', 'MC Povoacao 1');
 
 -- --------------------------------------------------------
 
@@ -577,6 +605,13 @@ CREATE TABLE `mc_village` (
   `village_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mc_village`
+--
+
+INSERT INTO `mc_village` (`village_id`, `province`, `village_name`) VALUES
+(1, 'Maputo Cidade', 'MC Vila 1');
+
 -- --------------------------------------------------------
 
 --
@@ -588,6 +623,13 @@ CREATE TABLE `mc_zone` (
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mc_zone`
+--
+
+INSERT INTO `mc_zone` (`zone_id`, `province`, `zone_name`) VALUES
+(1, 'Maputo Cidade', 'MC Zona 1');
 
 -- --------------------------------------------------------
 
@@ -2262,13 +2304,13 @@ ALTER TABLE `mc_admin_post`
 -- AUTO_INCREMENT for table `mc_cell`
 --
 ALTER TABLE `mc_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mc_circle`
 --
 ALTER TABLE `mc_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mc_district`
@@ -2286,25 +2328,25 @@ ALTER TABLE `mc_locality`
 -- AUTO_INCREMENT for table `mc_neighborhood`
 --
 ALTER TABLE `mc_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mc_township`
 --
 ALTER TABLE `mc_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mc_village`
 --
 ALTER TABLE `mc_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mc_zone`
 --
 ALTER TABLE `mc_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mn_admin_post`
@@ -2382,13 +2424,13 @@ ALTER TABLE `mp_circle`
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `mp_neighborhood`
 --
 ALTER TABLE `mp_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mp_township`
