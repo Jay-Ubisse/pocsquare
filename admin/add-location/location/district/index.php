@@ -36,7 +36,7 @@
                         }
 					}
 				?>
-            <form method="POST" action="../../../../server/src/add-location/district.php" class="mt-10">
+            <form method="POST" action="../../../../server/src/add-location/add-location.php" class="mt-10">
                 <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
                     <div>
                         <label for="province" class="font-medium">Província</label>

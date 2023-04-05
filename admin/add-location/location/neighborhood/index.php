@@ -36,17 +36,17 @@
                         }
 					}
 				?>
-            <form method="POST" action="../../../../server/src/add-location/neighborhood.php" class="mt-10">
+            <form method="POST" action="../../../../server/src/add-location/add-location.php" class="mt-10">
                 <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
                     <div>
                         <label for="province" class="font-medium">Província</label>
                         <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Província">Maputo Província</option>
+                            <option value="Maputo Cidade">Maputo Cidade</option>
                         </select>
                     </div>
                     <div>
                         <label for="neighborhood" class="font-medium">Bairro</label>
-                        <input type="text" name="neighborhood" placeholder="Introduza o nome da localidade" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
+                        <input type="text" name="neighborhood" placeholder="Introduza o nome do bairro" required autocomplete="off" class="border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded">
                     </div>
                 </div>
                 <div class="gap-5 w-fit mx-auto mt-10">
