@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2023 at 12:06 PM
+-- Generation Time: Apr 06, 2023 at 11:33 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,6 +41,13 @@ CREATE TABLE `administrative_entities` (
   `neighborhood_id` varchar(3) NOT NULL,
   `province_alphabetical_id` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `administrative_entities`
+--
+
+INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`) VALUES
+(10000024, 'Maputo Cidade', '01', 'MC Distrito 1', '12', 'MC Posto 1', '13', ' ', '0', 'MC Bairro 1', '1', 'MC');
 
 -- --------------------------------------------------------
 
@@ -180,6 +187,30 @@ CREATE TABLE `complementary_entities` (
   `email` varchar(50) DEFAULT NULL,
   `website` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `espacial_entities`
+--
+
+CREATE TABLE `espacial_entities` (
+  `entity_id` int(11) NOT NULL,
+  `latitude` decimal(10,0) NOT NULL,
+  `latitude_dms` varchar(20) NOT NULL,
+  `longitude` decimal(10,0) NOT NULL,
+  `longitude_dms` varchar(20) NOT NULL,
+  `sea_rise` varchar(20) NOT NULL,
+  `via_lat_start` varchar(20) NOT NULL,
+  `via_lat_end` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `espacial_entities`
+--
+
+INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
+(1, '10', '4.343', '9', '494.48994', '4.40404', '3.666', '4.67');
 
 -- --------------------------------------------------------
 
@@ -463,6 +494,27 @@ CREATE TABLE `local_entities` (
   `township_id` varchar(3) NOT NULL,
   `zone` varchar(50) NOT NULL,
   `zone_id` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `main_address_info`
+--
+
+CREATE TABLE `main_address_info` (
+  `entity_id` int(11) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `neighborhood` varchar(50) NOT NULL,
+  `locality` varchar(50) NOT NULL,
+  `road_name` varchar(50) NOT NULL,
+  `door_number` int(5) NOT NULL,
+  `block` varchar(3) NOT NULL,
+  `CEP` varchar(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `website` int(50) NOT NULL,
+  `phone_number` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1086,6 +1138,13 @@ CREATE TABLE `postal_entities` (
   `postal_code` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `postal_entities`
+--
+
+INSERT INTO `postal_entities` (`entity_id`, `block`, `lateral`, `entry`, `mailbox`, `post_office`, `postal_code`) VALUES
+(12, 2, 'A', 'A', 'Caixa Postal Z', 'Estacao Z', 'MC12 13A');
+
 -- --------------------------------------------------------
 
 --
@@ -1192,24 +1251,6 @@ CREATE TABLE `sf_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `space_entities`
---
-
-CREATE TABLE `space_entities` (
-  `entity_id` int(11) NOT NULL,
-  `latitude` decimal(10,0) NOT NULL,
-  `latitude_dms` geometry NOT NULL,
-  `longitude` decimal(10,0) NOT NULL,
-  `longitude_dms` geometry NOT NULL,
-  `sea-​​rise` geometry NOT NULL,
-  `via_lat_start` geometry NOT NULL,
-  `via_lat_end` geometry NOT NULL,
-  `aerial-map` geometry NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1541,6 +1582,12 @@ ALTER TABLE `complementary_entities`
   ADD PRIMARY KEY (`entity_id`);
 
 --
+-- Indexes for table `espacial_entities`
+--
+ALTER TABLE `espacial_entities`
+  ADD PRIMARY KEY (`entity_id`);
+
+--
 -- Indexes for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
@@ -1658,6 +1705,12 @@ ALTER TABLE `in_zone`
 -- Indexes for table `local_entities`
 --
 ALTER TABLE `local_entities`
+  ADD PRIMARY KEY (`entity_id`);
+
+--
+-- Indexes for table `main_address_info`
+--
+ALTER TABLE `main_address_info`
   ADD PRIMARY KEY (`entity_id`);
 
 --
@@ -1991,12 +2044,6 @@ ALTER TABLE `sf_zone`
   ADD PRIMARY KEY (`zone_id`);
 
 --
--- Indexes for table `space_entities`
---
-ALTER TABLE `space_entities`
-  ADD PRIMARY KEY (`entity_id`);
-
---
 -- Indexes for table `technician`
 --
 ALTER TABLE `technician`
@@ -2118,7 +2165,7 @@ ALTER TABLE `zb_zone`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000025;
 
 --
 -- AUTO_INCREMENT for table `cd_admin_post`
@@ -2179,6 +2226,12 @@ ALTER TABLE `cd_zone`
 --
 ALTER TABLE `complementary_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `espacial_entities`
+--
+ALTER TABLE `espacial_entities`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gz_admin_post`
@@ -2293,6 +2346,12 @@ ALTER TABLE `in_zone`
 --
 ALTER TABLE `local_entities`
   MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000013;
+
+--
+-- AUTO_INCREMENT for table `main_address_info`
+--
+ALTER TABLE `main_address_info`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `mc_admin_post`
@@ -2562,7 +2621,7 @@ ALTER TABLE `ns_zone`
 -- AUTO_INCREMENT for table `postal_entities`
 --
 ALTER TABLE `postal_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `sf_admin_post`
@@ -2617,12 +2676,6 @@ ALTER TABLE `sf_village`
 --
 ALTER TABLE `sf_zone`
   MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `space_entities`
---
-ALTER TABLE `space_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tt_admin_post`

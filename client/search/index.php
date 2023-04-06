@@ -32,14 +32,14 @@
                 </div>
             </div>
         </section>
-        <section id="location-info" class="bg-slate-300 w-3/5 mx-auto rounded-lg my-20 p-5 flex flex-row justify-between">
+        <section id="location-info" class="bg-slate-300 mx-auto rounded-lg my-10 p-5 flex laptop:flex-row mobile:flex-col laptop:justify-between laptop:gap-0 mobile:gap-3 laptop:w-4/5 mobile:w-[95%]">
             <div>
                 <p><span><b>Província: </b></span><span id="province"></span></p>
                 <p><span><b>Distrito: </b></span><span id="district"></span></p>
                 <p><span><b>Posto Administrativo: </b></span><span id="administrative-post"></span></p>
                 <p><span><b>CEP: </b></span><span id="cep"></span></p>
             </div>
-            <div class="border border-orange-700 rounded-md h-64 w-64 flex justify-center items-center font-bold">
+            <div class="border border-orange-700 rounded-md flex justify-center items-center font-bold mobile:mx-auto laptop:mx-0 laptop:h-[400px] mobile:h-[300px] laptop:w-[600px] mobile:w-[95%]">
                     MAPA
             </div>
         </section>

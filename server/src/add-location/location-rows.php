@@ -185,7 +185,7 @@
     //get Maputo Cidade neighborhood
     $maputoNeighborhoodQuery = "SELECT * FROM $database_name.mc_neighborhood";
     $maputoNeighborhoodResult = $dbcon->query($maputoNeighborhoodQuery);
-    $maputoNeighborhood = $maputoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $maputoNeighborhoods = $maputoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Maputo Província Neighborhood
     $maputoProvinceNeighborhoodQuery = "SELECT * FROM $database_name.mp_neighborhood";
@@ -195,27 +195,27 @@
     //get Gaza Neighborhood
     $gazaNeighborhoodQuery = "SELECT * FROM $database_name.gz_neighborhood";
     $gazaNeighborhoodResult = $dbcon->query($gazaNeighborhoodQuery);
-    $gazaNeighborhood = $gazaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $gazaNeighborhoods = $gazaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Inhambane Neighborhood
     $inhambaneNeighborhoodQuery = "SELECT * FROM $database_name.in_neighborhood";
     $inhambaneNeighborhoodResult = $dbcon->query($inhambaneNeighborhoodQuery);
-    $inhambaneNeighborhood = $inhambaneNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $inhambaneNeighborhoods = $inhambaneNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Manica Neighborhood
     $manicaNeighborhoodQuery = "SELECT * FROM $database_name.mn_neighborhood";
     $manicaNeighborhoodResult = $dbcon->query($manicaNeighborhoodQuery);
-    $manicaNeighborhood = $manicaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $manicaNeighborhoods = $manicaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Sofala Neighborhood
     $sofalaNeighborhoodQuery = "SELECT * FROM $database_name.sf_neighborhood";
     $sofalaNeighborhoodResult = $dbcon->query($sofalaNeighborhoodQuery);
-    $sofalaNeighborhood = $sofalaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $sofalaNeighborhoods = $sofalaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Tete Neighborhood
     $teteNeighborhoodQuery = "SELECT * FROM $database_name.tt_neighborhood";
     $teteNeighborhoodResult = $dbcon->query($teteNeighborhoodQuery);
-    $teteNeighborhood = $teteNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $teteNeighborhoods = $teteNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Nampula Neighborhood
     $nampulaNeighborhoodQuery = "SELECT * FROM $database_name.np_neighborhood";
@@ -225,17 +225,17 @@
     //get Niassa Neighborhood
     $niassaNeighborhoodQuery = "SELECT * FROM $database_name.ns_neighborhood";
     $niassaNeighborhoodResult = $dbcon->query($niassaNeighborhoodQuery);
-    $niassaNeighborhood = $niassaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $niassaNeighborhoods = $niassaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Zambézia Neighborhood
     $zambeziaNeighborhoodQuery = "SELECT * FROM $database_name.zb_neighborhood";
     $zambeziaNeighborhoodResult = $dbcon->query($zambeziaNeighborhoodQuery);
-    $zambeziaNeighborhood = $zambeziaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $zambeziaNeighborhoods = $zambeziaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Cabo Delgado Neighborhood
     $delgadoNeighborhoodQuery = "SELECT * FROM $database_name.cd_neighborhood";
     $delgadoNeighborhoodResult = $dbcon->query($delgadoNeighborhoodQuery);
-    $caboDelgadoNeighborhood = $delgadoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $caboDelgadoNeighborhoods = $delgadoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
 
     /**
      * GET CELL DATA
