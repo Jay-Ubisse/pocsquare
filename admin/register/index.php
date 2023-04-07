@@ -22,7 +22,7 @@
             <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
 				<?php
 					if(isset($_SESSION["register-response"]) ) {
-                        echo "<div class='bg-yellow-500 text-white font-semibold flex justify-center my-6 py-4'>";
+                        echo "<div class='bg-green-500 text-white font-semibold flex justify-center my-6 py-4'>";
 						echo $_SESSION["register-response"];
 						unset($_SESSION["register-response"]);
                         echo "</div>";
@@ -372,75 +372,401 @@
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="cell" class="font-medium">Célula</label>
                         <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoCells as $maputoCell) {
+                                    echo "<option value='" . $maputoCell['cell_name'] ."'>" . $maputoCell['cell_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="cell-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoProvinceCells as $maputoProvinceCell) {
+                                    echo "<option value='" . $maputoProvinceCell['cell_name'] ."'>" . $maputoProvinceCell['cell_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="cell-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($gazaCells as $gazaCell) {
+                                    echo "<option value='" . $gazaCell['cell_name'] ."'>" . $gazaCell['cell_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="cell-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($inhambaneCells as $inhambaneCell) {
+                                    echo "<option value='" . $inhambaneCell['cell_name'] ."'>" . $inhambaneCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaCells as $manicaCell) {
+                                    echo "<option value='" . $manicaCell['cell_name'] ."'>" . $manicaCell['cell_name'] . "</option>";
+                               }
+                            ?>
+                        </select>
+                        <select name="cell-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaCells as $sofalaCell) {
+                                    echo "<option value='" . $sofalaCell['cell_name'] ."'>" . $sofalaCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteCells as $teteCell) {
+                                    echo "<option value='" . $teteCell['cell_name'] ."'>" . $teteCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaCells as $nampulaCell) {
+                                    echo "<option value='" . $nampulaCell['cell_name'] ."'>" . $nampulaCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaCells as $niassaCell) {
+                                   echo "<option value='" . $niassaCell['cell_name'] ."'>" . $niassaCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaCells as $zambeziaCell) {
+                                    echo "<option value='" . $zambeziaCell['cell_name'] ."'>" . $zambeziaCell['cell_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="cell-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoCells as $caboDelgadoCell) {
+                                    echo "<option value='" . $caboDelgadoCell['cell_name'] ."'>" . $caboDelgadoCell['cell_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="circle" class="font-medium">Circulo</label>
-                        <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                        <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($maputoCircles as $maputoCircle) {
+                                    echo "<option value='" . $maputoCircle['circle_name'] ."'>" . $maputoCircle['circle_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="circle-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoProvinceCircles as $maputoProvinceCircle) {
+                                    echo "<option value='" . $maputoProvinceCircle['circle_name'] ."'>" . $maputoProvinceCircle['circle_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="circle-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($gazaCircles as $gazaCircle) {
+                                    echo "<option value='" . $gazaCircle['circle_name'] ."'>" . $gazaCircle['circle_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="circle-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($inhambaneCircles as $inhambaneCircle) {
+                                    echo "<option value='" . $inhambaneCircle['circle_name'] ."'>" . $inhambaneCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaCircles as $manicaCircle) {
+                                    echo "<option value='" . $manicaCircle['circle_name'] ."'>" . $manicaCircle['circle_name'] . "</option>";
+                               }
+                            ?>
+                        </select>
+                        <select name="circle-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaCircles as $sofalaCircle) {
+                                    echo "<option value='" . $sofalaCircle['circle_name'] ."'>" . $sofalaCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteCircles as $teteCircle) {
+                                    echo "<option value='" . $teteCircle['circle_name'] ."'>" . $teteCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaCircles as $nampulaCircle) {
+                                    echo "<option value='" . $nampulaCircle['circle_name'] ."'>" . $nampulaCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaCircles as $niassaCircle) {
+                                   echo "<option value='" . $niassaCircle['circle_name'] ."'>" . $niassaCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaCircles as $zambeziaCircle) {
+                                    echo "<option value='" . $zambeziaCircle['circle_name'] ."'>" . $zambeziaCircle['circle_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="circle-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoCircles as $caboDelgadoCircle) {
+                                    echo "<option value='" . $caboDelgadoCircle['circle_name'] ."'>" . $caboDelgadoCircle['circle_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="village" class="font-medium">Vila</label>
                         <select name="village-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoVillages as $maputoVillage) {
+                                    echo "<option value='" . $maputoVillage['village_name'] ."'>" . $maputoVillage['village_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="village-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoProvinceVillages as $maputoProvinceVillage) {
+                                    echo "<option value='" . $maputoProvinceVillage['village_name'] ."'>" . $maputoProvinceVillage['village_name'] . "</option>";
+                                }
+                            ?>
                         </select>
-
+                        <select name="village-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($gazaVillages as $gazaVillage) {
+                                    echo "<option value='" . $gazaVillage['village_name'] ."'>" . $gazaVillage['village_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="village-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($inhambaneVilages as $inhambaneVilage) {
+                                    echo "<option value='" . $inhambaneVilage['village_name'] ."'>" . $inhambaneVilage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaVillages as $manicaVillage) {
+                                    echo "<option value='" . $manicaVillage['village_name'] ."'>" . $manicaVillage['village_name'] . "</option>";
+                               }
+                            ?>
+                        </select>
+                        <select name="village-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaVillages as $sofalaVillage) {
+                                    echo "<option value='" . $sofalaVillage['village_name'] ."'>" . $sofalaVillage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteVilages as $teteVilage) {
+                                    echo "<option value='" . $teteVilage['village_name'] ."'>" . $teteVilage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaVillages as $nampulaVillage) {
+                                    echo "<option value='" . $nampulaVillage['village_name'] ."'>" . $nampulaVillage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaVillages as $niassaVillage) {
+                                   echo "<option value='" . $niassaVillage['village_name'] ."'>" . $niassaVillage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaVillages as $zambeziaVillage) {
+                                    echo "<option value='" . $zambeziaVillage['village_name'] ."'>" . $zambeziaVillage['village_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="village-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoVillages as $caboDelgadoVillage) {
+                                    echo "<option value='" . $caboDelgadoVillage['village_name'] ."'>" . $caboDelgadoVillage['village_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="zone" class="font-medium">Zona</label>
                         <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoZones as $maputoZone) {
+                                    echo "<option value='" . $maputoZone['zone_name'] ."'>" . $maputoZone['zone_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="zone-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($maputoProvinceZones as $maputoProvinceZone) {
+                                    echo "<option value='" . $maputoProvinceZone['zone_name'] ."'>" . $maputoProvinceZone['zone_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="zone-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($gazaZones as $gazaZone) {
+                                    echo "<option value='" . $gazaZone['zone_name'] ."'>" . $gazaZone['zone_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                         <select name="zone-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                            <?php
+                                foreach ($inhambaneZones as $inhambaneZone) {
+                                    echo "<option value='" . $inhambaneZone['zone_name'] ."'>" . $inhambaneZone['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($mainicaZones as $mainicaZone) {
+                                    echo "<option value='" . $mainicaZone['zone_name'] ."'>" . $mainicaZone['zone_name'] . "</option>";
+                               }
+                            ?>
+                        </select>
+                        <select name="zone-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaZonas as $sofalaZona) {
+                                    echo "<option value='" . $sofalaZona['zone_name'] ."'>" . $sofalaZona['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteZones as $teteZone) {
+                                    echo "<option value='" . $teteZone['zone_name'] ."'>" . $teteZone['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaZones as $nampulaZone) {
+                                    echo "<option value='" . $nampulaZone['zone_name'] ."'>" . $nampulaZone['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaZones as $niassaZone) {
+                                   echo "<option value='" . $niassaZone['zone_name'] ."'>" . $niassaZone['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambeziaZones as $zambeziaZone) {
+                                    echo "<option value='" . $zambeziaZone['zone_name'] ."'>" . $zambeziaZone['zone_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="zone-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoZones as $caboDelgadoZone) {
+                                    echo "<option value='" . $caboDelgadoZone['zone_name'] ."'>" . $caboDelgadoZone['zone_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="township" class="font-medium">Povoação</label>
-                        <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                        <select name="township-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($maputoTownships as $maputoTownship) {
+                                    echo "<option value='" . $maputoTownship['township_name'] ."'>" . $maputoTownship['township_name'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="zone-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                        <select name="township-mp" class="mp-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($maputoProvinceTownships as $maputoProvinceTownship) {
+                                    echo "<option value='" . $maputoProvinceTownship['township_name'] ."'>" . $maputoProvinceTownship['township_name'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="zone-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                        <select name="township-gz" class="gz-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($gazaTownships as $gazaTownship) {
+                                    echo "<option value='" . $gazaTownship['township_name'] ."'>" . $gazaTownship['township_name'] . "</option>";
+                                }
+                            ?>
                         </select>
-                        <select name="zone-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
-
+                        <select name="township-in" class="in-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($inhambaneTownships as $inhambaneTownship) {
+                                    echo "<option value='" . $inhambaneTownship['township_name'] ."'>" . $inhambaneTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-mn" class="mn-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($manicaTownships as $manicaTownship) {
+                                    echo "<option value='" . $manicaTownship['township_name'] ."'>" . $manicaTownship['township_name'] . "</option>";
+                               }
+                            ?>
+                        </select>
+                        <select name="township-sf" class="sf-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($sofalaTownships as $sofalaTownship) {
+                                    echo "<option value='" . $sofalaTownship['township_name'] ."'>" . $sofalaTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-tt" class="tt-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($teteTownships as $teteTownship) {
+                                    echo "<option value='" . $teteTownship['township_name'] ."'>" . $teteTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-np" class="np-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($nampulaTownships as $nampulaTownship) {
+                                    echo "<option value='" . $nampulaTownship['township_name'] ."'>" . $nampulaTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-ns" class="ns-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($niassaTownships as $niassaTownship) {
+                                   echo "<option value='" . $niassaTownship['township_name'] ."'>" . $niassaTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-zb" class="zb-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($zambwziaTownships as $zambwziaTownship) {
+                                    echo "<option value='" . $zambwziaTownship['township_name'] ."'>" . $zambwziaTownship['township_name'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                        <select name="township-cd" class="cd-field border border-orange-700 focus:outline-none outline-none rounded">
+                            <?php
+                                foreach ($caboDelgadoTownships as $caboDelgadoTownship) {
+                                    echo "<option value='" . $caboDelgadoTownship['township_name'] ."'>" . $caboDelgadoTownship['township_name'] . "</option>";
+                                }
+                            ?>
                         </select>
                     </div>
                 </fieldset>
