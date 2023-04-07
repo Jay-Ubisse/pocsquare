@@ -451,7 +451,7 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="circle" class="font-medium">Circulo</label>
-                        <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                             <?php
                                 foreach ($maputoCircles as $maputoCircle) {
                                     echo "<option value='" . $maputoCircle['circle_name'] ."'>" . $maputoCircle['circle_name'] . "</option>";
@@ -792,7 +792,7 @@
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                             <label for="door-number" class="font-medium">Número da Porta</label>
-                            <input type="text" name="door-number"  class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <input type="number" min="1" name="door-number"  class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                     </div>
                     <div class="flex mt-2 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
@@ -817,6 +817,10 @@
                         </div>
                     </div>
                     <div class="flex mt-2 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
+                        <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                            <label for="block" class="font-medium">Quadra</label>
+                            <input type="text" name="block" class="border border-orange-700 focus:outline-none outline-none rounded">
+                        </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                             <label for="roundabout" class="font-medium">Rotunda</label>
                             <input type="text" name="roundabout" class="border border-orange-700 focus:outline-none outline-none rounded">
@@ -860,8 +864,8 @@
                 <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-row flex-wrap justify-evenly py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                     <legend class="text-lg font-semibold px-4">Entidades Postais</legend>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
-                        <label for="block" class="font-medium">Quarteirão</label>
-                        <input type="number" name="block" min="1" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <label for="city-block" class="font-medium">Quarteirão</label>
+                        <input type="number" name="city-block" min="1" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="lateral" class="font-medium">Lateral Alfa-Numérico</label>

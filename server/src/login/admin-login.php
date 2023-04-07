@@ -22,6 +22,7 @@
             } else {
                 $_SESSION['admin-auth'] = "Logged-in";
                 $_SESSION['user-data'] = $adminDataRow;
+                $_SESSION["user-role"] = "Administrador";
                 header("location: ../../../admin/home");
             }
         }

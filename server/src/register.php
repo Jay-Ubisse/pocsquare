@@ -37,6 +37,8 @@ switch ($provinceAlphanumericId) {
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
         
+        $localityOrNeighborhoodId = $neighborhoodId;
+
         break;
     case 'MP':
         $province_name = "Maputo Província";
@@ -62,6 +64,8 @@ switch ($provinceAlphanumericId) {
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
 
+        $localityOrNeighborhoodId = $localityId;
+
         break;
     case 'GZ':
         $province_name = "Gaza";
@@ -86,6 +90,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+        
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'IN':
         $province_name = "Inhambane";
@@ -110,6 +116,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'MN':
         $province_name = "Manica";
@@ -134,6 +142,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'SF':
         $province_name = "Sofala";
@@ -158,6 +168,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'TT':
         $province_name = "Tete";
@@ -182,6 +194,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'NP':
         $province_name = "Nampula";
@@ -206,6 +220,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'NS':
         $province_name = "Niassa";
@@ -230,6 +246,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'ZB':
         $province_name = "Zambézia";
@@ -254,6 +272,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     case 'CD':
         $province_name = "Cabo Delgado";
@@ -278,6 +298,8 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
+
+        $localityOrNeighborhoodId = $localityId;
         break;
     
     default:
@@ -294,7 +316,8 @@ $doorNumber = $_POST["door-number"];
 $roadType = $_POST["road-type"];
 $roadName = $_POST["road-name"];
 $stalemate = $_POST["stalemate"];
-$viaduct = $ $_POST["viaduct"];
+$viaduct = $_POST["viaduct"];
+$block = $_POST["block"];
 $roundabout = $_POST["roundabout"];
 $lane = $_POST["lane"];
 $wide = $_POST["wide"];
@@ -307,12 +330,12 @@ $affectation = $_POST["affectation"];
 
 
 //Postal entities
-$block = $_POST["block"];
+$cityBlock = $_POST["city-block"];
 $lateral = $_POST["lateral"];
 $entry = $_POST["entry"];
 $mailbox = $_POST["mailbox"];
 $postOffice = $_POST["post-office"];
-$postalCode = $province . $districtId . " " . $adminPostId . $_POST['lateral'];
+$postalCode = $provinceAlphanumericId . $localityOrNeighborhoodId . " " . $cityBlock . $lateral;
 
 
 //espacial entities
@@ -329,6 +352,11 @@ $viaLatEnd = $_POST["via-lat-end"];
 $contactNumber = $_POST["contact-number"];
 $email = $_POST["email"];
 $website = $_POST["website"];
+
+//registration information
+$registrationDate = date("d-m-y");
+$userRole = $_SESSION["user-role"];
+$userId = $_SESSION['user-data']['username'];
 
 function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone) {
     global $dbcon, $database_name;
@@ -407,24 +435,24 @@ try {
 
     //save local entities data
     $local_entities_query = "INSERT INTO $database_name.local_entities 
-                                    (cell, cell_id, circle, circle_id, village_post, township_id, zone, zone_id) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                                    (cell, cell_id, circle, circle_id, village, village_id, township, township_id, zone, zone_id) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($local_entities_query);
     $stmt->execute([$cell, $cellId, $circle, $circleId, $village, $villageId, $township, $townshipId, $zone, $zoneId]);
 
      //save heritage entities data
     $heritage_entities_query = "INSERT INTO $database_name.heritage_entities 
-                                    (property_type, floor, side, door_number, road_name, road_type, stalemate, viaduct, roundabout, lane, wide, bridges, plaza, length, width, occupancy, affectation) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                    (property_type, floor, side, door_number, road_name, road_type, stalemate, viaduct, block, roundabout, lane, wide, bridges, plaza, length, width, occupancy, affectation) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($heritage_entities_query);
-    $stmt->execute([$propertyType, $floor, $side, $doorNumber, $roadType, $roadName, $stalemate, $viaduct, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation]);
+    $stmt->execute([$propertyType, $floor, $side, $doorNumber, $roadType, $roadName, $stalemate, $viaduct, $block, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation]);
 
     //save postal entities data
     $postal_entities_query = "INSERT INTO $database_name.postal_entities 
-                            (block, lateral, entry, mailbox, post_office, postal_code) 
+                            (city_block, lateral, entry, mailbox, post_office, postal_code) 
                             VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($postal_entities_query);
-    $stmt->execute([$block, $lateral, $entry, $mailbox, $postOffice, $postalCode]);
+    $stmt->execute([$cityBlock, $lateral, $entry, $mailbox, $postOffice, $postalCode]);
 
     //save espacial entities data
     $espacial_entities_query = "INSERT INTO $database_name.espacial_entities 
@@ -440,11 +468,19 @@ try {
     $stmt = $dbcon->prepare($Complementary_entities_query);
     $stmt->execute([$contactNumber, $email, $website]);
 
+    //save registration_info entities data
+    $registration_info_query = "INSERT INTO $database_name.registration_info 
+                            (registration_date, user_role, user_id) 
+                            VALUES (?, ?, ?)";
+    $stmt = $dbcon->prepare($registration_info_query);
+    $stmt->execute([$registrationDate, $userRole, $userId]);
+
+    //save main info address data
     $main_address_info_query = "INSERT INTO $database_name.main_address_info 
-                            (province, district, neighborhood, locality, road_name, door_number, block, cep, email, email, website, phone_number) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            (province, district, neighborhood, locality, road_name, door_number, city_block, cep, email, website, phone_number) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($main_address_info_query);
-    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $seaRise, $viaLatStart, $viaLatEnd]);
+    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber]);
  
 
     $dbcon->commit();

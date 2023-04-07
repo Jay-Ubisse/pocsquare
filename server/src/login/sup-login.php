@@ -22,6 +22,7 @@
             } else {
                 $_SESSION['sup-auth'] = "Logged-in!";
                 $_SESSION['user-data'] = $adminDataRow;
+                $_SESSION["user-role"] = "Supervisor";
                 header("location: ../../../admin/home/");
             }
         }

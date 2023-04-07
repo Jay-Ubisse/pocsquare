@@ -22,6 +22,7 @@
             } else {
                 $_SESSION['tech-auth'] = "Logged-in!";
                 $_SESSION['user-data'] = $adminDataRow;
+                $_SESSION["user-role"] = "Técnico";
                 header("location: ../../../admin/home");
             }
         }
