@@ -486,8 +486,8 @@
                             <input type="text" name="stalemate"  class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
-                            <label for="Viaduct" class="font-medium">Viaduto</label>
-                            <input type="text" name="Viaduct"  class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <label for="viaduct" class="font-medium">Viaduto</label>
+                            <input type="text" name="viaduct"  class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                     </div>
                     <div class="flex mt-2 laptop:flex-row mobile:flex-col laptop:justify-evenly laptop:gap-0 mobile:gap-2">
