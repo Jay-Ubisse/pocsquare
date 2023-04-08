@@ -50,8 +50,15 @@
                     MAPA
             </div>
         </section>
-        <section>
-            
+        <section class="mt-5 p-3 mx-auto laptop:w-[40%] mobile:w-[95%]">
+            <h1 class="laptop:text-2xl mobile:text-xl font-bold mb-5 text-center">Precisa de ajuda?</h1>
+            <ul class="laptop:text-base mobile:text-sm font-normal">
+                <li class="my-2 pb-2 px-2 border-b border-gray-600 hover:font-medium"><a href="#">Não consegue encontrar o endereço que procura?</a></li>
+                <li class="my-2 pb-2 px-2 border-b border-gray-600 hover:font-medium"><a href="#">Como procurar um endereço ou código postal usando o localizador de código postal?</a></li>
+                <li class="my-2 pb-2 px-2 border-b border-gray-600 hover:font-medium"><a href="#">Não consigo encontrar meu endereço no Localizador de código postal</a></li>
+                <li class="my-2 pb-2 px-2 border-b border-gray-600 hover:font-medium"><a href="#">Atualizando meu endereço no Localizador de Código Postal.</a></li>
+                <li class="my-2 pb-2 px-2 border-b border-gray-600 hover:font-medium"><a href="#">Se o endereço parecer incorreto, entre em contato conosco para nos informar.</a></li>
+            </ul>
         </section>
     </main>
     <Footer>
