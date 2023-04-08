@@ -37,14 +37,14 @@
                 <p><span><b>Província: </b></span><span id="province"></span></p>
                 <p><span><b>Distrito: </b></span><span id="district"></span></p>
                 <p><span><b>Bairro: </b></span><span id="neighborhood"></span></p>
-                <p><span><b>Localidade: </b></span><span id="neighborhood"></span></p>
-                <p><span><b>Quarteirão: </b></span><span id="block"></span></p>
-                <p><span><b>Avenida ou Rua: </b></span><span id="road_name"></span></p>
-                <p><span><b>Numero da porta: </b></span><span id="door_number"></span></p>
+                <p><span><b>Localidade: </b></span><span id="locality"></span></p>
+                <p><span><b>Quarteirão: </b></span><span id="city-block"></span></p>
+                <p><span><b>Avenida ou Rua: </b></span><span id="road-name"></span></p>
+                <p><span><b>Numero da porta: </b></span><span id="door-number"></span></p>
                 <p><span><b>CEP: </b></span><span id="cep"></span></p>
                 <p><span><b>Telefone: </b></span><span id="tel"></span></p>
                 <p><span><b>Email: </b></span><span id="email"></span></p>
-                <p><span><b>Websites: </b></span><span id="website"></span></p>
+                <p><span><b>Website: </b></span><span id="website"></span></p>
             </div>
             <div class="border border-orange-700 rounded-md flex justify-center items-center font-bold mobile:mx-auto laptop:mx-0 laptop:h-[400px] mobile:h-[300px] laptop:w-[600px] mobile:w-[95%]">
                     MAPA

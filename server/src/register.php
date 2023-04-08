@@ -335,7 +335,7 @@ $lateral = $_POST["lateral"];
 $entry = $_POST["entry"];
 $mailbox = $_POST["mailbox"];
 $postOffice = $_POST["post-office"];
-$postalCode = $provinceAlphanumericId . $localityOrNeighborhoodId . " " . $cityBlock . $lateral;
+$postalCode = $provinceAlphanumericId . $localityOrNeighborhoodId . " " . $block . $lateral;
 
 
 //espacial entities
