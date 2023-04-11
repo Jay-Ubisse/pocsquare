@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2023 at 08:51 PM
+-- Generation Time: Apr 11, 2023 at 11:28 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -47,7 +47,7 @@ CREATE TABLE `administrative_entities` (
 --
 
 INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`) VALUES
-(10000034, 'Maputo Cidade', '01', 'MC Distrito 1', '12', 'MC Posto 1', '13', ' ', '0', 'MC Bairro 1', '1', 'MC');
+(100001, 'Maputo Cidade', '01', 'MC Distrito 1', '10', 'MC Posto 1', '10', ' ', '0', 'MC Bairro 1', '100', 'MC');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`username`, `password`) VALUES
-('ubisse', 'f9069bbef34fd6d4e082c4e110a6a252');
+('admin', 'c3630306d12f1c1056badb39aa74fe7f'),
+('supervisor', 'c3630306d12f1c1056badb39aa74fe7f'),
+('tecnico', 'c3630306d12f1c1056badb39aa74fe7f');
 
 -- --------------------------------------------------------
 
@@ -193,7 +195,7 @@ CREATE TABLE `complementary_entities` (
 --
 
 INSERT INTO `complementary_entities` (`entity_id`, `contact_number`, `email`, `website`) VALUES
-(5, 848839501, 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com');
+(100001, 848839501, 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com');
 
 -- --------------------------------------------------------
 
@@ -217,8 +219,7 @@ CREATE TABLE `espacial_entities` (
 --
 
 INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
-(1, '10', '4.343', '9', '494.48994', '4.40404', '3.666', '4.67'),
-(6, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67');
+(100001, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67');
 
 -- --------------------------------------------------------
 
@@ -231,13 +232,6 @@ CREATE TABLE `gz_admin_post` (
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gz_admin_post`
---
-
-INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(11, 'Gaza', 'GZ Posto 1');
 
 -- --------------------------------------------------------
 
@@ -275,13 +269,6 @@ CREATE TABLE `gz_district` (
   `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `gz_district`
---
-
-INSERT INTO `gz_district` (`district_id`, `province`, `district_name`) VALUES
-(2, 'Gaza', 'GZ Distrito 1');
-
 -- --------------------------------------------------------
 
 --
@@ -293,13 +280,6 @@ CREATE TABLE `gz_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `gz_locality`
---
-
-INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(101, 'Gaza', 'GZ Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -382,7 +362,7 @@ CREATE TABLE `heritage_entities` (
 --
 
 INSERT INTO `heritage_entities` (`entity_id`, `property_type`, `floor`, `side`, `door_number`, `road_name`, `road_type`, `stalemate`, `viaduct`, `block`, `roundabout`, `lane`, `wide`, `bridges`, `plaza`, `length`, `width`, `occupancy`, `affectation`) VALUES
-(0, 'Casa Gemin', 'R/C', 'lado a', 465, 'Avenida', 'Karl Max', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca 1', 0, 0, 'ocupacao a', 'afetacao a');
+(0, 'Casa Geminada', 'R/C', 'lado a', 11, 'Avenida', 'Karl Max', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca 1', 0, 0, 'ocupacao a', 'afetacao a');
 
 -- --------------------------------------------------------
 
@@ -517,7 +497,7 @@ CREATE TABLE `local_entities` (
 --
 
 INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
-(10000018, 'MC Celula 1', '1', 'MC Circulo 1', '1', 'MC Vila 1', '1', 'MC Povoacao 1', '1', 'MC Zona 1', '1');
+(100001, 'MC Celula 1', '100', 'MC Circulo 1', '100', 'MC Vila 1', '100', 'MC Povoacao 1', '100', 'MC Zona 1', '100');
 
 -- --------------------------------------------------------
 
@@ -536,7 +516,7 @@ CREATE TABLE `main_address_info` (
   `city_block` int(5) NOT NULL,
   `cep` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `website` int(50) NOT NULL,
+  `website` varchar(50) NOT NULL,
   `phone_number` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -545,7 +525,7 @@ CREATE TABLE `main_address_info` (
 --
 
 INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood`, `locality`, `road_name`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`) VALUES
-(1, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'Karl Max', 465, 5, 'MC1 5A', 'ubisse.joaquim@outlook.com', 0, 848839501);
+(100001, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'Karl Max', 11, 45, 'MC100 1009A', 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com', 848839501);
 
 -- --------------------------------------------------------
 
@@ -564,7 +544,7 @@ CREATE TABLE `mc_admin_post` (
 --
 
 INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(13, 'Maputo Cidade', 'MC Posto 1');
+(10, 'Maputo Cidade', 'MC Posto 1');
 
 -- --------------------------------------------------------
 
@@ -583,7 +563,7 @@ CREATE TABLE `mc_cell` (
 --
 
 INSERT INTO `mc_cell` (`cell_id`, `province`, `cell_name`) VALUES
-(1, 'Maputo Cidade', 'MC Celula 1');
+(100, 'Maputo Cidade', 'MC Celula 1');
 
 -- --------------------------------------------------------
 
@@ -602,7 +582,7 @@ CREATE TABLE `mc_circle` (
 --
 
 INSERT INTO `mc_circle` (`circle_id`, `province`, `circle_name`) VALUES
-(1, 'Maputo Cidade', 'MC Circulo 1');
+(100, 'Maputo Cidade', 'MC Circulo 1');
 
 -- --------------------------------------------------------
 
@@ -621,9 +601,7 @@ CREATE TABLE `mc_district` (
 --
 
 INSERT INTO `mc_district` (`district_id`, `province`, `district_name`) VALUES
-(12, 'Maputo Cidade', 'MC Distrito 1'),
-(13, 'Maputo Cidade', 'KaMpfumu'),
-(14, 'Maputo Cidade', 'MC Distrito 2');
+(10, 'Maputo Cidade', 'MC Distrito 1');
 
 -- --------------------------------------------------------
 
@@ -654,7 +632,7 @@ CREATE TABLE `mc_neighborhood` (
 --
 
 INSERT INTO `mc_neighborhood` (`neighborhood_id`, `province`, `neighborhood_name`) VALUES
-(1, 'Maputo Cidade', 'MC Bairro 1');
+(100, 'Maputo Cidade', 'MC Bairro 1');
 
 -- --------------------------------------------------------
 
@@ -673,7 +651,7 @@ CREATE TABLE `mc_township` (
 --
 
 INSERT INTO `mc_township` (`township_id`, `province`, `township_name`) VALUES
-(1, 'Maputo Cidade', 'MC Povoacao 1');
+(100, 'Maputo Cidade', 'MC Povoacao 1');
 
 -- --------------------------------------------------------
 
@@ -692,7 +670,7 @@ CREATE TABLE `mc_village` (
 --
 
 INSERT INTO `mc_village` (`village_id`, `province`, `village_name`) VALUES
-(1, 'Maputo Cidade', 'MC Vila 1');
+(100, 'Maputo Cidade', 'MC Vila 1');
 
 -- --------------------------------------------------------
 
@@ -711,7 +689,7 @@ CREATE TABLE `mc_zone` (
 --
 
 INSERT INTO `mc_zone` (`zone_id`, `province`, `zone_name`) VALUES
-(1, 'Maputo Cidade', 'MC Zona 1');
+(100, 'Maputo Cidade', 'MC Zona 1');
 
 -- --------------------------------------------------------
 
@@ -880,13 +858,6 @@ CREATE TABLE `mp_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `mp_locality`
---
-
-INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
-(101, 'Maputo Província', 'MP Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -1173,7 +1144,7 @@ CREATE TABLE `postal_entities` (
 --
 
 INSERT INTO `postal_entities` (`entity_id`, `city_block`, `lateral`, `entry`, `mailbox`, `post_office`, `postal_code`) VALUES
-(17, 5, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC1 5A');
+(100001, 45, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC100 1009A');
 
 -- --------------------------------------------------------
 
@@ -1194,7 +1165,7 @@ CREATE TABLE `registration_info` (
 --
 
 INSERT INTO `registration_info` (`entity_id`, `registration_date`, `edition_date`, `user_role`, `user_id`) VALUES
-(5, '2007-04-23', NULL, 'Administra', 'ubisse');
+(100001, '2011-04-23', NULL, 'Administra', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1315,13 +1286,6 @@ CREATE TABLE `supervisors` (
   `password` varchar(270) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `supervisors`
---
-
-INSERT INTO `supervisors` (`username`, `password`) VALUES
-('supervisor', 'f9069bbef34fd6d4e082c4e110a6a252');
-
 -- --------------------------------------------------------
 
 --
@@ -1332,13 +1296,6 @@ CREATE TABLE `technician` (
   `username` varchar(50) NOT NULL,
   `password` varchar(270) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `technician`
---
-
-INSERT INTO `technician` (`username`, `password`) VALUES
-('tecnico', 'f9069bbef34fd6d4e082c4e110a6a252');
 
 -- --------------------------------------------------------
 
@@ -2222,631 +2179,631 @@ ALTER TABLE `zb_zone`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000035;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `cd_admin_post`
 --
 ALTER TABLE `cd_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cd_cell`
 --
 ALTER TABLE `cd_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_circle`
 --
 ALTER TABLE `cd_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_district`
 --
 ALTER TABLE `cd_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cd_locality`
 --
 ALTER TABLE `cd_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_neighborhood`
 --
 ALTER TABLE `cd_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_township`
 --
 ALTER TABLE `cd_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_village`
 --
 ALTER TABLE `cd_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `cd_zone`
 --
 ALTER TABLE `cd_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `complementary_entities`
 --
 ALTER TABLE `complementary_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `espacial_entities`
 --
 ALTER TABLE `espacial_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `gz_cell`
 --
 ALTER TABLE `gz_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_circle`
 --
 ALTER TABLE `gz_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_district`
 --
 ALTER TABLE `gz_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_neighborhood`
 --
 ALTER TABLE `gz_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_township`
 --
 ALTER TABLE `gz_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_village`
 --
 ALTER TABLE `gz_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `gz_zone`
 --
 ALTER TABLE `gz_zone`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_admin_post`
 --
 ALTER TABLE `in_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `in_cell`
 --
 ALTER TABLE `in_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_circle`
 --
 ALTER TABLE `in_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_district`
 --
 ALTER TABLE `in_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `in_locality`
 --
 ALTER TABLE `in_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_neighborhood`
 --
 ALTER TABLE `in_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_township`
 --
 ALTER TABLE `in_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_village`
 --
 ALTER TABLE `in_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `in_zone`
 --
 ALTER TABLE `in_zone`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000019;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `main_address_info`
 --
 ALTER TABLE `main_address_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `mc_admin_post`
 --
 ALTER TABLE `mc_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mc_cell`
 --
 ALTER TABLE `mc_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mc_circle`
 --
 ALTER TABLE `mc_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mc_district`
 --
 ALTER TABLE `mc_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mc_locality`
 --
 ALTER TABLE `mc_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mc_neighborhood`
 --
 ALTER TABLE `mc_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mc_township`
 --
 ALTER TABLE `mc_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mc_village`
 --
 ALTER TABLE `mc_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mc_zone`
 --
 ALTER TABLE `mc_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mn_admin_post`
 --
 ALTER TABLE `mn_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mn_cell`
 --
 ALTER TABLE `mn_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_circle`
 --
 ALTER TABLE `mn_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_district`
 --
 ALTER TABLE `mn_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mn_locality`
 --
 ALTER TABLE `mn_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_neighborhood`
 --
 ALTER TABLE `mn_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_township`
 --
 ALTER TABLE `mn_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_village`
 --
 ALTER TABLE `mn_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mn_zone`
 --
 ALTER TABLE `mn_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_admin_post`
 --
 ALTER TABLE `mp_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mp_cell`
 --
 ALTER TABLE `mp_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_circle`
 --
 ALTER TABLE `mp_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_neighborhood`
 --
 ALTER TABLE `mp_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_township`
 --
 ALTER TABLE `mp_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_village`
 --
 ALTER TABLE `mp_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `mp_zone`
 --
 ALTER TABLE `mp_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_admin_post`
 --
 ALTER TABLE `np_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `np_cell`
 --
 ALTER TABLE `np_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_circle`
 --
 ALTER TABLE `np_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_district`
 --
 ALTER TABLE `np_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `np_locality`
 --
 ALTER TABLE `np_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_neighborhood`
 --
 ALTER TABLE `np_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_township`
 --
 ALTER TABLE `np_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_village`
 --
 ALTER TABLE `np_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `np_zone`
 --
 ALTER TABLE `np_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_admin_post`
 --
 ALTER TABLE `ns_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ns_cell`
 --
 ALTER TABLE `ns_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_circle`
 --
 ALTER TABLE `ns_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_district`
 --
 ALTER TABLE `ns_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ns_locality`
 --
 ALTER TABLE `ns_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_neighborhood`
 --
 ALTER TABLE `ns_neighborhood`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_township`
 --
 ALTER TABLE `ns_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_village`
 --
 ALTER TABLE `ns_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `ns_zone`
 --
 ALTER TABLE `ns_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `postal_entities`
 --
 ALTER TABLE `postal_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `registration_info`
 --
 ALTER TABLE `registration_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
 
 --
 -- AUTO_INCREMENT for table `sf_admin_post`
 --
 ALTER TABLE `sf_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sf_cell`
 --
 ALTER TABLE `sf_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_circle`
 --
 ALTER TABLE `sf_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_district`
 --
 ALTER TABLE `sf_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sf_locality`
 --
 ALTER TABLE `sf_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_neighborhood`
 --
 ALTER TABLE `sf_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_township`
 --
 ALTER TABLE `sf_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_village`
 --
 ALTER TABLE `sf_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `sf_zone`
 --
 ALTER TABLE `sf_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_admin_post`
 --
 ALTER TABLE `tt_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tt_cell`
 --
 ALTER TABLE `tt_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_circle`
 --
 ALTER TABLE `tt_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_district`
 --
 ALTER TABLE `tt_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tt_locality`
 --
 ALTER TABLE `tt_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_neighborhood`
 --
 ALTER TABLE `tt_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_township`
 --
 ALTER TABLE `tt_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_village`
 --
 ALTER TABLE `tt_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tt_zone`
 --
 ALTER TABLE `tt_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_admin_post`
 --
 ALTER TABLE `zb_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `zb_cell`
 --
 ALTER TABLE `zb_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_circle`
 --
 ALTER TABLE `zb_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_district`
 --
 ALTER TABLE `zb_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `zb_locality`
 --
 ALTER TABLE `zb_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_neighborhood`
 --
 ALTER TABLE `zb_neighborhood`
-  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `neighborhood_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_township`
 --
 ALTER TABLE `zb_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_village`
 --
 ALTER TABLE `zb_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `zb_zone`
 --
 ALTER TABLE `zb_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

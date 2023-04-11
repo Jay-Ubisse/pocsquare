@@ -5,6 +5,10 @@
 $("header").load("../../client/components/header.html");
 $("footer").load("../../client/components/footer.html");
 
+/*
+Mobile menu
+*/
+
 
 /*
   SEARCH ENGINE

@@ -1,8 +1,39 @@
-<div class="bg-orange-700 text-white font-semibold flex flex-row justify-between items-center px-7 py-4">
-    <a href="../" class="text-lg flex flex-row gap-3">
-        <span><i class="fa-solid fa-arrow-left fa=lg"></i></span><span>Voltar ao Inicío</span>
+<div class="bg-orange-700 text-white flex flex-row justify-between items-center laptop:px-7 mobile:px-3 py-4">
+    <a href="../" class="laptop:text-lg mobile:text-base flex flex-row gap-3">
+        <span class="text-xl font-bold px-3 py-1 rounded-md bg-white text-orange-700 shadow-sm shadow-gray-300">
+            Pocsquare
+        </span>
     </a>
-    <div class="text-xl font-bold px-3 py-1 rounded-md bg-white text-orange-700 shadow-sm shadow-gray-300">
-        Pocsquare
+    <div class="mobile:hidden laptop:flex">
+        <ul class="laptop:flex laptop:gap-4 laptop:w-fit font-medium">
+            <li class="hover:text-yellow-400"><a href="../">Início</a></li>
+            <li class="hover:text-yellow-400"><a href="#">Sobre nós</a></li>
+            <li class="hover:text-yellow-400"><a href="#">Nossos Serviços</a></li>
+            <li class="hover:text-yellow-400"><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <div id="menu-bar" class="laptop:hidden mobile:flex">
+        <span><i class="fa-solid fa-bars fa-2x"></i></span>
+    </div>
+    <div id="menu" class="justify-center items-center w-screen h-screen bg-slate-300 fixed top-0 left-0">
+        <span id="xmark" class="text-orange-700 absolute top-3 right-6"><i class="fa-solid fa-xmark fa-3x"></i></span>
+        <ul class="flex flex-col gap-10 mt-[40%] items-center font-medium text-orange-700 text-2xl h-[90%] w-[95%]">
+            <li class="hover:text-yellow-400 border-b border-orange-700 w-[90%] text-center pb-2"><a href="../">Início</a></li>
+            <li class="hover:text-yellow-400 border-b border-orange-700 w-[90%] text-center pb-2"><a href="#">Sobre nós</a></li>
+            <li class="hover:text-yellow-400 border-b border-orange-700 w-[90%] text-center pb-2"><a href="#">Nossos Serviços</a></li>
+            <li class="hover:text-yellow-400 border-b border-orange-700 w-[90%] text-center pb-2"><a href="#">Contacto</a></li>
+        </ul>
+        <span class="fixed bottom-2 left-0 text-orange-700 text-base font-light text-center w-full">&copy; Pocsquare</span>
     </div>
 </div>
+
+<script>
+    $("#menu").hide();
+    $( "#menu-bar" ).on( "click", function() {
+        $("#menu").slideDown(500);
+    });
+
+    $( "#xmark" ).on( "click", function() {
+        $("#menu").slideUp(500);
+    });
+</script>
