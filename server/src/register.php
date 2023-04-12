@@ -41,14 +41,14 @@ switch ($provinceAlphanumericId) {
 
         break;
     case 'MP':
-        $province_name = "Maputo Província";
+        $provinceName = "Maputo Província";
         $district = $_POST["district-mp"];
         $adminPost = $_POST["administrative-post-mp"];
         $neighborhood = " ";
         $locality = $_POST["locality-mp"];
         $circle = $_POST["circle-mp"];
         $cell =  $_POST["cell-mp"];
-        $village = $_POST["village-mt"];
+        $village = $_POST["village-mp"];
         $township = $_POST["township-mp"];
         $zone = $_POST["zone-mp"];
 
@@ -57,7 +57,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -68,7 +68,7 @@ switch ($provinceAlphanumericId) {
 
         break;
     case 'GZ':
-        $province_name = "Gaza";
+        $provinceName = "Gaza";
         $district = $_POST["district-gz"];
         $adminPost = $_POST["administrative-post-gz"];
         $neighborhood = " ";
@@ -84,7 +84,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -94,7 +94,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'IN':
-        $province_name = "Inhambane";
+        $provinceName = "Inhambane";
         $district = $_POST["district-in"];
         $adminPost = $_POST["administrative-post-in"];
         $neighborhood = " ";
@@ -110,7 +110,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -120,7 +120,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'MN':
-        $province_name = "Manica";
+        $provinceName = "Manica";
         $district = $_POST["district-mn"];
         $adminPost = $_POST["administrative-post-mn"];
         $neighborhood = " ";
@@ -136,7 +136,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -146,7 +146,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'SF':
-        $province_name = "Sofala";
+        $provinceName = "Sofala";
         $district = $_POST["district-sf"];
         $adminPost = $_POST["administrative-post-sf"];
         $neighborhood = " ";
@@ -162,7 +162,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -172,7 +172,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'TT':
-        $province_name = "Tete";
+        $provinceName = "Tete";
         $district = $_POST["district-tt"];
         $adminPost = $_POST["administrative-post-tt"];
         $neighborhood = " ";
@@ -188,7 +188,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -198,7 +198,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'NP':
-        $province_name = "Nampula";
+        $provinceName = "Nampula";
         $district = $_POST["district-np"];
         $adminPost = $_POST["administrative-post-np"];
         $neighborhood = " ";
@@ -214,7 +214,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -224,7 +224,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'NS':
-        $province_name = "Niassa";
+        $provinceName = "Niassa";
         $district = $_POST["district-ns"];
         $adminPost = $_POST["administrative-post-ns"];
         $neighborhood = " ";
@@ -240,7 +240,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -250,7 +250,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'ZB':
-        $province_name = "Zambézia";
+        $provinceName = "Zambézia";
         $district = $_POST["district-zb"];
         $adminPost = $_POST["administrative-post-zb"];
         $neighborhood = " ";
@@ -266,7 +266,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -276,7 +276,7 @@ switch ($provinceAlphanumericId) {
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'CD':
-        $province_name = "Cabo Delgado";
+        $provinceName = "Cabo Delgado";
         $district = $_POST["district-cd"];
         $adminPost = $_POST["administrative-post-cd"];
         $neighborhood = " ";
@@ -292,7 +292,7 @@ switch ($provinceAlphanumericId) {
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
         $neighborhoodId = 0;
-        $localityId = [3];
+        $localityId = $idArray[3];
         $cellId = $idArray[4];
         $circleId = $idArray[5];
         $villageId = $idArray[6];
@@ -477,10 +477,10 @@ try {
 
     //save main info address data
     $main_address_info_query = "INSERT INTO $database_name.main_address_info 
-                            (province, district, neighborhood, locality, road_name, door_number, city_block, cep, email, website, phone_number) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            (province, district, neighborhood, locality, road_name, door_number, city_block, cep, email, website, phone_number, responsible) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($main_address_info_query);
-    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber]);
+    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId]);
  
 
     $dbcon->commit();
@@ -494,7 +494,5 @@ catch(PDOException $ex) {
     $dbcon->rollBack();
     echo $ex->getMessage();
 }
-
-
 
 ?>

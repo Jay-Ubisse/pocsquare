@@ -844,12 +844,12 @@
                             <input type="text" name="plaza" class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
-                            <label for="length" class="font-medium">Comprimento</label>
-                            <input type="text" name="length" class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <label for="length" class="font-medium">Comprimento (metros)</label>
+                            <input type="number" name="length" class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
-                            <label for="width" class="font-medium">Largura</label>
-                            <input type="text" name="width"  class="border border-orange-700 focus:outline-none outline-none rounded">
+                            <label for="width" class="font-medium">Largura (metros)</label>
+                            <input type="number" name="width"  class="border border-orange-700 focus:outline-none outline-none rounded">
                         </div>
                         <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                             <label for="occupancy" class="font-medium">Ocupação</label>
@@ -865,11 +865,11 @@
                     <legend class="text-lg font-semibold px-4">Entidades Postais</legend>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="city-block" class="font-medium">Quarteirão</label>
-                        <input type="number" name="city-block" min="1" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <input type="number" name="city-block" min="1" class="border border-orange-700 focus:outline-none outline-none rounded">
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="lateral" class="font-medium">Lateral Alfa-Numérico</label>
-                        <select name="lateral" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="lateral" class="border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
@@ -878,7 +878,7 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="entry" class="font-medium">Entrada</label>
-                        <select name="entry" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <select name="entry" class="border border-orange-700 focus:outline-none outline-none rounded">
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
@@ -887,11 +887,11 @@
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="mailbox" class="font-medium">Caixa Postal</label>
-                        <input type="text" name="mailbox" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <input type="text" name="mailbox" class="border border-orange-700 focus:outline-none outline-none rounded">
                     </div>
                     <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                         <label for="post-office" class="font-medium">Estacão de correios</label>
-                        <input type="text" name="post-office" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
+                        <input type="text" name="post-office" class="border border-orange-700 focus:outline-none outline-none rounded">
                     </div>
                 </fieldset>
                 <fieldset class="border border-orange-700 mx-auto rounded-md gap-4 py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">

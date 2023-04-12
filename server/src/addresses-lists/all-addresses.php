@@ -20,7 +20,7 @@
             echo "<tr class='font-normal'>";
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>". $row['cep'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['road_name'] . ", " . $row['district'] . ", " . $row['province'] . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $_SESSION['user-data']['username']  . "</td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['responsible']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-blue-600 py-2 px-5 text-center'><a href=''><i class=\"fa-solid fa-circle-info\"></i></a></td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-green-600 py-2 px-5 text-center'><a href=''><i class=\"fa-solid fa-pen-to-square fa-lg\"></i></a></td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-red-600 py-2 px-5 text-center'><a href=''><i class=\"fa-solid fa-xmark fa-lg\"></i></a></td>\n";

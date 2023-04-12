@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2023 at 11:28 PM
+-- Generation Time: Apr 12, 2023 at 07:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -47,7 +47,8 @@ CREATE TABLE `administrative_entities` (
 --
 
 INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`) VALUES
-(100001, 'Maputo Cidade', '01', 'MC Distrito 1', '10', 'MC Posto 1', '10', ' ', '0', 'MC Bairro 1', '100', 'MC');
+(100009, 'Maputo Cidade', '01', 'MC Distrito 1', '10', 'MC Posto 1', '10', ' ', '0', 'MC Bairro 1', '100', 'MC'),
+(100010, 'Gaza', '03', 'GZ Distrito 1', '10', 'GZ Posto 1', '10', 'GZ Localidade 1', '100', ' ', '0', 'GZ');
 
 -- --------------------------------------------------------
 
@@ -65,9 +66,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`username`, `password`) VALUES
-('admin', 'c3630306d12f1c1056badb39aa74fe7f'),
-('supervisor', 'c3630306d12f1c1056badb39aa74fe7f'),
-('tecnico', 'c3630306d12f1c1056badb39aa74fe7f');
+('admin', 'c3630306d12f1c1056badb39aa74fe7f');
 
 -- --------------------------------------------------------
 
@@ -195,7 +194,8 @@ CREATE TABLE `complementary_entities` (
 --
 
 INSERT INTO `complementary_entities` (`entity_id`, `contact_number`, `email`, `website`) VALUES
-(100001, 848839501, 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com');
+(100007, 878877655, 'johnbill@gmail.com', 'https://www.meusite.com'),
+(100008, 848455059, 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com');
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,8 @@ CREATE TABLE `espacial_entities` (
 --
 
 INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
-(100001, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67');
+(100007, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67'),
+(100008, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67');
 
 -- --------------------------------------------------------
 
@@ -233,6 +234,13 @@ CREATE TABLE `gz_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_admin_post`
+--
+
+INSERT INTO `gz_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Gaza', 'GZ Posto 1');
+
 -- --------------------------------------------------------
 
 --
@@ -244,6 +252,13 @@ CREATE TABLE `gz_cell` (
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gz_cell`
+--
+
+INSERT INTO `gz_cell` (`cell_id`, `province`, `cell_name`) VALUES
+(100, 'Gaza', 'GZ Celula 1');
 
 -- --------------------------------------------------------
 
@@ -257,6 +272,13 @@ CREATE TABLE `gz_circle` (
   `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_circle`
+--
+
+INSERT INTO `gz_circle` (`circle_id`, `province`, `circle_name`) VALUES
+(100, 'Gaza', 'GZ Circulo 1');
+
 -- --------------------------------------------------------
 
 --
@@ -269,6 +291,13 @@ CREATE TABLE `gz_district` (
   `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_district`
+--
+
+INSERT INTO `gz_district` (`district_id`, `province`, `district_name`) VALUES
+(10, 'Gaza', 'GZ Distrito 1');
+
 -- --------------------------------------------------------
 
 --
@@ -280,6 +309,13 @@ CREATE TABLE `gz_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gz_locality`
+--
+
+INSERT INTO `gz_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Gaza', 'GZ Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -305,6 +341,13 @@ CREATE TABLE `gz_township` (
   `township_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_township`
+--
+
+INSERT INTO `gz_township` (`township_id`, `province`, `township_name`) VALUES
+(100, 'Gaza', 'GZ Povoacao 1');
+
 -- --------------------------------------------------------
 
 --
@@ -317,6 +360,13 @@ CREATE TABLE `gz_village` (
   `village_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gz_village`
+--
+
+INSERT INTO `gz_village` (`village_id`, `province`, `village_name`) VALUES
+(100, 'Gaza', 'GZ Vila 1');
+
 -- --------------------------------------------------------
 
 --
@@ -324,10 +374,17 @@ CREATE TABLE `gz_village` (
 --
 
 CREATE TABLE `gz_zone` (
-  `village_id` int(3) NOT NULL,
+  `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
-  `village_name` text NOT NULL
+  `zone_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gz_zone`
+--
+
+INSERT INTO `gz_zone` (`zone_id`, `province`, `zone_name`) VALUES
+(100, 'Gaza', 'GZ Zona 1');
 
 -- --------------------------------------------------------
 
@@ -362,7 +419,8 @@ CREATE TABLE `heritage_entities` (
 --
 
 INSERT INTO `heritage_entities` (`entity_id`, `property_type`, `floor`, `side`, `door_number`, `road_name`, `road_type`, `stalemate`, `viaduct`, `block`, `roundabout`, `lane`, `wide`, `bridges`, `plaza`, `length`, `width`, `occupancy`, `affectation`) VALUES
-(0, 'Casa Geminada', 'R/C', 'lado a', 11, 'Avenida', 'Karl Max', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca 1', 0, 0, 'ocupacao a', 'afetacao a');
+(100004, 'Casa Geminada', 'R/C', 'lado a', 23, 'Avenida', 'Karl Max', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca a', 23, 23, 'ocupacao a', 'afetacao a'),
+(100005, 'Casa Geminada', 'R/C', 'lado a', 54, 'Rua', 'Rua da cos', 'imasse g', ' viaduto g', '1345', 'rotunda g', 'travessa g', 'largo g', 'ponte g', 'praca g', 34, 23, 'ocupacao g', 'afetacao g');
 
 -- --------------------------------------------------------
 
@@ -497,7 +555,8 @@ CREATE TABLE `local_entities` (
 --
 
 INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
-(100001, 'MC Celula 1', '100', 'MC Circulo 1', '100', 'MC Vila 1', '100', 'MC Povoacao 1', '100', 'MC Zona 1', '100');
+(100004, 'MC Celula 1', '100', 'MC Circulo 1', '100', 'MC Vila 1', '100', 'MC Povoacao 1', '100', 'MC Zona 1', '100'),
+(100005, 'GZ Celula 1', '100', 'GZ Circulo 1', '100', 'GZ Vila 1', '100', 'GZ Povoacao 1', '100', 'GZ Zona 1', '100');
 
 -- --------------------------------------------------------
 
@@ -517,15 +576,17 @@ CREATE TABLE `main_address_info` (
   `cep` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   `website` varchar(50) NOT NULL,
-  `phone_number` int(9) NOT NULL
+  `phone_number` int(9) NOT NULL,
+  `responsible` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `main_address_info`
 --
 
-INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood`, `locality`, `road_name`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`) VALUES
-(100001, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'Karl Max', 11, 45, 'MC100 1009A', 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com', 848839501);
+INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood`, `locality`, `road_name`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`, `responsible`) VALUES
+(100004, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'Karl Max', 23, 2, 'MC100 1009A', 'johnbill@gmail.com', 'https://www.meusite.com', 878877655, 'admin'),
+(100005, 'Gaza', 'GZ Distrito 1', ' ', 'GZ Localidade 1', 'Rua da costa do sol', 54, 23, 'GZ100 1345C', 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com', 848455059, 'admin');
 
 -- --------------------------------------------------------
 
@@ -544,7 +605,8 @@ CREATE TABLE `mc_admin_post` (
 --
 
 INSERT INTO `mc_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
-(10, 'Maputo Cidade', 'MC Posto 1');
+(10, 'Maputo Cidade', 'MC Posto 1'),
+(11, 'Maputo Cidade', 'MP Posto 1');
 
 -- --------------------------------------------------------
 
@@ -811,6 +873,13 @@ CREATE TABLE `mp_admin_post` (
   `admin_post_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mp_admin_post`
+--
+
+INSERT INTO `mp_admin_post` (`admin_post_id`, `province`, `admin_post_name`) VALUES
+(10, 'Maputo Província', 'MP Posto 1');
+
 -- --------------------------------------------------------
 
 --
@@ -822,6 +891,13 @@ CREATE TABLE `mp_cell` (
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_cell`
+--
+
+INSERT INTO `mp_cell` (`cell_id`, `province`, `cell_name`) VALUES
+(100, 'Maputo Província', 'MP Celula 1');
 
 -- --------------------------------------------------------
 
@@ -835,6 +911,13 @@ CREATE TABLE `mp_circle` (
   `circle_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mp_circle`
+--
+
+INSERT INTO `mp_circle` (`circle_id`, `province`, `circle_name`) VALUES
+(100, 'Maputo Província', 'MP Circulo 1');
+
 -- --------------------------------------------------------
 
 --
@@ -847,6 +930,13 @@ CREATE TABLE `mp_district` (
   `district_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mp_district`
+--
+
+INSERT INTO `mp_district` (`district_id`, `province`, `district_name`) VALUES
+(0, 'Maputo Província', 'MP Distrito 1');
+
 -- --------------------------------------------------------
 
 --
@@ -858,6 +948,13 @@ CREATE TABLE `mp_locality` (
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_locality`
+--
+
+INSERT INTO `mp_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Maputo Província', 'MP Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -883,6 +980,13 @@ CREATE TABLE `mp_township` (
   `township_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mp_township`
+--
+
+INSERT INTO `mp_township` (`township_id`, `province`, `township_name`) VALUES
+(100, 'Maputo Província', 'MP Povoacao 1');
+
 -- --------------------------------------------------------
 
 --
@@ -895,6 +999,13 @@ CREATE TABLE `mp_village` (
   `village_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mp_village`
+--
+
+INSERT INTO `mp_village` (`village_id`, `province`, `village_name`) VALUES
+(100, 'Maputo Província', 'MP Vila 1');
+
 -- --------------------------------------------------------
 
 --
@@ -906,6 +1017,13 @@ CREATE TABLE `mp_zone` (
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mp_zone`
+--
+
+INSERT INTO `mp_zone` (`zone_id`, `province`, `zone_name`) VALUES
+(100, 'Maputo Província', 'MP Zona 1');
 
 -- --------------------------------------------------------
 
@@ -1144,7 +1262,8 @@ CREATE TABLE `postal_entities` (
 --
 
 INSERT INTO `postal_entities` (`entity_id`, `city_block`, `lateral`, `entry`, `mailbox`, `post_office`, `postal_code`) VALUES
-(100001, 45, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC100 1009A');
+(100007, 2, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC100 1009A'),
+(100008, 23, 'C', 'C', 'Caixa Postal Z', 'Estacao Z', 'GZ100 1345C');
 
 -- --------------------------------------------------------
 
@@ -1165,7 +1284,8 @@ CREATE TABLE `registration_info` (
 --
 
 INSERT INTO `registration_info` (`entity_id`, `registration_date`, `edition_date`, `user_role`, `user_id`) VALUES
-(100001, '2011-04-23', NULL, 'Administra', 'admin');
+(100007, '2012-04-23', NULL, 'Administra', 'admin'),
+(100008, '2012-04-23', NULL, 'Administra', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1286,6 +1406,13 @@ CREATE TABLE `supervisors` (
   `password` varchar(270) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `supervisors`
+--
+
+INSERT INTO `supervisors` (`username`, `password`) VALUES
+('supervisor', 'c3630306d12f1c1056badb39aa74fe7f');
+
 -- --------------------------------------------------------
 
 --
@@ -1296,6 +1423,13 @@ CREATE TABLE `technician` (
   `username` varchar(50) NOT NULL,
   `password` varchar(270) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `technician`
+--
+
+INSERT INTO `technician` (`username`, `password`) VALUES
+('tecnico', 'c3630306d12f1c1056badb39aa74fe7f');
 
 -- --------------------------------------------------------
 
@@ -1647,7 +1781,7 @@ ALTER TABLE `gz_village`
 -- Indexes for table `gz_zone`
 --
 ALTER TABLE `gz_zone`
-  ADD PRIMARY KEY (`village_id`);
+  ADD PRIMARY KEY (`zone_id`);
 
 --
 -- Indexes for table `heritage_entities`
@@ -2179,7 +2313,7 @@ ALTER TABLE `zb_zone`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
 
 --
 -- AUTO_INCREMENT for table `cd_admin_post`
@@ -2239,43 +2373,43 @@ ALTER TABLE `cd_zone`
 -- AUTO_INCREMENT for table `complementary_entities`
 --
 ALTER TABLE `complementary_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
 
 --
 -- AUTO_INCREMENT for table `espacial_entities`
 --
 ALTER TABLE `espacial_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
 
 --
 -- AUTO_INCREMENT for table `gz_admin_post`
 --
 ALTER TABLE `gz_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `gz_cell`
 --
 ALTER TABLE `gz_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `gz_circle`
 --
 ALTER TABLE `gz_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `gz_district`
 --
 ALTER TABLE `gz_district`
-  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `gz_locality`
 --
 ALTER TABLE `gz_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `gz_neighborhood`
@@ -2287,19 +2421,25 @@ ALTER TABLE `gz_neighborhood`
 -- AUTO_INCREMENT for table `gz_township`
 --
 ALTER TABLE `gz_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `gz_village`
 --
 ALTER TABLE `gz_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `gz_zone`
 --
 ALTER TABLE `gz_zone`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `heritage_entities`
+--
+ALTER TABLE `heritage_entities`
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
 
 --
 -- AUTO_INCREMENT for table `in_admin_post`
@@ -2359,19 +2499,19 @@ ALTER TABLE `in_zone`
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
 
 --
 -- AUTO_INCREMENT for table `main_address_info`
 --
 ALTER TABLE `main_address_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
 
 --
 -- AUTO_INCREMENT for table `mc_admin_post`
 --
 ALTER TABLE `mc_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `mc_cell`
@@ -2479,25 +2619,25 @@ ALTER TABLE `mn_zone`
 -- AUTO_INCREMENT for table `mp_admin_post`
 --
 ALTER TABLE `mp_admin_post`
-  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `admin_post_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mp_cell`
 --
 ALTER TABLE `mp_cell`
-  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `cell_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_circle`
 --
 ALTER TABLE `mp_circle`
-  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_locality`
 --
 ALTER TABLE `mp_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_neighborhood`
@@ -2509,19 +2649,19 @@ ALTER TABLE `mp_neighborhood`
 -- AUTO_INCREMENT for table `mp_township`
 --
 ALTER TABLE `mp_township`
-  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `township_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_village`
 --
 ALTER TABLE `mp_village`
-  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `village_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mp_zone`
 --
 ALTER TABLE `mp_zone`
-  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `zone_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `np_admin_post`
@@ -2635,13 +2775,13 @@ ALTER TABLE `ns_zone`
 -- AUTO_INCREMENT for table `postal_entities`
 --
 ALTER TABLE `postal_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
 
 --
 -- AUTO_INCREMENT for table `registration_info`
 --
 ALTER TABLE `registration_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100002;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
 
 --
 -- AUTO_INCREMENT for table `sf_admin_post`

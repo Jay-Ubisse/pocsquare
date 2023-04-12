@@ -48,7 +48,7 @@
 
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
     <script>
-        $("#all").load("../../server/src/places-lists/all-places.php");
+        $("#all").load("../../server/src/addresses-lists/all-addresses.php");
     </script>
 </body>
 </html>
