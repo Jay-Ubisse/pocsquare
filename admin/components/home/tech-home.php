@@ -6,7 +6,7 @@
                 <i class="fa-solid fa-floppy-disk fa-2x"></i>
             </span>
             <span>
-                Cadastrar Local
+                Cadastrar Endereço
             </span>
         </a>
     </div>
