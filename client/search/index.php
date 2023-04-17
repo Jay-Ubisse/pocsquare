@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-gray-200 font-schibsted p-0">
     <header>
         <!-- Header added using ajax-->
@@ -19,12 +21,33 @@
         <section class="bg-search-background p-0 bg-cover border mt-0 min-h-[400px]">
             <div class="bg-white/30 min-h-[400px] p-1 w-full">
                 <div class="mx-auto mt-20 laptop:w-1/2 mobile:w-[95%]">
-                    <div class="text-center mb-2 p-4 bg-white/80">
+                    <div class="text-center mb-1 p-4 bg-white/80">
                         <h1 class="laptop:text-lg mobile:text-base font-bold mb-5">Encontre um endereço</h1>
-                        <p class="laptop:text-base mobile:text-sm font-medium">Digite uma parte do endereço ou código postal</p>
+                        <p class="laptop:text-base mobile:text-sm font-medium">Selecione um País e digite uma parte do endereço ou código postal</p>
                     </div>
-                    <div>
+                    <div class="text-center mb-2 p-4">
+                        <select name="country" onchange="toggleSearchField()" class="country px-4 py-2 focus:outline-none focus:border-4 focus:border-orange-700 focus:shadow-orange-700 focus:shadow-fixed-2 text-gray-600 font-medium">
+                            <option value="select-country"><-- Selecione o País --></option>
+                            <option value="mozambique">Moçambique</option>
+                            <option value="angola">Angola</option>
+                            <option value="cabo-verde">Cabo Verde</option>
+                        </select>
+                    </div>
+                    <div id="mz-search-field">
                         <input type="search" placeholder="Pesquisar" id="searchValue" class="py-3 px-3 focus:outline-none focus:border-4 focus:border-orange-700 focus:shadow-orange-700 focus:shadow-fixed-2 text-gray-600 placeholder-gray-600 font-medium w-full" />
+                    </div>
+                    <div id="ao-search-field">
+                        <input type="search" placeholder="Pesquisar" id="searchValue" class="py-3 px-3 focus:outline-none focus:border-4 focus:border-orange-700 focus:shadow-orange-700 focus:shadow-fixed-2 text-gray-600 placeholder-gray-600 font-medium w-full" />
+                    </div>
+                    <div id="cv-search-field">
+                        <input type="search" placeholder="Pesquisar" id="searchValue" class="py-3 px-3 focus:outline-none focus:border-4 focus:border-orange-700 focus:shadow-orange-700 focus:shadow-fixed-2 text-gray-600 placeholder-gray-600 font-medium w-full" />
+                    </div>
+                    <div id="hidden-search-field">
+                        <input type="search" disabled placeholder="Pesquisar" id="searchValue" class="py-3 px-3 focus:outline-none focus:border-4 focus:border-orange-700 focus:shadow-orange-700 focus:shadow-fixed-2 text-gray-600 placeholder-gray-600 font-medium w-full" />
+                    </div>
+                    <div id="info-field" class="flex laptop:flex-row mobile:flex-col gap-2 bg-white/80 text-center mb-1 p-4">
+                        <span class="text-yellow-500"><i class="fa-solid fa-circle-info fa-2x"></i></span>
+                        <span class="laptop:text-base mobile:text-sm font-medium">Esta região nao esta disponível.</span>
                     </div>
                     <div id="results" class="bg-white mt-1 max-h-[500px] overflow-y-scroll">
 
@@ -47,7 +70,7 @@
                 <p><span><b>Website: </b></span><span id="website"></span></p>
             </div>
             <div class="border border-orange-700 rounded-md flex justify-center items-center font-bold mobile:mx-auto laptop:mx-0 laptop:h-[400px] mobile:h-[300px] laptop:w-[600px] mobile:w-[95%]">
-                    MAPA
+                MAPA
             </div>
         </section>
         <section class="mt-5 p-3 mx-auto laptop:w-[40%] mobile:w-[95%]">
@@ -67,4 +90,5 @@
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
     <script src="../../assets/scripts/search.js"></script>
 </body>
+
 </html>

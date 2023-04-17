@@ -13,11 +13,56 @@ Mobile menu
 /*
   SEARCH ENGINE
 */
-$('#searchValue').on('input',function(e){
+$('#searchValue').on('input', function (e) {
     var input = $(this);
     var value = input.val();
-    $("#results").load("../../server/src/search.php", {data: value});
+    $("#results").load("../../server/src/search.php", { data: value });
 });
+
+$('#mz-search-field').hide();
+$('#hidden-search-field').show();
+$('#ao-search-field').hide();
+$('#cv-search-field').hide();
+$('#info-field').hide();
+function toggleSearchField() {
+
+    let value = $(".country").val();
+
+    switch (value) {
+        case "select-country":
+            $('#mz-search-field').hide();
+            $('#hidden-search-field').show();
+            $('#ao-search-field').hide();
+            $('#cv-search-field').hide();
+            $('#info-field').hide();
+            break;
+        case "mozambique":
+            $('#mz-search-field').show();
+            $('#hidden-search-field').hide();
+            $('#ao-search-field').hide();
+            $('#cv-search-field').hide();
+            $('#info-field').hide();
+            break;
+        case "angola":
+            $('#mz-search-field').hide();
+            $('#hidden-search-field').hide();
+            $('#ao-search-field').hide();
+            $('#cv-search-field').hide();
+            $('#info-field').show();
+            break;
+        case "cabo-verde":
+            $('#mz-search-field').hide();
+            $('#hidden-search-field').hide();
+            $('#ao-search-field').hide();
+            $('#cv-search-field').hide();
+            $('#info-field').show();
+            break;
+
+        default:
+            break;
+    }
+
+}
 
 $("#location-info").hide();
 function showInfo(data) {
