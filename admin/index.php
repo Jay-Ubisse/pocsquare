@@ -6,15 +6,17 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Pocsquare</title>
-    <link rel="stylesheet" href="../assets/styles/output.css">
-    <link rel="stylesheet" href="../assets/styles/form.css">
-    <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login | Pocsquare</title>
+	<link rel="stylesheet" href="../assets/styles/output.css">
+	<link rel="stylesheet" href="../assets/styles/form.css">
+	<script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="relative">
 	<div class="absolute top-0 right-0 laptop:m-10 mobile:m-4">
 		<select id="role" onchange="changeRole()" class="px-5 py-2 rounded outline-none active:outline active:outline-orange-700">
@@ -26,10 +28,10 @@ session_start();
 	<div class="container tech-container">
 		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["tech-auth"]) ) {
-					echo $_SESSION["tech-auth"];
-					unset($_SESSION["tech-auth"]);
-				} 
+			if (isset($_SESSION["tech-auth"])) {
+				echo $_SESSION["tech-auth"];
+				unset($_SESSION["tech-auth"]);
+			}
 			?>
 		</div>
 		<div class="pic">
@@ -44,13 +46,13 @@ session_start();
 			<button type="submit" class="button">Entrar</button>
 		</form>
 	</div>
-    <div class="container admin-container">
+	<div class="container admin-container">
 		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["admin-auth"]) ) {
-					echo $_SESSION["admin-auth"];
-					unset($_SESSION["admin-auth"]);
-				} 
+			if (isset($_SESSION["admin-auth"])) {
+				echo $_SESSION["admin-auth"];
+				unset($_SESSION["admin-auth"]);
+			}
 			?>
 		</div>
 		<div class="pic">
@@ -66,12 +68,12 @@ session_start();
 		</form>
 	</div>
 	<div class="container sup-container">
-		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
+		<div class="bg-red-700 text-white font-semibold flex justify-center my-4">
 			<?php
-				if(isset($_SESSION["sup-auth"]) ) {
-					echo $_SESSION["sup-auth"];
-					unset($_SESSION["sup-auth"]);
-				} 
+			if (isset($_SESSION["sup-auth"])) {
+				echo $_SESSION["sup-auth"];
+				unset($_SESSION["sup-auth"]);
+			}
 			?>
 		</div>
 		<div class="pic">
@@ -90,4 +92,5 @@ session_start();
 	<script src="../assets/scripts/jquery-3.6.0.js"></script>
 	<script src="../assets/scripts/admin/login.js"></script>
 </body>
+
 </html>
