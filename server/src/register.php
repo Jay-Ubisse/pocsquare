@@ -36,7 +36,7 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
-        
+
         $localityOrNeighborhoodId = $neighborhoodId;
 
         break;
@@ -90,7 +90,7 @@ switch ($provinceAlphanumericId) {
         $villageId = $idArray[6];
         $townshipId = $idArray[7];
         $zoneId = $idArray[8];
-        
+
         $localityOrNeighborhoodId = $localityId;
         break;
     case 'IN':
@@ -301,7 +301,7 @@ switch ($provinceAlphanumericId) {
 
         $localityOrNeighborhoodId = $localityId;
         break;
-    
+
     default:
         # code...
         break;
@@ -314,7 +314,17 @@ $floor = $_POST["floor"];
 $side = $_POST["side"];
 $doorNumber = $_POST["door-number"];
 $roadType = $_POST["road-type"];
-$roadName = $_POST["road-name"];
+switch ($roadType) {
+    case 'Avenida':
+        $roadName = "AV. " . $_POST["road-name"];
+        break;
+    case 'Rua':
+        $roadName = "Rua " . $_POST["road-name"];
+        break;
+    default:
+        # code...
+        break;
+}
 $stalemate = $_POST["stalemate"];
 $viaduct = $_POST["viaduct"];
 $block = $_POST["block"];
@@ -358,7 +368,8 @@ $registrationDate = date("d-m-y");
 $userRole = $_SESSION["user-role"];
 $userId = $_SESSION['user-data']['username'];
 
-function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone) {
+function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone)
+{
     global $dbcon, $database_name;
 
     //get district id 
@@ -440,12 +451,12 @@ try {
     $stmt = $dbcon->prepare($local_entities_query);
     $stmt->execute([$cell, $cellId, $circle, $circleId, $village, $villageId, $township, $townshipId, $zone, $zoneId]);
 
-     //save heritage entities data
+    //save heritage entities data
     $heritage_entities_query = "INSERT INTO $database_name.heritage_entities 
                                     (property_type, floor, side, door_number, road_name, road_type, stalemate, viaduct, block, roundabout, lane, wide, bridges, plaza, length, width, occupancy, affectation) 
                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($heritage_entities_query);
-    $stmt->execute([$propertyType, $floor, $side, $doorNumber, $roadType, $roadName, $stalemate, $viaduct, $block, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation]);
+    $stmt->execute([$propertyType, $floor, $side, $doorNumber,  $roadName, $roadType, $stalemate, $viaduct, $block, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation]);
 
     //save postal entities data
     $postal_entities_query = "INSERT INTO $database_name.postal_entities 
@@ -477,22 +488,18 @@ try {
 
     //save main info address data
     $main_address_info_query = "INSERT INTO $database_name.main_address_info 
-                            (province, district, neighborhood, locality, road_name, door_number, city_block, cep, email, website, phone_number, responsible) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                            (province, district, neighborhood, locality, road_name, floor, door_number, city_block, cep, email, website, phone_number, responsible) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($main_address_info_query);
-    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId]);
- 
+    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $floor, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId]);
+
 
     $dbcon->commit();
-    
+
     $_SESSION['register-response'] = "Registro efectuado com sucesso!";
     header("location: ../../admin/register/");
-
-} 
-catch(PDOException $ex) {
+} catch (PDOException $ex) {
     //Something went wrong rollback!
     $dbcon->rollBack();
     echo $ex->getMessage();
 }
-
-?>

@@ -57,17 +57,15 @@
         </section>
         <section id="location-info" class="bg-slate-300 mx-auto rounded-lg my-10 p-5 flex laptop:flex-row mobile:flex-col laptop:justify-between laptop:gap-0 mobile:gap-3 laptop:w-4/5 mobile:w-[95%]">
             <div>
-                <p><span><b>Província: </b></span><span id="province"></span></p>
-                <p><span><b>Distrito: </b></span><span id="district"></span></p>
-                <p><span><b>Bairro: </b></span><span id="neighborhood"></span></p>
-                <p><span><b>Localidade: </b></span><span id="locality"></span></p>
-                <p><span><b>Quarteirão: </b></span><span id="city-block"></span></p>
-                <p><span><b>Avenida ou Rua: </b></span><span id="road-name"></span></p>
-                <p><span><b>Numero da porta: </b></span><span id="door-number"></span></p>
-                <p><span><b>CEP: </b></span><span id="cep"></span></p>
-                <p><span><b>Telefone: </b></span><span id="tel"></span></p>
-                <p><span><b>Email: </b></span><span id="email"></span></p>
-                <p><span><b>Website: </b></span><span id="website"></span></p>
+                <p id="primary-address"><!-- door number, andar --></p>
+                <p id="road-name"></p>
+                <p id="neighborhood"></p>
+                <p id="province"></p>
+                <p id="cep"></p>
+                <br>
+                <p id="tel"></p>
+                <p id="email"></p>
+                <p id="website"></p>
             </div>
             <div class="border border-orange-700 rounded-md flex justify-center items-center font-bold mobile:mx-auto laptop:mx-0 laptop:h-[400px] mobile:h-[300px] laptop:w-[600px] mobile:w-[95%]">
                 MAPA
