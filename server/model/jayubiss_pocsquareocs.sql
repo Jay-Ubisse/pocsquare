@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2023 at 07:15 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Apr 17, 2023 at 10:41 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,7 @@ CREATE TABLE `administrative_entities` (
   `neighborhood` varchar(50) NOT NULL,
   `neighborhood_id` varchar(3) NOT NULL,
   `province_alphabetical_id` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `administrative_entities`
@@ -59,7 +59,7 @@ INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeri
 CREATE TABLE `admins` (
   `username` varchar(50) NOT NULL,
   `password` varchar(270) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admins`
@@ -78,7 +78,7 @@ CREATE TABLE `cd_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE `cd_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -102,7 +102,7 @@ CREATE TABLE `cd_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ CREATE TABLE `cd_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,7 @@ CREATE TABLE `cd_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE `cd_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,7 @@ CREATE TABLE `cd_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE `cd_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -174,7 +174,7 @@ CREATE TABLE `cd_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ CREATE TABLE `complementary_entities` (
   `contact_number` int(9) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `website` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `complementary_entities`
@@ -212,15 +212,15 @@ CREATE TABLE `espacial_entities` (
   `sea_rise` varchar(20) NOT NULL,
   `via_lat_start` varchar(20) NOT NULL,
   `via_lat_end` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `espacial_entities`
 --
 
 INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
-(100007, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67'),
-(100008, '10', '4.343', '9', '4.48994', '4.40404', '3.666', '4.67');
+(100007, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67'),
+(100008, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67');
 
 -- --------------------------------------------------------
 
@@ -232,7 +232,7 @@ CREATE TABLE `gz_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_admin_post`
@@ -251,7 +251,7 @@ CREATE TABLE `gz_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_cell`
@@ -270,7 +270,7 @@ CREATE TABLE `gz_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_circle`
@@ -289,7 +289,7 @@ CREATE TABLE `gz_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_district`
@@ -308,7 +308,7 @@ CREATE TABLE `gz_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_locality`
@@ -327,7 +327,7 @@ CREATE TABLE `gz_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -339,7 +339,7 @@ CREATE TABLE `gz_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_township`
@@ -358,7 +358,7 @@ CREATE TABLE `gz_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_village`
@@ -377,7 +377,7 @@ CREATE TABLE `gz_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gz_zone`
@@ -412,7 +412,7 @@ CREATE TABLE `heritage_entities` (
   `width` double NOT NULL,
   `occupancy` varchar(20) NOT NULL,
   `affectation` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `heritage_entities`
@@ -432,7 +432,7 @@ CREATE TABLE `in_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -444,7 +444,7 @@ CREATE TABLE `in_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -456,7 +456,7 @@ CREATE TABLE `in_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -468,7 +468,7 @@ CREATE TABLE `in_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -480,7 +480,7 @@ CREATE TABLE `in_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -492,7 +492,7 @@ CREATE TABLE `in_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -504,7 +504,7 @@ CREATE TABLE `in_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -516,7 +516,7 @@ CREATE TABLE `in_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -528,7 +528,7 @@ CREATE TABLE `in_zone` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -548,7 +548,7 @@ CREATE TABLE `local_entities` (
   `township_id` varchar(3) NOT NULL,
   `zone` varchar(50) NOT NULL,
   `zone_id` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `local_entities`
@@ -578,7 +578,7 @@ CREATE TABLE `main_address_info` (
   `website` varchar(50) NOT NULL,
   `phone_number` int(9) NOT NULL,
   `responsible` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `main_address_info`
@@ -598,7 +598,7 @@ CREATE TABLE `mc_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_admin_post`
@@ -618,7 +618,7 @@ CREATE TABLE `mc_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_cell`
@@ -637,7 +637,7 @@ CREATE TABLE `mc_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_circle`
@@ -656,7 +656,7 @@ CREATE TABLE `mc_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_district`
@@ -675,7 +675,7 @@ CREATE TABLE `mc_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -687,7 +687,7 @@ CREATE TABLE `mc_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_neighborhood`
@@ -706,7 +706,7 @@ CREATE TABLE `mc_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_township`
@@ -725,7 +725,7 @@ CREATE TABLE `mc_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_village`
@@ -744,7 +744,7 @@ CREATE TABLE `mc_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mc_zone`
@@ -763,7 +763,7 @@ CREATE TABLE `mn_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -775,7 +775,7 @@ CREATE TABLE `mn_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -787,7 +787,7 @@ CREATE TABLE `mn_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -799,7 +799,7 @@ CREATE TABLE `mn_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -811,7 +811,14 @@ CREATE TABLE `mn_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mn_locality`
+--
+
+INSERT INTO `mn_locality` (`locality_id`, `province`, `locality_name`) VALUES
+(100, 'Manica', 'MN Localidade 1');
 
 -- --------------------------------------------------------
 
@@ -823,7 +830,7 @@ CREATE TABLE `mn_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` int(20) NOT NULL,
   `neighborhood_name` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -835,7 +842,7 @@ CREATE TABLE `mn_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -847,7 +854,7 @@ CREATE TABLE `mn_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -859,7 +866,7 @@ CREATE TABLE `mn_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -871,7 +878,7 @@ CREATE TABLE `mp_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_admin_post`
@@ -890,7 +897,7 @@ CREATE TABLE `mp_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_cell`
@@ -909,7 +916,7 @@ CREATE TABLE `mp_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_circle`
@@ -928,14 +935,15 @@ CREATE TABLE `mp_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_district`
 --
 
 INSERT INTO `mp_district` (`district_id`, `province`, `district_name`) VALUES
-(0, 'Maputo Província', 'MP Distrito 1');
+(10, 'Maputo Província', 'MP Districto 1'),
+(11, 'Maputo Província', 'MP Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -947,7 +955,7 @@ CREATE TABLE `mp_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_locality`
@@ -966,7 +974,7 @@ CREATE TABLE `mp_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -978,7 +986,7 @@ CREATE TABLE `mp_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_township`
@@ -997,7 +1005,7 @@ CREATE TABLE `mp_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_village`
@@ -1016,7 +1024,7 @@ CREATE TABLE `mp_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mp_zone`
@@ -1035,7 +1043,7 @@ CREATE TABLE `np_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1047,7 +1055,7 @@ CREATE TABLE `np_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1059,7 +1067,7 @@ CREATE TABLE `np_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1071,7 +1079,7 @@ CREATE TABLE `np_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1083,7 +1091,7 @@ CREATE TABLE `np_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1095,7 +1103,7 @@ CREATE TABLE `np_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1107,7 +1115,7 @@ CREATE TABLE `np_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1119,7 +1127,7 @@ CREATE TABLE `np_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1131,7 +1139,7 @@ CREATE TABLE `np_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1143,7 +1151,7 @@ CREATE TABLE `ns_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1155,7 +1163,7 @@ CREATE TABLE `ns_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1167,7 +1175,7 @@ CREATE TABLE `ns_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1179,7 +1187,7 @@ CREATE TABLE `ns_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1191,7 +1199,7 @@ CREATE TABLE `ns_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1203,7 +1211,7 @@ CREATE TABLE `ns_neighborhood` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1223,7 @@ CREATE TABLE `ns_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1227,7 +1235,7 @@ CREATE TABLE `ns_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1239,7 +1247,7 @@ CREATE TABLE `ns_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1255,7 +1263,7 @@ CREATE TABLE `postal_entities` (
   `mailbox` varchar(30) NOT NULL,
   `post_office` varchar(30) NOT NULL,
   `postal_code` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `postal_entities`
@@ -1277,7 +1285,7 @@ CREATE TABLE `registration_info` (
   `edition_date` date DEFAULT NULL,
   `user_role` varchar(10) NOT NULL,
   `user_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration_info`
@@ -1297,7 +1305,7 @@ CREATE TABLE `sf_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1309,7 +1317,7 @@ CREATE TABLE `sf_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1321,7 +1329,7 @@ CREATE TABLE `sf_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1333,7 +1341,7 @@ CREATE TABLE `sf_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1345,7 +1353,7 @@ CREATE TABLE `sf_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1357,7 +1365,7 @@ CREATE TABLE `sf_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1369,7 +1377,7 @@ CREATE TABLE `sf_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1381,7 +1389,7 @@ CREATE TABLE `sf_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1393,7 +1401,7 @@ CREATE TABLE `sf_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1404,7 +1412,7 @@ CREATE TABLE `sf_zone` (
 CREATE TABLE `supervisors` (
   `username` varchar(50) NOT NULL,
   `password` varchar(270) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `supervisors`
@@ -1422,7 +1430,7 @@ INSERT INTO `supervisors` (`username`, `password`) VALUES
 CREATE TABLE `technician` (
   `username` varchar(50) NOT NULL,
   `password` varchar(270) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `technician`
@@ -1441,7 +1449,7 @@ CREATE TABLE `tt_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1453,7 +1461,7 @@ CREATE TABLE `tt_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1465,7 +1473,7 @@ CREATE TABLE `tt_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1477,7 +1485,7 @@ CREATE TABLE `tt_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1489,7 +1497,7 @@ CREATE TABLE `tt_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1501,7 +1509,7 @@ CREATE TABLE `tt_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1513,7 +1521,7 @@ CREATE TABLE `tt_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1525,7 +1533,7 @@ CREATE TABLE `tt_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1537,7 +1545,7 @@ CREATE TABLE `tt_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1549,7 +1557,7 @@ CREATE TABLE `zb_admin_post` (
   `admin_post_id` int(2) NOT NULL,
   `province` varchar(20) NOT NULL,
   `admin_post_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1561,7 +1569,7 @@ CREATE TABLE `zb_cell` (
   `cell_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `cell_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1573,7 +1581,7 @@ CREATE TABLE `zb_circle` (
   `circle_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `circle_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1585,7 +1593,7 @@ CREATE TABLE `zb_district` (
   `district_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `district_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1597,7 +1605,7 @@ CREATE TABLE `zb_locality` (
   `locality_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `locality_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1609,7 +1617,7 @@ CREATE TABLE `zb_neighborhood` (
   `neighborhood_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `neighborhood_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1621,7 +1629,7 @@ CREATE TABLE `zb_township` (
   `township_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `township_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1633,7 +1641,7 @@ CREATE TABLE `zb_village` (
   `village_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `village_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1645,7 +1653,7 @@ CREATE TABLE `zb_zone` (
   `zone_id` int(3) NOT NULL,
   `province` varchar(20) NOT NULL,
   `zone_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -2589,7 +2597,7 @@ ALTER TABLE `mn_district`
 -- AUTO_INCREMENT for table `mn_locality`
 --
 ALTER TABLE `mn_locality`
-  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `locality_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `mn_neighborhood`
@@ -2632,6 +2640,12 @@ ALTER TABLE `mp_cell`
 --
 ALTER TABLE `mp_circle`
   MODIFY `circle_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- AUTO_INCREMENT for table `mp_district`
+--
+ALTER TABLE `mp_district`
+  MODIFY `district_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `mp_locality`
