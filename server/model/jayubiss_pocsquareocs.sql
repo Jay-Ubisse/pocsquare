@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2023 at 10:41 PM
+-- Generation Time: Apr 18, 2023 at 09:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -47,8 +47,7 @@ CREATE TABLE `administrative_entities` (
 --
 
 INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `locality`, `locality_id`, `neighborhood`, `neighborhood_id`, `province_alphabetical_id`) VALUES
-(100009, 'Maputo Cidade', '01', 'MC Distrito 1', '10', 'MC Posto 1', '10', ' ', '0', 'MC Bairro 1', '100', 'MC'),
-(100010, 'Gaza', '03', 'GZ Distrito 1', '10', 'GZ Posto 1', '10', 'GZ Localidade 1', '100', ' ', '0', 'GZ');
+(100013, 'Maputo Cidade', '01', 'MC Distrito 1', '10', 'MC Posto 1', '10', ' ', '0', 'MC Bairro 1', '100', 'MC');
 
 -- --------------------------------------------------------
 
@@ -194,8 +193,7 @@ CREATE TABLE `complementary_entities` (
 --
 
 INSERT INTO `complementary_entities` (`entity_id`, `contact_number`, `email`, `website`) VALUES
-(100007, 878877655, 'johnbill@gmail.com', 'https://www.meusite.com'),
-(100008, 848455059, 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com');
+(100010, 848839501, 'joaquimubisse@gmail.com', 'https://www.jay-ubisse.com');
 
 -- --------------------------------------------------------
 
@@ -219,8 +217,7 @@ CREATE TABLE `espacial_entities` (
 --
 
 INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
-(100007, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67'),
-(100008, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67');
+(100010, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67');
 
 -- --------------------------------------------------------
 
@@ -419,8 +416,7 @@ CREATE TABLE `heritage_entities` (
 --
 
 INSERT INTO `heritage_entities` (`entity_id`, `property_type`, `floor`, `side`, `door_number`, `road_name`, `road_type`, `stalemate`, `viaduct`, `block`, `roundabout`, `lane`, `wide`, `bridges`, `plaza`, `length`, `width`, `occupancy`, `affectation`) VALUES
-(100004, 'Casa Geminada', 'R/C', 'lado a', 23, 'Avenida', 'Karl Max', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca a', 23, 23, 'ocupacao a', 'afetacao a'),
-(100005, 'Casa Geminada', 'R/C', 'lado a', 54, 'Rua', 'Rua da cos', 'imasse g', ' viaduto g', '1345', 'rotunda g', 'travessa g', 'largo g', 'ponte g', 'praca g', 34, 23, 'ocupacao g', 'afetacao g');
+(100007, 'Casa Geminada', 'R/C', 'lado a', 543, 'AV.Karl Max', 'Avenida', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca 1', 3000, 9000, 'ocupacao a', 'afetacao a');
 
 -- --------------------------------------------------------
 
@@ -555,8 +551,7 @@ CREATE TABLE `local_entities` (
 --
 
 INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
-(100004, 'MC Celula 1', '100', 'MC Circulo 1', '100', 'MC Vila 1', '100', 'MC Povoacao 1', '100', 'MC Zona 1', '100'),
-(100005, 'GZ Celula 1', '100', 'GZ Circulo 1', '100', 'GZ Vila 1', '100', 'GZ Povoacao 1', '100', 'GZ Zona 1', '100');
+(100008, 'MC Celula 1', '100', 'MC Circulo 1', '100', 'MC Vila 1', '100', 'MC Povoacao 1', '100', 'MC Zona 1', '100');
 
 -- --------------------------------------------------------
 
@@ -571,6 +566,7 @@ CREATE TABLE `main_address_info` (
   `neighborhood` varchar(50) NOT NULL,
   `locality` varchar(50) NOT NULL,
   `road_name` varchar(50) NOT NULL,
+  `floor` varchar(15) NOT NULL,
   `door_number` int(5) NOT NULL,
   `city_block` int(5) NOT NULL,
   `cep` varchar(15) NOT NULL,
@@ -584,9 +580,8 @@ CREATE TABLE `main_address_info` (
 -- Dumping data for table `main_address_info`
 --
 
-INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood`, `locality`, `road_name`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`, `responsible`) VALUES
-(100004, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'Karl Max', 23, 2, 'MC100 1009A', 'johnbill@gmail.com', 'https://www.meusite.com', 878877655, 'admin'),
-(100005, 'Gaza', 'GZ Distrito 1', ' ', 'GZ Localidade 1', 'Rua da costa do sol', 54, 23, 'GZ100 1345C', 'ubisse.joaquim@outlook.com', 'https://www.jay-ubisse.com', 848455059, 'admin');
+INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood`, `locality`, `road_name`, `floor`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`, `responsible`) VALUES
+(100007, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', ' ', 'AV.Karl Max', 'R/C', 543, 34, 'MC100 1009A', 'joaquimubisse@gmail.com', 'https://www.jay-ubisse.com', 848839501, 'admin');
 
 -- --------------------------------------------------------
 
@@ -1270,8 +1265,7 @@ CREATE TABLE `postal_entities` (
 --
 
 INSERT INTO `postal_entities` (`entity_id`, `city_block`, `lateral`, `entry`, `mailbox`, `post_office`, `postal_code`) VALUES
-(100007, 2, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC100 1009A'),
-(100008, 23, 'C', 'C', 'Caixa Postal Z', 'Estacao Z', 'GZ100 1345C');
+(100010, 34, 'A', 'A', 'Caixa Postal a', 'Estacao a', 'MC100 1009A');
 
 -- --------------------------------------------------------
 
@@ -1292,8 +1286,7 @@ CREATE TABLE `registration_info` (
 --
 
 INSERT INTO `registration_info` (`entity_id`, `registration_date`, `edition_date`, `user_role`, `user_id`) VALUES
-(100007, '2012-04-23', NULL, 'Administra', 'admin'),
-(100008, '2012-04-23', NULL, 'Administra', 'admin');
+(100010, '2018-04-23', NULL, 'Administra', 'admin');
 
 -- --------------------------------------------------------
 
@@ -2321,7 +2314,7 @@ ALTER TABLE `zb_zone`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100014;
 
 --
 -- AUTO_INCREMENT for table `cd_admin_post`
@@ -2381,13 +2374,13 @@ ALTER TABLE `cd_zone`
 -- AUTO_INCREMENT for table `complementary_entities`
 --
 ALTER TABLE `complementary_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
 
 --
 -- AUTO_INCREMENT for table `espacial_entities`
 --
 ALTER TABLE `espacial_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
 
 --
 -- AUTO_INCREMENT for table `gz_admin_post`
@@ -2447,7 +2440,7 @@ ALTER TABLE `gz_zone`
 -- AUTO_INCREMENT for table `heritage_entities`
 --
 ALTER TABLE `heritage_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100008;
 
 --
 -- AUTO_INCREMENT for table `in_admin_post`
@@ -2507,13 +2500,13 @@ ALTER TABLE `in_zone`
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
 
 --
 -- AUTO_INCREMENT for table `main_address_info`
 --
 ALTER TABLE `main_address_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100006;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100008;
 
 --
 -- AUTO_INCREMENT for table `mc_admin_post`
@@ -2789,13 +2782,13 @@ ALTER TABLE `ns_zone`
 -- AUTO_INCREMENT for table `postal_entities`
 --
 ALTER TABLE `postal_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
 
 --
 -- AUTO_INCREMENT for table `registration_info`
 --
 ALTER TABLE `registration_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100009;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100011;
 
 --
 -- AUTO_INCREMENT for table `sf_admin_post`
