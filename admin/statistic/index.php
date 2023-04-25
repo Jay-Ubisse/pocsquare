@@ -155,6 +155,15 @@ session_start();
         <section class="moz-section">
           <?php include "./components/moz-section.html"  ?>
         </section>
+        <section class="south-section">
+          <?php include "./components/south-section.html"  ?>
+        </section>
+        <section class="center-section">
+          <?php include "./components/center-section.html"  ?>
+        </section>
+        <section class="north-section">
+          <?php include "./components/north-section.html"  ?>
+        </section>
       </article>
     </main>
     <footer class="h-[3%] bg-orange-800 text-white text-center w-full laptop:text-xs">
@@ -163,8 +172,8 @@ session_start();
   </section>
 
   <script src="../../assets/scripts/jquery-3.6.0.js"></script>
-  <script src="../../assets/scripts/statistic.js"></script>
-  <script src="../../assets/scripts/number-counters.js"></script>
+  <script src="../../assets/scripts/admin/statistic.js"></script>
+  <script src="../../assets/scripts/admin/number-counters.js"></script>
 </body>
 
 </html>
