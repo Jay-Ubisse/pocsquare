@@ -86,7 +86,7 @@
         <!-- Footer added using ajax-->
     </Footer>
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
-    <script src="../../assets/scripts/search.js"></script>
+    <script src="../../assets/scripts/client/search.js"></script>
 </body>
 
 </html>
