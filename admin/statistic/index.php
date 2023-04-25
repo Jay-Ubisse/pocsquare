@@ -11,6 +11,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estatística | Pocsquare</title>
   <link rel="stylesheet" href="../../assets/styles/output.css" />
+  <link rel="stylesheet" href="../../assets/styles/progress-bar.css" />
   <script src="https://kit.fontawesome.com/4b43862993.js" crossorigin="anonymous"></script>
 </head>
 
@@ -151,69 +152,8 @@ session_start();
         </div>
       </aside>
       <article class="w-[85%] h-full bg-slate-200 p-2">
-        <section class="moz-section h-[30%] grid grid-cols-5 gap-y-2 gap-x-4">
-          <div class="rounded-md bg-slate-300 p-2 h-fit">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Províncias
-            </h1>
-            <div id="counters_3">
-              <div class="counter font-bold text-lg text-orange-800 w-full text-center mt-1" data-TargetNum="10" data-Speed="1000">0</div>
-            </div>
-          </div>
-          <div class=" rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Distritos
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              P. Administrativos
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Localidades
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Bairros
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Células
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Círclulos
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Vilas
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Zonas
-            </h1>
-            <span></span>
-          </div>
-          <div class="rounded-md bg-slate-300 p-2">
-            <h1 class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center">
-              Povoações
-            </h1>
-            <span></span>
-          </div>
+        <section class="moz-section">
+          <?php include "./components/moz-section.html"  ?>
         </section>
       </article>
     </main>

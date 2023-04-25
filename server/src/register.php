@@ -5,7 +5,7 @@ session_start();
 /*
 $_SESSION['register-response'] = "Formulário em manutenção. Tente mais tarde.";
     header("location: ../../admin/register/");
- */
+*/
 
 //get selected province
 $provinceAlphanumericId = $_POST["province"];
