@@ -497,7 +497,7 @@ try {
     $dbcon->commit();
 
     $_SESSION['register-response'] = "Registro efectuado com sucesso!";
-    header("location: ../../admin/register/");
+    header("location: ../../admin/register-address/");
 } catch (PDOException $ex) {
     //Something went wrong rollback!
     $dbcon->rollBack();

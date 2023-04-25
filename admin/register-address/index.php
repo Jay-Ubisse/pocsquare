@@ -20,7 +20,7 @@ session_start();
         <?php include "../components/header.php"; ?>
     </header>
     <main class="h-screen">
-        <form method="post" action="../../server/src/register.php" class="border-2 border-orange-700 rounded-xl mx-auto mt-10 mb-20 laptop:w-[90%] mobile:w-[95%]">
+        <form method="post" action="../../server/src/register-address.php" class="border-2 border-orange-700 rounded-xl mx-auto mt-10 mb-20 laptop:w-[90%] mobile:w-[95%]">
             <h1 class="w-fit mx-auto my-5 font-bold text-2xl text-orange-700">Cadastrar Local</h1>
             <?php
             if (isset($_SESSION["register-response"])) {
