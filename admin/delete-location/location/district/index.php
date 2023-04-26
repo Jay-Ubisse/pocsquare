@@ -24,9 +24,10 @@ session_start();
 
             </table>
         </section>
-        <section class="border-2 rounded-md border-orange-700 max-h-[300px] p-4 w-[23%] mt-10">
+        <section class="border-2 rounded-md border-orange-700 h-[100px] p-4 w-[23%] mt-10">
             <label for="province" class="font-medium">Província</label>
-            <select name="province" class="border border-orange-700 focus:outline-none outline-none rounded">
+            <select name="province" id="provinces" onchange="getTableData()" class="border border-orange-700 focus:outline-none outline-none rounded">
+                <option value="Maputo Cidade">Maputo Cidade</option>
                 <option value="Maputo Província">Maputo Província</option>
                 <option value="Gaza">Gaza</option>
                 <option value="Inhambane">Inhambane</option>
@@ -46,7 +47,12 @@ session_start();
 
     <script src="../../../../assets/scripts/jquery-3.6.0.js"></script>
     <script>
-        $("#all").load("../../../../server/src/modify-location/locations-list.php");
+        $("#all").load("../../../../server/src/modify-location/locations-list.php",{data: "Maputo Cidade"});
+
+        function getTableData() {
+            let province = $("#provinces").val();
+            $("#all").load("../../../../server/src/modify-location/locations-list.php",{data: province});
+        }
     </script>
 </body>
 
