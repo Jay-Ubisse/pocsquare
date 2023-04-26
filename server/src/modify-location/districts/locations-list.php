@@ -1,5 +1,5 @@
 <?php
-require "../../config/connect.php";
+require "../../../config/connect.php";
 
 $province = $_POST['data'];
 
