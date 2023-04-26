@@ -45,7 +45,7 @@
                 Inserir Locais no Sistema
             </span>
         </a>
-        <a href="../delete-location" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
+        <a href="../modify-location" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
             <span>
                 <i class="fa-solid fa-plus fa-2x"></i>
             </span>

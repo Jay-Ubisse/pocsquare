@@ -34,33 +34,33 @@ session_start();
         <section class="bg-white h-fit mx-auto my-20 p-6 rounded-lg laptop:w-5/6 mobile:w-[95%]">
             <h1 class="text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">DASHBOARD</h1>
             <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
-                <a href="./location/district/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/district/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Distrito
                 </a>
-                <a href="./location/administrative-post/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/administrative-post/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar P. Administrativo
                 </a>
-                <a href="./location/locality/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/locality/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Localidade
                 </a>
             </div>
             <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
-                <a href="./location/neighborhood/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/neighborhood/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar bairro
-                </a><a href="./location/zone/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                </a><a href="./location-list/zone/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Zona
                 </a>
-                <a href="./location/township/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/township/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Povoação
                 </a>
             </div>
             <div class="flex h-44 laptop:flex-row mobile:flex-col mobile:gap-3 laptop:gap-0 laptop:justify-evenly laptop:mt-10 mobile:mt-3">
-                <a href="./location/village/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/village/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Vila
-                </a><a href="./location/circle/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                </a><a href="./location-list/circle/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Círculo
                 </a>
-                <a href="./location/cell/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
+                <a href="./location-list/cell/" class="border-2 border-orange-700 rounded-md h-full flex justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[30%] mobile:w-full">
                     Modificar Célula
                 </a>
             </div>

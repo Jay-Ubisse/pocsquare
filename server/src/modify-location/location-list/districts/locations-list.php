@@ -1,5 +1,5 @@
 <?php
-require "../../../config/connect.php";
+require "../../../../config/connect.php";
 
 $province = $_POST['data'];
 
@@ -62,7 +62,8 @@ function maputoCityDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -91,7 +92,8 @@ function maputoProvinceDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -120,7 +122,8 @@ function gazaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -149,7 +152,8 @@ function inhambaneDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -178,7 +182,8 @@ function manicaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -207,7 +212,8 @@ function sofalaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -236,7 +242,8 @@ function teteDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -265,7 +272,8 @@ function nampulaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -294,7 +302,8 @@ function zambeziaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -323,7 +332,8 @@ function niassaDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {
@@ -352,7 +362,8 @@ function caboDelgadoDistricts() {
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-5'>" . $row['district_id'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['province']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5'>" . $row['district_name']  . "</td>\n";
-            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+            echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-5 text-center'><a href='#' 
+            onclick=\"sendInfo('" . $row['province'] . ", " . $row['district_name'] . "')\"  class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
             echo  "</tr>";
         }
 } else {

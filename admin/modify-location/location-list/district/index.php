@@ -47,11 +47,18 @@ session_start();
 
     <script src="../../../../assets/scripts/jquery-3.6.0.js"></script>
     <script>
-        $("#all").load("../../../../server/src/modify-location/districts/locations-list.php",{data: "Maputo Cidade"});
+        $("#all").load("../../../../server/src/modify-location/location-list/districts/locations-list.php",{data: "Maputo Cidade"});
 
         function getTableData() {
             let province = $("#provinces").val();
-            $("#all").load("../../../../server/src/modify-location/districts/locations-list.php",{data: province});
+            $("#all").load("../../../../server/src/modify-location/location-list/districts/locations-list.php",{data: province});
+        }
+
+        function sendInfo(e, data) {
+            e.preventDefault();
+            $.post("../../../../server/src/modify-location/edit-location/edit-district.php", function(data) {
+                alert(data);
+            });
         }
     </script>
 </body>
