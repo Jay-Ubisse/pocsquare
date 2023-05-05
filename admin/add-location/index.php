@@ -84,48 +84,6 @@ session_start();
         function changeProvinceName() {
             province = $("#provinceOption").val();
             
-            /*
-            switch (selectedValue) {
-                case "Maputo Cidade":
-
-                    break;
-                case "Maputo Província":
-
-                    break;
-                case "Gaza":
-
-                    break;
-                case "Inhambane":
-
-                    break;
-                case "cell":
-
-                    break;
-                case "Manica":
-
-                    break;
-                case "Sofala":
-
-                    break;
-                case "Tete":
-
-                    break;
-                case "Nampula":
-
-                    break;
-                case "Niassa":
-
-                    break;
-                case "Zambézia":
-
-                    break;
-                case "Cabo Delgado":
-
-                    break;
-
-                default:
-                    break;
-            } */
         }
 
         function changeInputField() {
@@ -192,7 +150,7 @@ session_start();
         }
 
         $("form").submit(function(event) {
-//../../server/src/add-location/add-location.php
+
             $.post("../../server/src/add-location/add-location.php", {
                     inputArea: inputName,
                     inputProvince: province,
@@ -200,6 +158,7 @@ session_start();
                 },
                 function(response) {
                     console.log(response);
+                    $(".status-info").text(response); //usa appemd para colocar divs com cores diferentes boy
                 }
             );
 
