@@ -2,6 +2,7 @@
 require "../../server/config/connect.php";
 include "../../server/src/add-location/location-rows.php";
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +75,7 @@ session_start();
 
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
     <script src="../../assets/scripts/admin/register.js"></script>
+    <script src="../../assets/scripts/admin/session-timeout.js"></script>
 </body>
 
 </html>

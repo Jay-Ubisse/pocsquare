@@ -1,6 +1,7 @@
 <?php
     require "../../server/config/connect.php";
     session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +48,7 @@
     </footer>
 
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
+    <script src="../../assets/scripts/admin/session-timeout.js"></script>
     <script>
         $("#all").load("../../server/src/addresses-lists/all-addresses.php");
     </script>

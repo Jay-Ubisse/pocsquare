@@ -58,5 +58,8 @@
     <footer>
         <?php include "../../../components/footer.php" ?>
     </footer>
+
+    <script src="../../../../assets/scripts/jquery-3.6.0.js"></script>
+    <script src="../../../../assets/scripts/admin/session-timeout-2.js"></script>
 </body>
 </html>

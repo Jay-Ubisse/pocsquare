@@ -56,6 +56,7 @@ echo $_SESSION['teste'];
             $("#all").load("../../../../server/src/modify-location/districts/locations-list.php",{data: province});
         }
     </script>
+    <script src="../../../../assets/scripts/admin/session-timeout-2.js"></script>
 </body>
 
 </html>

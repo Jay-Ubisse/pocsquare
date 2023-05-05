@@ -61,6 +61,7 @@ session_start();
             });
         }
     </script>
+    <script src="../../../../assets/scripts/admin/session-timeout-2.js"></script>
 </body>
 
 </html>
