@@ -2,74 +2,74 @@
 require "../../config/connect.php";
 session_start();
 
-$province = $_POST['province'];
+$province = $_POST['inputProvince'];
 
-if (isset($_POST['district'])) {
-    $district = trim($_POST['district']);
+if ($_POST["inputArea"] == "district") {
+    $district = trim($_POST["inputData"]);
     $entity_field = 'district';
     $selected_field = $district;
     $success_message = 'Distrito adicionado com sucesso!';
     $failure_message = 'Este distrito já foi adicionado!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['admin-post'])) {
-    $admin_post = trim($_POST['admin-post']);
+if ($_POST["inputArea"] == "admin-post") {
+    $admin_post = trim($_POST["inputData"]);
     $entity_field = 'admin_post';
     $selected_field = $admin_post;
     $success_message = 'P. Administrativo adicionado com sucesso!';
     $failure_message = 'Este p. administrativo já foi adicionado!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['locality'])) {
-    $locality = trim($_POST['locality']);
+if ($_POST["inputArea"] == "locality") {
+    $locality = trim($_POST["inputData"]);
     $entity_field = 'locality';
     $selected_field = $locality;
     $success_message = 'Localidade adicionada com sucesso!';
     $failure_message = 'Esta localidade já foi adicionada!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['neighborhood'])) {
-    $neighborhood = trim($_POST['neighborhood']);
+if ($_POST["inputArea"] == "neighborhood") {
+    $neighborhood = trim($_POST["inputData"]);
     $entity_field = 'neighborhood';
     $selected_field = $neighborhood;
     $success_message = 'Bairro adicionado com sucesso!';
     $failure_message = 'Este bairro já foi adicionado!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['cell'])) {
-    $cell = trim($_POST['cell']);
+if ($_POST["inputArea"] == "cell") {
+    $cell = trim($_POST["inputData"]);
     $entity_field = 'cell';
     $selected_field = $cell;
     $success_message = 'Célula adicionada com sucesso!';
     $failure_message = 'Esta célula já foi adicionada!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['circle'])) {
-    $circle = trim($_POST['circle']);
+if ($_POST["inputArea"] == "circle") {
+    $circle = trim($_POST["inputData"]);
     $entity_field = 'circle';
     $selected_field = $circle;
     $success_message = 'Círculo adicionado com sucesso!';
     $failure_message = 'Este círculo já foi adicionado!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['zone'])) {
-    $zone = trim($_POST['zone']);
+if ($_POST["inputArea"] == "village") {
+    $zone = trim($_POST["inputData"]);
     $entity_field = 'zone';
     $selected_field = $zone;
     $success_message = 'Zona adicionada com sucesso!';
     $failure_message = 'Esta zona já foi adicionada!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['village'])) {
-    $village = trim($_POST['village']);
+if ($_POST["inputArea"] == "zone") {
+    $village = trim($_POST["inputData"]);
     $entity_field = 'village';
     $selected_field = $village;
     $success_message = 'Vila adicionada com sucesso!';
     $failure_message = 'Esta vila já foi adicionada!';
     selectProvince($entity_field, $selected_field, $success_message, $failure_message);
 }
-if (isset($_POST['township'])) {
-    $township = trim($_POST['township']);
+if ($_POST["inputArea"] == "township") {
+    $township = trim($_POST["inputData"]);
     $entity_field = 'township';
     $selected_field = $township;
     $success_message = 'Povoação adicionada com sucesso!';
@@ -229,10 +229,11 @@ function saveLocation($table, $selected_field, $entity_field, $success_message) 
     
     
         $dbcon->commit();
-        
-        $_SESSION['registration-info'] = $success_message;
-        $_SESSION['error'] = false;
 
+        $_SESSION['error'] = false;
+        echo $success_message;
+
+        /*
         switch ($entity_field) {
             case 'township':
                 header("location: ../../../admin/add-location/location/township/");
@@ -265,6 +266,7 @@ function saveLocation($table, $selected_field, $entity_field, $success_message) 
                 # code...
                 break;
         }
+        */
     
     } 
     catch(PDOException $ex) {
@@ -275,9 +277,10 @@ function saveLocation($table, $selected_field, $entity_field, $success_message) 
 }
 
 function errorMessage($failure_message, $entity_field) {
-    $_SESSION['registration-info'] = $failure_message;
     $_SESSION['error'] = true;
+    echo $failure_message;
     
+    /*
     switch ($entity_field) {
         case 'township':
             header("location: ../../../admin/add-location/location/township/");
@@ -310,6 +313,7 @@ function errorMessage($failure_message, $entity_field) {
             # code...
             break;
     }
+     */
 }
 
 
