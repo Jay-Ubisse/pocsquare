@@ -3,6 +3,9 @@ require "../../server/config/connect.php";
 include "../../server/src/add-location/location-rows.php";
 session_start();
 
+if(!isset($_SESSION["admin-auth"])) {
+    header("Location: ../");
+} else {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,3 +82,6 @@ session_start();
 </body>
 
 </html>
+<?php
+}
+?>

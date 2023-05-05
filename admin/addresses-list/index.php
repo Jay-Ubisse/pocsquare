@@ -2,6 +2,9 @@
     require "../../server/config/connect.php";
     session_start();
 
+    if(!isset($_SESSION["admin-auth"])) {
+        header("Location: ../");
+    } else {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,3 +57,6 @@
     </script>
 </body>
 </html>
+<?php
+    }
+?>
