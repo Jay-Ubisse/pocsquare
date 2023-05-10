@@ -38,8 +38,8 @@ session_start();
             <h1 class="heading text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">
                 <!-- Heading added using ajax -->
             </h1>
-            <div>
-                <?php include "./components/status-message.php"; ?>
+            <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
+                
             </div>
             <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
                 <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
@@ -157,8 +157,19 @@ session_start();
                     inputData: $(".input-field").val(),
                 },
                 function(response) {
-                    console.log(response);
-                    $(".status-info").text(response); //usa appemd para colocar divs com cores diferentes boy
+                    if(response.includes("foi")) {
+                        $(".status-info").css({
+                        "display": "flex",
+                        "background-color": "rgb(220, 38, 38)",
+                        });
+                    }
+                    if(response.includes("sucesso")) {
+                        $(".status-info").css({
+                        "display": "flex",
+                        "background-color": "rgb(22, 163, 74)",
+                        });
+                    }
+                    $(".status-info").text(response);
                 }
             );
 
