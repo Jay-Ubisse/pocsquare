@@ -5,6 +5,11 @@ session_start();
 if(!isset($_SESSION["admin-auth"])) {
   header("Location: ../");
 } else {
+  if (isset($_SESSION['timestamp'])) {
+    unset($_SESSION['timestamp']);
+
+    $_SESSION['timestamp'] = time();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

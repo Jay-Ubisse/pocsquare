@@ -1,6 +1,11 @@
 <?php
 require "../../config/connect.php";
 session_start();
+if (isset($_SESSION['timestamp'])) {
+    unset($_SESSION['timestamp']);
+
+    $_SESSION['timestamp'] = time();
+}
 
 $province = $_POST['inputProvince'];
 

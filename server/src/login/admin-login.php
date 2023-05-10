@@ -1,7 +1,6 @@
 <?php
 require "../../config/connect.php";
 session_start();
-
 $_SESSION['timestamp'] = time();
 
 $username = $_POST["username"];

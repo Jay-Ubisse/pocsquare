@@ -2,6 +2,12 @@
 require "../../server/config/connect.php";
 session_start();
 
+if (isset($_SESSION['timestamp'])) {
+    unset($_SESSION['timestamp']);
+
+    $_SESSION['timestamp'] = time();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
