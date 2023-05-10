@@ -26,9 +26,8 @@ if (isset($_SESSION['timestamp'])) {
         <?php include "../components/header.php"; ?>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] relative overflow-scroll">
-        <div class="absolute top-2 right-4 flex flex-col gap-2">
-            <label for="area" class="font-medium">Selecione o que deseja inserir</label>
-            <select name="area" id="areaOption" onchange="changeInputField()" class="border border-orange-700 focus:outline-none outline-none rounded">
+        <div class="absolute top-2 right-8 flex flex-col gap-2">
+            <select name="area" id="areaOption" onchange="changeInputField()" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
                 <option value="district">Distrito</option>
                 <option value="admin-post">Posto Administrativo</option>
                 <option value="neighborhood">Bairro</option>
@@ -40,39 +39,76 @@ if (isset($_SESSION['timestamp'])) {
                 <option value="township">Povoação</option>
             </select>
         </div>
-        <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:mt-20 mobile:mt-20 laptop:w-1/2 mobile:w-[95%]">
-            <h1 class="heading text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit">
+        <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:mt-20 mobile:mt-20 laptop:w-4/5 mobile:w-[95%]">
+            <h1 class="heading text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit mb-5">
                 <!-- Heading added using ajax -->
             </h1>
-            <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
-                
-            </div>
-            <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
-                <div class="flex laptop:flex-row  mobile:flex-col laptop:gap-0 mobile:gap-4 laptop:justify-around">
+            <div class="flex laptop:flex-row mobile:flex-col mobile:gap-2 laptop:justify-around">
+                <div class="bg-slate-200 p-4 rounded-md">
                     <div>
-                        <label for="province" class="font-medium">Província</label>
-                        <select name="province" id="provinceOption" onchange="changeProvinceName()" class="border border-orange-700 focus:outline-none outline-none rounded">
-                            <option value="Maputo Cidade">Maputo Cidade</option>
-                            <option value="Maputo Província">Maputo Província</option>
-                            <option value="Gaza">Gaza</option>
-                            <option value="Inhambane">Inhambane</option>
-                            <option value="Manica">Manica</option>
-                            <option value="Sofala">Sofala</option>
-                            <option value="Tete">Tete</option>
-                            <option value="Nampula">Nampula</option>
-                            <option value="Niassa">Niassa</option>
-                            <option value="Zambézia">Zambézia</option>
-                            <option value="Cabo Delgado">Cabo Delgado</option>
-                        </select>
+                        <h1 class="text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
+                            Inserir Manualmente
+                        </h1>
                     </div>
-                    <div class="input-section">
-                        <!-- Field added using ajax -->
+                    <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
+                    
                     </div>
+                    <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
+                        <div class="flex laptop:flex-row  mobile:flex-col gap-4">
+                            <div>
+                                <label for="province" class="font-medium">Província</label>
+                                <select name="province" id="provinceOption" onchange="changeProvinceName()" class="border border-orange-700 focus:outline-none outline-none rounded">
+                                    <option value="Maputo Cidade">Maputo Cidade</option>
+                                    <option value="Maputo Província">Maputo Província</option>
+                                    <option value="Gaza">Gaza</option>
+                                    <option value="Inhambane">Inhambane</option>
+                                    <option value="Manica">Manica</option>
+                                    <option value="Sofala">Sofala</option>
+                                    <option value="Tete">Tete</option>
+                                    <option value="Nampula">Nampula</option>
+                                    <option value="Niassa">Niassa</option>
+                                    <option value="Zambézia">Zambézia</option>
+                                    <option value="Cabo Delgado">Cabo Delgado</option>
+                                </select>
+                            </div>
+                            <div class="input-section">
+                                <!-- Field added using ajax -->
+                            </div>
+                        </div>
+                        <div class="gap-5 w-fit mx-auto mt-10">
+                            <input type="submit" value="Adicionar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                        </div>
+                    </form>
                 </div>
-                <div class="gap-5 w-fit mx-auto mt-10">
-                    <input type="submit" value="Adicionar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                <div class="flex justify-center items-center font-semibold text-lg text-slate-700 mx-3">
+                    OU
                 </div>
-            </form>
+                <div class="bg-slate-200 p-4 rounded-md">
+                    <div>
+                        <h1 class="text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
+                            Importar ficheiro Excel
+                        </h1>
+                    </div>
+                    <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
+                    
+                    </div>
+                    <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
+                        <div>
+                            <label for="file" class="font-medium">Carregar ficheiro</label>
+                            <input
+                                type="file"
+                                name="file"
+                                required
+                                autocomplete="off"
+                                class="input-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded"
+                            />
+                        </div>
+                        <div class="gap-5 w-fit mx-auto mt-10">
+                            <input type="submit" value="Carregar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
