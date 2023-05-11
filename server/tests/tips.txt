@@ -1,0 +1,1 @@
+composer require phpoffice/phpspreadsheet --prefer-source --ignore-platform-reqs (instalar dependencia para ulpload de ficheiros excel)

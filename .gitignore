@@ -1,5 +1,6 @@
 # Node
 node_modules
+vendor
 
 # ENV files
 .env

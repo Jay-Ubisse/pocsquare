@@ -26,38 +26,37 @@ if (isset($_SESSION['timestamp'])) {
         <?php include "../components/header.php"; ?>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] relative overflow-scroll">
-        <div class="absolute top-2 right-8 flex flex-col gap-2">
-            <select name="area" id="areaOption" onchange="changeInputField()" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
-                <option value="district">Distrito</option>
-                <option value="admin-post">Posto Administrativo</option>
-                <option value="neighborhood">Bairro</option>
-                <option value="locality">Localidade</option>
-                <option value="cell">Célula</option>
-                <option value="circle">Círculo</option>
-                <option value="village">Vila</option>
-                <option value="zone">Zona</option>
-                <option value="township">Povoação</option>
-            </select>
-        </div>
         <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:mt-20 mobile:mt-20 laptop:w-4/5 mobile:w-[95%]">
-            <h1 class="heading text-orange-700 text-xl font-semibold border-b border-orange-700 w-fit mb-5">
-                <!-- Heading added using ajax -->
-            </h1>
             <div class="flex laptop:flex-row mobile:flex-col mobile:gap-2 laptop:justify-around">
                 <div class="bg-slate-200 p-4 rounded-md">
                     <div>
-                        <h1 class="text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
-                            Inserir Manualmente
-                        </h1>
+                    <h1 class="heading text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
+                        <!-- Heading added using ajax -->
+                    </h1>
                     </div>
-                    <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
-                    
+                    <div class='manual-status-info hidden text-white font-semibold justify-center my-6 py-4'>
+
                     </div>
-                    <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
+
+                    <!-- Form submitted using ajax -->
+                    <form method="POST" action="" class="manual-form mt-10">
+                        <div class="flex flex-col gap-2">
+                            <select name="area" onchange="changeInputField()" class="areaOption border mb-4 py-1 border-orange-700 focus:outline-none outline-none rounded">
+                                <option value="district">Distrito</option>
+                                <option value="admin-post">Posto Administrativo</option>
+                                <option value="neighborhood">Bairro</option>
+                                <option value="locality">Localidade</option>
+                                <option value="cell">Célula</option>
+                                <option value="circle">Círculo</option>
+                                <option value="village">Vila</option>
+                                <option value="zone">Zona</option>
+                                <option value="township">Povoação</option>
+                            </select>
+                        </div>
                         <div class="flex laptop:flex-row  mobile:flex-col gap-4">
                             <div>
                                 <label for="province" class="font-medium">Província</label>
-                                <select name="province" id="provinceOption" onchange="changeProvinceName()" class="border border-orange-700 focus:outline-none outline-none rounded">
+                                <select name="province" onchange="changeProvinceName()" class="provinceOption border border-orange-700 focus:outline-none outline-none rounded">
                                     <option value="Maputo Cidade">Maputo Cidade</option>
                                     <option value="Maputo Província">Maputo Província</option>
                                     <option value="Gaza">Gaza</option>
@@ -89,22 +88,61 @@ if (isset($_SESSION['timestamp'])) {
                             Importar ficheiro Excel
                         </h1>
                     </div>
-                    <div class='status-info hidden text-white font-semibold justify-center my-6 py-4'>
-                    
-                    </div>
-                    <form method="POST" action="" class="mt-10"> <!-- Form submitted using ajax -->
-                        <div>
-                            <label for="file" class="font-medium">Carregar ficheiro</label>
-                            <input
-                                type="file"
-                                name="file"
-                                required
-                                autocomplete="off"
-                                class="input-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded"
-                            />
+                    <?php
+                        if (isset($_SESSION["import-status"])) {
+
+                            if ($_SESSION["successful-status"]) {
+                                echo "<div class='bg-green-500 text-white font-semibold flex justify-center my-6 py-4'>";
+                                echo $_SESSION["import-status"];
+                                unset($_SESSION["import-status"]);
+                                echo "</div>";
+                            } else {
+                                echo "<div class='bg-red-500 text-white font-semibold flex justify-center my-6 py-4'>";
+                                echo $_SESSION["import-status"];
+                                unset($_SESSION["import-status"]);
+                                echo "</div>";
+                            }
+                        }
+                        ?>
+
+                    <form method="POST" action="../../server/src/add-location/add-location-by-excel.php" enctype="multipart/form-data" class="excel-form mt-10">
+                        <div class="mb-4 flex flex-col gap-2">
+                            <select name="area" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
+                                <option value="district">Distrito</option>
+                                <option value="admin-post">Posto Administrativo</option>
+                                <option value="neighborhood">Bairro</option>
+                                <option value="locality">Localidade</option>
+                                <option value="cell">Célula</option>
+                                <option value="circle">Círculo</option>
+                                <option value="village">Vila</option>
+                                <option value="zone">Zona</option>
+                                <option value="township">Povoação</option>
+                            </select>
+                        </div>
+                        <div class="flex laptop:flex-row  mobile:flex-col gap-4">
+                            <div>
+                                <label for="province" class="font-medium">Província</label>
+                                <select name="province" class="excelProvinceOption border border-orange-700 focus:outline-none outline-none rounded">
+                                    <option value="Maputo Cidade">Maputo Cidade</option>
+                                    <option value="Maputo Província">Maputo Província</option>
+                                    <option value="Gaza">Gaza</option>
+                                    <option value="Inhambane">Inhambane</option>
+                                    <option value="Manica">Manica</option>
+                                    <option value="Sofala">Sofala</option>
+                                    <option value="Tete">Tete</option>
+                                    <option value="Nampula">Nampula</option>
+                                    <option value="Niassa">Niassa</option>
+                                    <option value="Zambézia">Zambézia</option>
+                                    <option value="Cabo Delgado">Cabo Delgado</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="excel-file" class="font-medium">Carregar ficheiro</label>
+                                <input type="file" name="excel-file" required autocomplete="off" class="excel-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded" />
+                            </div>
                         </div>
                         <div class="gap-5 w-fit mx-auto mt-10">
-                            <input type="submit" value="Carregar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
+                            <input type="submit" name="import-excel" value="Carregar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
                         </div>
                     </form>
                 </div>
@@ -123,13 +161,8 @@ if (isset($_SESSION['timestamp'])) {
         let inputName = "district";
         let province = "Maputo Cidade"
 
-        function changeProvinceName() {
-            province = $("#provinceOption").val();
-            
-        }
-
         function changeInputField() {
-            let selectedValue = $("#areaOption").val();
+            let selectedValue = $(".areaOption").val();
             switch (selectedValue) {
                 case "district":
                     $(".heading").text("Adicionar Distrito");
@@ -191,7 +224,12 @@ if (isset($_SESSION['timestamp'])) {
             }
         }
 
-        $("form").submit(function(event) {
+        function changeProvinceName() {
+            province = $(".provinceOption").val();
+
+        }
+
+        $(".manual-form").submit(function(event) {
 
             $.post("../../server/src/add-location/add-location.php", {
                     inputArea: inputName,
@@ -199,19 +237,19 @@ if (isset($_SESSION['timestamp'])) {
                     inputData: $(".input-field").val(),
                 },
                 function(response) {
-                    if(response.includes("foi")) {
-                        $(".status-info").css({
-                        "display": "flex",
-                        "background-color": "rgb(220, 38, 38)",
+                    if (response.includes("foi")) {
+                        $(".manual-status-info").css({
+                            "display": "flex",
+                            "background-color": "rgb(220, 38, 38)",
                         });
                     }
-                    if(response.includes("sucesso")) {
-                        $(".status-info").css({
-                        "display": "flex",
-                        "background-color": "rgb(22, 163, 74)",
+                    if (response.includes("sucesso")) {
+                        $(".manual-status-info").css({
+                            "display": "flex",
+                            "background-color": "rgb(22, 163, 74)",
                         });
                     }
-                    $(".status-info").text(response);
+                    $(".manual-status-info").text(response);
                 }
             );
 

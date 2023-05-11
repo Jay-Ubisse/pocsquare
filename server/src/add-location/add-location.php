@@ -237,41 +237,6 @@ function saveLocation($table, $selected_field, $entity_field, $success_message) 
 
         $_SESSION['error'] = false;
         echo $success_message;
-
-        /*
-        switch ($entity_field) {
-            case 'township':
-                header("location: ../../../admin/add-location/location/township/");
-                break;
-            case 'village':
-                header("location: ../../../admin/add-location/location/village/");
-                break;
-            case 'district':
-                header("location: ../../../admin/add-location/location/district/");
-                break;
-            case 'admin_post':
-                header("location: ../../../admin/add-location/location/administrative-post/");
-                break;
-            case 'locality':
-                header("location: ../../../admin/add-location/location/locality/");
-                break;
-            case 'neighborhood':
-                header("location: ../../../admin/add-location/location/neighborhood/");
-                break;
-            case 'cell':
-                header("location: ../../../admin/add-location/location/cell/");
-                break;
-            case 'circle':
-                header("location: ../../../admin/add-location/location/circle/");
-                break;
-            case 'zone':
-                header("location: ../../../admin/add-location/location/zone/");
-                break;
-            default:
-                # code...
-                break;
-        }
-        */
     
     } 
     catch(PDOException $ex) {
@@ -285,40 +250,6 @@ function errorMessage($failure_message, $entity_field) {
     $_SESSION['error'] = true;
     echo $failure_message;
     
-    /*
-    switch ($entity_field) {
-        case 'township':
-            header("location: ../../../admin/add-location/location/township/");
-            break;
-        case 'village':
-            header("location: ../../../admin/add-location/location/village/");
-            break;
-        case 'district':
-            header("location: ../../../admin/add-location/location/district/");
-            break;
-        case 'admin_post':
-            header("location: ../../../admin/add-location/location/administrative-post/");
-            break;
-        case 'locality':
-            header("location: ../../../admin/add-location/location/locality/");
-            break;
-        case 'neighborhood':
-            header("location: ../../../admin/add-location/location/neighborhood/");
-            break;
-        case 'cell':
-            header("location: ../../../admin/add-location/location/cell/");
-            break;
-        case 'circle':
-            header("location: ../../../admin/add-location/location/circle/");
-            break;
-        case 'zone':
-            header("location: ../../../admin/add-location/location/zone/");
-            break;
-        default:
-            # code...
-            break;
-    }
-     */
 }
 
 
