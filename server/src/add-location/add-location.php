@@ -208,7 +208,7 @@ function checkLocation($checkLocationQuery,  $selected_field, $entity_field) {
     $checkLocalityResult = $dbcon->query($checkLocationQuery);
     $rows = $checkLocalityResult->fetchAll(PDO::FETCH_ASSOC);
 
-    $column = $entity_field . '_name';
+    $column = 'name';
 
     $isFound = false;
     foreach ($rows as $row) {
@@ -222,7 +222,7 @@ function checkLocation($checkLocationQuery,  $selected_field, $entity_field) {
 
 function saveLocation($table, $selected_field, $entity_field, $success_message) {
     global $province, $dbcon, $database_name;
-    $column = $entity_field . '_name';
+    $column = 'name';
 
     try {
 

@@ -109,7 +109,7 @@ function saveData($table) {
 
                 $dbcon->beginTransaction();
             
-                $testeQuery = "INSERT INTO $database_name." . "$table (province, district_name) VALUES (?, ?)";
+                $testeQuery = "INSERT INTO $database_name." . "$table (province, name) VALUES (?, ?)";
                 $stmt = $dbcon->prepare($testeQuery);
                 $stmt->execute([$province, $district]);
             
