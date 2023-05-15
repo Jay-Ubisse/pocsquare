@@ -30,9 +30,9 @@ if (isset($_SESSION['timestamp'])) {
             <div class="flex laptop:flex-row mobile:flex-col mobile:gap-2 laptop:justify-around">
                 <div class="bg-slate-200 p-4 rounded-md">
                     <div>
-                    <h1 class="heading text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
-                        <!-- Heading added using ajax -->
-                    </h1>
+                        <h1 class="heading text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
+                            <!-- Heading added using ajax -->
+                        </h1>
                     </div>
                     <div class='manual-status-info hidden text-white font-semibold justify-center my-6 py-4'>
 
@@ -89,25 +89,32 @@ if (isset($_SESSION['timestamp'])) {
                         </h1>
                     </div>
                     <?php
-                        if (isset($_SESSION["import-status"])) {
+                    if (isset($_SESSION["import-status"])) {
 
-                            if ($_SESSION["successful-status"]) {
-                                echo "<div class='bg-green-500 text-white font-semibold flex justify-center my-6 py-4'>";
-                                echo $_SESSION["import-status"];
-                                unset($_SESSION["import-status"]);
-                                echo "</div>";
-                            } else {
-                                echo "<div class='bg-red-500 text-white font-semibold flex justify-center my-6 py-4'>";
-                                echo $_SESSION["import-status"];
-                                unset($_SESSION["import-status"]);
-                                echo "</div>";
-                            }
+                        if ($_SESSION["successful-status"] == "ok") {
+                            echo "<div class='bg-green-500 text-white font-semibold flex justify-center my-6 px-2 py-4'>";
+                            echo $_SESSION["import-status"];
+                            unset($_SESSION["import-status"]);
+                            echo "</div>";
                         }
-                        ?>
+                        if ($_SESSION["successful-status"] == "error") {
+                            echo "<div class='bg-red-500 text-white font-semibold flex justify-center my-6 px-2 py-4'>";
+                            echo $_SESSION["import-status"];
+                            unset($_SESSION["import-status"]);
+                            echo "</div>";
+                        }
+                        if ($_SESSION["successful-status"] == "not ok") {
+                            echo "<div class='bg-yellow-500 text-white font-semibold flex justify-center my-6 px-2 py-4'>";
+                            echo $_SESSION["import-status"];
+                            unset($_SESSION["import-status"]);
+                            echo "</div>";
+                        }
+                    }
+                    ?>
 
                     <form method="POST" action="../../server/src/add-location/add-location-by-excel.php" enctype="multipart/form-data" class="excel-form mt-10">
                         <div class="mb-4 flex flex-col gap-2">
-                            <select name="area" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
+                            <select name="region" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
                                 <option value="district">Distrito</option>
                                 <option value="admin-post">Posto Administrativo</option>
                                 <option value="neighborhood">Bairro</option>
@@ -119,27 +126,9 @@ if (isset($_SESSION['timestamp'])) {
                                 <option value="township">Povoação</option>
                             </select>
                         </div>
-                        <div class="flex laptop:flex-row  mobile:flex-col gap-4">
-                            <div>
-                                <label for="province" class="font-medium">Província</label>
-                                <select name="province" class="excelProvinceOption border border-orange-700 focus:outline-none outline-none rounded">
-                                    <option value="Maputo Cidade">Maputo Cidade</option>
-                                    <option value="Maputo Província">Maputo Província</option>
-                                    <option value="Gaza">Gaza</option>
-                                    <option value="Inhambane">Inhambane</option>
-                                    <option value="Manica">Manica</option>
-                                    <option value="Sofala">Sofala</option>
-                                    <option value="Tete">Tete</option>
-                                    <option value="Nampula">Nampula</option>
-                                    <option value="Niassa">Niassa</option>
-                                    <option value="Zambézia">Zambézia</option>
-                                    <option value="Cabo Delgado">Cabo Delgado</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="excel-file" class="font-medium">Carregar ficheiro</label>
-                                <input type="file" name="excel-file" required autocomplete="off" class="excel-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded" />
-                            </div>
+                        <div>
+                            <label for="excel-file" class="font-medium">Carregar ficheiro</label>
+                            <input type="file" name="excel-file" required autocomplete="off" class="excel-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded" />
                         </div>
                         <div class="gap-5 w-fit mx-auto mt-10">
                             <input type="submit" name="import-excel" value="Carregar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">

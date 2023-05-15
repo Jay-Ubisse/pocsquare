@@ -1232,6 +1232,11 @@ video {
   background-color: rgb(255 255 255 / 0.8);
 }
 
+.bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
 .bg-search-background {
   background-image: url('../img/search-background.jpg');
 }
