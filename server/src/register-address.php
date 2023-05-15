@@ -373,58 +373,58 @@ function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality
     global $dbcon, $database_name;
 
     //get district id 
-    $districtQuery = "SELECT * FROM $database_name. " . $alphanumericID . "_district WHERE district_name = '$district'";
+    $districtQuery = "SELECT * FROM $database_name. " . $alphanumericID . "_district WHERE district = '$district'";
     $districtQueryResult = $dbcon->query($districtQuery);
     $districtRows = $districtQueryResult->fetch(PDO::FETCH_ASSOC);
-    $districtId = $districtRows['district_id'];
+    $districtId = $districtRows['id'];
 
     //get admin post id
-    $adminPostQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_admin_post WHERE admin_post_name = '$adminPost'";
+    $adminPostQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_admin_post WHERE admin_post = '$adminPost'";
     $adminPostQueryResult = $dbcon->query($adminPostQuery);
     $adminPostRows = $adminPostQueryResult->fetch(PDO::FETCH_ASSOC);
-    $adminPostId = $adminPostRows['admin_post_id'];
+    $adminPostId = $adminPostRows['id'];
 
     //get neighborhood id
-    $neighborhoodQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_neighborhood WHERE neighborhood_name = '$neighborhood'";
+    $neighborhoodQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_neighborhood WHERE neighborhood = '$neighborhood'";
     $neighborhoodQueryResult = $dbcon->query($neighborhoodQuery);
     $neighborhoodRows = $neighborhoodQueryResult->fetch(PDO::FETCH_ASSOC);
-    $neighborhoodId = $neighborhoodRows['neighborhood_id'];
+    $neighborhoodId = $neighborhoodRows['id'];
 
     //get locality id
-    $localityQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_locality WHERE locality_name = '$locality'";
+    $localityQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_locality WHERE locality = '$locality'";
     $localityQueryResult = $dbcon->query($localityQuery);
     $localityRows = $localityQueryResult->fetch(PDO::FETCH_ASSOC);
-    $localityId = $localityRows['locality_id'];
+    $localityId = $localityRows['id'];
 
     //get cell id
-    $cellQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_cell WHERE cell_name = '$cell'";
+    $cellQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_cell WHERE cell = '$cell'";
     $cellQueryResult = $dbcon->query($cellQuery);
     $cellRows = $cellQueryResult->fetch(PDO::FETCH_ASSOC);
-    $cellId = $cellRows['cell_id'];
+    $cellId = $cellRows['id'];
 
     //get circle id
-    $circleQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_circle WHERE circle_name = '$circle'";
+    $circleQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_circle WHERE circle = '$circle'";
     $circleQueryResult = $dbcon->query($circleQuery);
     $circleRows = $circleQueryResult->fetch(PDO::FETCH_ASSOC);
-    $circleId = $circleRows['circle_id'];
+    $circleId = $circleRows['id'];
 
     //get village id
-    $villageQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_village WHERE village_name = '$village'";
+    $villageQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_village WHERE village = '$village'";
     $villageQueryResult = $dbcon->query($villageQuery);
     $villageRows = $villageQueryResult->fetch(PDO::FETCH_ASSOC);
-    $villageId = $villageRows['village_id'];
+    $villageId = $villageRows['id'];
 
     //get township id
-    $townshipQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_township WHERE township_name = '$township'";
+    $townshipQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_township WHERE township = '$township'";
     $townshipQueryResult = $dbcon->query($townshipQuery);
     $townshipRows = $townshipQueryResult->fetch(PDO::FETCH_ASSOC);
-    $townshipId = $townshipRows['township_id'];
+    $townshipId = $townshipRows['id'];
 
     //get zone id
-    $zoneQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_zone WHERE zone_name = '$zone'";
+    $zoneQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_zone WHERE zone = '$zone'";
     $zoneQueryResult = $dbcon->query($zoneQuery);
     $zoneRows = $zoneQueryResult->fetch(PDO::FETCH_ASSOC);
-    $zoneId = $zoneRows['zone_id'];
+    $zoneId = $zoneRows['id'];
 
     return array($districtId, $adminPostId, $neighborhoodId, $localityId, $cellId, $circleId, $villageId, $townshipId, $zoneId);
 }
