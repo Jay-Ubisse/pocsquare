@@ -34,8 +34,8 @@ if (isset($_SESSION['timestamp'])) {
                             <!-- Heading added using ajax -->
                         </h1>
                     </div>
-                    <div class='manual-status-info hidden text-white font-semibold justify-center my-6 py-4'>
-
+                    <div class='manual-status-info flex gap-2 bg-yellow-500 text-white font-semibold justify-center my-6 py-4'>
+                        <span><i class="fa-solid fa-triangle-exclamation"></i></span><span> Área em Manutenção</span>
                     </div>
 
                     <!-- Form submitted using ajax -->
@@ -73,7 +73,7 @@ if (isset($_SESSION['timestamp'])) {
                             </div>
                             <div class="flex flex-col gap-2">
                                 <label for="id" class="font-medium">ID</label>
-                                <input type="text" id="id" name="id" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                                <input type="text" name="id" required class="id border border-orange-700 focus:outline-none outline-none rounded px-2">
                             </div>
                             <div class="input-section flex flex-col gap-2">
                                 <!-- Field added using ajax -->
@@ -139,7 +139,7 @@ if (isset($_SESSION['timestamp'])) {
     <script>
         $(".heading").text("Adicionar Distrito");
         $(".input-section").load("./components/district.html");
-        let inputName = "district";
+        let region = "district";
         let province = "Maputo Cidade"
 
         function changeInputField() {
@@ -149,55 +149,55 @@ if (isset($_SESSION['timestamp'])) {
                     $(".heading").text("Adicionar Distrito");
                     $(".input-section").load("./components/district.html");
 
-                    inputName = "district";
+                    region = "district";
                     break;
                 case "admin-post":
                     $(".heading").text("Adicionar Posto Administrativo");
                     $(".input-section").load("./components/admin-post.html");
 
-                    inputName = "admin-post";
+                    region = "admin-post";
                     break;
                 case "neighborhood":
                     $(".heading").text("Adicionar Bairro");
                     $(".input-section").load("./components/neighborhood.html");
 
-                    inputName = "neighborhood";
+                    region = "neighborhood";
                     break;
                 case "locality":
                     $(".heading").text("Adicionar Localidade");
                     $(".input-section").load("./components/locality.html");
 
-                    inputName = "locality";
+                    region = "locality";
                     break;
                 case "cell":
                     $(".heading").text("Adicionar Célula");
                     $(".input-section").load("./components/cell.html");
 
-                    inputName = "cell";
+                    region = "cell";
                     break;
                 case "circle":
                     $(".heading").text("Adicionar Círculo");
                     $(".input-section").load("./components/circle.html");
 
-                    inputName = "circle";
+                    region = "circle";
                     break;
                 case "village":
                     $(".heading").text("Adicionar Vila");
                     $(".input-section").load("./components/village.html");
 
-                    inputName = "village";
+                    region = "village";
                     break;
                 case "zone":
                     $(".heading").text("Adicionar Zona");
                     $(".input-section").load("./components/zone.html");
 
-                    inputName = "zone";
+                    region = "zone";
                     break;
                 case "township":
                     $(".heading").text("Adicionar Povoação");
                     $(".input-section").load("./components/township.html");
 
-                    inputName = "township";
+                    region = "township";
                     break;
 
                 default:
@@ -210,12 +210,14 @@ if (isset($_SESSION['timestamp'])) {
 
         }
 
+        /*
         $(".manual-form").submit(function(event) {
 
             $.post("../../server/src/add-location/add-location.php", {
-                    inputArea: inputName,
+                    inputRegion: region,
                     inputProvince: province,
-                    inputData: $(".input-field").val(),
+                    inputRegionName: $(".input-field").val(),
+                    inputId: $(".id").val(),
                 },
                 function(response) {
                     if (response.includes("foi")) {
@@ -236,6 +238,7 @@ if (isset($_SESSION['timestamp'])) {
 
             event.preventDefault();
         });
+        */
     </script>
 </body>
 
