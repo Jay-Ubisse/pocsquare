@@ -13,51 +13,7 @@ $extension = pathinfo($_FILES["excel-file"]["name"], PATHINFO_EXTENSION);
 $isSuccessful = "error";
 $lines = 1;
 
-if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
-    $obj = PhpOffice\PhpSpreadsheet\IOFactory::load($file);
-    $data = $obj->getActiveSheet()->toArray();
-
-    switch ($_POST["region"]) {
-        case 'district':
-            $region = 'district';
-            saveDistrict($region, $data);
-            break;
-        case 'admin-post':
-            $region = "admin_post";
-            saveAdminPost($region, $data);
-            break;
-        case 'neighborhood':
-            $region = "neighborhood";
-            saveNeighborhood($region, $data);
-            break;
-        case 'locality':
-
-            break;
-        case 'cell':
-
-            
-            break;
-        case 'village':
-
-            
-            break;
-        case 'zone':
-
-            
-            break;
-        case 'township':
-
-            
-            break;
-        default:
-            # code...
-            break;
-    }
-} else {
-    $_SESSION["successful-status"] = $isSuccessful;
-    $_SESSION["import-status"] = "Extensão inválida!";
-    header("location: ../../../admin/add-location/");
-}
+$numRow = 1;
 
 function getProvincePrefix($province) {
     
@@ -69,7 +25,7 @@ function getProvincePrefix($province) {
             $prefix = "mp_";
             break;
         case 'Gaza':
-            $prefix = "mc_";
+            $prefix = "gz_";
             break;
         case 'Inhambane':
             $prefix = "in_";
@@ -90,7 +46,7 @@ function getProvincePrefix($province) {
             $prefix = "np_";
             break;
         case 'Niassa':
-            $prefix = "zb_";
+            $prefix = "ns_";
             break;
         case 'Cabo Delgado':
             $prefix = "cd_";
@@ -103,14 +59,43 @@ function getProvincePrefix($province) {
     return $prefix;
 }
 
-function saveDistrict($region, $data) {
-    global $database_name, $dbcon, $lines;
+if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
+    $obj = PhpOffice\PhpSpreadsheet\IOFactory::load($file);
+    $data = $obj->getActiveSheet()->toArray();
 
     foreach ($data as $row) {
-        $province = $row['0'];
-        $district = $row['1'];
 
+        //começar a carregar dados a partir a terceira linha
+        if($numRow < 2) {
+            $numRow = $numRow + 1;
+            $lines = $lines + 1;
+            continue;
+        }
+
+        //dados das células do excel (em cada linha)
+        $province = trim($row['0']);
+        $district = trim($row['2']);
+        $districtId = trim($row['3']);
+        $adminPost = trim($row['4']);
+        $adminPostId = trim($row['5']);
+        $localityOrNeighborhood = trim($row['6']);
+        $localityOrNeighborhoodId = trim($row['7']);
+        $township = trim($row['8']);
+        $townshipId = trim($row['9']);
+        $cell = trim($row['10']);
+        $cellId = trim($row['11']);
+        $circle = trim($row['12']);
+        $circleId = trim($row['13']);
+        $village = trim($row['14']);
+        $villageId = trim($row['15']);
+        $zone = trim($row['16']);
+        $zoneId = trim($row['17']);
+
+        //verificar e obter o ID prefixo da província da linha (se existir)
         $prefix = getProvincePrefix($province);
+
+        //se a província nao for valida, parar o carregamento, redirecionar 
+        //para a pagina de carregamento e imprimir a mensagem de erro
         if($prefix == "404") {
             $isSuccessful = "not ok";
             $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas adicionadas.";
@@ -119,15 +104,62 @@ function saveDistrict($region, $data) {
             header("location: ../../../admin/add-location/");
             break;
         }
-        $tableName = $prefix . $region;
 
+        //construir os nomes das tabelas com base no prefixo obtido na linha 42
+        $districtTable = $prefix . "district";
+        $adminPostTable = $prefix . "admin_post";
+        $localityOrNeighborhoodTable = $prefix . "neighborhood_locality";
+        $townshipTable = $prefix . "township";
+        $cellTable = $prefix . "cell";
+        $circleTable = $prefix . "circle";
+        $villageTable = $prefix . "village";
+        $zoneTable = $prefix . "zone";
+
+
+        //inserir os dados nas devidas tabelas
         try {
 
             $dbcon->beginTransaction();
 
-            $testeQuery = "INSERT INTO $database_name." . "$tableName (province, district) VALUES (?, ?)";
-            $stmt = $dbcon->prepare($testeQuery);
-            $stmt->execute([$province, $district]);
+            //guardar dados na tabela dos distritos
+            $districtQuery = "INSERT INTO $database_name." . "$districtTable (id, province, district) VALUES (?, ?, ?)";
+            $stmt = $dbcon->prepare($districtQuery);
+            $stmt->execute([$districtId, $province, $district]);
+
+            //guardar dados na tabela dos postos administrativos
+            $adminPostQuery = "INSERT INTO $database_name." . "$adminPostTable (id, province, district, admin_post) VALUES (?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($adminPostQuery);
+            $stmt->execute([$adminPostId, $province, $district, $adminPost]);
+
+            //guardar dados na tabela dos bairros ou localidades
+            $localityOrNeighborhoodQuery = "INSERT INTO $database_name." . "$localityOrNeighborhoodTable (id, province, district, admin_post, neighborhood_locality) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($localityOrNeighborhoodQuery);
+            $stmt->execute([$localityOrNeighborhoodId, $province, $district, $adminPost, $localityOrNeighborhood]);
+
+            //guardar dados na tabela das povoações
+            $townshipQuery = "INSERT INTO $database_name." . "$townshipTable (id, province, district, admin_post, neighborhood_locality, township) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($townshipQuery);
+            $stmt->execute([$townshipId, $province, $district, $adminPost, $localityOrNeighborhood, $township]);
+
+            //guardar dados na tabela das células
+            $cellQuery = "INSERT INTO $database_name." . "$cellTable (id, province, district, admin_post, neighborhood_locality, cell) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($cellQuery);
+            $stmt->execute([$cellId, $province, $district, $adminPost, $localityOrNeighborhood, $cell]);
+
+            //guardar dados na tabela dos círculos
+            $circleQuery = "INSERT INTO $database_name." . "$circleTable (id, province, district, admin_post, neighborhood_locality, circle) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($circleQuery);
+            $stmt->execute([$circleId, $province, $district, $adminPost, $localityOrNeighborhood, $circle]);
+
+            //guardar dados na tabela das vilas
+            $villageQuery = "INSERT INTO $database_name." . "$villageTable (id, province, district, admin_post, neighborhood_locality, village) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($villageQuery);
+            $stmt->execute([$villageId, $province, $district, $adminPost, $localityOrNeighborhood, $village]);
+
+            //guardar dados na tabela das zonas
+            $zoneQuery = "INSERT INTO $database_name." . "$zoneTable (id, province, district, admin_post, neighborhood_locality, zone) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($zoneQuery);
+            $stmt->execute([$zoneId, $province, $district, $adminPost, $localityOrNeighborhood, $zone]);
 
             $dbcon->commit();
 
@@ -140,108 +172,20 @@ function saveDistrict($region, $data) {
             $_SESSION["successful-status"] = $isSuccessful;
             $_SESSION["import-status"] = "Ficheiro não importado!";
             header("location: ../../../admin/add-location/");
-        }
+
+        } 
+
     }
     if ($isSuccessful == "ok") {
         $_SESSION["successful-status"] = $isSuccessful;
         $_SESSION["import-status"] = "Ficheiro importado com sucesso!<br>" . $lines - 1 . " linhas adicionadas.";
         header("location: ../../../admin/add-location/");
     }
-}
 
-function saveAdminPost($region, $data) {
-    global $database_name, $dbcon, $lines;
-
-    foreach ($data as $row) {
-        $province = $row['0'];
-        $district = $row['1'];
-        $adminPost = $row['2'];
-
-        $prefix = getProvincePrefix($province);
-        if($prefix == "404") {
-            $isSuccessful = "not ok";
-            $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas foram adicionadas.";
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION['import-status'] = $errorInfo;
-            header("location: ../../../admin/add-location/");
-            break;
-        }
-        $tableName = $prefix . $region;
-
-        try {
-
-            $dbcon->beginTransaction();
-
-            $testeQuery = "INSERT INTO $database_name." . "$tableName (province, district, admin_post) VALUES (?, ?, ?)";
-            $stmt = $dbcon->prepare($testeQuery);
-            $stmt->execute([$province, $district, $adminPost]);
-
-            $dbcon->commit();
-
-            $isSuccessful = "ok";
-            $lines = $lines + 1;
-        } catch (PDOException $ex) {
-            //Something went wrong rollback!
-            $dbcon->rollBack();
-            echo $ex->getMessage();
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION["import-status"] = "Ficheiro não importado!";
-            header("location: ../../../admin/add-location/");
-        }
-    }
-    if ($isSuccessful == "ok") {
-        $_SESSION["successful-status"] = $isSuccessful;
-        $_SESSION["import-status"] = "Ficheiro importado com sucesso! " . $lines - 1 . " linhas adicionadas.";
-        header("location: ../../../admin/add-location/");
-    }
-}
-
-function saveNeighborhood($region, $data) {
-    global $database_name, $dbcon, $lines;
-
-    foreach ($data as $row) {
-        $province = $row['0'];
-        $district = $row['1'];
-        $adminPost = $row['2'];
-        $neighborhood = $row['3'];
-
-        $prefix = getProvincePrefix($province);
-        if($prefix == "404") {
-            $isSuccessful = "not ok";
-            $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas foram adicionadas.";
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION['import-status'] = $errorInfo;
-            header("location: ../../../admin/add-location/");
-            break;
-        }
-        $tableName = $prefix . $region;
-
-        try {
-
-            $dbcon->beginTransaction();
-
-            $testeQuery = "INSERT INTO $database_name." . "$tableName (province, district, admin_post, neighborhood) VALUES (?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($testeQuery);
-            $stmt->execute([$province, $district, $adminPost, $neighborhood]);
-
-            $dbcon->commit();
-
-            $isSuccessful = "ok";
-            $lines = $lines + 1;
-        } catch (PDOException $ex) {
-            //Something went wrong rollback!
-            $dbcon->rollBack();
-            echo $ex->getMessage();
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION["import-status"] = "Ficheiro não importado!";
-            header("location: ../../../admin/add-location/");
-        }
-    }
-    if ($isSuccessful == "ok") {
-        $_SESSION["successful-status"] = $isSuccessful;
-        $_SESSION["import-status"] = "Ficheiro importado com sucesso! " . $lines - 1 . " linhas adicionadas.";
-        header("location: ../../../admin/add-location/");
-    }
+} else {
+    $_SESSION["successful-status"] = $isSuccessful;
+    $_SESSION["import-status"] = "Extensão inválida!";
+    header("location: ../../../admin/add-location/");
 }
 
 ?>

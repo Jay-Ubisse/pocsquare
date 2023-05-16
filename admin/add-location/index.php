@@ -26,7 +26,7 @@ if (isset($_SESSION['timestamp'])) {
         <?php include "../components/header.php"; ?>
     </header>
     <main class="bg-gray-200 p-1 h-[calc(100vh-100px)] relative overflow-scroll">
-        <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:mt-20 mobile:mt-20 laptop:w-4/5 mobile:w-[95%]">
+        <section class="bg-white h-fit mx-auto p-6 rounded-lg laptop:mt-20 mobile:mt-20 laptop:w-3/5 mobile:w-[95%]">
             <div class="flex laptop:flex-row mobile:flex-col mobile:gap-2 laptop:justify-around">
                 <div class="bg-slate-200 p-4 rounded-md">
                     <div>
@@ -40,7 +40,7 @@ if (isset($_SESSION['timestamp'])) {
 
                     <!-- Form submitted using ajax -->
                     <form method="POST" action="" class="manual-form mt-10">
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-1 mb-8">
                             <select name="area" onchange="changeInputField()" class="areaOption border mb-4 py-1 border-orange-700 focus:outline-none outline-none rounded">
                                 <option value="district">Distrito</option>
                                 <option value="admin-post">Posto Administrativo</option>
@@ -52,9 +52,10 @@ if (isset($_SESSION['timestamp'])) {
                                 <option value="zone">Zona</option>
                                 <option value="township">Povoação</option>
                             </select>
+                            <hr class="h-px bg-orange-700 border-0">
                         </div>
-                        <div class="flex laptop:flex-row  mobile:flex-col gap-4">
-                            <div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-2">
                                 <label for="province" class="font-medium">Província</label>
                                 <select name="province" onchange="changeProvinceName()" class="provinceOption border border-orange-700 focus:outline-none outline-none rounded">
                                     <option value="Maputo Cidade">Maputo Cidade</option>
@@ -70,7 +71,11 @@ if (isset($_SESSION['timestamp'])) {
                                     <option value="Cabo Delgado">Cabo Delgado</option>
                                 </select>
                             </div>
-                            <div class="input-section">
+                            <div class="flex flex-col gap-2">
+                                <label for="id" class="font-medium">ID</label>
+                                <input type="text" id="id" name="id" required class="border border-orange-700 focus:outline-none outline-none rounded px-2">
+                            </div>
+                            <div class="input-section flex flex-col gap-2">
                                 <!-- Field added using ajax -->
                             </div>
                         </div>
@@ -82,7 +87,7 @@ if (isset($_SESSION['timestamp'])) {
                 <div class="flex justify-center items-center font-semibold text-lg text-slate-700 mx-3">
                     OU
                 </div>
-                <div class="bg-slate-200 p-4 rounded-md">
+                <div class="bg-slate-200 p-4 rounded-md h-fit">
                     <div>
                         <h1 class="text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
                             Importar ficheiro Excel
@@ -113,20 +118,7 @@ if (isset($_SESSION['timestamp'])) {
                     ?>
 
                     <form method="POST" action="../../server/src/add-location/add-location-by-excel.php" enctype="multipart/form-data" class="excel-form mt-10">
-                        <div class="mb-4 flex flex-col gap-2">
-                            <select name="region" class="border py-1 border-orange-700 focus:outline-none outline-none rounded">
-                                <option value="district">Distrito</option>
-                                <option value="admin-post">Posto Administrativo</option>
-                                <option value="neighborhood">Bairro</option>
-                                <option value="locality">Localidade</option>
-                                <option value="cell">Célula</option>
-                                <option value="circle">Círculo</option>
-                                <option value="village">Vila</option>
-                                <option value="zone">Zona</option>
-                                <option value="township">Povoação</option>
-                            </select>
-                        </div>
-                        <div>
+                        <div class="flex flex-col gap-3">
                             <label for="excel-file" class="font-medium">Carregar ficheiro</label>
                             <input type="file" name="excel-file" required autocomplete="off" class="excel-field border border-orange-700 px-2 w-60 focus:outline-none outline-none rounded" />
                         </div>

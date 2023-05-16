@@ -11,9 +11,6 @@ $(".ns-field").hide();
 $(".zb-field").hide();
 $(".cd-field").hide();
 
-$(".neighborhood").show();
-$(".locality").hide();
-
 function toggleFields() {
     let provinceVal = $("#province").val();
     
@@ -31,8 +28,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").show();
-            $(".locality").hide();
             break;
         case "MP":
             $(".mc-field").hide();          
@@ -47,8 +42,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "GZ":
             $(".mc-field").hide();            
@@ -63,8 +56,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "IN": 
             $(".mc-field").hide();           
@@ -79,8 +70,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "MN": 
             $(".mc-field").hide();           
@@ -95,8 +84,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "SF": 
             $(".mc-field").hide();           
@@ -111,8 +98,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "TT": 
             $(".mc-field").hide();           
@@ -127,8 +112,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "NP": 
             $(".mc-field").hide();           
@@ -143,8 +126,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "NS": 
             $(".mc-field").hide();           
@@ -159,8 +140,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "ZB": 
             $(".mc-field").hide();           
@@ -175,8 +154,6 @@ function toggleFields() {
             $(".zb-field").show();
             $(".cd-field").hide();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         case "CD": 
             $(".mc-field").hide();           
@@ -191,8 +168,6 @@ function toggleFields() {
             $(".zb-field").hide();
             $(".cd-field").show();
 
-            $(".neighborhood").hide();
-            $(".locality").show();
             break;
         default:
             break;

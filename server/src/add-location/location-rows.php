@@ -118,122 +118,63 @@
     $delgadoPostsQuery = "SELECT * FROM $database_name.cd_admin_post";
     $delgadoPostsResult = $dbcon->query($delgadoPostsQuery);
     $caboDelgadoPosts = $delgadoPostsResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    /**
-     * GET LOCALITY DATA
-     */
-
-    //get Maputo Cidade locality
-    $maputoLocalityQuery = "SELECT * FROM $database_name.mc_locality";
-    $maputoLocalityResult = $dbcon->query($maputoLocalityQuery);
-    $maputoLocality = $maputoLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Maputo Província locality
-    $maputoProvinceLocalityQuery = "SELECT * FROM $database_name.mp_locality";
-    $maputoProvinceLocalityResult = $dbcon->query($maputoProvinceLocalityQuery);
-    $maputoProvinceLocality = $maputoProvinceLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Gaza locality
-    $gazaLocalityQuery = "SELECT * FROM $database_name.gz_locality";
-    $gazaLocalityResult = $dbcon->query($gazaLocalityQuery);
-    $gazaLocality = $gazaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Inhambane locality
-    $inhambaneLocalityQuery = "SELECT * FROM $database_name.in_locality";
-    $inhambaneLocalityResult = $dbcon->query($inhambaneLocalityQuery);
-    $inhambaneLocality = $inhambaneLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Manica locality
-    $manicaLocalityQuery = "SELECT * FROM $database_name.mn_locality";
-    $manicaLocalityResult = $dbcon->query($manicaLocalityQuery);
-    $manicaLocality = $manicaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Sofala locality
-    $sofalaLocalityQuery = "SELECT * FROM $database_name.sf_locality";
-    $sofalaLocalityResult = $dbcon->query($sofalaLocalityQuery);
-    $sofalaLocality = $sofalaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Tete locality
-    $teteLocalityQuery = "SELECT * FROM $database_name.tt_locality";
-    $teteLocalityResult = $dbcon->query($teteLocalityQuery);
-    $teteLocality = $teteLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Nampula locality
-    $nampulaLocalityQuery = "SELECT * FROM $database_name.np_locality";
-    $nampulaLocalityResult = $dbcon->query($nampulaLocalityQuery);
-    $nampulaLocality = $nampulaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Niassa locality
-    $niassaLocalityQuery = "SELECT * FROM $database_name.ns_locality";
-    $niassaLocalityResult = $dbcon->query($niassaLocalityQuery);
-    $niassaLocality = $niassaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Zambézia locality
-    $zambeziaLocalityQuery = "SELECT * FROM $database_name.zb_locality";
-    $zambeziaLocalityResult = $dbcon->query($zambeziaLocalityQuery);
-    $zambeziaLocality = $zambeziaLocalityResult->fetchAll(PDO::FETCH_ASSOC);
-    
-    //get Cabo Delgado locality
-    $delgadoLocalityQuery = "SELECT * FROM $database_name.cd_locality";
-    $delgadoLocalityResult = $dbcon->query($delgadoLocalityQuery);
-    $caboDelgadoLocality = $delgadoLocalityResult->fetchAll(PDO::FETCH_ASSOC);
 
     /**
-     * GET NEIGHBORHOOD DATA
+     * GET NEIGHBORHOOD OR LOCALITY DATA
      */
 
     //get Maputo Cidade neighborhood
-    $maputoNeighborhoodQuery = "SELECT * FROM $database_name.mc_neighborhood";
+    $maputoNeighborhoodQuery = "SELECT * FROM $database_name.mc_neighborhood_locality";
     $maputoNeighborhoodResult = $dbcon->query($maputoNeighborhoodQuery);
     $maputoNeighborhoods = $maputoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Maputo Província Neighborhood
-    $maputoProvinceNeighborhoodQuery = "SELECT * FROM $database_name.mp_neighborhood";
+    $maputoProvinceNeighborhoodQuery = "SELECT * FROM $database_name.mp_neighborhood_locality";
     $maputoProvinceNeighborhoodResult = $dbcon->query($maputoProvinceNeighborhoodQuery);
-    $maputoProvinceNeighborhood = $maputoProvinceNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $maputoProvinceNeighborhoods = $maputoProvinceNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Gaza Neighborhood
-    $gazaNeighborhoodQuery = "SELECT * FROM $database_name.gz_neighborhood";
+    $gazaNeighborhoodQuery = "SELECT * FROM $database_name.gz_neighborhood_locality";
     $gazaNeighborhoodResult = $dbcon->query($gazaNeighborhoodQuery);
     $gazaNeighborhoods = $gazaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Inhambane Neighborhood
-    $inhambaneNeighborhoodQuery = "SELECT * FROM $database_name.in_neighborhood";
+    $inhambaneNeighborhoodQuery = "SELECT * FROM $database_name.in_neighborhood_locality";
     $inhambaneNeighborhoodResult = $dbcon->query($inhambaneNeighborhoodQuery);
     $inhambaneNeighborhoods = $inhambaneNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Manica Neighborhood
-    $manicaNeighborhoodQuery = "SELECT * FROM $database_name.mn_neighborhood";
+    $manicaNeighborhoodQuery = "SELECT * FROM $database_name.mn_neighborhood_locality";
     $manicaNeighborhoodResult = $dbcon->query($manicaNeighborhoodQuery);
     $manicaNeighborhoods = $manicaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Sofala Neighborhood
-    $sofalaNeighborhoodQuery = "SELECT * FROM $database_name.sf_neighborhood";
+    $sofalaNeighborhoodQuery = "SELECT * FROM $database_name.sf_neighborhood_locality";
     $sofalaNeighborhoodResult = $dbcon->query($sofalaNeighborhoodQuery);
     $sofalaNeighborhoods = $sofalaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Tete Neighborhood
-    $teteNeighborhoodQuery = "SELECT * FROM $database_name.tt_neighborhood";
+    $teteNeighborhoodQuery = "SELECT * FROM $database_name.tt_neighborhood_locality";
     $teteNeighborhoodResult = $dbcon->query($teteNeighborhoodQuery);
     $teteNeighborhoods = $teteNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Nampula Neighborhood
-    $nampulaNeighborhoodQuery = "SELECT * FROM $database_name.np_neighborhood";
+    $nampulaNeighborhoodQuery = "SELECT * FROM $database_name.np_neighborhood_locality";
     $nampulaNeighborhoodResult = $dbcon->query($nampulaNeighborhoodQuery);
-    $nampulaNeighborhood = $nampulaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
+    $nampulaNeighborhoods = $nampulaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Niassa Neighborhood
-    $niassaNeighborhoodQuery = "SELECT * FROM $database_name.ns_neighborhood";
+    $niassaNeighborhoodQuery = "SELECT * FROM $database_name.ns_neighborhood_locality";
     $niassaNeighborhoodResult = $dbcon->query($niassaNeighborhoodQuery);
     $niassaNeighborhoods = $niassaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Zambézia Neighborhood
-    $zambeziaNeighborhoodQuery = "SELECT * FROM $database_name.zb_neighborhood";
+    $zambeziaNeighborhoodQuery = "SELECT * FROM $database_name.zb_neighborhood_locality";
     $zambeziaNeighborhoodResult = $dbcon->query($zambeziaNeighborhoodQuery);
     $zambeziaNeighborhoods = $zambeziaNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Cabo Delgado Neighborhood
-    $delgadoNeighborhoodQuery = "SELECT * FROM $database_name.cd_neighborhood";
+    $delgadoNeighborhoodQuery = "SELECT * FROM $database_name.cd_neighborhood_locality";
     $delgadoNeighborhoodResult = $dbcon->query($delgadoNeighborhoodQuery);
     $caboDelgadoNeighborhoods = $delgadoNeighborhoodResult->fetchAll(PDO::FETCH_ASSOC);
 
@@ -323,7 +264,7 @@
     //get Manica Circle
     $manicaCircleQuery = "SELECT * FROM $database_name.mn_circle";
     $manicaCircleResult = $dbcon->query($manicaCircleQuery);
-    $manicaCircle = $manicaCircleResult->fetchAll(PDO::FETCH_ASSOC);
+    $manicaCircles = $manicaCircleResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Sofala Circle
     $sofalaCircleQuery = "SELECT * FROM $database_name.sf_circle";
@@ -343,7 +284,7 @@
     //get Niassa Circle
     $niassaCircleQuery = "SELECT * FROM $database_name.ns_circle";
     $niassaCircleResult = $dbcon->query($niassaCircleQuery);
-    $niassaCircle = $niassaCircleResult->fetchAll(PDO::FETCH_ASSOC);
+    $niassaCircles = $niassaCircleResult->fetchAll(PDO::FETCH_ASSOC);
     
     //get Zambézia Circle
     $zambeziaCircleQuery = "SELECT * FROM $database_name.zb_circle";
