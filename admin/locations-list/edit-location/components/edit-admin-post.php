@@ -2,7 +2,7 @@
     <h1 class="heading text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
         Editar Posto Administrativo
     </h1>
-    <form method="POST" action="" class="manual-form mt-10">
+    <form method="POST" action="../../../server/src/edit-location/edit-location.php" class="manual-form mt-10">
         <div class="grid laptop:grid-cols-2 mobile:grid-cols-1 gap-4">
             <div class="flex flex-col gap-2">
                 <label for="province" class="font-medium">Província</label>
@@ -22,11 +22,11 @@
             </div>
             <div class="flex flex-col gap-2">
                 <label for="id" class="font-medium">ID</label>
-                <input type="text" name="id" value="<?php echo $_SESSION["id_number"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-20 focus:outline-none outline-none rounded" />
+                <input type="text" name="id" disabled value="<?php echo $_SESSION["id_number"] ?>" required autocomplete="off" class="input-field border border-slate-700 px-1 w-20 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
-                <label for="admin-post" class="font-medium">Distrito</label>
-                <input type="text" name="admin-post" value="<?php echo $_SESSION["district_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
+                <label for="district" class="font-medium">Distrito</label>
+                <input type="text" name="district" value="<?php echo $_SESSION["district_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
                 <label for="admin-post" class="font-medium">Posto Administrativo</label>

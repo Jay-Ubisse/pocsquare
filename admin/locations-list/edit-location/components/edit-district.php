@@ -2,7 +2,7 @@
     <h1 class="heading text-orange-700 text-base font-semibold border-b border-orange-700 w-fit mb-5">
         Editar Distrito
     </h1>
-    <form method="POST" action="" class="manual-form mt-10">
+    <form method="POST" action="../../../server/src/edit-location/edit-location.php" class="manual-form mt-10">
         <div class="flex laptop:flex-row mobile:flex-col">
             <div>
                 <label for="province" class="font-medium">Província</label>
@@ -22,7 +22,7 @@
             </div>
             <div>
                 <label for="id" class="font-medium">ID</label>
-                <input type="text" name="id" value="<?php echo $_SESSION["id_number"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-20 focus:outline-none outline-none rounded" />
+                <input type="text" name="id" disabled value="<?php echo $_SESSION["id_number"] ?>" required autocomplete="off" class="input-field border border-slate-700 px-1 w-20 focus:outline-none outline-none rounded" />
             </div>
             <div>
                 <label for="district" class="font-medium">Distrito</label>
