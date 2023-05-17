@@ -54,19 +54,24 @@ switch ($region) {
         updateNeighborhoodOrLocality();
         break;
     case 'cell':
-
+        $ptRegionName = "uma Célula";
+        updateRegion();
         break;
     case 'circle':
-
+        $ptRegionName = "um Circulo";
+        updateRegion();
         break;
     case 'village':
-
+        $ptRegionName = "uma Vila";
+        updateRegion();
         break;
     case 'township':
-
+        $ptRegionName = "uma Povoação";
+        updateRegion();
         break;
     case 'zone':
-
+        $ptRegionName = "uma Zona";
+        updateRegion();
         break;
     default:
         # code...
@@ -131,7 +136,7 @@ function updateAdminPost() {
     //dados antigos
     $oldId = $_SESSION["id_number"];
     $oldDistrict = $_SESSION["district_name"];
-    $oldAdminPost = $_SESSION["admin_post"];
+    $oldAdminPost = $_SESSION["admin_post_name"];
 
 
     //novos dados
@@ -185,12 +190,11 @@ function updateNeighborhoodOrLocality() {
     //dados antigos
     $oldId = $_SESSION["id_number"];
     $oldDistrict = $_SESSION["district_name"];
-    $oldAdminPost = $_SESSION["admin_post"];
-    $oldNeighborhoodOrLocality = $_SESSION["neighborhood_locality"];
+    $oldAdminPost = $_SESSION["admin_post_name"];
+    $oldNeighborhoodOrLocality = $_SESSION["neighborhood_name"];
 
 
     //novos dados
-    $newId = $_POST["id"] . " ";
     $newDistrict = $_POST["district"];
     $newAdminPost = $_POST["admin-post"];
     $newNeighborhoodOrLocality = $_POST["neighborhood-locality"];
@@ -213,7 +217,7 @@ function updateNeighborhoodOrLocality() {
 
             $dbcon->beginTransaction();
 
-            $updateQuery = "UPDATE $database_name.$table SET province = ?, district = ?, admin_post = ?, neighborhood_locality = ?, WHERE id = ?";
+            $updateQuery = "UPDATE $database_name.$table SET province = ?, district = ?, admin_post = ?, neighborhood_locality = ? WHERE id = ?";
             $stmt= $dbcon->prepare($updateQuery);
             $stmt->execute([$newProvince, $newDistrict, $newAdminPost, $newNeighborhoodOrLocality, $oldId]);
 
@@ -226,9 +230,69 @@ function updateNeighborhoodOrLocality() {
             //Something went wrong rollback!
             $dbcon->rollBack();
             echo $ex->getMessage();
+            /*
             $_SESSION["update-status"] = true;
             $_SESSION['update-message'] = "Ocorreu um erro ao actualizar os dados.";
             header("location: ../../../admin/locations-list/edit-location/update-status/");
+            */
+
+        } 
+    }
+
+}
+
+function updateRegion() {
+    global $dbcon, $database_name, $newProvince, $region, $prefix, $ptRegionName;
+
+    //dados antigos
+    $oldId = $_SESSION["id_number"];
+    $oldDistrict = $_SESSION["district_name"];
+    $oldAdminPost = $_SESSION["admin_post_name"];
+    $oldNeighborhoodOrLocality = $_SESSION["neighborhood_name"];
+
+
+    //novos dados
+    $newDistrict = $_POST["district"];
+    $newAdminPost = $_POST["admin-post"];
+    $newNeighborhoodOrLocality = $_POST["neighborhood-locality"];
+    $regionName = $_POST["$region"];
+
+    //tabela 
+    $table = $prefix . $region;
+
+    //verificar se existe uma outra linha com o mesmo
+    $checkDistrictQuery = "SELECT * FROM $database_name.$table WHERE $region = '$regionName'";
+    $checkDistrictResult = $dbcon->query($checkDistrictQuery);
+    
+    if ($checkDistrictResult->rowCount() > 0) {
+        $_SESSION["update-status"] = true;
+        $_SESSION['update-message'] = "Já existe $ptRegionName registrado com o mesmo nome.";
+        header("location: ../../../admin/locations-list/edit-location/update-status/");
+    } else {
+        //Se tudo estiver ok, actualizar os dados.
+
+        try {
+
+            $dbcon->beginTransaction();
+
+            $updateQuery = "UPDATE $database_name.$table SET province = ?, district = ?, admin_post = ?, neighborhood_locality = ?, $region = ? WHERE id = ?";
+            $stmt= $dbcon->prepare($updateQuery);
+            $stmt->execute([$newProvince, $newDistrict, $newAdminPost, $newNeighborhoodOrLocality, $regionName, $oldId]);
+
+            $dbcon->commit();
+
+            $_SESSION["update-status"] = false;
+            $_SESSION['update-message'] = "Dados actualizados com sucesso.";
+            header("location: ../../../admin/locations-list/edit-location/update-status/");
+        } catch (PDOException $ex) {
+            //Something went wrong rollback!
+            $dbcon->rollBack();
+            echo $ex->getMessage();
+            /*
+            $_SESSION["update-status"] = true;
+            $_SESSION['update-message'] = "Ocorreu um erro ao actualizar os dados.";
+            header("location: ../../../admin/locations-list/edit-location/update-status/");
+            */
 
         } 
     }

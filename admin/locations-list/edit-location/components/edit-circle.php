@@ -25,20 +25,20 @@
                 <input type="text" name="id" disabled value="<?php echo $_SESSION["id_number"] ?>" required autocomplete="off" class="input-field border border-slate-700 px-1 w-20 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
-                <label for="admin-post" class="font-medium">Distrito</label>
-                <input type="text" name="admin-post" value="<?php echo $_SESSION["district_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
+                <label for="district" class="font-medium">Distrito</label>
+                <input type="text" name="district" value="<?php echo $_SESSION["district_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
                 <label for="admin-post" class="font-medium">Posto Administrativo</label>
                 <input type="text" name="admin-post" value="<?php echo $_SESSION["admin_post_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
-                <label for="admin-post" class="font-medium">Bairro ou Localidade</label>
-                <input type="text" name="admin-post" value="<?php echo $_SESSION["neighborhood_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
+                <label for="neighborhood-locality" class="font-medium">Bairro ou Localidade</label>
+                <input type="text" name="neighborhood-locality" value="<?php echo $_SESSION["neighborhood_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
             </div>
             <div class="flex flex-col gap-2">
-                <label for="admin-post" class="font-medium">Circulo</label>
-                <input type="text" name="admin-post" value="<?php echo $_SESSION["circle_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
+                <label for="circle" class="font-medium">Circulo</label>
+                <input type="text" name="circle" value="<?php echo $_SESSION["circle_name"] ?>" required autocomplete="off" class="input-field border border-orange-700 px-1 w-60 focus:outline-none outline-none rounded" />
             </div>
         </div>
         <div class="gap-5 w-fit mx-auto mt-10">
