@@ -1285,6 +1285,11 @@ video {
   padding: 1.5rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1761,6 +1766,10 @@ video {
     width: 100%;
   }
 
+  .mobile\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   .mobile\:flex-col {
     flex-direction: column;
   }
@@ -1941,6 +1950,14 @@ video {
   .laptop\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .laptop\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .laptop\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .laptop\:flex-row {

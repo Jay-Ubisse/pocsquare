@@ -5,4 +5,4 @@ setInterval(function() {
             window.location.href = "../../../../server/src/logout-route.php";
         }
     });
-}, 20000);
+}, 1000);

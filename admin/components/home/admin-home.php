@@ -19,6 +19,24 @@
         </a>
     </div>
     <div class="flex gap-2 h-44 laptop:flex-row mobile:flex-col laptop:mt-10 mobile:mt-2">
+        <a href="../add-location" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
+            <span>
+                <i class="fa-solid fa-plus fa-2x"></i>
+            </span>
+            <span>
+                Inserir Locais no Sistema
+            </span>
+        </a>
+        <a href="../locations-list" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
+            <span>
+                <i class="fa-solid fa-list fa-2x"></i>
+            </span>
+            <span>
+                Lista de Locais Inseridos no Sistema
+            </span>
+        </a>
+    </div>
+    <div class="flex gap-2 h-44 laptop:flex-row mobile:flex-col laptop:mt-10 mobile:mt-2">
         <a href="../register-employer/" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
             <span>
                 <i class="fa-solid fa-id-card fa-2x"></i>
@@ -33,24 +51,6 @@
             </span>
             <span>
                 Lista de Funcionários
-            </span>
-        </a>
-    </div>
-    <div class="flex gap-2 h-44 laptop:flex-row mobile:flex-col laptop:mt-10 mobile:mt-2">
-        <a href="../add-location" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
-            <span>
-                <i class="fa-solid fa-plus fa-2x"></i>
-            </span>
-            <span>
-                Inserir Locais no Sistema
-            </span>
-        </a>
-        <a href="../modify-location" class="border-2 border-orange-700 rounded-md h-full flex gap-3 justify-center items-center text-orange-700 text-xl font-bold hover:bg-orange-700 hover:text-white laptop:w-[50%] mobile:w-full">
-            <span>
-                <i class="fa-solid fa-pen-to-square fa-2x"></i>
-            </span>
-            <span>
-                Modificar Locais no Sistema
             </span>
         </a>
     </div>
