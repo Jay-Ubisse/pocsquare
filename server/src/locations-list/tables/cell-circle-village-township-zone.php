@@ -19,8 +19,9 @@ if ($rows) {
         echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-3'>" . $row['admin_post']  . "</td>\n";
         echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-3'>" . $row['neighborhood_locality']  . "</td>\n";
         echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-3'>" . $row["$region"]  . "</td>\n";
-        echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-3 text-center'><a href='#' 
-        onclick=\"sendInfoForEdit('" . "$region-data" . "," . $row['id'] . "," . $row['district'] . "," . $row['admin_post'] . "," . $row['neighborhood_locality'] . "," . $row["$region"] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a><a href='#' class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
+        echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-3 text-center'>
+            <a href='#' onclick=\"sendInfoForEdit('" . "$region-data" . "," . $row['id'] . "," . $row['district'] . "," . $row['admin_post'] . "," . $row['neighborhood_locality'] . "," . $row["$region"] . "')\" class='bg-green-600 px-3 py-1 rounded-sm text-white'>Editar</a>
+            <a href='#' onclick=\"sendDataForDeletion('" . $row['id'] . "," . $table . "')\" class='bg-red-600 px-3 py-1 rounded-sm text-white ml-2'>Eliminar</a></td>\n";
         echo  "</tr>";
     }
 } else {

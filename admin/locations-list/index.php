@@ -99,7 +99,6 @@ if (!isset($_SESSION["admin-auth"])) {
 
             function sendInfoForEdit(data) {
                 let dataArray = data.split(",");
-                console.log(dataArray[0]);
 
                 switch (dataArray[0]) {
                     case "district-data":
@@ -220,6 +219,29 @@ if (!isset($_SESSION["admin-auth"])) {
                         break;
                 }
 
+            }
+
+            function sendDataForDeletion(data) {
+                let isConfirmed = confirm("Tem certeza que deseja eliminar?");
+
+                if (isConfirmed) {
+                    let dataArray = data.split(",");
+                    $.post("../../server/src/delete-location/delete-location.php", 
+                            {
+                                id: dataArray[0],
+                                table: dataArray[1],
+                            },
+                            function(response) {
+                                if (response) {
+                                    alert("Eliminado com sucesso.");
+                                    location.reload();
+                                } else {
+                                    alert("Ocorreu um erro ao eliminar.\nTente de novo.");
+                                    location.reload();
+                                }
+                            }
+                        );
+                }
             }
         </script>
         <script src="../../assets/scripts/admin/session-timeout.js"></script>
