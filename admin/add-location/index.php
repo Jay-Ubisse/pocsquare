@@ -40,6 +40,20 @@ if (isset($_SESSION['timestamp'])) {
 
                     <!-- Form submitted using ajax -->
                     <form method="POST" action="" class="manual-form mt-10">
+                        <div class="flex flex-col gap-1">
+                            <select name="area" onchange="getFieldsByQuantity()" class="fieldQuant border mb-4 py-1 border-orange-700 focus:outline-none outline-none rounded">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
                         <div class="flex flex-col gap-1 mb-8">
                             <select name="area" onchange="changeInputField()" class="areaOption border mb-4 py-1 border-orange-700 focus:outline-none outline-none rounded">
                                 <option value="district">Distrito</option>
@@ -52,39 +66,17 @@ if (isset($_SESSION['timestamp'])) {
                                 <option value="zone">Zona</option>
                                 <option value="township">Povoação</option>
                             </select>
-                            <hr class="h-px bg-orange-700 border-0">
+                            <hr class="h-[2px] bg-orange-700 border-0">
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <div class="flex flex-col gap-2">
-                                <label for="province" class="font-medium">Província</label>
-                                <select name="province" onchange="changeProvinceName()" class="provinceOption border border-orange-700 focus:outline-none outline-none rounded">
-                                    <option value="Maputo Cidade">Maputo Cidade</option>
-                                    <option value="Maputo Província">Maputo Província</option>
-                                    <option value="Gaza">Gaza</option>
-                                    <option value="Inhambane">Inhambane</option>
-                                    <option value="Manica">Manica</option>
-                                    <option value="Sofala">Sofala</option>
-                                    <option value="Tete">Tete</option>
-                                    <option value="Nampula">Nampula</option>
-                                    <option value="Niassa">Niassa</option>
-                                    <option value="Zambézia">Zambézia</option>
-                                    <option value="Cabo Delgado">Cabo Delgado</option>
-                                </select>
-                            </div>
-                            <div class="flex flex-col gap-2">
-                                <label for="id" class="font-medium">ID</label>
-                                <input type="text" name="id" required class="id border border-orange-700 focus:outline-none outline-none rounded px-2">
-                            </div>
-                            <div class="input-section flex flex-col gap-2">
-                                <!-- Field added using ajax -->
-                            </div>
+                        <div class="input-section flex flex-col gap-4">
+                            <!-- Field added using ajax -->
                         </div>
                         <div class="gap-5 w-fit mx-auto mt-10">
                             <input type="submit" value="Adicionar" class="bg-orange-700 rounded-md text-white font-medium px-4 py-2">
                         </div>
                     </form>
                 </div>
-                <div class="flex justify-center items-center font-semibold text-lg text-slate-700 mx-3">
+                <div class="flex justify-center font-semibold text-lg text-slate-700 mx-3">
                     OU
                 </div>
                 <div class="bg-slate-200 p-4 rounded-md h-fit">
@@ -137,11 +129,18 @@ if (isset($_SESSION['timestamp'])) {
     <script src="../../assets/scripts/jquery-3.6.0.js"></script>
     <script src="../../assets/scripts/admin/session-timeout.js"></script>
     <script>
+        "use strict";
+
+        //mostrar campos dos distritos na primeira renderização da pagina
         $(".heading").text("Adicionar Distrito");
         $(".input-section").load("./components/district.html");
+
+        //variáveis para armazenar a região e província escolhidos (Ininialmente
+        //Distrito e Maputo Cidade respectivamente)
         let region = "district";
         let province = "Maputo Cidade"
 
+        //funcao para mudar a região escolhida e mostrar os campos da regiao correspondente
         function changeInputField() {
             let selectedValue = $(".areaOption").val();
             switch (selectedValue) {
@@ -205,11 +204,143 @@ if (isset($_SESSION['timestamp'])) {
             }
         }
 
+        //função para mudar a província escolhida
         function changeProvinceName() {
             province = $(".provinceOption").val();
 
         }
+        
+        //função para mostrar diferentes números de campos, conforme selecionado.
+        function getFieldsByQuantity() {
+            let quant = $(".fieldQuant").val();
+            switch (quant) {
+                case "1":
+                    $("#one").css({"display": "flex"});
+                    $("#two").css({"display": "none"});
+                    $("#three").css({"display": "none"});
+                    $("#four").css({"display": "none"});
+                    $("#five").css({"display": "none"});
+                    $("#six").css({"display": "none"});
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "2":
+                    $("#one").css({"display": "flex"});
+                    $("#two").css({"display": "flex"});
+                    $("#three").css({"display": "none"});
+                    $("#four").css({"display": "none"});
+                    $("#five").css({"display": "none"});
+                    $("#six").css({"display": "none"});
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "3":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "none"});
+                    $("#five").css({"display": "none"});
+                    $("#six").css({"display": "none"});
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "4":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "none"});
+                    $("#six").css({"display": "none"});
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "5":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "none"});
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "6":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "flex"});;
+                    $("#seven").css({"display": "none"});
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "7":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "flex"});;
+                    $("#seven").css({"display": "flex"});;
+                    $("#eight").css({"display": "none"});
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "8":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "flex"});;
+                    $("#seven").css({"display": "flex"});;
+                    $("#eight").css({"display": "flex"});;
+                    $("#nine").css({"display": "none"});
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "9":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "flex"});;
+                    $("#seven").css({"display": "flex"});;
+                    $("#eight").css({"display": "flex"});;
+                    $("#nine").css({"display": "flex"});;
+                    $("#ten").css({"display": "none"});
+                    break;
+                case "10":
+                    $("#one").css({"display": "flex"});;
+                    $("#two").css({"display": "flex"});;
+                    $("#three").css({"display": "flex"});;
+                    $("#four").css({"display": "flex"});;
+                    $("#five").css({"display": "flex"});;
+                    $("#six").css({"display": "flex"});;
+                    $("#seven").css({"display": "flex"});;
+                    $("#eight").css({"display": "flex"});;
+                    $("#nine").css({"display": "flex"});;
+                    $("#ten").css({"display": "flex"});;
+                    break;
+                default:
+                    break;
+            }
 
+        }
+
+        //código da submissão do formulário
         /*
         $(".manual-form").submit(function(event) {
 
