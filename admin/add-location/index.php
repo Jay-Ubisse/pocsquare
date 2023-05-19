@@ -57,8 +57,8 @@ if (isset($_SESSION['timestamp'])) {
                         <div class="flex flex-col gap-1 mb-8">
                             <select name="area" onchange="changeInputField()" class="areaOption border mb-4 py-1 border-orange-700 focus:outline-none outline-none rounded">
                                 <option value="district">Distrito</option>
-                                <option value="admin-post">Posto Administrativo</option>
-                                <option value="neighborhood">Bairro</option>
+                                <option value="admin_post">Posto Administrativo</option>
+                                <option value="neighborhood_locality">Bairro</option>
                                 <option value="locality">Localidade</option>
                                 <option value="cell">Célula</option>
                                 <option value="circle">Círculo</option>
@@ -138,7 +138,6 @@ if (isset($_SESSION['timestamp'])) {
         //variáveis para armazenar a região e província escolhidos (Ininialmente
         //Distrito e Maputo Cidade respectivamente)
         let region = "district";
-        let province = "Maputo Cidade"
 
         //funcao para mudar a região escolhida e mostrar os campos da regiao correspondente
         function changeInputField() {
@@ -148,66 +147,54 @@ if (isset($_SESSION['timestamp'])) {
                     $(".heading").text("Adicionar Distrito");
                     $(".input-section").load("./components/district.html");
 
-                    region = "district";
+                    region = selectedValue;
                     break;
-                case "admin-post":
+                case "admin_post":
                     $(".heading").text("Adicionar Posto Administrativo");
                     $(".input-section").load("./components/admin-post.html");
 
-                    region = "admin-post";
+                    region = selectedValue;
                     break;
-                case "neighborhood":
+                case "neighborhood_locality":
                     $(".heading").text("Adicionar Bairro");
                     $(".input-section").load("./components/neighborhood.html");
 
-                    region = "neighborhood";
-                    break;
-                case "locality":
-                    $(".heading").text("Adicionar Localidade");
-                    $(".input-section").load("./components/locality.html");
-
-                    region = "locality";
+                    region = selectedValue;
                     break;
                 case "cell":
                     $(".heading").text("Adicionar Célula");
                     $(".input-section").load("./components/cell.html");
 
-                    region = "cell";
+                    region = selectedValue;
                     break;
                 case "circle":
                     $(".heading").text("Adicionar Círculo");
                     $(".input-section").load("./components/circle.html");
 
-                    region = "circle";
+                    region = selectedValue;
                     break;
                 case "village":
                     $(".heading").text("Adicionar Vila");
                     $(".input-section").load("./components/village.html");
 
-                    region = "village";
+                    region = selectedValue;
                     break;
                 case "zone":
                     $(".heading").text("Adicionar Zona");
                     $(".input-section").load("./components/zone.html");
 
-                    region = "zone";
+                    region = selectedValue;
                     break;
                 case "township":
                     $(".heading").text("Adicionar Povoação");
                     $(".input-section").load("./components/township.html");
 
-                    region = "township";
+                    region = selectedValue;
                     break;
 
                 default:
                     break;
             }
-        }
-
-        //função para mudar a província escolhida
-        function changeProvinceName() {
-            province = $(".provinceOption").val();
-
         }
         
         //função para mostrar diferentes números de campos, conforme selecionado.
@@ -341,35 +328,64 @@ if (isset($_SESSION['timestamp'])) {
         }
 
         //código da submissão do formulário
-        /*
         $(".manual-form").submit(function(event) {
 
             $.post("../../server/src/add-location/add-location.php", {
                     inputRegion: region,
-                    inputProvince: province,
-                    inputRegionName: $(".input-field").val(),
-                    inputId: $(".id").val(),
+
+                    provinceOne: $('.provinceOne').val(),
+                    provinceTwo: $('.provinceTwo').val(),
+                    provinceThree: $('.provinceThree').val(),
+                    provinceFour: $('.provinceFour').val(),
+                    provinceFive: $('.provinceFive').val(),
+                    provinceSix: $('.provinceSix').val(),
+                    provinceSeven: $('.provinceSeven').val(),
+                    provinceEight: $('.provinceEight').val(),
+                    provinceNine: $('.provinceNine').val(),
+                    provinceTen: $('.provinceTen').val(),
+
+                    regionOne: $(".inputOne").val(),
+                    regionTwo: $(".inputTwo").val(),
+                    regionThree: $(".inputThree").val(),
+                    regionFour: $(".inputFour").val(),
+                    regionFive: $(".inputFive").val(),
+                    regionSix: $(".inputSix").val(),
+                    regionSeven: $(".inputSeven").val(),
+                    regionEight: $(".inputEight").val(),
+                    regionNine: $(".inputNine").val(),
+                    regionTen: $(".inputTen").val(),
+
+                    idOne: $(".idOne").val(),
+                    idTwo: $(".idTwo").val(),
+                    idThree: $(".idThree").val(),
+                    idFour: $(".idFour").val(),
+                    idFive: $(".idFive").val(),
+                    idSix: $(".idSix").val(),
+                    idSeven: $(".idSeven").val(),
+                    idEight: $(".idEight").val(),
+                    idNine: $(".idNine").val(),
+                    idTen: $(".idTen").val(),
                 },
                 function(response) {
-                    if (response.includes("foi")) {
+                    //response.includes("foi")
+                    if (Number(response) === 0) {
                         $(".manual-status-info").css({
                             "display": "flex",
                             "background-color": "rgb(220, 38, 38)",
                         });
-                    }
-                    if (response.includes("sucesso")) {
+                    } else {
                         $(".manual-status-info").css({
                             "display": "flex",
                             "background-color": "rgb(22, 163, 74)",
                         });
                     }
-                    $(".manual-status-info").text(response);
+                    let message = Number(response) + " linhas adicionadas."
+                    $(".manual-status-info").text(message);
                 }
             );
 
             event.preventDefault();
         });
-        */
     </script>
 </body>
 

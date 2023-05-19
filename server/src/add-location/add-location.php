@@ -1,4 +1,5 @@
 <?php
+
 require "../../config/connect.php";
 session_start();
 if (isset($_SESSION['timestamp'])) {
@@ -8,177 +9,199 @@ if (isset($_SESSION['timestamp'])) {
 }
 
 
-//obter os valores da provincia e ID introduzidos
-$province = $_POST['inputProvince'];
-$id = $_POST['inputId'];
+$linesAdded = 0;
 
+if (isset($_POST['regionOne']) && isset($_POST['idOne'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionOne']);
+    $id = trim($_POST['idOne']);
+    $province = $_POST['provinceOne'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionTwo']) && isset($_POST['idTwo'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionTwo']);
+    $id = trim($_POST['idTwo']);
+    $province = $_POST['provinceTwo'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionThree']) && isset($_POST['idThree'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionThree']);
+    $id = trim($_POST['idThree']);
+    $province = $_POST['provinceThree'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionFour']) && isset($_POST['idFour'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionFour']);
+    $id = trim($_POST['idFour']);
+    $province = $_POST['provinceFour'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionFive']) && isset($_POST['idFive'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionFive']);
+    $id = trim($_POST['idFive']);
+    $province = $_POST['provinceFive'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionSix']) && isset($_POST['idSix'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionSix']);
+    $id = trim($_POST['idSix']);
+    $province = $_POST['provinceSix'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionSeven']) && isset($_POST['idSeven'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionSeven']);
+    $id = trim($_POST['idSeven']);
+    $province = $_POST['provinceSeven'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionEight']) && isset($_POST['idEight'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionEight']);
+    $id = trim($_POST['idEight']);
+    $province = $_POST['provinceEight'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionNine']) && isset($_POST['idNine'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionNine']);
+    $id = trim($_POST['idNine']);
+    $province = $_POST['provinceNine'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
+if (isset($_POST['regionTen']) && isset($_POST['idTen'])) {
+    $inputRegion = $_POST['inputRegion'];
+    $regionName = trim($_POST['regionTen']);
+    $id = trim($_POST['idTen']);
+    $province = $_POST['provinceTen'];
+    $success_message = 'Adicionado com sucesso!';
+    $failure_message = 'Já foi adicionado!';
+    selectProvince($inputRegion, $regionName, $id, $province,  $success_message, $failure_message);
+}
 
-//selecionar a região escolhida
-if ($_POST["inputRegion"] == "district") {
-    $entity_field = 'district';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Distrito adicionado com sucesso!';
-    $failure_message = 'Este distrito já foi adicionado!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "admin-post") {
-    $entity_field = 'admin_post';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'P. Administrativo adicionado com sucesso!';
-    $failure_message = 'Este p. administrativo já foi adicionado!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "locality") {
-    $entity_field = 'locality';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Localidade adicionada com sucesso!';
-    $failure_message = 'Esta localidade já foi adicionada!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "neighborhood") {
-    $entity_field = 'neighborhood';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Bairro adicionado com sucesso!';
-    $failure_message = 'Este bairro já foi adicionado!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "cell") {
-    $entity_field = 'cell';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Célula adicionada com sucesso!';
-    $failure_message = 'Esta célula já foi adicionada!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "circle") {
-    $entity_field = 'circle';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Círculo adicionado com sucesso!';
-    $failure_message = 'Este círculo já foi adicionado!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "village") {
-    $entity_field = 'zone';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Zona adicionada com sucesso!';
-    $failure_message = 'Esta zona já foi adicionada!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "zone") {
-    $entity_field = 'village';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Vila adicionada com sucesso!';
-    $failure_message = 'Esta vila já foi adicionada!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-if ($_POST["inputRegion"] == "township") {
-    $entity_field = 'township';
-    $regionName = trim($_POST["inputRegionName"]);
-    $success_message = 'Povoação adicionada com sucesso!';
-    $failure_message = 'Esta povoação já foi adicionada!';
-    selectProvince($entity_field, $regionName, $success_message, $failure_message);
-}
-
-function selectProvince($entity_field, $regionName, $success_message, $failure_message) {
-    global $province, $database_name;
+function selectProvince($inputRegion, $regionName, $id, $province, $success_message, $failure_message) {
 
     switch ($province) {
         case 'Maputo Cidade':
-            $table = "mc_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "mc_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Maputo Província':
-            $table = "mp_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "mp_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Gaza':
-            $table = "gz_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "gz_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Inhambane':
-            $table = "in_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "in_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Manica':
-            $table = "mn_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "mn_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Sofala':
-            $table = "sf_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "sf_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Tete':
-            $table = "tt_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "tt_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Nampula':
-            $table = "np_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "np_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Niassa':
-            $table = "ns_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "ns_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Zambézia':
-            $table = "zb_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $table);
+            $table = "zb_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $table);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         case 'Cabo Delgado':
-            $table = "cd_$entity_field";
-            $isFound = checkLocation($entity_field, $regionName, $entity_field);
+            $table = "cd_$inputRegion";
+            $isFound = checkLocation($inputRegion, $regionName, $inputRegion);
             if($isFound) {
-                errorMessage($failure_message, $entity_field);
+                errorMessage($failure_message, $inputRegion);
             } else {
-                saveLocation($table, $regionName, $entity_field, $success_message);
+                saveLocation($table, $regionName, $inputRegion, $id, $success_message);
             }
             break;
         default:
@@ -187,17 +210,9 @@ function selectProvince($entity_field, $regionName, $success_message, $failure_m
     }
 }
 
-function checkLocation($entity_field, $regionName, $table) {
-    global  $dbcon, $database_name, $id;
+function checkLocation($inputRegion, $regionName, $table) {
+    global  $dbcon, $database_name;
     $isFound = false;
-
-    //verificar se o ID existe na tabela
-    $checkIdQuery = "SELECT * FROM $database_name.$table WHERE id = $id";
-    $checkIdResult = $dbcon->query($checkIdQuery);
-
-    if($checkIdResult->rowCount() > 0) {
-        $isFound = true;
-    }
 
 
     //Verificar se a região digitada existe na tabela
@@ -205,7 +220,7 @@ function checkLocation($entity_field, $regionName, $table) {
     $checkLocalityResult = $dbcon->query($checkLocationQuery);
     $rows = $checkLocalityResult->fetchAll(PDO::FETCH_ASSOC);
 
-    $column = $entity_field;
+    $column = $inputRegion;
     foreach ($rows as $row) {
         if(strcasecmp($regionName , $row["$column"]) == 0) {
             $isFound = true;
@@ -216,23 +231,22 @@ function checkLocation($entity_field, $regionName, $table) {
     return $isFound;
 }
 
-function saveLocation($table, $selected_field, $entity_field, $success_message) {
-    global $province, $dbcon, $database_name;
-    $column = $entity_field;
+function saveLocation($table, $regionName, $inputRegion, $id, $success_message) {
+    global $province, $dbcon, $database_name, $linesAdded;
+    $column = $inputRegion;
 
     try {
 
         $dbcon->beginTransaction();
     
-        $saveLocalityQuery = "INSERT INTO $database_name." . $table . " (province, " . $column . ") VALUES (?, ?)";
+        $saveLocalityQuery = "INSERT INTO $database_name." . $table . " (id, province, " . $column . ") VALUES (?, ?, ?)";
         $stmt = $dbcon->prepare($saveLocalityQuery);
-        $stmt->execute([$province, $selected_field]);
+        $stmt->execute([$id, $province, $regionName]);
     
     
         $dbcon->commit();
 
-        $_SESSION['error'] = false;
-        echo $success_message;
+        $linesAdded = $linesAdded + 1;
     
     } 
     catch(PDOException $ex) {
@@ -242,11 +256,14 @@ function saveLocation($table, $selected_field, $entity_field, $success_message) 
     }
 }
 
-function errorMessage($failure_message, $entity_field) {
-    $_SESSION['error'] = true;
-    echo $failure_message;
+function errorMessage($failure_message, $inputRegion) {
+    global $linesAdded;
+
+    //echo $linesAdded;
     
 }
+
+echo $linesAdded;
 
 
 
