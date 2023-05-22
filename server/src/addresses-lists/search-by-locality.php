@@ -2,7 +2,10 @@
     require "../../config/connect.php";
     session_start();
 
-    $sql = "SELECT * FROM $database_name.main_address_info ORDER BY cep";
+    $neighborhoodOrLocality = $_POST['inputData'];
+    $date = $_POST['inputDate'];
+    echo $neighborhoodOrLocality;
+    $sql = "SELECT * FROM $database_name.main_address_info WHERE neighborhood_locality LIKE '%$neighborhoodOrLocality%' ORDER BY cep";
     $result = $dbcon->query($sql);
 
     echo    "<tr>";

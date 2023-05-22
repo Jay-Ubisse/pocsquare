@@ -17,289 +17,253 @@ switch ($provinceAlphanumericId) {
         $provinceName = "Maputo Cidade";
         $district = $_POST["district-mc"];
         $adminPost = $_POST["administrative-post-mc"];
-        $neighborhood = $_POST["neighborhood-mc"];
-        $locality = " ";
+        $neighborhoodOrLocality = $_POST["neighborhood-mc"];
         $circle = $_POST["circle-mc"];
         $cell =  $_POST["cell-mc"];
         $village = $_POST["village-mc"];
         $township = $_POST["township-mc"];
         $zone = $_POST["zone-mc"];
 
-        $idArray = getIDs("mc", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("mc", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "01";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = $idArray[2];
-        $localityId = 0;
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
-
-        $localityOrNeighborhoodId = $neighborhoodId;
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
         break;
     case 'MP':
         $provinceName = "Maputo Província";
         $district = $_POST["district-mp"];
         $adminPost = $_POST["administrative-post-mp"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-mp"];
+        $neighborhoodOrLocality = $_POST["neighborhood-mp"];
         $circle = $_POST["circle-mp"];
         $cell =  $_POST["cell-mp"];
         $village = $_POST["village-mp"];
         $township = $_POST["township-mp"];
         $zone = $_POST["zone-mp"];
 
-        $idArray = getIDs("mp", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("mp", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "02";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
-
-        $localityOrNeighborhoodId = $localityId;
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
         break;
     case 'GZ':
         $provinceName = "Gaza";
         $district = $_POST["district-gz"];
         $adminPost = $_POST["administrative-post-gz"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-gz"];
+        $neighborhoodOrLocality = $_POST["neighborhood-gz"];
         $circle = $_POST["circle-gz"];
         $cell =  $_POST["cell-gz"];
         $village = $_POST["village-gz"];
         $township = $_POST["township-gz"];
         $zone = $_POST["zone-gz"];
 
-        $idArray = getIDs("gz", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("gz", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "03";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'IN':
         $provinceName = "Inhambane";
         $district = $_POST["district-in"];
         $adminPost = $_POST["administrative-post-in"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-in"];
+        $neighborhoodOrLocality = $_POST["neighborhood-in"];
         $circle = $_POST["circle-in"];
         $cell =  $_POST["cell-in"];
         $village = $_POST["village-in"];
         $township = $_POST["township-in"];
         $zone = $_POST["zone-in"];
 
-        $idArray = getIDs("in", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("in", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "04";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'MN':
         $provinceName = "Manica";
         $district = $_POST["district-mn"];
         $adminPost = $_POST["administrative-post-mn"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-mn"];
+        $neighborhoodOrLocality = $_POST["neighborhood-mn"];
         $circle = $_POST["circle-mn"];
         $cell =  $_POST["cell-mn"];
         $village = $_POST["village-mn"];
         $township = $_POST["township-mn"];
         $zone = $_POST["zone-mn"];
 
-        $idArray = getIDs("mn", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("mn", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "05";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'SF':
         $provinceName = "Sofala";
         $district = $_POST["district-sf"];
         $adminPost = $_POST["administrative-post-sf"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-sf"];
+        $neighborhoodOrLocality = $_POST["neighborhood-sf"];
         $circle = $_POST["circle-sf"];
         $cell =  $_POST["cell-sf"];
         $village = $_POST["village-sf"];
         $township = $_POST["township-sf"];
         $zone = $_POST["zone-sf"];
 
-        $idArray = getIDs("sf", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("sf", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "06";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'TT':
         $provinceName = "Tete";
         $district = $_POST["district-tt"];
         $adminPost = $_POST["administrative-post-tt"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-tt"];
+        $neighborhoodOrLocality = $_POST["neighborhood-tt"];
         $circle = $_POST["circle-tt"];
         $cell =  $_POST["cell-tt"];
         $village = $_POST["village-tt"];
         $township = $_POST["township-tt"];
         $zone = $_POST["zone-tt"];
-
-        $idArray = getIDs("tt", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("tt", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "07";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'NP':
         $provinceName = "Nampula";
         $district = $_POST["district-np"];
         $adminPost = $_POST["administrative-post-np"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-np"];
+        $neighborhoodOrLocality = $_POST["neighborhood-np"];
         $circle = $_POST["circle-np"];
         $cell =  $_POST["cell-np"];
         $village = $_POST["village-np"];
         $township = $_POST["township-np"];
         $zone = $_POST["zone-np"];
 
-        $idArray = getIDs("np", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("np", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "08";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'NS':
         $provinceName = "Niassa";
         $district = $_POST["district-ns"];
         $adminPost = $_POST["administrative-post-ns"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-ns"];
+        $neighborhoodOrLocality = $_POST["neighborhood-ns"];
         $circle = $_POST["circle-ns"];
         $cell =  $_POST["cell-ns"];
         $village = $_POST["village-ns"];
         $township = $_POST["township-ns"];
         $zone = $_POST["zone-ns"];
 
-        $idArray = getIDs("ns", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("ns", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "09";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'ZB':
         $provinceName = "Zambézia";
         $district = $_POST["district-zb"];
         $adminPost = $_POST["administrative-post-zb"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-zb"];
+        $neighborhoodOrLocality = $_POST["neighborhood-zb"];
         $circle = $_POST["circle-zb"];
         $cell =  $_POST["cell-zb"];
         $village = $_POST["village-zb"];
         $township = $_POST["township-zb"];
         $zone = $_POST["zone-zb"];
 
-        $idArray = getIDs("zb", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("zb", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
     case 'CD':
         $provinceName = "Cabo Delgado";
         $district = $_POST["district-cd"];
         $adminPost = $_POST["administrative-post-cd"];
-        $neighborhood = " ";
-        $locality = $_POST["locality-cd"];
+        $neighborhoodOrLocality = $_POST["neighborhood-cd"];
         $circle = $_POST["circle-cd"];
         $cell =  $_POST["cell-cd"];
         $village = $_POST["village-cd"];
         $township = $_POST["township-cd"];
         $zone = $_POST["zone-cd"];
 
-        $idArray = getIDs("cd", $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone);
+        $idArray = getIDs("cd", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
         $districtId = $idArray[0];
         $adminPostId = $idArray[1];
-        $neighborhoodId = 0;
-        $localityId = $idArray[3];
-        $cellId = $idArray[4];
-        $circleId = $idArray[5];
-        $villageId = $idArray[6];
-        $townshipId = $idArray[7];
-        $zoneId = $idArray[8];
+        $neighborhoodOrLocalityId = $idArray[2];
+        $cellId = $idArray[3];
+        $circleId = $idArray[4];
+        $villageId = $idArray[5];
+        $townshipId = $idArray[6];
+        $zoneId = $idArray[7];
 
-        $localityOrNeighborhoodId = $localityId;
         break;
 
     default:
@@ -345,8 +309,7 @@ $lateral = $_POST["lateral"];
 $entry = $_POST["entry"];
 $mailbox = $_POST["mailbox"];
 $postOffice = $_POST["post-office"];
-$postalCode = $provinceAlphanumericId . $localityOrNeighborhoodId . " " . $block . $lateral;
-
+$postalCode = $provinceAlphanumericId . $neighborhoodOrLocalityId . " " . $block . $lateral;
 
 //espacial entities
 $latitude = $_POST["latitude"];
@@ -368,7 +331,7 @@ $registrationDate = date("d-m-y");
 $userRole = $_SESSION["user-role"];
 $userId = $_SESSION['user-data']['username'];
 
-function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality, $cell, $circle, $village, $township, $zone)
+function getIDs($alphanumericID, $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone)
 {
     global $dbcon, $database_name;
 
@@ -385,16 +348,10 @@ function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality
     $adminPostId = $adminPostRows['id'];
 
     //get neighborhood id
-    $neighborhoodQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_neighborhood WHERE neighborhood = '$neighborhood'";
-    $neighborhoodQueryResult = $dbcon->query($neighborhoodQuery);
-    $neighborhoodRows = $neighborhoodQueryResult->fetch(PDO::FETCH_ASSOC);
-    $neighborhoodId = $neighborhoodRows['id'];
-
-    //get locality id
-    $localityQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_locality WHERE locality = '$locality'";
-    $localityQueryResult = $dbcon->query($localityQuery);
-    $localityRows = $localityQueryResult->fetch(PDO::FETCH_ASSOC);
-    $localityId = $localityRows['id'];
+    $neighborhoodOrLocalityQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_neighborhood_locality WHERE neighborhood_locality = '$neighborhoodOrLocality'";
+    $neighborhoodOrLocalityQueryResult = $dbcon->query($neighborhoodOrLocalityQuery);
+    $neighborhoodOrLocalityRows = $neighborhoodOrLocalityQueryResult->fetch(PDO::FETCH_ASSOC);
+    $neighborhoodOrLocalityId = $neighborhoodOrLocalityRows['id'];
 
     //get cell id
     $cellQuery = "SELECT * FROM  $database_name. " . $alphanumericID . "_cell WHERE cell = '$cell'";
@@ -426,12 +383,13 @@ function getIDs($alphanumericID, $district, $adminPost, $neighborhood, $locality
     $zoneRows = $zoneQueryResult->fetch(PDO::FETCH_ASSOC);
     $zoneId = $zoneRows['id'];
 
-    return array($districtId, $adminPostId, $neighborhoodId, $localityId, $cellId, $circleId, $villageId, $townshipId, $zoneId);
+    return array($districtId, $adminPostId, $neighborhoodOrLocalityId, $cellId, $circleId, $villageId, $townshipId, $zoneId);
 }
 
 /**
  * Insert the data in the respective tables (USING PDO).
  */
+
 
 try {
 
@@ -439,10 +397,10 @@ try {
 
     //save admin entities data
     $administrative_entities_query = "INSERT INTO $database_name.administrative_entities 
-                                    (province, province_numeric_id, district, district_id, administrative_post, admin_post_id, locality, locality_id, neighborhood, neighborhood_id, province_alphabetical_id) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                    (province, province_numeric_id, district, district_id, administrative_post, admin_post_id, neighborhood_locality, neighborhood_locality_id, province_alphabetical_id) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($administrative_entities_query);
-    $stmt->execute([$provinceName, $provinceId, $district, $districtId, $adminPost, $adminPostId, $locality, $localityId, $neighborhood, $neighborhoodId, $provinceAlphanumericId]);
+    $stmt->execute([$provinceName, $provinceId, $district, $districtId, $adminPost, $adminPostId, $neighborhoodOrLocality, $neighborhoodOrLocalityId, $provinceAlphanumericId]);
 
     //save local entities data
     $local_entities_query = "INSERT INTO $database_name.local_entities 
@@ -488,10 +446,10 @@ try {
 
     //save main info address data
     $main_address_info_query = "INSERT INTO $database_name.main_address_info 
-                            (province, district, neighborhood, locality, road_name, floor, door_number, city_block, cep, email, website, phone_number, responsible) 
+                            (province, district, neighborhood_locality, road_name, floor, door_number, city_block, cep, email, website, phone_number, responsible, registration_date) 
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $dbcon->prepare($main_address_info_query);
-    $stmt->execute([$provinceName, $district, $neighborhood, $locality, $roadName, $floor, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId]);
+    $stmt->execute([$provinceName, $district, $neighborhoodOrLocality, $roadName, $floor, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId, $registrationDate]);
 
 
     $dbcon->commit();
@@ -503,3 +461,4 @@ try {
     $dbcon->rollBack();
     echo $ex->getMessage();
 }
+

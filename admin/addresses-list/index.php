@@ -31,23 +31,27 @@
                 
             </table>
         </section>
-        <section class="border-2 rounded-md border-orange-700 max-h-[300px] p-4 w-[23%] mt-10">
+        <section class="border-2 rounded-md border-orange-700 h-fit p-4 w-[23%] mt-10">
             <label for="filter" class="text-lg font-semibold">Filtrar por:</label>
             <hr class="w-20 bg-orange-700 h-[3px] mb-3 mt-1 font-extrabold rounded" />
-            <select onchange="filterOptions()" name="filter" id="filter" class="outline-none focus:outline-orange-700">
+            <select name="filter" id="filter" class="outline-none focus:outline-orange-700">
                 <option value="all">Todos</option>
                 <option value="cep">CEP</option>
                 <option value="province">Província</option>
                 <option value="district">Distrito</option>
-                <option value="admin-post">Posto Administrativo</option>
-                <option value="neighborhood">Bairro</option>
-                <option value="locality">Localidade</option>
-                <option value="user">Usuário responsável</option>
-                <option value="date">Data</option>    
+                <option value="neighborhood-locality">Bairro ou Localidade</option>
+                <option value="user">Usuário responsável</option>    
             </select>
-            <div id="name-form" class="mt-10 flex flex-col gap-4">
-                <input type="text" id="name" class="h-8 rounded-md outline-none focus:outline-orange-700 px-2">
-                <button onclick="loadByName()" class="w-fit px-4 py-2 bg-orange-700 text-white rounded-md">Pesquisar</button>    
+            <div id="input-data-form" class="mt-4 flex flex-col gap-4">
+                <input type="text" id="input-data" class="h-8 rounded-md outline-none focus:outline-orange-700 px-2">    
+            </div>
+            <hr class="w-[95%] mx-auto bg-orange-700 h-[2px] mb-2 mt-4 font-extrabold rounded" />
+            <div id="date-form" class="flex flex-col gap-4">
+                <label class="text-base font-medium">Data</label>
+                <input type="date" id="date" class="h-8 rounded-md outline-none focus:outline-orange-700 px-2">    
+            </div>
+            <div class="mt-10 flex flex-col gap-4">
+                <button class="submit w-fit px-4 py-2 bg-orange-700 text-white rounded-md">Pesquisar</button>    
             </div>
         </section>
     </main>
@@ -59,6 +63,50 @@
     <script src="../../assets/scripts/admin/session-timeout.js"></script>
     <script>
         $("#all").load("../../server/src/addresses-lists/all-addresses.php");
+
+        $(".submit").on('click', function () {
+            let filter = $("#filter").val();
+            let data = $("#input-data").val();
+            let date = $("#date").val();
+            
+            switch (filter) {
+                case "all":
+                    $("#all").load("../../server/src/addresses-lists/all-addresses.php");
+                    break;
+                case "cep":
+                    $("#all").load("../../server/src/addresses-lists/search-by-cep.php", {
+                        inputData: data,
+                        inputDate: date,
+                    });
+                    break;
+                case "province":
+                    $("#all").load("../../server/src/addresses-lists/search-by-province.php", {
+                        inputData: data,
+                        inputDate: date,
+                    });
+                    break;
+                case "district":
+                    $("#all").load("../../server/src/addresses-lists/search-by-district.php", {
+                        inputData: data,
+                        inputDate: date,
+                    });
+                    break;
+                case "neighborhood-locality":
+                    $("#all").load("../../server/src/addresses-lists/search-by-locality.php", {
+                        inputData: data,
+                        inputDate: date,
+                    });
+                case "user":
+                    $("#all").load("../../server/src/addresses-lists/search-by-user.php", {
+                        inputData: data,
+                        inputDate: date,
+                    });
+                    break;
+                default:
+                    break;
+            }
+        });
+
     </script>
 </body>
 </html>

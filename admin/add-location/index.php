@@ -34,8 +34,8 @@ if (isset($_SESSION['timestamp'])) {
                             <!-- Heading added using ajax -->
                         </h1>
                     </div>
-                    <div class='manual-status-info flex gap-2 bg-yellow-500 text-white font-semibold justify-center my-6 py-4'>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i></span><span> Área em Manutenção</span>
+                    <div class='manual-status-info hidden gap-2 text-white font-semibold justify-center my-6 py-4'>
+                        
                     </div>
 
                     <!-- Form submitted using ajax -->
@@ -368,18 +368,29 @@ if (isset($_SESSION['timestamp'])) {
                 },
                 function(response) {
                     //response.includes("foi")
-                    if (Number(response) === 0) {
+                    let responseArray = response.split(",");
+                    let linesAccepted = Number(responseArray[0]);
+                    let linesSkipped = Number(responseArray[1]);
+                    if ((linesAccepted > 0) && (linesSkipped > 0)) {
+                        $(".manual-status-info").css({
+                            "display": "flex",
+                            "background-color": "rgb(234, 179, 8)",
+                        });
+                    }
+                    if ((linesAccepted === 0) && (linesSkipped > 0)) {
                         $(".manual-status-info").css({
                             "display": "flex",
                             "background-color": "rgb(220, 38, 38)",
                         });
-                    } else {
+                    }
+                    if ((linesAccepted > 0) && (linesSkipped === 0)) {
                         $(".manual-status-info").css({
                             "display": "flex",
                             "background-color": "rgb(22, 163, 74)",
                         });
                     }
-                    let message = Number(response) + " linhas adicionadas."
+                    let message = `${linesAccepted} linhas adicionadas.
+                    ${linesSkipped} linhas já existentes.`;
                     $(".manual-status-info").text(message);
                 }
             );

@@ -2,7 +2,10 @@
     require "../../config/connect.php";
     session_start();
 
-    $sql = "SELECT * FROM $database_name.main_address_info ORDER BY cep";
+    $user = $_POST['inputData'];
+    $date = $_POST['inputDate'];
+
+    $sql = "SELECT * FROM $database_name.main_address_info WHERE responsible LIKE '%$user%' ORDER BY cep";
     $result = $dbcon->query($sql);
 
     echo    "<tr>";
