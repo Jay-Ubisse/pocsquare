@@ -72,112 +72,115 @@ if (!isset($_SESSION["admin-auth"])) {
             <hr class="w-40 bg-orange-700 h-[2px] mb-10 mt-1 font-extrabold rounded" />
             <div class="grid grid-cols-4 justify-items-center">
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Tipo de Propriedade: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Tipo de Propriedade: </span><span><?php echo $_SESSION["property_type"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Andar: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Andar: </span><span><?php echo $_SESSION["floor"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Lado: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Lado: </span><span><?php echo $_SESSION["side"];  ?></span>
                 </div>
                 <div class="mb-3">
-                    <span class="font-semibold">Tipo de Via: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Tipo de Via: </span><span><?php echo $_SESSION["road_type"];  ?></span>
                 </div>
                  <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Nome/Número da Via: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Nome/Número da Via: </span><span><?php echo $_SESSION["road_name"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Impasse: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Impasse: </span><span><?php echo $_SESSION["stalemate"];  ?></span>
                 </div>
                 <div class="mb-3">
-                    <span class="font-semibold">Viaduto: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Viaduto: </span><span><?php echo $_SESSION["viaduct"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Quadra: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Quadra: </span><span><?php echo $_SESSION["block"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Rotunda: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Rotunda: </span><span><?php echo $_SESSION["roundabout"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Travessas: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Travessas: </span><span><?php echo $_SESSION["lane"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Largos: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Largos: </span><span><?php echo $_SESSION["wide"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Pontes: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Pontes: </span><span><?php echo $_SESSION["bridges"];  ?></span>
                 </div>
                  <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Praças: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Praças: </span><span><?php echo $_SESSION["plaza"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Comprimento (metros): </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Comprimento (metros): </span><span><?php echo $_SESSION["length"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Largura (metros): </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Largura (metros): </span><span><?php echo $_SESSION["width"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Ocupação: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Ocupação: </span><span><?php echo $_SESSION["occupancy"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Afetação: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Afetação: </span><span><?php echo $_SESSION["affectation"];  ?></span>
                 </div>
             </div>
             <h2 class="font-semibold text-lg mt-4">Entidades Postais</h2>
             <hr class="w-40 bg-orange-700 h-[2px] mb-10 mt-1 font-extrabold rounded" />
             <div class="grid grid-cols-4 justify-items-center">
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Quarteirão: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Quarteirão: </span><span><?php echo $_SESSION["city_block"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Entrada: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Lateral: </span><span><?php echo $_SESSION["lateral"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Caixa Postal: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Entrada: </span><span><?php echo $_SESSION["entry"];  ?></span>
+                </div>
+                <div class="mb-3 flex flex-col gap-2">
+                    <span class="font-semibold">Caixa Postal: </span><span><?php echo $_SESSION["mailbox"];  ?></span>
                 </div>
                  <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Estacão de correios: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Estacão de correios: </span><span><?php echo $_SESSION["post_office"];  ?></span>
                 </div>
             </div>
             <h2 class="font-semibold text-lg mt-4">Entidades Espaciais</h2>
             <hr class="w-40 bg-orange-700 h-[2px] mb-10 mt-1 font-extrabold rounded" />
             <div class="grid grid-cols-4 justify-items-center">
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Latitude: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Latitude: </span><span><?php echo $_SESSION["latitude"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Latitude DMS: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Latitude DMS: </span><span><?php echo $_SESSION["latitude_dms"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Longetude: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Longetude: </span><span><?php echo $_SESSION["longitude"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Longitude DMS: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Longitude DMS: </span><span><?php echo $_SESSION["longitude_dms"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Elevação do Mar: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Elevação do Mar: </span><span><?php echo $_SESSION["sea_rise"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Via Lat Start: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Via Lat Start: </span><span><?php echo $_SESSION["via_lat_start"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Via Lat End: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Via Lat End: </span><span><?php echo $_SESSION["via_lat_end"];  ?></span>
                 </div>
             </div>
             <h2 class="font-semibold text-lg mt-4">Entidades Complementares</h2>
             <hr class="w-40 bg-orange-700 h-[2px] mb-10 mt-1 font-extrabold rounded" />
             <div class="grid grid-cols-4 justify-items-center">
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Número de Contato: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Número de Contato: </span><span><?php echo $_SESSION["contact_number"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Email: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Email: </span><span><?php echo $_SESSION["email"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Website: </span><span><?php echo $_SESSION["province"];  ?></span>
+                    <span class="font-semibold">Website: </span><span><?php echo $_SESSION["website"];  ?></span>
                 </div>
             </div>
-            <p class="mt-5"><span class="font-semibold">Responsável pelo cadastro:</span><span></span></p>
+            <p class="mt-5"><span class="font-semibold">Responsável pelo cadastro: </span><span><?php echo $_SESSION["responsible"];  ?></span></p>
         </main>
         <footer>
             <?php include "../../components/footer.php" ?>
