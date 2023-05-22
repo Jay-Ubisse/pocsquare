@@ -23,7 +23,7 @@
             echo  "<td class='border-collapse border-2 border-orange-700 text-lg py-2 px-2'>" . $row['road_name'] . ", " . $row['district'] . ", " . $row['province'] . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 py-2 px-2'>" . $row['responsible']  . "</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-blue-600 py-2 px-2 text-center'>
-                <a href=''><i class=\"fa-solid fa-circle-info\"></i>i</a></td>\n";
+                <a href='' onclick=\"viewInfo('" . $row['entity_id'] . "')\"><i class=\"fa-solid fa-circle-info\"></i>i</a></td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-green-600 py-2 px-2 text-center'>
                 <a href=''><i class=\"fa-solid fa-pen-to-square fa-lg\"></i></a>K</td>\n";
             echo  "<td class='border-collapse border-2 border-orange-700 text-red-600 py-2 px-2 text-center'>
