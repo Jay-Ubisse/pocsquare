@@ -107,6 +107,29 @@
             }
         });
 
+        function sendDataForDeletion(data) {
+                let isConfirmed = confirm("Tem certeza que deseja eliminar?");
+
+                if (isConfirmed) {
+                    let dataArray = data.split(",");
+                    $.post("../../server/src/delete-location/delete-addresses.php", 
+                            {
+                                id: dataArray[0],
+                                table: dataArray[1],
+                            },
+                            function(response) {
+                                if (response) {
+                                    alert("Eliminado com sucesso.");
+                                    location.reload();
+                                } else {
+                                    alert("Ocorreu um erro ao eliminar.\nTente de novo.");
+                                    location.reload();
+                                }
+                            }
+                        );
+                }
+            }
+
     </script>
 </body>
 </html>
