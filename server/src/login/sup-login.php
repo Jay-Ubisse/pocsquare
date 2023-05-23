@@ -1,33 +1,39 @@
 <?php
-    require "../../config/connect.php";
-    session_start();
-    $_SESSION['timestamp'] = time();
+require "../../config/connect.php";
+session_start();
+$_SESSION['timestamp'] = time();
 
-        $username = $_POST["username"];
-        $password = md5($_POST["password"]);
+$username = $_POST["username"];
+$password = md5($_POST["password"]);
 
-        // getting user admin data
-        $fetchAdminDataQuery = "SELECT * FROM $database_name.supervisors WHERE username = '$username'";
-        $adminDataResult = $dbcon->query($fetchAdminDataQuery);
+// getting user admin data
+$supervisorDataQuery = "SELECT * FROM $database_name.users WHERE role = 'supervisor' AND username = '$username'";
+$supervisorDataResult = $dbcon->query($supervisorDataQuery);
 
-        if ($adminDataResult->rowCount() == 0) {
-            $_SESSION['sup-auth'] = "Nome de usuário inválido!";
+if ($supervisorDataResult->rowCount() == 0) {
+    $_SESSION['supervisor-auth'] = "Nome de usuário inválido!";
+    header("location: ../../../admin/");
+} else {
+    $supervisorDataRow = $supervisorDataResult->fetch(PDO::FETCH_ASSOC);
+    $pass =  $supervisorDataRow['password'];
+
+    if ($pass !== $password) {
+        $_SESSION['supervisor-auth'] = "Palavra-passe inválida!";
+        header("location: ../../../admin/");
+    } else {
+        if($supervisorDataRow['status'] == 'inactive') {
+            $_SESSION['supervisor-auth'] = "Conta Inactiva! Contacte o seu supervisor.";
             header("location: ../../../admin/");
         } else {
-            $adminDataRow = $adminDataResult->fetch(PDO::FETCH_ASSOC);
-            $pass =  $adminDataRow['password'];
-
-            if ($pass !== $password) {
-                $_SESSION['sup-auth'] = "Palavra-passe inválida!";
-                header("location: ../../../admin/");
-            } else {
-                $_SESSION['sup-auth'] = "Logged-in!";
-                $_SESSION['user-data'] = $adminDataRow;
-                $_SESSION["user-role"] = "Supervisor";
-                header("location: ../../../admin/home/");
-            }
+            $_SESSION['supervisor-auth'] = "Sessão iniciada.";
+            $_SESSION['user-data'] = $supervisorDataRow;
+            $_SESSION["user-role"] = "Supervisor";
+            header("location: ../../../admin/home");
         }
+    }
+}
 
-        //Terminar a conexao PDO
-        $dbcon=null;
+//Terminar a conexao PDO
+$dbcon = null;
+
 ?>

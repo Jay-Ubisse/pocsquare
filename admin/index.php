@@ -26,7 +26,7 @@ session_start();
 		</select>
 	</div>
 	<div class="container tech-container">
-		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
+		<div class="bg-red-700 px-2 text-white font-semibold flex justify-center my-4">
 			<?php
 			if (isset($_SESSION["tech-auth"])) {
 				echo $_SESSION["tech-auth"];
@@ -47,7 +47,7 @@ session_start();
 		</form>
 	</div>
 	<div class="container admin-container">
-		<div class="bg-[#6e48aa] text-white font-semibold flex justify-center my-4">
+		<div class="bg-red-700 px-2 text-white font-semibold flex justify-center my-4">
 			<?php
 			if (isset($_SESSION["admin-auth"])) {
 				echo $_SESSION["admin-auth"];
@@ -68,11 +68,11 @@ session_start();
 		</form>
 	</div>
 	<div class="container sup-container">
-		<div class="bg-red-700 text-white font-semibold flex justify-center my-4">
+		<div class="bg-red-700 px-2 text-white font-semibold flex justify-center my-4">
 			<?php
-			if (isset($_SESSION["sup-auth"])) {
-				echo $_SESSION["sup-auth"];
-				unset($_SESSION["sup-auth"]);
+			if (isset($_SESSION["supervisor-auth"])) {
+				echo $_SESSION["supervisor-auth"];
+				unset($_SESSION["supervisor-auth"]);
 			}
 			?>
 		</div>
