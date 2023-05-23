@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 09:59 PM
+-- Generation Time: May 23, 2023 at 09:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,12 +35,17 @@ CREATE TABLE `administrative_entities` (
   `district_id` varchar(3) DEFAULT NULL,
   `administrative_post` varchar(40) DEFAULT NULL,
   `admin_post_id` varchar(3) DEFAULT NULL,
-  `locality` varchar(50) DEFAULT NULL,
-  `locality_id` varchar(3) DEFAULT NULL,
-  `neighborhood` varchar(50) DEFAULT NULL,
-  `neighborhood_id` varchar(3) DEFAULT NULL,
+  `neighborhood_locality` varchar(50) DEFAULT NULL,
+  `neighborhood_locality_id` varchar(3) DEFAULT NULL,
   `province_alphabetical_id` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `administrative_entities`
+--
+
+INSERT INTO `administrative_entities` (`entity_id`, `province`, `province_numeric_id`, `district`, `district_id`, `administrative_post`, `admin_post_id`, `neighborhood_locality`, `neighborhood_locality_id`, `province_alphabetical_id`) VALUES
+(4, 'Maputo Cidade', '01', 'MC Distrito 1', '01', 'TT Posto 1', '01', 'MC Bairro 1', '001', 'MC');
 
 -- --------------------------------------------------------
 
@@ -73,6 +78,14 @@ CREATE TABLE `cd_admin_post` (
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cd_admin_post`
+--
+
+INSERT INTO `cd_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1'),
+('02', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +100,14 @@ CREATE TABLE `cd_cell` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cd_cell`
+--
+
+INSERT INTO `cd_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1', 'CD Celula 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2', 'CD Celula 2');
 
 -- --------------------------------------------------------
 
@@ -103,6 +124,14 @@ CREATE TABLE `cd_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cd_circle`
+--
+
+INSERT INTO `cd_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1', 'CD Circulo 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2', 'CD Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +143,14 @@ CREATE TABLE `cd_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cd_district`
+--
+
+INSERT INTO `cd_district` (`id`, `province`, `district`) VALUES
+('01', 'Cabo Delgado', 'CD Distrito 1'),
+('02', 'Cabo Delgado', 'CD Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -128,6 +165,14 @@ CREATE TABLE `cd_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cd_neighborhood_locality`
+--
+
+INSERT INTO `cd_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -144,6 +189,14 @@ CREATE TABLE `cd_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cd_township`
+--
+
+INSERT INTO `cd_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1', 'CD Povoacao 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2', 'CD Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -158,6 +211,14 @@ CREATE TABLE `cd_village` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cd_village`
+--
+
+INSERT INTO `cd_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1', 'CD Vila 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2', 'CD Vila 2');
 
 -- --------------------------------------------------------
 
@@ -174,6 +235,14 @@ CREATE TABLE `cd_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cd_zone`
+--
+
+INSERT INTO `cd_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Cabo Delgado', 'CD Distrito 1', 'CD Posto 1', 'CD Localidade 1', 'CD Zona 1'),
+('002', 'Cabo Delgado', 'CD Distrito 2', 'CD Posto 2', 'CD Localidade 2', 'CD Zona 2');
+
 -- --------------------------------------------------------
 
 --
@@ -186,6 +255,13 @@ CREATE TABLE `complementary_entities` (
   `email` varchar(50) DEFAULT NULL,
   `website` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `complementary_entities`
+--
+
+INSERT INTO `complementary_entities` (`entity_id`, `contact_number`, `email`, `website`) VALUES
+(4, 848839501, 'isauramulungo@gmail.com', 'https://www.meusite.com');
 
 -- --------------------------------------------------------
 
@@ -204,6 +280,13 @@ CREATE TABLE `espacial_entities` (
   `via_lat_end` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `espacial_entities`
+--
+
+INSERT INTO `espacial_entities` (`entity_id`, `latitude`, `latitude_dms`, `longitude`, `longitude_dms`, `sea_rise`, `via_lat_start`, `via_lat_end`) VALUES
+(4, 10, '4.343', 9, '4.48994', '4.40404', '3.666', '4.67');
+
 -- --------------------------------------------------------
 
 --
@@ -216,6 +299,14 @@ CREATE TABLE `gz_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gz_admin_post`
+--
+
+INSERT INTO `gz_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+(1, 'Gaza', 'GZ Distrito 1', 'GZ Posto 1'),
+(2, 'Gaza', 'GZ Distrito 2', 'GZ Posto 2');
 
 -- --------------------------------------------------------
 
@@ -232,6 +323,14 @@ CREATE TABLE `gz_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `gz_cell`
+--
+
+INSERT INTO `gz_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1', 'GZ Celula 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2', 'GZ Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -247,6 +346,14 @@ CREATE TABLE `gz_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `gz_circle`
+--
+
+INSERT INTO `gz_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1', 'GZ Circulo 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2', 'GZ Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -258,6 +365,14 @@ CREATE TABLE `gz_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gz_district`
+--
+
+INSERT INTO `gz_district` (`id`, `province`, `district`) VALUES
+('01', 'Gaza', 'GZ Distrito 1'),
+('02', 'Gaza', 'GZ Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -272,6 +387,14 @@ CREATE TABLE `gz_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gz_neighborhood_locality`
+--
+
+INSERT INTO `gz_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -288,6 +411,14 @@ CREATE TABLE `gz_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `gz_township`
+--
+
+INSERT INTO `gz_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1', 'GZ Povoacao 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2', 'GZ Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -303,6 +434,14 @@ CREATE TABLE `gz_village` (
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `gz_village`
+--
+
+INSERT INTO `gz_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1', 'GZ Vila 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2', 'GZ Vila 2');
+
 -- --------------------------------------------------------
 
 --
@@ -317,6 +456,14 @@ CREATE TABLE `gz_zone` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gz_zone`
+--
+
+INSERT INTO `gz_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Gaza', 'GZ Distrito 1', 'GZ Posto 1', 'GZ Localidade 1', 'GZ Zona 1'),
+('002', 'Gaza', 'GZ Distrito 2', 'GZ Posto 2', 'GZ Localidade 2', 'GZ Zona 2');
 
 -- --------------------------------------------------------
 
@@ -346,6 +493,13 @@ CREATE TABLE `heritage_entities` (
   `affectation` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `heritage_entities`
+--
+
+INSERT INTO `heritage_entities` (`entity_id`, `property_type`, `floor`, `side`, `door_number`, `road_name`, `road_type`, `stalemate`, `viaduct`, `block`, `roundabout`, `lane`, `wide`, `bridges`, `plaza`, `length`, `width`, `occupancy`, `affectation`) VALUES
+(4, 'Casa Geminada', 'R/C', 'lado a', 34, 'AV. Karl Max', 'Avenida', 'imasse a', ' viaduto a', '1009', 'rotunda a', 'travessa a', 'largo a', 'ponte a', 'praca 1', 22, 22, 'ocupacao a', 'afetacao a');
+
 -- --------------------------------------------------------
 
 --
@@ -358,6 +512,14 @@ CREATE TABLE `in_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `in_admin_post`
+--
+
+INSERT INTO `in_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Inhambane', 'IN Distrito 1', 'IN Posto 1'),
+('02', 'Inhambane', 'IN Distrito 2', 'IN Posto 2');
 
 -- --------------------------------------------------------
 
@@ -374,6 +536,14 @@ CREATE TABLE `in_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `in_cell`
+--
+
+INSERT INTO `in_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1', 'IN Celula 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2', 'IN Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -389,6 +559,14 @@ CREATE TABLE `in_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `in_circle`
+--
+
+INSERT INTO `in_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1', 'IN Circulo 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2', 'IN Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -400,6 +578,14 @@ CREATE TABLE `in_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `in_district`
+--
+
+INSERT INTO `in_district` (`id`, `province`, `district`) VALUES
+('01', 'Inhambane', 'IN Distrito 1'),
+('02', 'Inhambane', 'IN Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -414,6 +600,14 @@ CREATE TABLE `in_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `in_neighborhood_locality`
+--
+
+INSERT INTO `in_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -430,6 +624,14 @@ CREATE TABLE `in_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `in_township`
+--
+
+INSERT INTO `in_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1', 'IN Povoacao 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2', 'IN Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -445,6 +647,14 @@ CREATE TABLE `in_village` (
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `in_village`
+--
+
+INSERT INTO `in_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1', 'IN Vila 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2', 'IN Vila 2');
+
 -- --------------------------------------------------------
 
 --
@@ -459,6 +669,14 @@ CREATE TABLE `in_zone` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `in_zone`
+--
+
+INSERT INTO `in_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Inhambane', 'IN Distrito 1', 'IN Posto 1', 'IN Localidade 1', 'IN Zona 1'),
+('002', 'Inhambane', 'IN Distrito 2', 'IN Posto 2', 'IN Localidade 2', 'IN Zona 2');
 
 -- --------------------------------------------------------
 
@@ -480,6 +698,16 @@ CREATE TABLE `local_entities` (
   `zone_id` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `local_entities`
+--
+
+INSERT INTO `local_entities` (`entity_id`, `cell`, `cell_id`, `circle`, `circle_id`, `village`, `village_id`, `township`, `township_id`, `zone`, `zone_id`) VALUES
+(1, 'MC Celula 1', '001', 'MC Circulo 1', '001', 'MC Vila 1', '001', 'MC Povoacao 1', '001', 'MC Zona 1', '001'),
+(2, 'IN Celula 1', '001', 'IN Circulo 1', '001', 'IN Vila 1', '001', 'IN Povoacao 1', '001', 'IN Zona 1', '001'),
+(3, 'NS Celula 1', '001', 'NS Circulo 1', '001', 'NS Vila 1', '001', 'NS Povoacao 1', '001', 'NS Zona 1', '001'),
+(4, 'MC Celula 1', '001', 'MC Circulo 1', '001', 'MC Vila 1', '001', 'MC Povoacao 1', '001', 'MC Zona 1', '001');
+
 -- --------------------------------------------------------
 
 --
@@ -490,8 +718,7 @@ CREATE TABLE `main_address_info` (
   `entity_id` int(11) NOT NULL,
   `province` varchar(20) DEFAULT NULL,
   `district` varchar(50) DEFAULT NULL,
-  `neighborhood` varchar(50) DEFAULT NULL,
-  `locality` varchar(50) DEFAULT NULL,
+  `neighborhood_locality` varchar(50) DEFAULT NULL,
   `road_name` varchar(50) DEFAULT NULL,
   `floor` varchar(15) DEFAULT NULL,
   `door_number` int(5) DEFAULT NULL,
@@ -500,8 +727,16 @@ CREATE TABLE `main_address_info` (
   `email` varchar(50) DEFAULT NULL,
   `website` varchar(50) DEFAULT NULL,
   `phone_number` int(9) DEFAULT NULL,
-  `responsible` varchar(50) DEFAULT NULL
+  `responsible` varchar(50) DEFAULT NULL,
+  `registration_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `main_address_info`
+--
+
+INSERT INTO `main_address_info` (`entity_id`, `province`, `district`, `neighborhood_locality`, `road_name`, `floor`, `door_number`, `city_block`, `cep`, `email`, `website`, `phone_number`, `responsible`, `registration_date`) VALUES
+(4, 'Maputo Cidade', 'MC Distrito 1', 'MC Bairro 1', 'AV. Karl Max', 'R/C', 34, 7, 'MC001 1009A', 'isauramulungo@gmail.com', 'https://www.meusite.com', 848839501, 'admin', '2022-05-23');
 
 -- --------------------------------------------------------
 
@@ -515,6 +750,15 @@ CREATE TABLE `mc_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mc_admin_post`
+--
+
+INSERT INTO `mc_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Maputo Cidade', 'TT Distrito 1', 'TT Posto 1'),
+('02', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2'),
+('03', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3');
 
 -- --------------------------------------------------------
 
@@ -531,6 +775,15 @@ CREATE TABLE `mc_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mc_cell`
+--
+
+INSERT INTO `mc_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1', 'MC Celula 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2', 'MC Celula 2'),
+('003', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3', 'MC Bairro 3', 'MC Celula 3');
+
 -- --------------------------------------------------------
 
 --
@@ -546,6 +799,15 @@ CREATE TABLE `mc_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mc_circle`
+--
+
+INSERT INTO `mc_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1', 'MC Circulo 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2', 'MC Circulo 2'),
+('003', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3', 'MC Bairro 3', 'MC Circulo 3');
+
 -- --------------------------------------------------------
 
 --
@@ -557,6 +819,15 @@ CREATE TABLE `mc_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mc_district`
+--
+
+INSERT INTO `mc_district` (`id`, `province`, `district`) VALUES
+('01', 'Maputo Cidade', 'MC Distrito 1'),
+('02', 'Maputo Cidade', 'MC Disrito 2'),
+('03', 'Maputo Cidade', 'MC Distrito 3');
 
 -- --------------------------------------------------------
 
@@ -571,6 +842,15 @@ CREATE TABLE `mc_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mc_neighborhood_locality`
+--
+
+INSERT INTO `mc_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2'),
+('003', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3', 'MC Bairro 3');
 
 -- --------------------------------------------------------
 
@@ -587,6 +867,15 @@ CREATE TABLE `mc_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mc_township`
+--
+
+INSERT INTO `mc_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1', 'MC Povoacao 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2', 'MC Povoacao 2'),
+('003', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3', 'MC Bairro 3', 'MC Povoacao 3');
+
 -- --------------------------------------------------------
 
 --
@@ -601,6 +890,14 @@ CREATE TABLE `mc_village` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mc_village`
+--
+
+INSERT INTO `mc_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1', 'MC Vila 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2', 'MC Vila 2');
 
 -- --------------------------------------------------------
 
@@ -617,6 +914,15 @@ CREATE TABLE `mc_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mc_zone`
+--
+
+INSERT INTO `mc_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Maputo Cidade', 'MC Distrito 1', 'MC Posto 1', 'MC Bairro 1', 'MC Zona 1'),
+('002', 'Maputo Cidade', 'MC Distrito 2', 'MC Posto 2', 'MC Bairro 2', 'MC Zona 2'),
+('003', 'Maputo Cidade', 'MC Distrito 3', 'MC Posto 3', 'MC Bairro 3', 'MC Zona 3');
+
 -- --------------------------------------------------------
 
 --
@@ -629,6 +935,14 @@ CREATE TABLE `mn_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mn_admin_post`
+--
+
+INSERT INTO `mn_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Manica', 'MN Distrito 1', 'MN Posto 1'),
+('02', 'Manica', 'MN Distrito 2', 'MN Posto 2');
 
 -- --------------------------------------------------------
 
@@ -645,6 +959,14 @@ CREATE TABLE `mn_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mn_cell`
+--
+
+INSERT INTO `mn_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Manica', 'MN Distrito 1', 'MN Posto 1', 'MN Localidade 1', 'MN Celula 1'),
+('002', 'Manica', 'MN Distrito 2', 'MN Posto 2', 'MN Localidade 2', 'MN Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -660,6 +982,14 @@ CREATE TABLE `mn_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mn_circle`
+--
+
+INSERT INTO `mn_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Manica', 'MN Distrito 1', 'MN Posto 1', 'MN Localidade 1', 'MN Circulo 1'),
+('002', 'Manica', 'MN Distrito 2', 'MN Posto 2', 'MN Localidade 2', 'MN Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -671,6 +1001,14 @@ CREATE TABLE `mn_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mn_district`
+--
+
+INSERT INTO `mn_district` (`id`, `province`, `district`) VALUES
+('01', 'Manica', 'MN Distrito 1'),
+('02', 'Manica', 'MN Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -685,6 +1023,14 @@ CREATE TABLE `mn_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mn_neighborhood_locality`
+--
+
+INSERT INTO `mn_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Manica', 'MN Distrito 1', 'MN Posto 1', 0),
+('002', 'Manica', 'MN Distrito 2', 'MN Posto 2', 0);
 
 -- --------------------------------------------------------
 
@@ -701,6 +1047,14 @@ CREATE TABLE `mn_township` (
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mn_township`
+--
+
+INSERT INTO `mn_township` (`id`, `province`, `township`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Manica', 'MN Povoacao 1', 'MN Distrito 1', 'MN Posto 1', 'MN Localidade 1'),
+('002', 'Manica', 'MN Povoacao 2', 'MN Distrito 2', 'MN Posto 2', 'MN Localidade 2');
+
 -- --------------------------------------------------------
 
 --
@@ -715,6 +1069,14 @@ CREATE TABLE `mn_village` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mn_village`
+--
+
+INSERT INTO `mn_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Manica', 'MN Distrito 1', 'MN Posto 1', 'MN Localidade 1', 'MN Vila 1'),
+('002', 'Manica', 'MN Distrito 2', 'MN Posto 2', 'MN Localidade 2', 'MN Vila 2');
 
 -- --------------------------------------------------------
 
@@ -731,6 +1093,14 @@ CREATE TABLE `mn_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mn_zone`
+--
+
+INSERT INTO `mn_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Manica', 'MN Distrito 1', 'MN Posto 1', 'MN Localidade 1', 'MN Zona 1'),
+('002', 'Manica', 'MN Distrito 2', 'MN Posto 2', 'MN Localidade 2', 'MN Zona 2');
+
 -- --------------------------------------------------------
 
 --
@@ -743,6 +1113,14 @@ CREATE TABLE `mp_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mp_admin_post`
+--
+
+INSERT INTO `mp_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1'),
+('03', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3');
 
 -- --------------------------------------------------------
 
@@ -759,6 +1137,15 @@ CREATE TABLE `mp_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mp_cell`
+--
+
+INSERT INTO `mp_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1', 'MP Celula 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2', 'MP Celula 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3', 'MP Celula 3');
+
 -- --------------------------------------------------------
 
 --
@@ -774,6 +1161,15 @@ CREATE TABLE `mp_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mp_circle`
+--
+
+INSERT INTO `mp_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1', 'MP Circulo 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2', 'MP Circulo 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3', 'MP Circulo 3');
+
 -- --------------------------------------------------------
 
 --
@@ -785,6 +1181,14 @@ CREATE TABLE `mp_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mp_district`
+--
+
+INSERT INTO `mp_district` (`id`, `province`, `district`) VALUES
+('02', 'Maputo Província', 'MP Distrito 2'),
+('03', 'Maputo Província', 'MP Distrito 3');
 
 -- --------------------------------------------------------
 
@@ -799,6 +1203,15 @@ CREATE TABLE `mp_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mp_neighborhood_locality`
+--
+
+INSERT INTO `mp_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3');
 
 -- --------------------------------------------------------
 
@@ -815,6 +1228,15 @@ CREATE TABLE `mp_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mp_township`
+--
+
+INSERT INTO `mp_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1', 'MP Povoacao 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2', 'MP Povoacao 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3', 'MP Povoacao 3');
+
 -- --------------------------------------------------------
 
 --
@@ -829,6 +1251,15 @@ CREATE TABLE `mp_village` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mp_village`
+--
+
+INSERT INTO `mp_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1', 'MP Vila 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2', 'MP Vila 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3', 'MP Vila 3');
 
 -- --------------------------------------------------------
 
@@ -845,6 +1276,15 @@ CREATE TABLE `mp_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `mp_zone`
+--
+
+INSERT INTO `mp_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Maputo Província', 'MP Distrito 1', 'MP Posto 1', 'MP Localidade 1', 'MP Zona 1'),
+('002', 'Maputo Província', 'MP Distrito 2', 'MP Posto 2', 'MP Localidade 2', 'MP Zona 2'),
+('003', 'Maputo Província', 'MP Distrito 3', 'MP Posto 3', 'MP Localidade 3', 'MP Zona 3');
+
 -- --------------------------------------------------------
 
 --
@@ -857,6 +1297,14 @@ CREATE TABLE `np_admin_post` (
   `district` varchar(50) NOT NULL,
   `admin_post` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_admin_post`
+--
+
+INSERT INTO `np_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Nampula', 'NP Distrito 1', 'NP Posto 1'),
+('02', 'Nampula', 'NP Distrito 2', 'NP Posto 2');
 
 -- --------------------------------------------------------
 
@@ -873,6 +1321,14 @@ CREATE TABLE `np_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `np_cell`
+--
+
+INSERT INTO `np_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Nampula', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1', 'NP Celula 1'),
+('002', 'Nampula', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2', 'NP Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -888,6 +1344,14 @@ CREATE TABLE `np_circle` (
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `np_circle`
+--
+
+INSERT INTO `np_circle` (`id`, `province`, `circle`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Nampula', 'NP Circulo 1', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1'),
+('002', 'Nampula', 'NP Circulo 2', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2');
+
 -- --------------------------------------------------------
 
 --
@@ -899,6 +1363,14 @@ CREATE TABLE `np_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_district`
+--
+
+INSERT INTO `np_district` (`id`, `province`, `district`) VALUES
+('01', 'Nampula', 'NP Distrito 1'),
+('02', 'Nampula', 'NP Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -913,6 +1385,14 @@ CREATE TABLE `np_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_neighborhood_locality`
+--
+
+INSERT INTO `np_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Nampula', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1'),
+('002', 'Nampula', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -929,6 +1409,14 @@ CREATE TABLE `np_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `np_township`
+--
+
+INSERT INTO `np_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Nampula', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1', 'NP Povoacao 1'),
+('002', 'Nampula', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2', 'NP Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -943,6 +1431,14 @@ CREATE TABLE `np_village` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `np_village`
+--
+
+INSERT INTO `np_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Nampula', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1', 'NP Vila 1'),
+('002', 'Nampula', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2', 'NP Vila 2');
 
 -- --------------------------------------------------------
 
@@ -959,6 +1455,14 @@ CREATE TABLE `np_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `np_zone`
+--
+
+INSERT INTO `np_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Nampula', 'NP Distrito 1', 'NP Posto 1', 'NP Localidade 1', 'NP Zona 1'),
+('002', 'Nampula', 'NP Distrito 2', 'NP Posto 2', 'NP Localidade 2', 'NP Zona 2');
+
 -- --------------------------------------------------------
 
 --
@@ -971,6 +1475,14 @@ CREATE TABLE `ns_admin_post` (
   `district` varchar(50) DEFAULT NULL,
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ns_admin_post`
+--
+
+INSERT INTO `ns_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Niassa', 'NS Distrito 1', 'NS Posto 1'),
+('02', 'Niassa', 'NS Distrito 2', 'NS Posto 2');
 
 -- --------------------------------------------------------
 
@@ -987,6 +1499,14 @@ CREATE TABLE `ns_cell` (
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ns_cell`
+--
+
+INSERT INTO `ns_cell` (`id`, `province`, `cell`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Niassa', 'NS Celula 1', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1'),
+('002', 'Niassa', 'NS Celula 2', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1002,6 +1522,14 @@ CREATE TABLE `ns_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ns_circle`
+--
+
+INSERT INTO `ns_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Niassa', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1', 'NS Circulo 1'),
+('002', 'Niassa', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2', 'NS Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1013,6 +1541,14 @@ CREATE TABLE `ns_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ns_district`
+--
+
+INSERT INTO `ns_district` (`id`, `province`, `district`) VALUES
+('01', 'Niassa', 'NS Distrito 1'),
+('02', 'Niassa', 'NS Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -1027,6 +1563,14 @@ CREATE TABLE `ns_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ns_neighborhood_locality`
+--
+
+INSERT INTO `ns_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Niassa', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1'),
+('002', 'Niassa', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -1043,6 +1587,14 @@ CREATE TABLE `ns_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ns_township`
+--
+
+INSERT INTO `ns_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Niassa', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1', 'NS Povoacao 1'),
+('002', 'Niassa', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2', 'NS Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1058,6 +1610,14 @@ CREATE TABLE `ns_village` (
   `village` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `ns_village`
+--
+
+INSERT INTO `ns_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Niassa', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1', 'NS Vila 1'),
+('002', 'Niassa', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2', 'NS Vila 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1072,6 +1632,14 @@ CREATE TABLE `ns_zone` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ns_zone`
+--
+
+INSERT INTO `ns_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Niassa', 'NS Distrito 1', 'NS Posto 1', 'NS Localidade 1', 'NS Zona 1'),
+('002', 'Niassa', 'NS Distrito 2', 'NS Posto 2', 'NS Localidade 2', 'NS Zona 2');
 
 -- --------------------------------------------------------
 
@@ -1089,6 +1657,13 @@ CREATE TABLE `postal_entities` (
   `postal_code` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `postal_entities`
+--
+
+INSERT INTO `postal_entities` (`entity_id`, `city_block`, `lateral`, `entry`, `mailbox`, `post_office`, `postal_code`) VALUES
+(4, 7, 'A', 'B', 'Caixa Postal a', 'Estacao a', 'MC001 1009A');
+
 -- --------------------------------------------------------
 
 --
@@ -1103,6 +1678,13 @@ CREATE TABLE `registration_info` (
   `user_id` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `registration_info`
+--
+
+INSERT INTO `registration_info` (`entity_id`, `registration_date`, `edition_date`, `user_role`, `user_id`) VALUES
+(4, '2022-05-23', NULL, 'Administra', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -1115,6 +1697,14 @@ CREATE TABLE `sf_admin_post` (
   `district` varchar(50) DEFAULT NULL,
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sf_admin_post`
+--
+
+INSERT INTO `sf_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Sofala', 'SF Distrito 1', 'SF Posto 1'),
+('02', 'Sofala', 'SF Distrito 2', 'SF Posto 2');
 
 -- --------------------------------------------------------
 
@@ -1131,6 +1721,14 @@ CREATE TABLE `sf_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sf_cell`
+--
+
+INSERT INTO `sf_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1', 'SF Celula 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2', 'SF Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1146,6 +1744,14 @@ CREATE TABLE `sf_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sf_circle`
+--
+
+INSERT INTO `sf_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1', 'SF Circulo 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2', 'SF Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1157,6 +1763,14 @@ CREATE TABLE `sf_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sf_district`
+--
+
+INSERT INTO `sf_district` (`id`, `province`, `district`) VALUES
+('01', 'Sofala', 'SF Distrito 1'),
+('02', 'Sofala', 'SF Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -1171,6 +1785,14 @@ CREATE TABLE `sf_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sf_neighborhood_locality`
+--
+
+INSERT INTO `sf_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -1187,6 +1809,14 @@ CREATE TABLE `sf_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sf_township`
+--
+
+INSERT INTO `sf_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1', 'SF Povoacao 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2', 'SF Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1202,6 +1832,14 @@ CREATE TABLE `sf_village` (
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sf_village`
+--
+
+INSERT INTO `sf_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1', 'SF Vila 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2', 'SF Vila 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1216,6 +1854,14 @@ CREATE TABLE `sf_zone` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sf_zone`
+--
+
+INSERT INTO `sf_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Sofala', 'SF Distrito 1', 'SF Posto 1', 'SF Localidade 1', 'SF Zona 1'),
+('002', 'Sofala', 'SF Distrito 2', 'SF Posto 2', 'SF Localidade 2', 'SF Zona 2');
 
 -- --------------------------------------------------------
 
@@ -1263,6 +1909,14 @@ CREATE TABLE `tt_admin_post` (
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tt_admin_post`
+--
+
+INSERT INTO `tt_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Tete', 'TT Distrito 1', 'TT Posto 1'),
+('02', 'Tete', 'TT Distrito 2', 'TT Posto 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1277,6 +1931,14 @@ CREATE TABLE `tt_cell` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tt_cell`
+--
+
+INSERT INTO `tt_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Tete', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1', 'TT Celula 1'),
+('002', 'Tete', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2', 'TT Celula 2');
 
 -- --------------------------------------------------------
 
@@ -1293,6 +1955,14 @@ CREATE TABLE `tt_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tt_circle`
+--
+
+INSERT INTO `tt_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Tete', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1', 'TT Circulo 1'),
+('002', 'Tete', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2', 'TT Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1304,6 +1974,14 @@ CREATE TABLE `tt_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tt_district`
+--
+
+INSERT INTO `tt_district` (`id`, `province`, `district`) VALUES
+('01', 'Tete', 'TT Distrito 1'),
+('02', 'Tete', 'TT Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -1318,6 +1996,14 @@ CREATE TABLE `tt_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tt_neighborhood_locality`
+--
+
+INSERT INTO `tt_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Tete', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1'),
+('002', 'Tete', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -1334,6 +2020,14 @@ CREATE TABLE `tt_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tt_township`
+--
+
+INSERT INTO `tt_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Tete', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1', 'TT Povoacao 1'),
+('002', 'Tete', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2', 'TT Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1348,6 +2042,14 @@ CREATE TABLE `tt_village` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tt_village`
+--
+
+INSERT INTO `tt_village` (`id`, `province`, `village`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Tete', 'TT Vila 1', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1'),
+('002', 'Tete', 'TT Vila 2', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -1364,6 +2066,14 @@ CREATE TABLE `tt_zone` (
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tt_zone`
+--
+
+INSERT INTO `tt_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Tete', 'TT Distrito 1', 'TT Posto 1', 'TT Localidade 1', 'TT Zona 1'),
+('002', 'Tete', 'TT Distrito 2', 'TT Posto 2', 'TT Localidade 2', 'TT Zona 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1376,6 +2086,14 @@ CREATE TABLE `zb_admin_post` (
   `district` varchar(50) DEFAULT NULL,
   `admin_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zb_admin_post`
+--
+
+INSERT INTO `zb_admin_post` (`id`, `province`, `district`, `admin_post`) VALUES
+('01', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1'),
+('02', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2');
 
 -- --------------------------------------------------------
 
@@ -1392,6 +2110,14 @@ CREATE TABLE `zb_cell` (
   `cell` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `zb_cell`
+--
+
+INSERT INTO `zb_cell` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `cell`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1', 'ZB Celula 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2', 'ZB Celula 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1407,6 +2133,14 @@ CREATE TABLE `zb_circle` (
   `circle` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `zb_circle`
+--
+
+INSERT INTO `zb_circle` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `circle`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1', 'ZB Circulo 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2', 'ZB Circulo 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1418,6 +2152,14 @@ CREATE TABLE `zb_district` (
   `province` varchar(20) NOT NULL,
   `district` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zb_district`
+--
+
+INSERT INTO `zb_district` (`id`, `province`, `district`) VALUES
+('01', 'Zambézia', 'ZB Distrito 1'),
+('02', 'Zambézia', 'ZB Distrito 2');
 
 -- --------------------------------------------------------
 
@@ -1432,6 +2174,14 @@ CREATE TABLE `zb_neighborhood_locality` (
   `admin_post` varchar(50) DEFAULT NULL,
   `neighborhood_locality` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zb_neighborhood_locality`
+--
+
+INSERT INTO `zb_neighborhood_locality` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2');
 
 -- --------------------------------------------------------
 
@@ -1448,6 +2198,14 @@ CREATE TABLE `zb_township` (
   `township` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `zb_township`
+--
+
+INSERT INTO `zb_township` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `township`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1', 'ZB Povoacao 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2', 'ZB Povoacao 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1463,6 +2221,14 @@ CREATE TABLE `zb_village` (
   `village` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `zb_village`
+--
+
+INSERT INTO `zb_village` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `village`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1', 'ZB Vila 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2', 'ZB Vila 2');
+
 -- --------------------------------------------------------
 
 --
@@ -1477,6 +2243,14 @@ CREATE TABLE `zb_zone` (
   `neighborhood_locality` varchar(50) DEFAULT NULL,
   `zone` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zb_zone`
+--
+
+INSERT INTO `zb_zone` (`id`, `province`, `district`, `admin_post`, `neighborhood_locality`, `zone`) VALUES
+('001', 'Zambézia', 'ZB Distrito 1', 'ZB Posto 1', 'ZB Localidade 1', 'ZB Zona 1'),
+('002', 'Zambézia', 'ZB Distrito 2', 'ZB Posto 2', 'ZB Localidade 2', 'ZB Zona 2');
 
 --
 -- Indexes for dumped tables
@@ -2078,49 +2852,49 @@ ALTER TABLE `zb_zone`
 -- AUTO_INCREMENT for table `administrative_entities`
 --
 ALTER TABLE `administrative_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `complementary_entities`
 --
 ALTER TABLE `complementary_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `espacial_entities`
 --
 ALTER TABLE `espacial_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `heritage_entities`
 --
 ALTER TABLE `heritage_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `local_entities`
 --
 ALTER TABLE `local_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `main_address_info`
 --
 ALTER TABLE `main_address_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `postal_entities`
 --
 ALTER TABLE `postal_entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `registration_info`
 --
 ALTER TABLE `registration_info`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
