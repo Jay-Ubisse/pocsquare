@@ -162,16 +162,16 @@ if(!isset($_SESSION["admin-auth"])) {
       </aside>
       <article class="w-[85%] h-full bg-slate-200 p-2">
         <section class="moz-section">
-          <?php include "./components/moz-section.html"  ?>
+          <?php include "./components/moz-section.php"  ?>
         </section>
         <section class="south-section">
-          <?php include "./components/south-section.html"  ?>
+          <?php include "./components/south-section.php"  ?>
         </section>
         <section class="center-section">
-          <?php include "./components/center-section.html"  ?>
+          <?php include "./components/center-section.php"  ?>
         </section>
         <section class="north-section">
-          <?php include "./components/north-section.html"  ?>
+          <?php include "./components/north-section.php"  ?>
         </section>
       </article>
     </main>

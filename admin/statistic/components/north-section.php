@@ -51,28 +51,12 @@
       <h1
         class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center"
       >
-        Localidades
+        Bairros e Localidades
       </h1>
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
           data-TargetNum="123"
-          data-Speed="1000"
-        >
-          0
-        </div>
-      </div>
-    </div>
-    <div class="rounded-md bg-slate-300 p-2">
-      <h1
-        class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center"
-      >
-        Bairros
-      </h1>
-      <div id="counters_3">
-        <div
-          class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="5594"
           data-Speed="1000"
         >
           0
@@ -180,7 +164,7 @@
           <h2 class="text-orange-800 font-bold text-lg text-center mt-[15%]">04 / 2023</h2>
       </div>
       <div class="w-full h-[32%] flex flex-col justify-center items-center border border-orange-800">
-          <h1 class="text-orange-800 font-bold text-xl">Zona Sul</h1>
+        <h1 class="text-orange-800 font-bold text-xl">Zona Norte</h1>
           <h2 class="text-orange-800 font-bold text-lg">(Moçambique)</h2>
       </div>
     </div>
@@ -189,7 +173,7 @@
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Maputo Cidade
+          Nampula
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
@@ -277,7 +261,7 @@
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Maputo Província
+          Zambézia
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
@@ -365,7 +349,7 @@
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Gaza
+          Niassa
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
@@ -453,7 +437,7 @@
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Inhambane
+          Cabo Delgado
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>

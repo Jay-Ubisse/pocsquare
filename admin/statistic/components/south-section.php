@@ -8,7 +8,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="3"
+          data-TargetNum="4"
           data-Speed="1000"
         >
           0
@@ -24,7 +24,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="87"
+          data-TargetNum="<?php echo $_SESSION['southDistricts']; ?>"
           data-Speed="1000"
         >
           0
@@ -40,7 +40,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="107"
+          data-TargetNum="<?php echo $_SESSION['southAdminPosts']; ?>"
           data-Speed="1000"
         >
           0
@@ -51,28 +51,12 @@
       <h1
         class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center"
       >
-        Localidades
+        Bairros e Localidades
       </h1>
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="123"
-          data-Speed="1000"
-        >
-          0
-        </div>
-      </div>
-    </div>
-    <div class="rounded-md bg-slate-300 p-2">
-      <h1
-        class="text-sm text-orange-800 font-medium border-b border-orange-800 px-2 text-center"
-      >
-        Bairros
-      </h1>
-      <div id="counters_3">
-        <div
-          class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="5594"
+          data-TargetNum="<?php echo $_SESSION['southNeighborhoodOrLocality']; ?>"
           data-Speed="1000"
         >
           0
@@ -88,7 +72,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="437"
+          data-TargetNum="<?php echo $_SESSION['southCells']; ?>"
           data-Speed="1000"
         >
           0
@@ -104,7 +88,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="139"
+          data-TargetNum="<?php echo $_SESSION['southCircles']; ?>"
           data-Speed="1000"
         >
           0
@@ -120,7 +104,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="762"
+          data-TargetNum="<?php echo $_SESSION['southVillages']; ?>"
           data-Speed="1000"
         >
           0
@@ -136,7 +120,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="342"
+          data-TargetNum="<?php echo $_SESSION['southZones']; ?>"
           data-Speed="1000"
         >
           0
@@ -152,7 +136,7 @@
       <div id="counters_3">
         <div
           class="counter font-bold text-lg text-orange-800 w-full text-center mt-1"
-          data-TargetNum="234"
+          data-TargetNum="<?php echo $_SESSION['southTownships']; ?>"
           data-Speed="1000"
         >
           0
@@ -180,16 +164,16 @@
           <h2 class="text-orange-800 font-bold text-lg text-center mt-[15%]">04 / 2023</h2>
       </div>
       <div class="w-full h-[32%] flex flex-col justify-center items-center border border-orange-800">
-        <h1 class="text-orange-800 font-bold text-xl">Zona Centro</h1>
-        <h2 class="text-orange-800 font-bold text-lg">(Moçambique)</h2>
+          <h1 class="text-orange-800 font-bold text-xl">Zona Sul</h1>
+          <h2 class="text-orange-800 font-bold text-lg">(Moçambique)</h2>
       </div>
     </div>
-    <div class="w-[79%] flex flex-row">
-      <div class="laptop:w-[29%] mobile:mx-auto">
+    <div class="w-[79%] flex flex-row justify-between">
+      <div class="w-[24%]">
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Manica
+          Maputo Cidade
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
@@ -273,11 +257,11 @@
           </div>
         </div>
       </div>
-      <div class="laptop:w-[29%] mobile:w-11/12 mobile:mx-auto">
+      <div class="w-[24%]">
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Sofala
+          Maputo Província
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
@@ -361,11 +345,99 @@
           </div>
         </div>
       </div>
-      <div class="laptop:w-[29%] mobile:mx-auto">
+      <div class="w-[24%]">
         <div
           class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
         >
-          Tete
+          Gaza
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Distritos</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">P. Administrativos</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Localidades</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Bairros</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Células</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Círculos</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Vilas</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Zonas</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+        <div class="px-2">
+          <p class="progress-label">Povoações</p>
+          <div class="progress-container">
+            <div class="meter my-2">
+              <span style="width: 60%"><span class="progress"></span></span>
+            </div>
+            <p class="progress-percentage">60%</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-[24%]">
+        <div
+          class="mb-3 text-orange-800 font-semibold text-lg border-b border-orange-800 p-1"
+        >
+          Inhambane
         </div>
         <div class="px-2">
           <p class="progress-label">Distritos</p>
