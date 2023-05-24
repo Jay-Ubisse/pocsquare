@@ -59,6 +59,62 @@ function getProvincePrefix($province) {
     return $prefix;
 }
 
+function checkIDs($districtTable, $districtId, $adminPostTable, $adminPostId, $localityOrNeighborhoodTable, $localityOrNeighborhoodId, $townshipTable, $townshipId, $cellTable, $cellId, $circleTable, $circleId, $villageTable, $villageId, $zoneTable, $zoneId) {
+    global $dbcon, $database_name;
+
+    $isFound = false;
+
+    $districtQuery = "SELECT * from $database_name.$districtTable WHERE id = '$districtId'";
+    $districtResult = $dbcon->query($districtQuery)->rowCount();
+    if($districtResult > 0) {
+        $isFound = true;
+    }
+
+    $adminPostQuery = "SELECT * from $database_name.$adminPostTable WHERE id = '$adminPostId'";
+    $adminPostResult = $dbcon->query($adminPostQuery)->rowCount();
+    if($adminPostResult > 0) {
+        $isFound = true;
+    }
+
+    $localityOrNeighborhoodQuery = "SELECT * from $database_name.$localityOrNeighborhoodTable WHERE id = '$localityOrNeighborhoodId'";
+    $localityOrNeighborhoodResult = $dbcon->query($localityOrNeighborhoodQuery)->rowCount();
+    if($localityOrNeighborhoodResult > 0) {
+        $isFound = true;
+    }
+
+    $townshipQuery = "SELECT * from $database_name.$townshipTable WHERE id = '$townshipId'";
+    $townshipResult = $dbcon->query($townshipQuery)->rowCount();
+    if($townshipResult > 0) {
+        $isFound = true;
+    }
+
+    $cellQuery = "SELECT * from $database_name.$cellTable WHERE id = '$cellId'";
+    $cellResult = $dbcon->query($cellQuery)->rowCount();
+    if($cellResult > 0) {
+        $isFound = true;
+    }
+
+    $circleQuery = "SELECT * from $database_name.$circleTable WHERE id = '$circleId'";
+    $circleResult = $dbcon->query($circleQuery)->rowCount();
+    if($circleResult > 0) {
+        $isFound = true;
+    }
+
+    $villageQuery = "SELECT * from $database_name.$villageTable WHERE id = '$villageId'";
+    $villageResult = $dbcon->query($villageQuery)->rowCount();
+    if($villageResult > 0) {
+        $isFound = true;
+    }
+
+    $zoneQuery = "SELECT * from $database_name.$zoneTable WHERE id = '$zoneId'";
+    $zoneResult = $dbcon->query($zoneQuery)->rowCount();
+    if($zoneResult > 0) {
+        $isFound = true;
+    }
+
+    return $isFound;
+}
+
 if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
     $obj = PhpOffice\PhpSpreadsheet\IOFactory::load($file);
     $data = $obj->getActiveSheet()->toArray();
@@ -115,6 +171,17 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         $villageTable = $prefix . "village";
         $zoneTable = $prefix . "zone";
 
+        $checkIds = checkIDs($districtTable, $districtId, $adminPostTable, $adminPostId, $localityOrNeighborhoodTable, $localityOrNeighborhoodId, $townshipTable, $townshipId, $cellTable, $cellId, $circleTable, $circleId, $villageTable, $villageId, $zoneTable, $zoneId);
+
+        if($checkIds) {
+            $isSuccessful = "not ok";
+            $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas adicionadas.";
+            $_SESSION["successful-status"] = $isSuccessful;
+            $_SESSION['import-status'] = $errorInfo;
+            header("location: ../../../admin/add-location/");
+            break;
+        }
+
 
         //inserir os dados nas devidas tabelas
         try {
@@ -169,9 +236,9 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             //Something went wrong rollback!
             $dbcon->rollBack();
             echo $ex->getMessage();
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION["import-status"] = "Ficheiro não importado!";
-            header("location: ../../../admin/add-location/");
+            //$_SESSION["successful-status"] = $isSuccessful;
+            //$_SESSION["import-status"] = "Ficheiro não importado!";
+            //header("location: ../../../admin/add-location/");
 
         } 
 
