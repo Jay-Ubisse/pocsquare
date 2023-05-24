@@ -160,12 +160,6 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             $stmt = $dbcon->prepare($zoneQuery);
             $stmt->execute([$zoneId, $province, $district, $adminPost, $localityOrNeighborhood, $zone]);
 
-    
-            
-            //guardar dados na tabela geral
-            $zoneQuery = "INSERT INTO $database_name." . "all_regions (province, district, admin_post, 	neighborhood_locality, 	township, cell, circle, village, zone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($zoneQuery);
-            $stmt->execute([$province, $province, $adminPost, $localityOrNeighborhood, $township, $cell, $circle, $village, $zone]);
 
             $dbcon->commit();
 
@@ -175,9 +169,6 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             //Something went wrong rollback!
             $dbcon->rollBack();
             $ex->getMessage();
-            //$_SESSION["successful-status"] = $isSuccessful;
-            //$_SESSION["import-status"] = "Ficheiro não importado!";
-            //header("location: ../../../admin/add-location/");
 
         } 
 
