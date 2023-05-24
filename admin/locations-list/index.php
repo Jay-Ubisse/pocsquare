@@ -27,16 +27,12 @@ if (!isset($_SESSION["admin-auth"])) {
         <header>
             <?php include "../components/header.php"; ?>
         </header>
-        <main class="p-1 flex flex-row justify-evenly">
-            <section class="mt-10 w-fit">
-                <table id="all" class="border-collapse border-2 border-orange-700">
-
-                </table>
-            </section>
-            <section class="border-2 rounded-md border-orange-700 h-fit p-4 w-[23%] mt-10">
+        <main class="p-1 flex flex-col justify-evenly">
+            <section class="flex flex-row gap-3 items-center border-2 rounded-md border-orange-700 h-fit p-4 w-fit mt-10">
                 <div>
                     <label for="region" class="font-medium">Região</label>
-                    <select name="region" class="regionOptions border mb-4 border-orange-700 focus:outline-none outline-none rounded">
+                    <select name="region" class="regionOptions border border-orange-700 focus:outline-none outline-none rounded">
+                        <option value="all">Todos</option>
                         <option value="district">Distrito</option>
                         <option value="admin_post">Posto Administrativo</option>
                         <option value="neighborhood_locality">Bairro ou Localidade</option>
@@ -64,8 +60,13 @@ if (!isset($_SESSION["admin-auth"])) {
                     </select>
                 </div>
                 <div>
-                    <button class="search bg-orange-700 rounded-md text-white font-medium mt-5 px-4 py-1">Buscar</button>
+                    <button class="search bg-orange-700 rounded-md text-white font-medium px-4 py-1">Buscar</button>
                 </div>
+            </section>
+            <section class="mt-10 w-fit mx-auto">
+                <table id="all" class="border-collapse border-2 border-orange-700">
+
+                </table>
             </section>
         </main>
         <footer>
@@ -74,27 +75,24 @@ if (!isset($_SESSION["admin-auth"])) {
 
         <script src="../../assets/scripts/jquery-3.6.0.js"></script>
         <script>
-
             $("#all").load(
-                "../../server/src/locations-list/locations-list.php", 
-                {
-                    region: "district",
+                "../../server/src/locations-list/locations-list.php", {
+                    region: "all",
                     province: "Maputo Cidade",
                 }
             );
 
-            $(".search").click(function () { 
+            $(".search").click(function() {
                 let regionValue = $(".regionOptions").val();
                 let provinceValue = $(".provinceOptions").val();
 
                 $("#all").load(
-                    "../../server/src/locations-list/locations-list.php", 
-                    {
+                    "../../server/src/locations-list/locations-list.php", {
                         region: regionValue,
                         province: provinceValue,
                     }
                 );
-                
+
             });
 
             function sendInfoForEdit(data) {
@@ -102,8 +100,7 @@ if (!isset($_SESSION["admin-auth"])) {
 
                 switch (dataArray[0]) {
                     case "district-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 region: "district",
@@ -114,8 +111,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "admin-post-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -127,8 +123,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "neighborhood-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -141,8 +136,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "cell-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -156,8 +150,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "circle-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -171,8 +164,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "village-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -186,8 +178,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "township-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -201,8 +192,7 @@ if (!isset($_SESSION["admin-auth"])) {
                         );
                         break;
                     case "zone-data":
-                        $.post("../../server/src/edit-location/edit-route.php", 
-                            {
+                        $.post("../../server/src/edit-location/edit-route.php", {
                                 id: dataArray[1],
                                 district: dataArray[2],
                                 adminPost: dataArray[3],
@@ -226,21 +216,20 @@ if (!isset($_SESSION["admin-auth"])) {
 
                 if (isConfirmed) {
                     let dataArray = data.split(",");
-                    $.post("../../server/src/delete-location/delete-location.php", 
-                            {
-                                id: dataArray[0],
-                                table: dataArray[1],
-                            },
-                            function(response) {
-                                if (response) {
-                                    alert("Eliminado com sucesso.");
-                                    location.reload();
-                                } else {
-                                    alert("Ocorreu um erro ao eliminar.\nTente de novo.");
-                                    location.reload();
-                                }
+                    $.post("../../server/src/delete-location/delete-location.php", {
+                            id: dataArray[0],
+                            table: dataArray[1],
+                        },
+                        function(response) {
+                            if (response) {
+                                alert("Eliminado com sucesso.");
+                                location.reload();
+                            } else {
+                                alert("Ocorreu um erro ao eliminar.\nTente de novo.");
+                                location.reload();
                             }
-                        );
+                        }
+                    );
                 }
             }
         </script>

@@ -11,9 +11,10 @@ $file = $_FILES["excel-file"]["tmp_name"];
 $extension = pathinfo($_FILES["excel-file"]["name"], PATHINFO_EXTENSION);
 
 $isSuccessful = "error";
-$lines = 1;
-
+$actualLine = 1;
 $numRow = 1;
+$invalidProvince = false;
+$successfulLines = 0;
 
 function getProvincePrefix($province) {
     
@@ -59,62 +60,6 @@ function getProvincePrefix($province) {
     return $prefix;
 }
 
-function checkIDs($districtTable, $districtId, $adminPostTable, $adminPostId, $localityOrNeighborhoodTable, $localityOrNeighborhoodId, $townshipTable, $townshipId, $cellTable, $cellId, $circleTable, $circleId, $villageTable, $villageId, $zoneTable, $zoneId) {
-    global $dbcon, $database_name;
-
-    $isFound = false;
-
-    $districtQuery = "SELECT * from $database_name.$districtTable WHERE id = '$districtId'";
-    $districtResult = $dbcon->query($districtQuery)->rowCount();
-    if($districtResult > 0) {
-        $isFound = true;
-    }
-
-    $adminPostQuery = "SELECT * from $database_name.$adminPostTable WHERE id = '$adminPostId'";
-    $adminPostResult = $dbcon->query($adminPostQuery)->rowCount();
-    if($adminPostResult > 0) {
-        $isFound = true;
-    }
-
-    $localityOrNeighborhoodQuery = "SELECT * from $database_name.$localityOrNeighborhoodTable WHERE id = '$localityOrNeighborhoodId'";
-    $localityOrNeighborhoodResult = $dbcon->query($localityOrNeighborhoodQuery)->rowCount();
-    if($localityOrNeighborhoodResult > 0) {
-        $isFound = true;
-    }
-
-    $townshipQuery = "SELECT * from $database_name.$townshipTable WHERE id = '$townshipId'";
-    $townshipResult = $dbcon->query($townshipQuery)->rowCount();
-    if($townshipResult > 0) {
-        $isFound = true;
-    }
-
-    $cellQuery = "SELECT * from $database_name.$cellTable WHERE id = '$cellId'";
-    $cellResult = $dbcon->query($cellQuery)->rowCount();
-    if($cellResult > 0) {
-        $isFound = true;
-    }
-
-    $circleQuery = "SELECT * from $database_name.$circleTable WHERE id = '$circleId'";
-    $circleResult = $dbcon->query($circleQuery)->rowCount();
-    if($circleResult > 0) {
-        $isFound = true;
-    }
-
-    $villageQuery = "SELECT * from $database_name.$villageTable WHERE id = '$villageId'";
-    $villageResult = $dbcon->query($villageQuery)->rowCount();
-    if($villageResult > 0) {
-        $isFound = true;
-    }
-
-    $zoneQuery = "SELECT * from $database_name.$zoneTable WHERE id = '$zoneId'";
-    $zoneResult = $dbcon->query($zoneQuery)->rowCount();
-    if($zoneResult > 0) {
-        $isFound = true;
-    }
-
-    return $isFound;
-}
-
 if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
     $obj = PhpOffice\PhpSpreadsheet\IOFactory::load($file);
     $data = $obj->getActiveSheet()->toArray();
@@ -124,7 +69,7 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         //começar a carregar dados a partir a terceira linha
         if($numRow < 2) {
             $numRow = $numRow + 1;
-            $lines = $lines + 1;
+            $actualLine = $actualLine + 1;
             continue;
         }
 
@@ -154,10 +99,8 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         //para a pagina de carregamento e imprimir a mensagem de erro
         if($prefix == "404") {
             $isSuccessful = "not ok";
-            $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas adicionadas.";
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION['import-status'] = $errorInfo;
-            header("location: ../../../admin/add-location/");
+            $invalidProvince = true;
+            $actualLine = $actualLine + 1;
             break;
         }
 
@@ -170,17 +113,6 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         $circleTable = $prefix . "circle";
         $villageTable = $prefix . "village";
         $zoneTable = $prefix . "zone";
-
-        $checkIds = checkIDs($districtTable, $districtId, $adminPostTable, $adminPostId, $localityOrNeighborhoodTable, $localityOrNeighborhoodId, $townshipTable, $townshipId, $cellTable, $cellId, $circleTable, $circleId, $villageTable, $villageId, $zoneTable, $zoneId);
-
-        if($checkIds) {
-            $isSuccessful = "not ok";
-            $errorInfo = "A linha $lines Contém um erro.<br>" . $lines - 1 . " linhas adicionadas.";
-            $_SESSION["successful-status"] = $isSuccessful;
-            $_SESSION['import-status'] = $errorInfo;
-            header("location: ../../../admin/add-location/");
-            break;
-        }
 
 
         //inserir os dados nas devidas tabelas
@@ -228,14 +160,21 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             $stmt = $dbcon->prepare($zoneQuery);
             $stmt->execute([$zoneId, $province, $district, $adminPost, $localityOrNeighborhood, $zone]);
 
+    
+            
+            //guardar dados na tabela geral
+            $zoneQuery = "INSERT INTO $database_name." . "all_regions (province, district, admin_post, 	neighborhood_locality, 	township, cell, circle, village, zone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $dbcon->prepare($zoneQuery);
+            $stmt->execute([$province, $province, $adminPost, $localityOrNeighborhood, $township, $cell, $circle, $village, $zone]);
+
             $dbcon->commit();
 
             $isSuccessful = "ok";
-            $lines = $lines + 1;
+            $successfulLines = $successfulLines + 1;
         } catch (PDOException $ex) {
             //Something went wrong rollback!
             $dbcon->rollBack();
-            echo $ex->getMessage();
+            $ex->getMessage();
             //$_SESSION["successful-status"] = $isSuccessful;
             //$_SESSION["import-status"] = "Ficheiro não importado!";
             //header("location: ../../../admin/add-location/");
@@ -243,11 +182,13 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         } 
 
     }
-    if ($isSuccessful == "ok") {
-        $_SESSION["successful-status"] = $isSuccessful;
-        $_SESSION["import-status"] = "Ficheiro importado com sucesso!<br>" . $lines - 1 . " linhas adicionadas.";
-        header("location: ../../../admin/add-location/");
+    $_SESSION["successful-status"] = $isSuccessful;
+    if($invalidProvince) {
+        $_SESSION["import-status"] = $successfulLines . " linhas adicionadas.<br>A linha: " . $successfulLines + 1 . " contem uma província invalida.";
+    } else {
+        $_SESSION["import-status"] = "Ficheiro importado com sucesso!<br>" . $successfulLines . " linhas adicionadas.";
     }
+    header("location: ../../../admin/add-location/");
 
 } else {
     $_SESSION["successful-status"] = $isSuccessful;

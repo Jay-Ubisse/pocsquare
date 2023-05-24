@@ -45,39 +45,58 @@ switch ($province) {
 
 $table = $prefix . $region;
 
-$sql = "SELECT * FROM $database_name.$table ORDER BY id";
-$result = $dbcon->query($sql);
 
 switch ($region) {
+    case 'all':
+        $sql = "SELECT * FROM $database_name.all_regions ORDER BY province";
+        $result = $dbcon->query($sql);
+        include_once "./tables/all.php";
+        break;
     case 'district':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Distrito";
         include_once "./tables/districts-table.php";
         break;
     case 'admin_post':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "P. Administrativo";
         include_once "./tables/admin-post-table.php";
         break;
     case 'neighborhood_locality':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Bairro ou Localidade";
         include_once "./tables/neighborhood-locality.php";
         break;
     case 'cell':
         $regionName = "Célula";
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         include_once "./tables/cell-circle-village-township-zone.php";
         break;
     case 'circle':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Circulo";
         include_once "./tables/cell-circle-village-township-zone.php";
         break;
     case 'village':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Vila";
         include_once "./tables/cell-circle-village-township-zone.php";
         break;
     case 'zone':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Zona";
         include_once "./tables/cell-circle-village-township-zone.php";
         break;
     case 'township':
+        $sql = "SELECT * FROM $database_name.$table ORDER BY id";
+        $result = $dbcon->query($sql);
         $regionName = "Povoação";
         include_once "./tables/cell-circle-village-township-zone.php";
         break;
