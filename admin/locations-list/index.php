@@ -27,8 +27,8 @@ if (!isset($_SESSION["admin-auth"])) {
         <header>
             <?php include "../components/header.php"; ?>
         </header>
-        <main class="p-1 flex flex-col justify-evenly">
-            <section class="flex flex-row gap-3 items-center border-2 rounded-md border-orange-700 h-fit p-4 w-fit mt-10">
+        <main class="p-1 my-10 mb-20 ">
+            <section class="flex flex-row gap-3 items-center border-2 rounded-md border-orange-700 h-fit p-4 w-fit">
                 <div>
                     <label for="region" class="font-medium">Região</label>
                     <select name="region" class="regionOptions border border-orange-700 focus:outline-none outline-none rounded">

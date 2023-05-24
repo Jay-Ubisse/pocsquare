@@ -48,8 +48,6 @@ $table = $prefix . $region;
 
 switch ($region) {
     case 'all':
-        $sql = "SELECT * FROM $database_name.all_regions ORDER BY province";
-        $result = $dbcon->query($sql);
         include_once "./tables/all.php";
         break;
     case 'district':
