@@ -2,6 +2,8 @@
 require "../../config/connect.php";
 require '../../../vendor/autoload.php';
 
+error_reporting(E_ALL ^ E_WARNING);
+
 session_start();
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -74,23 +76,23 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
         }
 
         //dados das células do excel (em cada linha)
-        $province = trim($row['0']);
-        $district = trim($row['2']);
-        $districtId = trim($row['3']);
-        $adminPost = trim($row['4']);
-        $adminPostId = trim($row['5']);
-        $localityOrNeighborhood = trim($row['6']);
-        $localityOrNeighborhoodId = trim($row['7']);
-        $township = trim($row['8']);
-        $townshipId = trim($row['9']);
-        $cell = trim($row['10']);
-        $cellId = trim($row['11']);
-        $circle = trim($row['12']);
-        $circleId = trim($row['13']);
-        $village = trim($row['14']);
-        $villageId = trim($row['15']);
-        $zone = trim($row['16']);
-        $zoneId = trim($row['17']);
+        $province = trim((string) $row['0']);
+        $district = trim((string) $row['2']);
+        $districtId = trim((string) $row['3']);
+        $adminPost = trim((string) $row['4']);
+        $adminPostId = trim((string) $row['5']);
+        $localityOrNeighborhood = trim((string) $row['6']);
+        $localityOrNeighborhoodId = trim((string) $row['7']);
+        $township = trim((string) $row['8']);
+        $townshipId = trim((string) $row['9']);
+        $cell = trim((string) $row['10']);
+        $cellId = trim((string) $row['11']);
+        $circle = trim((string) $row['12']);
+        $circleId = trim((string) $row['13']);
+        $village = trim((string) $row['14']);
+        $villageId = trim((string) $row['15']);
+        $zone = trim((string) $row['16']);
+        $zoneId = trim((string) $row['17']);
 
         //verificar e obter o ID prefixo da província da linha (se existir)
         $prefix = getProvincePrefix($province);
@@ -121,19 +123,34 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             $dbcon->beginTransaction();
 
             //guardar dados na tabela dos distritos
-            $districtQuery = "INSERT INTO $database_name." . "$districtTable (id, province, district) VALUES (?, ?, ?)";
-            $stmt = $dbcon->prepare($districtQuery);
-            $stmt->execute([$districtId, $province, $district]);
+            $checkDistrictsQuery = "SELECT * FROM $database_name.$districtTable WHERE id = '$districtId'";
+            $checkDistrictsResult = $dbcon->query($checkDistrictsQuery);
+
+            if ($checkDistrictsResult->rowCount() == 0) {
+                $districtQuery = "INSERT INTO $database_name." . "$districtTable (id, province, district) VALUES (?, ?, ?)";
+                $stmt = $dbcon->prepare($districtQuery);
+                $stmt->execute([$districtId, $province, $district]);
+            }
 
             //guardar dados na tabela dos postos administrativos
-            $adminPostQuery = "INSERT INTO $database_name." . "$adminPostTable (id, province, district, admin_post) VALUES (?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($adminPostQuery);
-            $stmt->execute([$adminPostId, $province, $district, $adminPost]);
+            $checkAdminPostsQuery = "SELECT * FROM $database_name.$adminPostTable WHERE id = '$adminPostId'";
+            $checkAdminPostsResult = $dbcon->query($checkAdminPostsQuery);
+
+            if ($checkAdminPostsResult->rowCount() == 0) {
+                $adminPostQuery = "INSERT INTO $database_name." . "$adminPostTable (id, province, district, admin_post) VALUES (?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($adminPostQuery);
+                $stmt->execute([$adminPostId, $province, $district, $adminPost]);
+            }
 
             //guardar dados na tabela dos bairros ou localidades
-            $localityOrNeighborhoodQuery = "INSERT INTO $database_name." . "$localityOrNeighborhoodTable (id, province, district, admin_post, neighborhood_locality) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($localityOrNeighborhoodQuery);
-            $stmt->execute([$localityOrNeighborhoodId, $province, $district, $adminPost, $localityOrNeighborhood]);
+            $checkLocalityOrNeighborhoodQuery = "SELECT * FROM $database_name.$localityOrNeighborhoodTable WHERE id = '$localityOrNeighborhoodId'";
+            $checkLocalityOrNeighborhoodResult = $dbcon->query($checkLocalityOrNeighborhoodQuery);
+
+            if ($checkLocalityOrNeighborhoodResult->rowCount() == 0) {
+                $localityOrNeighborhoodQuery = "INSERT INTO $database_name." . "$localityOrNeighborhoodTable (id, province, district, admin_post, neighborhood_locality) VALUES (?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($localityOrNeighborhoodQuery);
+                $stmt->execute([$localityOrNeighborhoodId, $province, $district, $adminPost, $localityOrNeighborhood]);
+            }
 
             //guardar dados na tabela das povoações
             $townshipQuery = "INSERT INTO $database_name." . "$townshipTable (id, province, district, admin_post, neighborhood_locality, township) VALUES (?, ?, ?, ?, ?, ?)";
@@ -175,7 +192,7 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
     }
     $_SESSION["successful-status"] = $isSuccessful;
     if($invalidProvince) {
-        $_SESSION["import-status"] = $successfulLines . " linhas adicionadas.<br>A linha: " . $successfulLines + 1 . " contem uma província invalida.";
+        $_SESSION["import-status"] = $successfulLines . " linhas adicionadas.<br>A linha: " . $successfulLines + 2 . " contem uma província invalida.";
     } else {
         $_SESSION["import-status"] = "Ficheiro importado com sucesso!<br>" . $successfulLines . " linhas adicionadas.";
     }
