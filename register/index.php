@@ -12,7 +12,7 @@ if (isset($_POST["first-name"]) && isset($_POST["last-name"]) && isset($_POST["e
     $bi = $_POST["bi"];
     $nuit = $_POST["nuit"];
     $birthDate = $_POST["birth-date"];
-    $registrationDate = date("Y-M-D");
+    $registrationDate = date("Y-m-d");
     $role = $_POST["role"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirm-password"];
