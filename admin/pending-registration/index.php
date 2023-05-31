@@ -3,7 +3,7 @@ require "../../server/config/connect.php";
 include "../../server/src/add-location/location-rows.php";
 session_start();
 
-if (!isset($_SESSION["admin-auth"])) {
+if (!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($_SESSION["supervisor-auth"])) {
     header("Location: ../");
 } else {
     if (isset($_SESSION['timestamp'])) {

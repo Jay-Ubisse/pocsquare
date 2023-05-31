@@ -2,7 +2,7 @@
 require "../../server/config/connect.php";
 session_start();
 
-if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"])) {
+if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($_SESSION["supervisor-auth"])) {
     header("Location: ../");
 } else {
     if (isset($_SESSION['timestamp'])) {
