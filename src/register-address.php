@@ -18,11 +18,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mc"];
         $adminPost = $_POST["administrative-post-mc"];
         $neighborhoodOrLocality = $_POST["neighborhood-mc"];
-        $circle = $_POST["circle-mc"];
-        $cell =  $_POST["cell-mc"];
-        $village = $_POST["village-mc"];
-        $township = $_POST["township-mc"];
-        $zone = $_POST["zone-mc"];
+
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("mc", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "01";
@@ -41,11 +43,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mp"];
         $adminPost = $_POST["administrative-post-mp"];
         $neighborhoodOrLocality = $_POST["neighborhood-mp"];
-        $circle = $_POST["circle-mp"];
-        $cell =  $_POST["cell-mp"];
-        $village = $_POST["village-mp"];
-        $township = $_POST["township-mp"];
-        $zone = $_POST["zone-mp"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("mp", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "02";
@@ -64,11 +68,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-gz"];
         $adminPost = $_POST["administrative-post-gz"];
         $neighborhoodOrLocality = $_POST["neighborhood-gz"];
-        $circle = $_POST["circle-gz"];
-        $cell =  $_POST["cell-gz"];
-        $village = $_POST["village-gz"];
-        $township = $_POST["township-gz"];
-        $zone = $_POST["zone-gz"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("gz", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "03";
@@ -87,11 +93,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-in"];
         $adminPost = $_POST["administrative-post-in"];
         $neighborhoodOrLocality = $_POST["neighborhood-in"];
-        $circle = $_POST["circle-in"];
-        $cell =  $_POST["cell-in"];
-        $village = $_POST["village-in"];
-        $township = $_POST["township-in"];
-        $zone = $_POST["zone-in"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("in", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "04";
@@ -110,11 +118,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mn"];
         $adminPost = $_POST["administrative-post-mn"];
         $neighborhoodOrLocality = $_POST["neighborhood-mn"];
-        $circle = $_POST["circle-mn"];
-        $cell =  $_POST["cell-mn"];
-        $village = $_POST["village-mn"];
-        $township = $_POST["township-mn"];
-        $zone = $_POST["zone-mn"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("mn", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "05";
@@ -133,11 +143,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-sf"];
         $adminPost = $_POST["administrative-post-sf"];
         $neighborhoodOrLocality = $_POST["neighborhood-sf"];
-        $circle = $_POST["circle-sf"];
-        $cell =  $_POST["cell-sf"];
-        $village = $_POST["village-sf"];
-        $township = $_POST["township-sf"];
-        $zone = $_POST["zone-sf"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("sf", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "06";
@@ -156,11 +168,14 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-tt"];
         $adminPost = $_POST["administrative-post-tt"];
         $neighborhoodOrLocality = $_POST["neighborhood-tt"];
-        $circle = $_POST["circle-tt"];
-        $cell =  $_POST["cell-tt"];
-        $village = $_POST["village-tt"];
-        $township = $_POST["township-tt"];
-        $zone = $_POST["zone-tt"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
+
         $idArray = getIDs("tt", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "07";
         $districtId = $idArray[0];
@@ -178,11 +193,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-np"];
         $adminPost = $_POST["administrative-post-np"];
         $neighborhoodOrLocality = $_POST["neighborhood-np"];
-        $circle = $_POST["circle-np"];
-        $cell =  $_POST["cell-np"];
-        $village = $_POST["village-np"];
-        $township = $_POST["township-np"];
-        $zone = $_POST["zone-np"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("np", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "08";
@@ -201,11 +218,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-ns"];
         $adminPost = $_POST["administrative-post-ns"];
         $neighborhoodOrLocality = $_POST["neighborhood-ns"];
-        $circle = $_POST["circle-ns"];
-        $cell =  $_POST["cell-ns"];
-        $village = $_POST["village-ns"];
-        $township = $_POST["township-ns"];
-        $zone = $_POST["zone-ns"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("ns", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "09";
@@ -224,11 +243,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-zb"];
         $adminPost = $_POST["administrative-post-zb"];
         $neighborhoodOrLocality = $_POST["neighborhood-zb"];
-        $circle = $_POST["circle-zb"];
-        $cell =  $_POST["cell-zb"];
-        $village = $_POST["village-zb"];
-        $township = $_POST["township-zb"];
-        $zone = $_POST["zone-zb"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("zb", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
@@ -247,11 +268,13 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-cd"];
         $adminPost = $_POST["administrative-post-cd"];
         $neighborhoodOrLocality = $_POST["neighborhood-cd"];
-        $circle = $_POST["circle-cd"];
-        $cell =  $_POST["cell-cd"];
-        $village = $_POST["village-cd"];
-        $township = $_POST["township-cd"];
-        $zone = $_POST["zone-cd"];
+        
+        $localEntitiesArray = getEntities($provinceAlphanumericId);
+        $circle = $localEntitiesArray[0];
+        $cell =  $localEntitiesArray[1];
+        $village = $localEntitiesArray[2];
+        $township = $localEntitiesArray[3];
+        $zone = $localEntitiesArray[4];
 
         $idArray = getIDs("cd", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
@@ -330,6 +353,54 @@ $website = $_POST["website"];
 $registrationDate = date("d-m-y");
 $userRole = $_SESSION["user-role"];
 $userId = $_SESSION['user-data']['username'];
+
+function getEntities($provinceAlphanumericId) {
+    $alphanumericId = strtolower($provinceAlphanumericId);
+    $localEntity = $_POST["local-entity"];
+
+    switch ($localEntity) {
+        case 'cell':
+            $circle = "";
+            $cell =  $_POST["cell-$alphanumericId"];
+            $village = "";
+            $township = "";
+            $zone = "";
+            break;
+        case 'circle':
+            $circle = $_POST["circle-$alphanumericId"];
+            $cell =  "";
+            $village = "";
+            $township = "";
+            $zone = "";
+            break;
+        case 'village':
+            $circle = "";
+            $cell =  "";
+            $village = $_POST["village-$alphanumericId"];
+            $township = "";
+            $zone = "";
+            break;
+        case 'zone':
+            $circle = "";
+            $cell =  "";
+            $village = "";
+            $township = "";
+            $zone = $_POST["zone-$alphanumericId"];
+            break;
+        case 'township':
+            $circle = "";
+            $cell =  "";
+            $village = "";
+            $township = $_POST["zone-$alphanumericId"];
+            $zone = "";
+            break;
+        default:
+            # code...
+            break;
+    }
+
+    return array($circle, $cell, $village, $township, $zone);
+}
 
 function getIDs($alphanumericID, $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone)
 {
