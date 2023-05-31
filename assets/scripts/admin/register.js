@@ -173,3 +173,54 @@ function toggleFields() {
             break;
     }
 }
+
+//selecionar entidades locais
+$(".cell").show();
+$(".circle").hide();
+$(".village").hide();
+$(".zone").hide();
+$(".township").hide();
+
+$(".local-entity").on('change', function () {
+    let selectedLocalEntity = $(".local-entity").val();
+    
+    switch (selectedLocalEntity) {
+        case 'cell':
+            $(".cell").show();
+            $(".circle").hide();
+            $(".village").hide();
+            $(".zone").hide();
+            $(".township").hide();
+            break;
+        case 'circle':
+            $(".cell").hide();
+            $(".circle").show();
+            $(".village").hide();
+            $(".zone").hide();
+            $(".township").hide();
+            break;
+        case 'village':
+            $(".cell").hide();
+            $(".circle").hide();
+            $(".village").show();
+            $(".zone").hide();
+            $(".township").hide();
+            break;
+        case 'zone':
+            $(".cell").hide();
+            $(".circle").hide();
+            $(".village").hide();
+            $(".zone").show();
+            $(".township").hide();
+            break;
+        case 'township':
+            $(".cell").hide();
+            $(".circle").hide();
+            $(".village").hide();
+            $(".zone").hide();
+            $(".township").show();
+            break;
+        default:
+            break;
+    }
+});

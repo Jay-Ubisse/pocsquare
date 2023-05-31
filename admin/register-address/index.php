@@ -300,7 +300,17 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
             </fieldset>
             <fieldset class="border border-orange-700 mx-auto rounded-md flex flex-row flex-wrap justify-evenly py-5 my-5 laptop:flex-row mobile:flex-col laptop:w-[97%] mobile:w-[90%]">
                 <legend class="text-lg font-semibold px-4">Entidades Locais</legend>
-                <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                <div class="flex gap-4 laptop:flex-row mobile:flex-col">
+                    <span class="font-medium">Selecione a entidade local</span>
+                    <select name="local-entity" class="local-entity border p-0 h-fit border-orange-700 focus:outline-none outline-none rounded">
+                        <option value="cell">Célula</option>
+                        <option value="circle">Círculo</option>
+                        <option value="village">Vila</option>
+                        <option value="zone">Zona</option>
+                        <option value="township">Povoação</option>
+                    </select>
+                </div>
+                <div class="cell flex laptop:flex-row mobile:flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                     <label for="cell" class="font-medium">Célula</label>
                     <select name="cell-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                         <?php
@@ -380,7 +390,7 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
                         ?>
                     </select>
                 </div>
-                <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                <div class="circle flex laptop:flex-row mobile:flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                     <label for="circle" class="font-medium">Circulo</label>
                     <select name="circle-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                         <?php
@@ -460,7 +470,7 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
                         ?>
                     </select>
                 </div>
-                <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                <div class="village flex laptop:flex-row mobile:flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                     <label for="village" class="font-medium">Vila</label>
                     <select name="village-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                         <?php
@@ -540,7 +550,7 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
                         ?>
                     </select>
                 </div>
-                <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                <div class="zone flex laptop:flex-row mobile:flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                     <label for="zone" class="font-medium">Zona</label>
                     <select name="zone-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                         <?php
@@ -620,7 +630,7 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
                         ?>
                     </select>
                 </div>
-                <div class="flex flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
+                <div class="township flex laptop:flex-row mobile:flex-col gap-2 laptop:w-[19%] mobile:w-full mobile:px-5 laptop:mb-0 mobile:mb-4">
                     <label for="township" class="font-medium">Povoação</label>
                     <select name="township-mc" class="mc-field border border-orange-700 focus:outline-none outline-none rounded">
                         <?php
