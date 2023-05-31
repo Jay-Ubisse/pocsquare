@@ -152,7 +152,7 @@ if (!isset($_SESSION["admin-auth"]) && isset($_SESSION["tech-auth"])) {
                     <span class="font-semibold">Latitude DMS: </span><span><?php echo $_SESSION["latitude_dms"];  ?></span>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
-                    <span class="font-semibold">Longetude: </span><span><?php echo $_SESSION["longitude"];  ?></span>
+                    <span class="font-semibold">Longetude: </span><span></span><?php echo $_SESSION["longitude"];  ?>
                 </div>
                 <div class="mb-3 flex flex-col gap-2">
                     <span class="font-semibold">Longitude DMS: </span><span><?php echo $_SESSION["longitude_dms"];  ?></span>

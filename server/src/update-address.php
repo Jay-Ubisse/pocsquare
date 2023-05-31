@@ -18,13 +18,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mc"];
         $adminPost = $_POST["administrative-post-mc"];
         $neighborhoodOrLocality = $_POST["neighborhood-mc"];
-
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-mc"];
+        $cell =  $_POST["cell-mc"];
+        $village = $_POST["village-mc"];
+        $township = $_POST["township-mc"];
+        $zone = $_POST["zone-mc"];
 
         $idArray = getIDs("mc", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "01";
@@ -43,13 +41,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mp"];
         $adminPost = $_POST["administrative-post-mp"];
         $neighborhoodOrLocality = $_POST["neighborhood-mp"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-mp"];
+        $cell =  $_POST["cell-mp"];
+        $village = $_POST["village-mp"];
+        $township = $_POST["township-mp"];
+        $zone = $_POST["zone-mp"];
 
         $idArray = getIDs("mp", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "02";
@@ -68,13 +64,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-gz"];
         $adminPost = $_POST["administrative-post-gz"];
         $neighborhoodOrLocality = $_POST["neighborhood-gz"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-gz"];
+        $cell =  $_POST["cell-gz"];
+        $village = $_POST["village-gz"];
+        $township = $_POST["township-gz"];
+        $zone = $_POST["zone-gz"];
 
         $idArray = getIDs("gz", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "03";
@@ -93,13 +87,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-in"];
         $adminPost = $_POST["administrative-post-in"];
         $neighborhoodOrLocality = $_POST["neighborhood-in"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-in"];
+        $cell =  $_POST["cell-in"];
+        $village = $_POST["village-in"];
+        $township = $_POST["township-in"];
+        $zone = $_POST["zone-in"];
 
         $idArray = getIDs("in", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "04";
@@ -118,13 +110,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-mn"];
         $adminPost = $_POST["administrative-post-mn"];
         $neighborhoodOrLocality = $_POST["neighborhood-mn"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-mn"];
+        $cell =  $_POST["cell-mn"];
+        $village = $_POST["village-mn"];
+        $township = $_POST["township-mn"];
+        $zone = $_POST["zone-mn"];
 
         $idArray = getIDs("mn", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "05";
@@ -143,13 +133,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-sf"];
         $adminPost = $_POST["administrative-post-sf"];
         $neighborhoodOrLocality = $_POST["neighborhood-sf"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-sf"];
+        $cell =  $_POST["cell-sf"];
+        $village = $_POST["village-sf"];
+        $township = $_POST["township-sf"];
+        $zone = $_POST["zone-sf"];
 
         $idArray = getIDs("sf", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "06";
@@ -168,14 +156,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-tt"];
         $adminPost = $_POST["administrative-post-tt"];
         $neighborhoodOrLocality = $_POST["neighborhood-tt"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
-
+        $circle = $_POST["circle-tt"];
+        $cell =  $_POST["cell-tt"];
+        $village = $_POST["village-tt"];
+        $township = $_POST["township-tt"];
+        $zone = $_POST["zone-tt"];
         $idArray = getIDs("tt", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "07";
         $districtId = $idArray[0];
@@ -193,13 +178,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-np"];
         $adminPost = $_POST["administrative-post-np"];
         $neighborhoodOrLocality = $_POST["neighborhood-np"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-np"];
+        $cell =  $_POST["cell-np"];
+        $village = $_POST["village-np"];
+        $township = $_POST["township-np"];
+        $zone = $_POST["zone-np"];
 
         $idArray = getIDs("np", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "08";
@@ -218,13 +201,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-ns"];
         $adminPost = $_POST["administrative-post-ns"];
         $neighborhoodOrLocality = $_POST["neighborhood-ns"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-ns"];
+        $cell =  $_POST["cell-ns"];
+        $village = $_POST["village-ns"];
+        $township = $_POST["township-ns"];
+        $zone = $_POST["zone-ns"];
 
         $idArray = getIDs("ns", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "09";
@@ -243,13 +224,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-zb"];
         $adminPost = $_POST["administrative-post-zb"];
         $neighborhoodOrLocality = $_POST["neighborhood-zb"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-zb"];
+        $cell =  $_POST["cell-zb"];
+        $village = $_POST["village-zb"];
+        $township = $_POST["township-zb"];
+        $zone = $_POST["zone-zb"];
 
         $idArray = getIDs("zb", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
@@ -268,13 +247,11 @@ switch ($provinceAlphanumericId) {
         $district = $_POST["district-cd"];
         $adminPost = $_POST["administrative-post-cd"];
         $neighborhoodOrLocality = $_POST["neighborhood-cd"];
-        
-        $localEntitiesArray = getEntities($provinceAlphanumericId);
-        $circle = $localEntitiesArray[0];
-        $cell =  $localEntitiesArray[1];
-        $village = $localEntitiesArray[2];
-        $township = $localEntitiesArray[3];
-        $zone = $localEntitiesArray[4];
+        $circle = $_POST["circle-cd"];
+        $cell =  $_POST["cell-cd"];
+        $village = $_POST["village-cd"];
+        $township = $_POST["township-cd"];
+        $zone = $_POST["zone-cd"];
 
         $idArray = getIDs("cd", $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone);
         $provinceId = "10";
@@ -351,56 +328,9 @@ $website = $_POST["website"];
 
 //registration information
 $registrationDate = date("d-m-y");
+$updateDate = date("d-m-y");
 $userRole = $_SESSION["user-role"];
 $userId = $_SESSION['user-data']['username'];
-
-function getEntities($provinceAlphanumericId) {
-    $alphanumericId = strtolower($provinceAlphanumericId);
-    $localEntity = $_POST["local-entity"];
-
-    switch ($localEntity) {
-        case 'cell':
-            $circle = "";
-            $cell =  $_POST["cell-$alphanumericId"];
-            $village = "";
-            $township = "";
-            $zone = "";
-            break;
-        case 'circle':
-            $circle = $_POST["circle-$alphanumericId"];
-            $cell =  "";
-            $village = "";
-            $township = "";
-            $zone = "";
-            break;
-        case 'village':
-            $circle = "";
-            $cell =  "";
-            $village = $_POST["village-$alphanumericId"];
-            $township = "";
-            $zone = "";
-            break;
-        case 'zone':
-            $circle = "";
-            $cell =  "";
-            $village = "";
-            $township = "";
-            $zone = $_POST["zone-$alphanumericId"];
-            break;
-        case 'township':
-            $circle = "";
-            $cell =  "";
-            $village = "";
-            $township = $_POST["zone-$alphanumericId"];
-            $zone = "";
-            break;
-        default:
-            # code...
-            break;
-    }
-
-    return array($circle, $cell, $village, $township, $zone);
-}
 
 function getIDs($alphanumericID, $district, $adminPost, $neighborhoodOrLocality, $cell, $circle, $village, $township, $zone)
 {
@@ -467,66 +397,54 @@ try {
     $dbcon->beginTransaction();
 
     //save admin entities data
-    $administrative_entities_query = "INSERT INTO $database_name.administrative_entities 
-                                    (province, province_numeric_id, district, district_id, administrative_post, admin_post_id, neighborhood_locality, neighborhood_locality_id, province_alphabetical_id) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $administrative_entities_query = "UPDATE $database_name.administrative_entities 
+                                    SET province = ?, province_numeric_id = ?, district = ?, district_id = ?, administrative_post = ?, admin_post_id = ?, neighborhood_locality = ?, neighborhood_locality_id = ?, province_alphabetical_id = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($administrative_entities_query);
-    $stmt->execute([$provinceName, $provinceId, $district, $districtId, $adminPost, $adminPostId, $neighborhoodOrLocality, $neighborhoodOrLocalityId, $provinceAlphanumericId]);
+    $stmt->execute([$provinceName, $provinceId, $district, $districtId, $adminPost, $adminPostId, $neighborhoodOrLocality, $neighborhoodOrLocalityId, $provinceAlphanumericId, $_SESSION["entity_id"]]);
 
     //save local entities data
-    $local_entities_query = "INSERT INTO $database_name.local_entities 
-                                    (cell, cell_id, circle, circle_id, village, village_id, township, township_id, zone, zone_id) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $local_entities_query = "UPDATE $database_name.local_entities 
+                                    SET cell = ?, cell_id = ?, circle = ?, circle_id = ?, village = ?, village_id = ?, township = ?, township_id = ?, zone = ?, zone_id = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($local_entities_query);
-    $stmt->execute([$cell, $cellId, $circle, $circleId, $village, $villageId, $township, $townshipId, $zone, $zoneId]);
+    $stmt->execute([$cell, $cellId, $circle, $circleId, $village, $villageId, $township, $townshipId, $zone, $zoneId, $_SESSION["entity_id"]]);
 
     //save heritage entities data
-    $heritage_entities_query = "INSERT INTO $database_name.heritage_entities 
-                                    (property_type, floor, side, door_number, road_name, road_type, stalemate, viaduct, block, roundabout, lane, wide, bridges, plaza, length, width, occupancy, affectation) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $heritage_entities_query = "UPDATE $database_name.heritage_entities 
+                                    SET property_type = ?, floor = ?, side = ?, door_number = ?, road_name = ?, road_type = ?, stalemate = ?, viaduct = ?, block = ?, roundabout = ?, lane = ?, wide = ?, bridges = ?, plaza = ?, length = ?, width = ?, occupancy = ?, affectation = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($heritage_entities_query);
-    $stmt->execute([$propertyType, $floor, $side, $doorNumber,  $roadName, $roadType, $stalemate, $viaduct, $block, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation]);
+    $stmt->execute([$propertyType, $floor, $side, $doorNumber,  $roadName, $roadType, $stalemate, $viaduct, $block, $roundabout, $lane, $wide, $bridges, $plaza, $length, $width, $occupancy, $affectation, $_SESSION["entity_id"]]);
 
     //save postal entities data
-    $postal_entities_query = "INSERT INTO $database_name.postal_entities 
-                            (city_block, lateral, entry, mailbox, post_office, postal_code) 
-                            VALUES (?, ?, ?, ?, ?, ?)";
+    $postal_entities_query = "UPDATE $database_name.postal_entities SET city_block = ?, lateral = ?, entry = ?, mailbox = ?, post_office = ?, postal_code = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($postal_entities_query);
-    $stmt->execute([$cityBlock, $lateral, $entry, $mailbox, $postOffice, $postalCode]);
+    $stmt->execute([$cityBlock, $lateral, $entry, $mailbox, $postOffice, $postalCode, $_SESSION["entity_id"]]);
 
     //save espacial entities data
-    $espacial_entities_query = "INSERT INTO $database_name.espacial_entities 
-                            (latitude, latitude_dms, longitude, longitude_dms, sea_rise, via_lat_start, via_lat_end) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $espacial_entities_query = "UPDATE $database_name.espacial_entities SET latitude = ?, latitude_dms = ?, longitude = ?, longitude_dms = ?, sea_rise = ?, via_lat_start = ?, via_lat_end = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($espacial_entities_query);
-    $stmt->execute([$latitude, $latitudeDMS, $longitude, $longitudeDMS, $seaRise, $viaLatStart, $viaLatEnd]);
+    $stmt->execute([$latitude, $latitudeDMS, $longitude, $longitudeDMS, $seaRise, $viaLatStart, $viaLatEnd, $_SESSION["entity_id"]]);
 
     //save Complementary entities data
-    $Complementary_entities_query = "INSERT INTO $database_name.Complementary_entities 
-                            (contact_number, email, website) 
-                            VALUES (?, ?, ?)";
+    $Complementary_entities_query = "UPDATE $database_name.Complementary_entities SET contact_number = ?, email = ?, website = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($Complementary_entities_query);
-    $stmt->execute([$contactNumber, $email, $website]);
+    $stmt->execute([$contactNumber, $email, $website, $_SESSION["entity_id"]]);
 
     //save registration_info entities data
-    $registration_info_query = "INSERT INTO $database_name.registration_info 
-                            (registration_date, user_role, user_id) 
-                            VALUES (?, ?, ?)";
+    $registration_info_query = "UPDATE $database_name.registration_info SET registration_date = ?, user_role = ?, user_id = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($registration_info_query);
-    $stmt->execute([$registrationDate, $userRole, $userId]);
+    $stmt->execute([$registrationDate, $userRole, $userId, $_SESSION["entity_id"]]);
 
     //save main info address data
-    $main_address_info_query = "INSERT INTO $database_name.main_address_info 
-                            (province, district, neighborhood_locality, road_name, floor, door_number, city_block, cep, email, website, phone_number, responsible, registration_date) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $main_address_info_query = "UPDATE $database_name.main_address_info 
+                            SET province = ?, district = ?, neighborhood_locality = ?, road_name = ?, floor = ?, door_number = ?, city_block = ?, cep = ?, email = ?, website = ?, phone_number = ?, responsible = ?, registration_date = ? WHERE entity_id = ?";
     $stmt = $dbcon->prepare($main_address_info_query);
-    $stmt->execute([$provinceName, $district, $neighborhoodOrLocality, $roadName, $floor, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId, $registrationDate]);
+    $stmt->execute([$provinceName, $district, $neighborhoodOrLocality, $roadName, $floor, $doorNumber, $cityBlock, $postalCode, $email, $website, $contactNumber, $userId, $updateDate, $_SESSION["entity_id"]]);
 
 
     $dbcon->commit();
 
-    $_SESSION['register-response'] = "Registro efectuado com sucesso!";
-    header("location: ../../admin/register-address/");
+    $_SESSION['register-response'] = "Endereço actualizado com sucesso!";
+    header("location: ../../admin/addresses-list/edit-address/");
 } catch (PDOException $ex) {
     //Something went wrong rollback!
     $dbcon->rollBack();

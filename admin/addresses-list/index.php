@@ -133,12 +133,24 @@ if (!isset($_SESSION["admin-auth"])  && !isset($_SESSION["tech-auth"]) && !isset
 
             //função para a pagina de visualização de informação
             function viewInfo(data) {
-                $.post("../../server/src/view-addresses/view-route.php", 
+                $.post("../../server/src/addresses-info/get-addresses-info.php", 
                     {
                         id: data,
                     },
-                    function() {
+                    function(response) {
                         location.href = "./address-info/";
+                    }
+                );
+            }
+
+            //função para a pagina de atualização do endereço
+            function updateAddress(data) {
+                $.post("../../server/src/addresses-info/get-addresses-info.php", 
+                    {
+                        id: data,
+                    },
+                    function(response) {
+                        location.href = "./edit-address/";
                     }
                 );
             }

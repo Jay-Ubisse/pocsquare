@@ -4,6 +4,8 @@
 
     $id = $_POST['id'];
 
+    $_SESSION["entity_id"] = $id;
+
     //dados das entidades administrativas
     $adminEntityQuery = "SELECT * FROM $database_name.administrative_entities WHERE entity_id = $id";
     $adminEntityResult = $dbcon->query($adminEntityQuery);
