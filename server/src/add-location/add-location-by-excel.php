@@ -104,7 +104,7 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             $isSuccessful = "not ok";
             $invalidProvince = true;
             $actualLine = $actualLine + 1;
-            continue;
+            break;
         }
 
 

@@ -12,7 +12,7 @@ if (!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset(
     }
 ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" class="scroll-smooth">
 
     <head>
         <meta charset="UTF-8">
@@ -27,8 +27,8 @@ if (!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset(
         <header>
             <?php include "../components/header.php"; ?>
         </header>
-        <main class="p-1 my-10 mb-20 ">
-            <section class="flex flex-row gap-3 items-center border-2 rounded-md border-orange-700 h-fit p-4 w-fit">
+        <main class="relative p-1 my-10 mb-20 ">
+            <section id="search" class="flex flex-row gap-3 items-center border-2 rounded-md border-orange-700 h-fit p-4 w-fit">
                 <div>
                     <label for="region" class="font-medium">Região</label>
                     <select name="region" class="regionOptions border border-orange-700 focus:outline-none outline-none rounded">
@@ -68,6 +68,9 @@ if (!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset(
 
                 </table>
             </section>
+            <div class="bg-orange-700 h-16 w-16 text-white flex justify-center items-center rounded-[50%] fixed bottom-20 z-20 right-4">
+                <a href="#search"><i class="fa-solid fa-arrow-up fa-2x"></i></a>
+            </div>
         </main>
         <footer>
             <?php include "../components/footer.php" ?>
