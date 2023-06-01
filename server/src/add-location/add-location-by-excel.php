@@ -6,6 +6,7 @@ error_reporting(E_ALL ^ E_WARNING);
 
 session_start();
 
+ini_set('memory_limit', '2048M');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -155,29 +156,39 @@ if ($extension == 'xlsx' || $extension == 'xls' || $extension == 'csv') {
             }
 
             //guardar dados na tabela das povoações
-            $townshipQuery = "INSERT INTO $database_name." . "$townshipTable (id, province, district, admin_post, neighborhood_locality, township) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($townshipQuery);
-            $stmt->execute([$townshipId, $province, $district, $adminPost, $localityOrNeighborhood, $township]);
+            if($township != "") {
+                $townshipQuery = "INSERT INTO $database_name." . "$townshipTable (id, province, district, admin_post, neighborhood_locality, township) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($townshipQuery);
+                $stmt->execute([$townshipId, $province, $district, $adminPost, $localityOrNeighborhood, $township]);
+            }
 
             //guardar dados na tabela das células
-            $cellQuery = "INSERT INTO $database_name." . "$cellTable (id, province, district, admin_post, neighborhood_locality, cell) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($cellQuery);
-            $stmt->execute([$cellId, $province, $district, $adminPost, $localityOrNeighborhood, $cell]);
+            if($cell != "") {
+                $cellQuery = "INSERT INTO $database_name." . "$cellTable (id, province, district, admin_post, neighborhood_locality, cell) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($cellQuery);
+                $stmt->execute([$cellId, $province, $district, $adminPost, $localityOrNeighborhood, $cell]);
+            }
 
             //guardar dados na tabela dos círculos
-            $circleQuery = "INSERT INTO $database_name." . "$circleTable (id, province, district, admin_post, neighborhood_locality, circle) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($circleQuery);
-            $stmt->execute([$circleId, $province, $district, $adminPost, $localityOrNeighborhood, $circle]);
+            if($circle != "") {
+                $circleQuery = "INSERT INTO $database_name." . "$circleTable (id, province, district, admin_post, neighborhood_locality, circle) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($circleQuery);
+                $stmt->execute([$circleId, $province, $district, $adminPost, $localityOrNeighborhood, $circle]);
+            }
 
             //guardar dados na tabela das vilas
-            $villageQuery = "INSERT INTO $database_name." . "$villageTable (id, province, district, admin_post, neighborhood_locality, village) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($villageQuery);
-            $stmt->execute([$villageId, $province, $district, $adminPost, $localityOrNeighborhood, $village]);
+            if($village != "") {
+                $villageQuery = "INSERT INTO $database_name." . "$villageTable (id, province, district, admin_post, neighborhood_locality, village) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($villageQuery);
+                $stmt->execute([$villageId, $province, $district, $adminPost, $localityOrNeighborhood, $village]);
+            }
 
             //guardar dados na tabela das zonas
-            $zoneQuery = "INSERT INTO $database_name." . "$zoneTable (id, province, district, admin_post, neighborhood_locality, zone) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $dbcon->prepare($zoneQuery);
-            $stmt->execute([$zoneId, $province, $district, $adminPost, $localityOrNeighborhood, $zone]);
+            if($zone != "") {
+                $zoneQuery = "INSERT INTO $database_name." . "$zoneTable (id, province, district, admin_post, neighborhood_locality, zone) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $dbcon->prepare($zoneQuery);
+                $stmt->execute([$zoneId, $province, $district, $adminPost, $localityOrNeighborhood, $zone]);
+            }
 
 
             $dbcon->commit();

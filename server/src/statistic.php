@@ -515,51 +515,108 @@ $_SESSION["mzTownships"] = $mzTownships;
 /* ======= PERCENTAGENS ======= */
 
 //percentagens na zona sul
-$southDistrictsPercent = round(($southDistricts / $mzDistricts) * 100);
-$_SESSION["southDistrictsPercent"] = $southDistrictsPercent;
+if($mzDistricts != 0) {
+    $southDistrictsPercent = round(($southDistricts / $mzDistricts) * 100);
+    $_SESSION["southDistrictsPercent"] = $southDistrictsPercent;
+} else {
+    $_SESSION["southDistrictsPercent"] = 0;
+}
 
-$southAdminPostsPercent = round(($southAdminPosts / $mzAdminPosts) * 100);
-$_SESSION["southAdminPostsPercent"] = $southAdminPostsPercent;
+if ($mzAdminPosts != 0) {
+    $southAdminPostsPercent = round(($southAdminPosts / $mzAdminPosts) * 100);
+    $_SESSION["southAdminPostsPercent"] = $southAdminPostsPercent;
+} else {
+    $_SESSION["southAdminPostsPercent"] = 0;
+}
 
-$southNeighborhoodOrLocalityPercent = round(($southNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
-$_SESSION["southNeighborhoodOrLocalityPercent"] = $southNeighborhoodOrLocalityPercent;
+if ($mzNeighborhoodOrLocality != 0) {
+    $southNeighborhoodOrLocalityPercent = round(($southNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
+    $_SESSION["southNeighborhoodOrLocalityPercent"] = $southNeighborhoodOrLocalityPercent;
+} else {
+   $_SESSION["southNeighborhoodOrLocalityPercent"] = 0;
+}
 
-$southCellsPercent = round(($southCells / $mzCells) * 100);
-$_SESSION["southCellsPercent"] = $southCellsPercent;
+if ($mzCells != 0) {
+    $southCellsPercent = round(($southCells / $mzCells) * 100);
+    $_SESSION["southCellsPercent"] = $southCellsPercent;
+} else {
+    $_SESSION["southCellsPercent"] = 0;
+}
 
-$southCirclesPercent = round(($southCircles / $mzCircles) * 100);
-$_SESSION["southCirclesPercent"] = $southCirclesPercent;
+if ($mzCircles != 0) {
+    $southCirclesPercent = round(($southCircles / $mzCircles) * 100);
+    $_SESSION["southCirclesPercent"] = $southCirclesPercent;
+} else {
+    $_SESSION["southCirclesPercent"] = 0;
+}
 
-$southVillagesPercent = round(($southVillages / $mzVillages) * 100);
-$_SESSION["southVillagesPercent"] = $southVillagesPercent;
+if ($mzVillages != 0) {
+    $southVillagesPercent = round(($southVillages / $mzVillages) * 100);
+    $_SESSION["southVillagesPercent"] = $southVillagesPercent;
+} else {
+    $_SESSION["southVillagesPercent"] = 0;
+}
 
-$southZonesPercent = round(($southZones / $mzZones) * 100);
-$_SESSION["southZonesPercent"] = $southZonesPercent;
+if ($mzZones != 0) {
+    $southZonesPercent = round(($southZones / $mzZones) * 100);
+    $_SESSION["southZonesPercent"] = $southZonesPercent;
+} else {
+    $_SESSION["southZonesPercent"] = 0;
+}
 
-$southTownshipsPercent = round(($southTownships / $mzTownships) * 100);
-$_SESSION["southTownshipsPercent"] = $southTownshipsPercent;
 
+if ($mzTownships != 0) {
+    $southTownshipsPercent = round(($southTownships / $mzTownships) * 100);
+    $_SESSION["southTownshipsPercent"] = $southTownshipsPercent;
+} else {
+    # code...
+}
 
 //percentagens na zona centro
-$centerDistrictsPercent = round(($centerDistricts / $mzDistricts) * 100);
-$_SESSION["centerDistrictsPercent"] = $centerDistrictsPercent;
+if ($mzDistricts != 0) {
+    $centerDistrictsPercent = round(($centerDistricts / $mzDistricts) * 100);
+    $_SESSION["centerDistrictsPercent"] = $centerDistrictsPercent;
+} else {
+    $_SESSION["centerDistrictsPercent"] = 0;
+}
 
-$centerAdminPostsPercent = round(($centerAdminPosts / $mzAdminPosts) * 100);
-$_SESSION["centerAdminPostsPercent"] = $centerAdminPostsPercent;
+if ($mzAdminPosts != 0) {
+    $centerAdminPostsPercent = round(($centerAdminPosts / $mzAdminPosts) * 100);
+    $_SESSION["centerAdminPostsPercent"] = $centerAdminPostsPercent;
+} else {
+    $_SESSION["centerAdminPostsPercent"] = 0;
+}
 
-$centerNeighborhoodOrLocalityPercent = round(($centerNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
-$_SESSION["centerNeighborhoodOrLocalityPercent"] = $centerNeighborhoodOrLocalityPercent;
-$_SESSION["centerNeighborhoodOrLocalityPercent"];
+
+if ($mzNeighborhoodOrLocality != 0) {
+    $centerNeighborhoodOrLocalityPercent = round(($centerNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
+    $_SESSION["centerNeighborhoodOrLocalityPercent"] = $centerNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["centerNeighborhoodOrLocalityPercent"] = 0;
+}
+
 
 //percentagens na zona norte
-$northDistrictsPercent = round(($northDistricts / $mzDistricts) * 100);
-$_SESSION["northDistrictsPercent"] = $northDistrictsPercent;
+if ($mzDistricts != 0) {
+    $northDistrictsPercent = round(($northDistricts / $mzDistricts) * 100);
+    $_SESSION["northDistrictsPercent"] = $northDistrictsPercent;
+} else {
+    $_SESSION["northDistrictsPercent"] = 0;
+}
 
-$northAdminPostsPercent = round(($northAdminPosts / $mzAdminPosts) * 100);
-$_SESSION["northAdminPostsPercent"] = $northAdminPostsPercent;
+if ($mzAdminPosts != 0) {
+    $northAdminPostsPercent = round(($northAdminPosts / $mzAdminPosts) * 100);
+    $_SESSION["northAdminPostsPercent"] = $northAdminPostsPercent;
+} else {
+    $_SESSION["northAdminPostsPercent"] = 0;
+}
 
-$northNeighborhoodOrLocalityPercent = round(($northNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
-$_SESSION["northNeighborhoodOrLocalityPercent"] = $northNeighborhoodOrLocalityPercent;
+if ($mzNeighborhoodOrLocality != 0) {
+    $northNeighborhoodOrLocalityPercent = round(($northNeighborhoodOrLocality / $mzNeighborhoodOrLocality) * 100);
+    $_SESSION["northNeighborhoodOrLocalityPercent"] = $northNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["northNeighborhoodOrLocalityPercent"] = 0;
+}
 
 
 header("location: ../../admin/statistic/");
