@@ -512,7 +512,7 @@ $mzTownships = $southTownships + $centerTownships + $northTownships;
 $_SESSION["mzTownships"] = $mzTownships;
 
 
-/* ======= PERCENTAGENS ======= */
+/* ======= PERCENTAGENS NO PAIS ======= */
 
 //percentagens na zona sul
 if($mzDistricts != 0) {
@@ -569,7 +569,7 @@ if ($mzTownships != 0) {
     $southTownshipsPercent = round(($southTownships / $mzTownships) * 100);
     $_SESSION["southTownshipsPercent"] = $southTownshipsPercent;
 } else {
-    # code...
+    $_SESSION["southTownshipsPercent"] = 0;
 }
 
 //percentagens na zona centro
@@ -595,6 +595,42 @@ if ($mzNeighborhoodOrLocality != 0) {
     $_SESSION["centerNeighborhoodOrLocalityPercent"] = 0;
 }
 
+if ($mzCells != 0) {
+    $centerCellsPercent = round(($centerCells / $mzCells) * 100);
+    $_SESSION["centerCellsPercent"] = $centerCellsPercent;
+} else {
+    $_SESSION["centerCellsPercent"] = 0;
+}
+
+if ($mzCircles != 0) {
+    $centerCirclesPercent = round(($centerCircles / $mzCircles) * 100);
+    $_SESSION["centerCirclesPercent"] = $centerCirclesPercent;
+} else {
+    $_SESSION["centerCirclesPercent"] = 0;
+}
+
+if ($mzVillages != 0) {
+    $centerVillagesPercent = round(($centerVillages / $mzVillages) * 100);
+    $_SESSION["centerVillagesPercent"] = $centerVillagesPercent;
+} else {
+    $_SESSION["centerVillagesPercent"] = 0;
+}
+
+if ($mzZones != 0) {
+    $centerZonesPercent = round(($centerZones / $mzZones) * 100);
+    $_SESSION["centerZonesPercent"] = $centerZonesPercent;
+} else {
+    $_SESSION["centerZonesPercent"] = 0;
+}
+
+
+if ($mzTownships != 0) {
+    $centerTownshipsPercent = round(($centerTownships / $mzTownships) * 100);
+    $_SESSION["centerTownshipsPercent"] = $centerTownshipsPercent;
+} else {
+    $_SESSION["centerTownshipsPercent"] = 0;
+}
+
 
 //percentagens na zona norte
 if ($mzDistricts != 0) {
@@ -618,6 +654,277 @@ if ($mzNeighborhoodOrLocality != 0) {
     $_SESSION["northNeighborhoodOrLocalityPercent"] = 0;
 }
 
+if ($mzCells != 0) {
+    $northCellsPercent = round(($northCells / $mzCells) * 100);
+    $_SESSION["northCellsPercent"] = $northCellsPercent;
+} else {
+    $_SESSION["northCellsPercent"] = 0;
+}
+
+if ($mzCircles != 0) {
+    $northCirclesPercent = round(($northCircles / $mzCircles) * 100);
+    $_SESSION["northCirclesPercent"] = $northCirclesPercent;
+} else {
+    $_SESSION["northCirclesPercent"] = 0;
+}
+
+if ($mzVillages != 0) {
+    $northVillagesPercent = round(($northVillages / $mzVillages) * 100);
+    $_SESSION["northVillagesPercent"] = $northVillagesPercent;
+} else {
+    $_SESSION["northVillagesPercent"] = 0;
+}
+
+if ($mzZones != 0) {
+    $northZonesPercent = round(($northZones / $mzZones) * 100);
+    $_SESSION["northZonesPercent"] = $northZonesPercent;
+} else {
+    $_SESSION["northZonesPercent"] = 0;
+}
+
+
+if ($mzTownships != 0) {
+    $northTownshipsPercent = round(($northTownships / $mzTownships) * 100);
+    $_SESSION["northTownshipsPercent"] = $northTownshipsPercent;
+} else {
+    $_SESSION["northTownshipsPercent"] = 0;
+}
+
+/* ======= PERCENTAGENS NA ZONA SUL ======= */
+
+//percentagens de Maputo Cidade
+if ($southDistricts != 0) {
+    $mcDistrictsPercent = round(($mcDistricts / $southDistricts) * 100);
+    $_SESSION["mcDistrictsPercent"] = $mcDistrictsPercent;
+} else {
+    $_SESSION["mcDistrictsPercent"] = 0;
+}
+
+if ($southAdminPosts != 0) {
+    $mcAdminPostsPercent = round(($mcAdminPosts / $southAdminPosts) * 100);
+    $_SESSION["mcAdminPostsPercent"] = $mcAdminPostsPercent;
+} else {
+    $_SESSION["mcAdminPostsPercent"] = 0;
+}
+
+if ($southNeighborhoodOrLocality != 0) {
+    $mcNeighborhoodOrLocalityPercent = round(($mcNeighborhoodOrLocality / $southNeighborhoodOrLocality) * 100);
+    $_SESSION["mcNeighborhoodOrLocalityPercent"] = $mcNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["mcNeighborhoodOrLocalityPercent"] = 0;
+}
+
+if ($southCells != 0) {
+    $mcCellsPercent = round(($mcCells / $southCells) * 100);
+    $_SESSION["mcCellsPercent"] = $mcCellsPercent;
+} else {
+    $_SESSION["mcCellsPercent"] = 0;
+}
+
+if ($southCircles != 0) {
+    $mcCirclesPercent = round(($mcCircles / $southCircles) * 100);
+    $_SESSION["mcCirclesPercent"] = $mcCirclesPercent;
+} else {
+    $_SESSION["mcCirclesPercent"] = 0;
+}
+
+if ($southVillages != 0) {
+    $mcVillagesPercent = round(($mcVillages / $southVillages) * 100);
+    $_SESSION["mcVillagesPercent"] = $mcVillagesPercent;
+} else {
+    $_SESSION["mcVillagesPercent"] = 0;
+}
+
+if ($southZones != 0) {
+    $mcZonesPercent = round(($mcZones / $southZones) * 100);
+    $_SESSION["mcZonesPercent"] = $mcZonesPercent;
+} else {
+    $_SESSION["mcZonesPercent"] = 0;
+}
+
+
+if ($southTownships != 0) {
+    $mcTownshipsPercent = round(($mcTownships / $southTownships) * 100);
+    $_SESSION["mcTownshipsPercent"] = $mcTownshipsPercent;
+} else {
+    $_SESSION["mcTownshipsPercent"] = 0;
+}
+
+//percentagens de Maputo Provincia
+if ($southDistricts != 0) {
+    $mpDistrictsPercent = round(($mpDistricts / $southDistricts) * 100);
+    $_SESSION["mpDistrictsPercent"] = $mpDistrictsPercent;
+} else {
+    $_SESSION["mpDistrictsPercent"] = 0;
+}
+
+if ($southAdminPosts != 0) {
+    $mpAdminPostsPercent = round(($mpAdminPosts / $southAdminPosts) * 100);
+    $_SESSION["mpAdminPostsPercent"] = $mpAdminPostsPercent;
+} else {
+    $_SESSION["mpAdminPostsPercent"] = 0;
+}
+
+if ($southNeighborhoodOrLocality != 0) {
+    $mpNeighborhoodOrLocalityPercent = round(($mpNeighborhoodOrLocality / $southNeighborhoodOrLocality) * 100);
+    $_SESSION["mpNeighborhoodOrLocalityPercent"] = $mpNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["mpNeighborhoodOrLocalityPercent"] = 0;
+}
+
+if ($southCells != 0) {
+    $mpCellsPercent = round(($mpCells / $southCells) * 100);
+    $_SESSION["mpCellsPercent"] = $mpCellsPercent;
+} else {
+    $_SESSION["mpCellsPercent"] = 0;
+}
+
+if ($southCircles != 0) {
+    $mpCirclesPercent = round(($mpCircles / $southCircles) * 100);
+    $_SESSION["mpCirclesPercent"] = $mpCirclesPercent;
+} else {
+    $_SESSION["mpCirclesPercent"] = 0;
+}
+
+if ($southVillages != 0) {
+    $mpVillagesPercent = round(($mpVillages / $southVillages) * 100);
+    $_SESSION["mpVillagesPercent"] = $mpVillagesPercent;
+} else {
+    $_SESSION["mpVillagesPercent"] = 0;
+}
+
+if ($southZones != 0) {
+    $mpZonesPercent = round(($mpZones / $southZones) * 100);
+    $_SESSION["mpZonesPercent"] = $mpZonesPercent;
+} else {
+    $_SESSION["mpZonesPercent"] = 0;
+}
+
+
+if ($southTownships != 0) {
+    $mpTownshipsPercent = round(($mpTownships / $southTownships) * 100);
+    $_SESSION["mpTownshipsPercent"] = $mpTownshipsPercent;
+} else {
+    $_SESSION["mpTownshipsPercent"] = 0;
+}
+
+
+//percentagens de gaza
+if ($southDistricts != 0) {
+    $gzDistrictsPercent = round(($gzDistricts / $southDistricts) * 100);
+    $_SESSION["gzDistrictsPercent"] = $gzDistrictsPercent;
+} else {
+    $_SESSION["gzDistrictsPercent"] = 0;
+}
+
+if ($southAdminPosts != 0) {
+    $gzAdminPostsPercent = round(($gzAdminPosts / $southAdminPosts) * 100);
+    $_SESSION["gzAdminPostsPercent"] = $gzAdminPostsPercent;
+} else {
+    $_SESSION["gzAdminPostsPercent"] = 0;
+}
+
+if ($southNeighborhoodOrLocality != 0) {
+    $gzNeighborhoodOrLocalityPercent = round(($gzNeighborhoodOrLocality / $southNeighborhoodOrLocality) * 100);
+    $_SESSION["gzNeighborhoodOrLocalityPercent"] = $gzNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["gzNeighborhoodOrLocalityPercent"] = 0;
+}
+
+if ($southCells != 0) {
+    $gzCellsPercent = round(($gzCells / $southCells) * 100);
+    $_SESSION["gzCellsPercent"] = $gzCellsPercent;
+} else {
+    $_SESSION["gzCellsPercent"] = 0;
+}
+
+if ($southCircles != 0) {
+    $gzCirclesPercent = round(($gzCircles / $southCircles) * 100);
+    $_SESSION["gzCirclesPercent"] = $gzCirclesPercent;
+} else {
+    $_SESSION["gzCirclesPercent"] = 0;
+}
+
+if ($southVillages != 0) {
+    $gzVillagesPercent = round(($gzVillages / $southVillages) * 100);
+    $_SESSION["gzVillagesPercent"] = $gzVillagesPercent;
+} else {
+    $_SESSION["gzVillagesPercent"] = 0;
+}
+
+if ($southZones != 0) {
+    $gzZonesPercent = round(($gzZones / $southZones) * 100);
+    $_SESSION["gzZonesPercent"] = $gzZonesPercent;
+} else {
+    $_SESSION["gzZonesPercent"] = 0;
+}
+
+
+if ($southTownships != 0) {
+    $gzTownshipsPercent = round(($gzTownships / $southTownships) * 100);
+    $_SESSION["gzTownshipsPercent"] = $gzTownshipsPercent;
+} else {
+    $_SESSION["gzTownshipsPercent"] = 0;
+}
+
+
+//percentagens de Inhambane
+if ($southDistricts != 0) {
+    $inDistrictsPercent = round(($inDistricts / $southDistricts) * 100);
+    $_SESSION["inDistrictsPercent"] = $inDistrictsPercent;
+} else {
+    $_SESSION["inDistrictsPercent"] = 0;
+}
+
+if ($southAdminPosts != 0) {
+    $inAdminPostsPercent = round(($inAdminPosts / $southAdminPosts) * 100);
+    $_SESSION["inAdminPostsPercent"] = $inAdminPostsPercent;
+} else {
+    $_SESSION["inAdminPostsPercent"] = 0;
+}
+
+if ($southNeighborhoodOrLocality != 0) {
+    $inNeighborhoodOrLocalityPercent = round(($inNeighborhoodOrLocality / $southNeighborhoodOrLocality) * 100);
+    $_SESSION["inNeighborhoodOrLocalityPercent"] = $inNeighborhoodOrLocalityPercent;
+} else {
+    $_SESSION["inNeighborhoodOrLocalityPercent"] = 0;
+}
+
+if ($southCells != 0) {
+    $inCellsPercent = round(($inCells / $southCells) * 100);
+    $_SESSION["inCellsPercent"] = $inCellsPercent;
+} else {
+    $_SESSION["inCellsPercent"] = 0;
+}
+
+if ($southCircles != 0) {
+    $inCirclesPercent = round(($inCircles / $southCircles) * 100);
+    $_SESSION["inCirclesPercent"] = $inCirclesPercent;
+} else {
+    $_SESSION["inCirclesPercent"] = 0;
+}
+
+if ($southVillages != 0) {
+    $inVillagesPercent = round(($inVillages / $southVillages) * 100);
+    $_SESSION["inVillagesPercent"] = $inVillagesPercent;
+} else {
+    $_SESSION["inVillagesPercent"] = 0;
+}
+
+if ($southZones != 0) {
+    $inZonesPercent = round(($inZones / $southZones) * 100);
+    $_SESSION["inZonesPercent"] = $inZonesPercent;
+} else {
+    $_SESSION["inZonesPercent"] = 0;
+}
+
+
+if ($southTownships != 0) {
+    $inTownshipsPercent = round(($inTownships / $southTownships) * 100);
+    $_SESSION["inTownshipsPercent"] = $inTownshipsPercent;
+} else {
+    $_SESSION["inTownshipsPercent"] = 0;
+}
 
 header("location: ../../admin/statistic/");
 

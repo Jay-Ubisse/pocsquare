@@ -206,45 +206,45 @@
         <p class="progress-label">Células</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["southCellsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["southCellsPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Círculos</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["southCirclesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["southCirclesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Vilas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["southVillagesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["southVillagesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Zonas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["southZonesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["southZonesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Povoações</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["southTownshipsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["southTownshipsPercent"]; ?>%</p>
         </div>
       </div>
     </div>
@@ -285,45 +285,45 @@
         <p class="progress-label">Células</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["centerCellsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["centerCellsPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Círculos</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["centerCirclesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["centerCirclesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Vilas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["centerVillagesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["centerVillagesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Zonas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["centerZonesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["centerZonesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Povoações</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["centerTownshipsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["centerTownshipsPercent"]; ?>%</p>
         </div>
       </div>
     </div>
@@ -364,45 +364,45 @@
         <p class="progress-label">Células</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["northCellsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["northCellsPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Círculos</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["northCirclesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["northCirclesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Vilas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["northVillagesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["northVillagesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Zonas</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["northZonesPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["northZonesPercent"]; ?>%</p>
         </div>
       </div>
       <div class="px-2">
         <p class="progress-label">Povoações</p>
         <div class="progress-container">
           <div class="meter my-2">
-            <span style="width: 60%"><span class="progress"></span></span>
+            <span style="width: <?php echo $_SESSION["northTownshipsPercent"]; ?>%"><span class="progress"></span></span>
           </div>
-          <p class="progress-percentage">60%</p>
+          <p class="progress-percentage"><?php echo $_SESSION["northTownshipsPercent"]; ?>%</p>
         </div>
       </div>
     </div>
