@@ -42,7 +42,7 @@ if(!isset($_SESSION["admin-auth"]) && !isset($_SESSION["tech-auth"]) && !isset($
         if (isset($_SESSION["admin-auth"])) {
             include "../components/home/admin-home.php";
         }
-        if (isset($_SESSION["sup-auth"])) {
+        if (isset($_SESSION["supervisor-auth"])) {
             include "../components/home/sup-home.php";
         }
         ?>
