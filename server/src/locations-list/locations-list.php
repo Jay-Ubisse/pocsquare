@@ -1,5 +1,6 @@
 <?php
 require "../../config/connect.php";
+session_start();
 
 $province = $_POST['province'];
 $region = $_POST['region'];
